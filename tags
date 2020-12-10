@@ -1,0 +1,1356 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADD_AT_END	retired/tpch.original/dbgen/dss.h	101;"	d
+ADHOC_DFLT	retired/tpch.original/dbgen/dss.h	452;"	d
+ADHOC_TAG	retired/tpch.original/dbgen/dss.h	451;"	d
+ADVANCE_STREAM	retired/tpch.original/dbgen/speed_seed.c	59;"	d	file:
+ADVANCE_STREAM64	retired/tpch.original/dbgen/speed_seed.c	61;"	d	file:
+ALLSPHINXOPTS	p2d2/greentreesnakes/Makefile	/^ALLSPHINXOPTS   = -d $(BUILDDIR)\/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .$/;"	m
+ALLSPHINXOPTS	p2d2/greentreesnakes/make.bat	/^	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%$/;"	v
+ALLSPHINXOPTS	p2d2/greentreesnakes/make.bat	/^set ALLSPHINXOPTS=-d %BUILDDIR%\/doctrees %SPHINXOPTS% .$/;"	v
+ALLSRC	retired/tpch.original/dbgen/makefile	/^ALLSRC=$(DBGENSRC) $(REFERENCE) $(QSRC) $(SCRIPTS)$/;"	m
+ANS	retired/tpch.original/dbgen/makefile	/^ANS   = answers\/q1.out answers\/q2.out answers\/q3.out answers\/q4.out answers\/q5.out answers\/q6.out answers\/q7.out answers\/q8.out \\$/;"	m
+ANSI	retired/tpch.original/dbgen/tpcd.h	34;"	d
+AdvanceRand64	retired/tpch.original/dbgen/rng64.c	/^DSS_HUGE AdvanceRand64( DSS_HUGE nSeed,$/;"	f
+AggregateType	p2d2/gr-example.py	/^from grizzly.aggregates import AggregateType$/;"	i
+AggregateType	p2d2/gr-test.py	/^from grizzly.aggregates import AggregateType$/;"	i
+Analyzer	p2d2/ast_example.py	/^class Analyzer(ast.NodeVisitor):$/;"	c
+Analyzer	p2d2/main.py	/^class Analyzer(ast.NodeVisitor):$/;"	c
+AssertCmpTransformer	p2d2/greentreesnakes/examples/test_framework/run.py	/^class AssertCmpTransformer(ast.NodeTransformer):$/;"	c
+AstMagics	p2d2/astpp.py	/^    class AstMagics(Magics):$/;"	c	function:load_ipython_extension
+AstMagics	p2d2/greentreesnakes/astpp.py	/^    class AstMagics(Magics):$/;"	c	function:load_ipython_extension
+BBB_BASE	retired/tpch.original/dbgen/dss.h	337;"	d
+BBB_BASE_LEN	retired/tpch.original/dbgen/dss.h	341;"	d
+BBB_CMNT_LEN	retired/tpch.original/dbgen/dss.h	340;"	d
+BBB_CMNT_SD	retired/tpch.original/dbgen/dss.h	547;"	d
+BBB_COMMEND	retired/tpch.original/dbgen/dss.h	339;"	d
+BBB_COMPLAIN	retired/tpch.original/dbgen/dss.h	338;"	d
+BBB_DEADBEATS	retired/tpch.original/dbgen/dss.h	336;"	d
+BBB_JNK_SD	retired/tpch.original/dbgen/dss.h	545;"	d
+BBB_OFFSET_SD	retired/tpch.original/dbgen/dss.h	548;"	d
+BBB_TYPE_LEN	retired/tpch.original/dbgen/dss.h	342;"	d
+BBB_TYPE_SD	retired/tpch.original/dbgen/dss.h	546;"	d
+BITS_PER_LONG	retired/tpch.original/dbgen/dss.h	142;"	d
+BUILD	retired/tpch.original/dbgen/makefile	/^BUILD=`grep BUILD release.h | cut -f3 -d' '`$/;"	m
+BUILD	retired/tpch.original/dbgen/release.h	7;"	d
+BUILDDIR	p2d2/greentreesnakes/Makefile	/^BUILDDIR      = _build$/;"	m
+BUILDDIR	p2d2/greentreesnakes/make.bat	/^set BUILDDIR=_build$/;"	v
+Base	wflows/dbs/info_db.py	/^Base = declarative_base()$/;"	v
+Base	wflows/dbs/sqlalchemy-connecttest.py	/^Base = declarative_base()$/;"	v
+CC	retired/tpch.original/dbgen/makefile	/^CC      = $/;"	m
+CFLAGS	retired/tpch.original/dbgen/makefile	/^CFLAGS	= -g -DDBNAME=\\"dss\\" -D$(MACHINE) -D$(DATABASE) -D$(WORKLOAD) -DRNG_TEST -D_FILE_OFFSET_BITS=64 $/;"	m
+COMMENT	retired/tpch.original/dbgen/tpcd.h	36;"	d
+CONFIG_DFLT	retired/tpch.original/dbgen/dss.h	450;"	d
+CONFIG_TAG	retired/tpch.original/dbgen/dss.h	449;"	d
+CSV_SAMPLE	wflows/ba_populate_db.py	/^CSV_SAMPLE = 5 #False to disable cutoff, int to enable$/;"	v
+CURRENTDATE	retired/tpch.original/dbgen/dss.h	416;"	d
+CUST	retired/tpch.original/dbgen/dss.h	91;"	d
+CUST_MORTALITY	retired/tpch.original/dbgen/dss.h	412;"	d
+C_ABAL_MAX	retired/tpch.original/dbgen/dss.h	362;"	d
+C_ABAL_MIN	retired/tpch.original/dbgen/dss.h	361;"	d
+C_ABAL_SD	retired/tpch.original/dbgen/dss.h	533;"	d
+C_ADDR_LEN	retired/tpch.original/dbgen/shared.h	42;"	d
+C_ADDR_MAX	retired/tpch.original/dbgen/shared.h	43;"	d
+C_ADDR_SD	retired/tpch.original/dbgen/shared.h	64;"	d
+C_CMNT_LEN	retired/tpch.original/dbgen/shared.h	45;"	d
+C_CMNT_MAX	retired/tpch.original/dbgen/shared.h	46;"	d
+C_CMNT_SD	retired/tpch.original/dbgen/shared.h	65;"	d
+C_DATES	retired/tpch.original/dbgen/dss.h	79;"	d
+C_MSEG_LEN	retired/tpch.original/dbgen/shared.h	44;"	d
+C_MSEG_MAX	retired/tpch.original/dbgen/dss.h	360;"	d
+C_MSEG_SD	retired/tpch.original/dbgen/dss.h	534;"	d
+C_NAME_FMT	retired/tpch.original/dbgen/dss.h	359;"	d
+C_NAME_LEN	retired/tpch.original/dbgen/shared.h	41;"	d
+C_NAME_TAG	retired/tpch.original/dbgen/dss.h	358;"	d
+C_NTRG_SD	retired/tpch.original/dbgen/dss.h	531;"	d
+C_PHNE_SD	retired/tpch.original/dbgen/dss.h	532;"	d
+C_SIZE	retired/tpch.original/dbgen/dss.h	357;"	d
+CodeMatcher	p2d2/gr-test.py	/^class CodeMatcher(unittest.TestCase):$/;"	c
+CodeMatcher	tests/test.py	/^class CodeMatcher(unittest.TestCase):$/;"	c
+Column	wflows/dbs/sqlalchemy-connecttest.py	/^from sqlalchemy import Column, Integer, String$/;"	i
+DATABASE	retired/tpch.original/dbgen/makefile	/^DATABASE= ORACLE $/;"	m
+DATE_LEN	retired/tpch.original/dbgen/shared.h	56;"	d
+DBASE	retired/tpch.original/dbgen/tpcd.h	28;"	d
+DBGENSRC	retired/tpch.original/dbgen/makefile	/^DBGENSRC=$(SRC1) $(HDR1) $(OTHER) $(DOC) $(SRC2) $(HDR2) $(SRC3)$/;"	m
+DDL	retired/tpch.original/dbgen/makefile	/^DDL  = dss.ddl dss.ri$/;"	m
+DECLARER	retired/tpch.original/dbgen/driver.c	56;"	d	file:
+DECLARER	retired/tpch.original/dbgen/permute.c	33;"	d	file:
+DECLARER	retired/tpch.original/dbgen/qgen.c	28;"	d	file:
+DECLARER	retired/tpch.original/dbgen/text.c	44;"	d	file:
+DFLT	retired/tpch.original/dbgen/tpcd.h	25;"	d
+DFLT_NUM	retired/tpch.original/dbgen/tpcd.h	39;"	d
+DIGITS_PER_LONG	retired/tpch.original/dbgen/bcd2.c	37;"	d	file:
+DIST_DFLT	retired/tpch.original/dbgen/dss.h	446;"	d
+DIST_MEMBER	retired/tpch.original/dbgen/dss.h	172;"	d
+DIST_PERMUTE	retired/tpch.original/dbgen/dss.h	173;"	d
+DIST_SIZE	retired/tpch.original/dbgen/dss.h	171;"	d
+DIST_TAG	retired/tpch.original/dbgen/dss.h	445;"	d
+DOC	retired/tpch.original/dbgen/makefile	/^DOC=README HISTORY PORTING.NOTES BUGS$/;"	m
+DOUBLE_CAST	retired/tpch.original/dbgen/config.h	217;"	d
+DSS_H	retired/tpch.original/dbgen/dss.h	68;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	110;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	122;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	133;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	143;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	155;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	163;"	d
+DSS_HUGE	retired/tpch.original/dbgen/config.h	182;"	d
+DT_CHR	retired/tpch.original/dbgen/dss.h	469;"	d
+DT_HUGE	retired/tpch.original/dbgen/dss.h	466;"	d
+DT_INT	retired/tpch.original/dbgen/dss.h	465;"	d
+DT_KEY	retired/tpch.original/dbgen/dss.h	467;"	d
+DT_MONEY	retired/tpch.original/dbgen/dss.h	468;"	d
+DT_STR	retired/tpch.original/dbgen/dss.h	459;"	d
+DT_VSTR	retired/tpch.original/dbgen/dss.h	461;"	d
+DT_VSTR	retired/tpch.original/dbgen/dss.h	463;"	d
+DataFrameTest	p2d2/gr-test.py	/^class DataFrameTest(CodeMatcher):$/;"	c
+ENDDATE	retired/tpch.original/dbgen/dss.h	417;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	100;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	109;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	55;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	64;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	73;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	82;"	d
+END_TRAN	retired/tpch.original/dbgen/tpcd.h	91;"	d
+EXE	retired/tpch.original/dbgen/makefile	/^EXE     =$/;"	m
+EXPLAIN	retired/tpch.original/dbgen/tpcd.h	27;"	d
+EXTERN	retired/tpch.original/dbgen/dss.h	238;"	d
+EXTERN	retired/tpch.original/dbgen/dss.h	240;"	d
+FQD	retired/tpch.original/dbgen/makefile	/^FQD=queries\/1.sql queries\/2.sql queries\/3.sql queries\/4.sql queries\/5.sql queries\/6.sql queries\/7.sql \\$/;"	m
+Fraction	p2d2/greentreesnakes/examples/wrap_integers.py	/^from fractions import Fraction$/;"	i
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	107;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	53;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	62;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	71;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	80;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	89;"	d
+GEN_QUERY_PLAN	retired/tpch.original/dbgen/tpcd.h	98;"	d
+GET_DIGIT	retired/tpch.original/dbgen/bcd2.c	39;"	d	file:
+GrizzlyGenerator	p2d2/gr-test.py	/^    from grizzly.generator import GrizzlyGenerator$/;"	i
+HDR	retired/tpch.original/dbgen/makefile	/^HDR  = $(HDR1) $(HDR2)$/;"	m
+HDR1	retired/tpch.original/dbgen/makefile	/^HDR1 = dss.h rnd.h config.h dsstypes.h shared.h bcd2.h rng64.h release.h$/;"	m
+HDR2	retired/tpch.original/dbgen/makefile	/^HDR2 = tpcd.h permute.h$/;"	m
+HUGE2LONG	retired/tpch.original/dbgen/dss.h	434;"	d
+HUGE_ADD	retired/tpch.original/dbgen/dss.h	438;"	d
+HUGE_CMP	retired/tpch.original/dbgen/dss.h	441;"	d
+HUGE_COUNT	retired/tpch.original/dbgen/config.h	123;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	114;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	125;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	135;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	145;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	157;"	d
+HUGE_DATE_FORMAT	retired/tpch.original/dbgen/config.h	186;"	d
+HUGE_DIV	retired/tpch.original/dbgen/dss.h	437;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	113;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	124;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	134;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	144;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	156;"	d
+HUGE_FORMAT	retired/tpch.original/dbgen/config.h	185;"	d
+HUGE_MOD	retired/tpch.original/dbgen/dss.h	440;"	d
+HUGE_MUL	retired/tpch.original/dbgen/dss.h	436;"	d
+HUGE_SET	retired/tpch.original/dbgen/dss.h	435;"	d
+HUGE_SUB	retired/tpch.original/dbgen/dss.h	439;"	d
+HVAR_SD	retired/tpch.original/dbgen/dss.h	540;"	d
+I18NSPHINXOPTS	p2d2/greentreesnakes/Makefile	/^I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .$/;"	m
+I18NSPHINXOPTS	p2d2/greentreesnakes/make.bat	/^	set I18NSPHINXOPTS=-D latex_paper_size=%PAPER% %I18NSPHINXOPTS%$/;"	v
+I18NSPHINXOPTS	p2d2/greentreesnakes/make.bat	/^set I18NSPHINXOPTS=%SPHINXOPTS% .$/;"	v
+INIT	retired/tpch.original/dbgen/tpcd.h	37;"	d
+INTERNAL_ERROR	retired/tpch.original/dbgen/dss.h	112;"	d
+IPython	p2d2/gr-connect.py	/^import IPython$/;"	i
+IPython	p2d2/gr-example.py	/^import IPython$/;"	i
+IPython	p2d2/pandas-random-df.py	/^import IPython$/;"	i
+IPython	wflows/ba_max_np.py	/^import IPython$/;"	i
+IPython	wflows/ba_max_sql.py	/^import IPython$/;"	i
+IPython	wflows/ba_populate_db.py	/^import IPython$/;"	i
+ITERATIONS	retired/tpch.original/dbgen/permute.c	92;"	d	file:
+Integer	p2d2/greentreesnakes/examples/wrap_integers.py	/^class Integer(object):$/;"	c
+Integer	wflows/dbs/sqlalchemy-connecttest.py	/^from sqlalchemy import Column, Integer, String$/;"	i
+IntegerWrapper	p2d2/greentreesnakes/examples/wrap_integers.py	/^class IntegerWrapper(ast.NodeTransformer):$/;"	c
+JDAY	retired/tpch.original/dbgen/build.c	57;"	d	file:
+JDAY_BASE	retired/tpch.original/dbgen/build.c	55;"	d	file:
+JMNTH_BASE	retired/tpch.original/dbgen/build.c	56;"	d	file:
+JUNK	retired/tpch.original/dbgen/makefile	/^JUNK  = $/;"	m
+KILL	retired/tpch.original/dbgen/config.h	169;"	d
+KILL	retired/tpch.original/dbgen/config.h	200;"	d
+LDFLAGS	retired/tpch.original/dbgen/makefile	/^LDFLAGS = -O$/;"	m
+LEAP	retired/tpch.original/dbgen/dss.h	401;"	d
+LEAP_ADJ	retired/tpch.original/dbgen/build.c	53;"	d	file:
+LIBS	retired/tpch.original/dbgen/makefile	/^LIBS    = -lm$/;"	m
+LIFENOISE	retired/tpch.original/dbgen/dss.h	115;"	d
+LINE	retired/tpch.original/dbgen/dss.h	93;"	d
+LINE_SIZE	retired/tpch.original/dbgen/qgen.c	46;"	d	file:
+LN_CNT	retired/tpch.original/dbgen/dss.h	113;"	d
+LOG	retired/tpch.original/dbgen/tpcd.h	31;"	d
+LONG2HUGE	retired/tpch.original/dbgen/dss.h	433;"	d
+L_CDTE_MAX	retired/tpch.original/dbgen/dss.h	393;"	d
+L_CDTE_MIN	retired/tpch.original/dbgen/dss.h	392;"	d
+L_CDTE_SD	retired/tpch.original/dbgen/dss.h	528;"	d
+L_CMNT_LEN	retired/tpch.original/dbgen/shared.h	51;"	d
+L_CMNT_MAX	retired/tpch.original/dbgen/shared.h	52;"	d
+L_CMNT_SD	retired/tpch.original/dbgen/shared.h	68;"	d
+L_DCNT_MAX	retired/tpch.original/dbgen/dss.h	387;"	d
+L_DCNT_MIN	retired/tpch.original/dbgen/dss.h	386;"	d
+L_DCNT_SD	retired/tpch.original/dbgen/dss.h	521;"	d
+L_INST_LEN	retired/tpch.original/dbgen/shared.h	53;"	d
+L_PKEY_MAX	retired/tpch.original/dbgen/dss.h	389;"	d
+L_PKEY_MIN	retired/tpch.original/dbgen/dss.h	388;"	d
+L_PKEY_SD	retired/tpch.original/dbgen/dss.h	525;"	d
+L_QTY_MAX	retired/tpch.original/dbgen/dss.h	383;"	d
+L_QTY_MIN	retired/tpch.original/dbgen/dss.h	382;"	d
+L_QTY_SD	retired/tpch.original/dbgen/dss.h	520;"	d
+L_RDTE_MAX	retired/tpch.original/dbgen/dss.h	395;"	d
+L_RDTE_MIN	retired/tpch.original/dbgen/dss.h	394;"	d
+L_RDTE_SD	retired/tpch.original/dbgen/dss.h	529;"	d
+L_RFLG_SD	retired/tpch.original/dbgen/dss.h	530;"	d
+L_SDTE_MAX	retired/tpch.original/dbgen/dss.h	391;"	d
+L_SDTE_MIN	retired/tpch.original/dbgen/dss.h	390;"	d
+L_SDTE_SD	retired/tpch.original/dbgen/dss.h	527;"	d
+L_SHIP_SD	retired/tpch.original/dbgen/dss.h	523;"	d
+L_SIZE	retired/tpch.original/dbgen/dss.h	381;"	d
+L_SKEY_SD	retired/tpch.original/dbgen/dss.h	526;"	d
+L_SMODE_LEN	retired/tpch.original/dbgen/shared.h	54;"	d
+L_SMODE_SD	retired/tpch.original/dbgen/dss.h	524;"	d
+L_TAX_MAX	retired/tpch.original/dbgen/dss.h	385;"	d
+L_TAX_MIN	retired/tpch.original/dbgen/dss.h	384;"	d
+L_TAX_SD	retired/tpch.original/dbgen/dss.h	522;"	d
+MACHINE	retired/tpch.original/dbgen/makefile	/^MACHINE = LINUX $/;"	m
+MALLOC_CHECK	retired/tpch.original/dbgen/dss.h	118;"	d
+MAX	retired/tpch.original/dbgen/dss.h	104;"	d
+MAX	retired/tpch.original/dbgen/dss.h	109;"	d
+MAXAGG_LEN	retired/tpch.original/dbgen/shared.h	60;"	d
+MAX_32B_SCALE	retired/tpch.original/dbgen/dss.h	432;"	d
+MAX_CHILDREN	retired/tpch.original/dbgen/dss.h	133;"	d
+MAX_COLOR	retired/tpch.original/dbgen/speed_seed.c	63;"	d	file:
+MAX_GRAMMAR_LEN	retired/tpch.original/dbgen/dss.h	231;"	d
+MAX_LONG	retired/tpch.original/dbgen/dss.h	143;"	d
+MAX_PARAM	retired/tpch.original/dbgen/varsub.c	58;"	d	file:
+MAX_PERMUTE	retired/tpch.original/dbgen/tpcd.h	127;"	d
+MAX_QUERY	retired/tpch.original/dbgen/permute.c	91;"	d	file:
+MAX_SCALE	retired/tpch.original/dbgen/dss.h	428;"	d
+MAX_SENT_LEN	retired/tpch.original/dbgen/dss.h	232;"	d
+MAX_STREAM	retired/tpch.original/dbgen/dss.h	420;"	d
+MAX_TABLE	retired/tpch.original/dbgen/dss.h	99;"	d
+MAX_VARS	retired/tpch.original/dbgen/tpcd.h	115;"	d
+MIN	retired/tpch.original/dbgen/dss.h	107;"	d
+MIN	retired/tpch.original/dbgen/dss.h	110;"	d
+MIN_SCALE	retired/tpch.original/dbgen/dss.h	427;"	d
+MK_SPARSE	retired/tpch.original/dbgen/dss.h	147;"	d
+MONEY_SCL	retired/tpch.original/dbgen/shared.h	25;"	d
+Magics	p2d2/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+Magics	p2d2/greentreesnakes/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+Modulus	retired/tpch.original/dbgen/speed_seed.c	/^static DSS_HUGE Modulus =  2147483647;   \/* trick you use to get 64 bit int *\/$/;"	v	file:
+Multiplier	retired/tpch.original/dbgen/speed_seed.c	/^static DSS_HUGE Multiplier = 16807;      \/* or whatever nonstandard *\/$/;"	v	file:
+NAME	retired/tpch.original/dbgen/dss.h	70;"	d
+NAME	retired/tpch.original/dbgen/dss.h	73;"	d
+NATION	retired/tpch.original/dbgen/dss.h	96;"	d
+NATIONS_MAX	retired/tpch.original/dbgen/dss.h	413;"	d
+NATION_LEN	retired/tpch.original/dbgen/shared.h	57;"	d
+NEW_BUILD	retired/tpch.original/dbgen/makefile	/^NEW_BUILD=`expr ${BUILD} + 1`$/;"	m
+NOATOM	retired/tpch.original/dbgen/driver.c	83;"	d	file:
+NOATOM	retired/tpch.original/dbgen/permute.c	59;"	d	file:
+NOATOM	retired/tpch.original/dbgen/text.c	69;"	d	file:
+NOCOMM	retired/tpch.original/dbgen/driver.c	95;"	d	file:
+NOCOMM	retired/tpch.original/dbgen/permute.c	71;"	d	file:
+NOCOMM	retired/tpch.original/dbgen/text.c	81;"	d	file:
+NOGDICAPMASKS	retired/tpch.original/dbgen/driver.c	84;"	d	file:
+NOGDICAPMASKS	retired/tpch.original/dbgen/permute.c	60;"	d	file:
+NOGDICAPMASKS	retired/tpch.original/dbgen/text.c	70;"	d	file:
+NOKANJI	retired/tpch.original/dbgen/driver.c	96;"	d	file:
+NOKANJI	retired/tpch.original/dbgen/permute.c	72;"	d	file:
+NOKANJI	retired/tpch.original/dbgen/text.c	82;"	d	file:
+NOMCX	retired/tpch.original/dbgen/driver.c	97;"	d	file:
+NOMCX	retired/tpch.original/dbgen/permute.c	73;"	d	file:
+NOMCX	retired/tpch.original/dbgen/text.c	83;"	d	file:
+NOMETAFILE	retired/tpch.original/dbgen/driver.c	85;"	d	file:
+NOMETAFILE	retired/tpch.original/dbgen/permute.c	61;"	d	file:
+NOMETAFILE	retired/tpch.original/dbgen/text.c	71;"	d	file:
+NOMINMAX	retired/tpch.original/dbgen/driver.c	86;"	d	file:
+NOMINMAX	retired/tpch.original/dbgen/permute.c	62;"	d	file:
+NOMINMAX	retired/tpch.original/dbgen/text.c	72;"	d	file:
+NOMSG	retired/tpch.original/dbgen/driver.c	87;"	d	file:
+NOMSG	retired/tpch.original/dbgen/permute.c	63;"	d	file:
+NOMSG	retired/tpch.original/dbgen/text.c	73;"	d	file:
+NONE	retired/tpch.original/dbgen/dss.h	87;"	d
+NOOPENFILE	retired/tpch.original/dbgen/driver.c	88;"	d	file:
+NOOPENFILE	retired/tpch.original/dbgen/permute.c	64;"	d	file:
+NOOPENFILE	retired/tpch.original/dbgen/text.c	74;"	d	file:
+NORASTEROPS	retired/tpch.original/dbgen/driver.c	89;"	d	file:
+NORASTEROPS	retired/tpch.original/dbgen/permute.c	65;"	d	file:
+NORASTEROPS	retired/tpch.original/dbgen/text.c	75;"	d	file:
+NOSCROLL	retired/tpch.original/dbgen/driver.c	90;"	d	file:
+NOSCROLL	retired/tpch.original/dbgen/permute.c	66;"	d	file:
+NOSCROLL	retired/tpch.original/dbgen/text.c	76;"	d	file:
+NOSOUND	retired/tpch.original/dbgen/driver.c	91;"	d	file:
+NOSOUND	retired/tpch.original/dbgen/permute.c	67;"	d	file:
+NOSOUND	retired/tpch.original/dbgen/text.c	77;"	d	file:
+NOSYSMETRICS	retired/tpch.original/dbgen/driver.c	92;"	d	file:
+NOSYSMETRICS	retired/tpch.original/dbgen/permute.c	68;"	d	file:
+NOSYSMETRICS	retired/tpch.original/dbgen/text.c	78;"	d	file:
+NOTEXTMETRIC	retired/tpch.original/dbgen/driver.c	93;"	d	file:
+NOTEXTMETRIC	retired/tpch.original/dbgen/permute.c	69;"	d	file:
+NOTEXTMETRIC	retired/tpch.original/dbgen/text.c	79;"	d	file:
+NOWH	retired/tpch.original/dbgen/driver.c	94;"	d	file:
+NOWH	retired/tpch.original/dbgen/permute.c	70;"	d	file:
+NOWH	retired/tpch.original/dbgen/text.c	80;"	d	file:
+NO_FUNC	retired/tpch.original/dbgen/driver.c	57;"	d	file:
+NO_LFUNC	retired/tpch.original/dbgen/driver.c	58;"	d	file:
+N_CMNT_LEN	retired/tpch.original/dbgen/shared.h	21;"	d
+N_CMNT_MAX	retired/tpch.original/dbgen/shared.h	22;"	d
+N_CMNT_SD	retired/tpch.original/dbgen/dss.h	542;"	d
+NextLine	retired/tpch.original/dbgen/check_answers/cmpq.pl	/^sub NextLine($)$/;"	s
+NextRand	retired/tpch.original/dbgen/rnd.c	/^NextRand(DSS_HUGE nSeed)$/;"	f
+NextRand64	retired/tpch.original/dbgen/rng64.c	/^NextRand64(DSS_HUGE nSeed){$/;"	f
+NthElement	retired/tpch.original/dbgen/speed_seed.c	/^void NthElement (DSS_HUGE N, DSS_HUGE *StartSeed)$/;"	f
+OBJ	retired/tpch.original/dbgen/makefile	/^OBJ     = .o$/;"	m
+OBJ1	retired/tpch.original/dbgen/makefile	/^OBJ1 = build$(OBJ) driver$(OBJ) bm_utils$(OBJ) rnd$(OBJ) print$(OBJ) \\$/;"	m
+OBJ2	retired/tpch.original/dbgen/makefile	/^OBJ2 = build$(OBJ) bm_utils$(OBJ) qgen$(OBJ) rnd$(OBJ) varsub$(OBJ) \\$/;"	m
+OBJS	retired/tpch.original/dbgen/makefile	/^OBJS = $(OBJ1) $(OBJ2)$/;"	m
+ONE_STREAM	retired/tpch.original/dbgen/dss.h	100;"	d
+OPEN_CHECK	retired/tpch.original/dbgen/dss.h	125;"	d
+ORDER	retired/tpch.original/dbgen/dss.h	92;"	d
+ORDERS_PER_CUST	retired/tpch.original/dbgen/dss.h	411;"	d
+ORDER_LINE	retired/tpch.original/dbgen/dss.h	94;"	d
+OTHER	retired/tpch.original/dbgen/makefile	/^OTHER=makefile.suite $(SETS) $(DDL) $(WINDOWS_IDE)$/;"	m
+OUTPUT	retired/tpch.original/dbgen/tpcd.h	26;"	d
+O_CKEY_MAX	retired/tpch.original/dbgen/dss.h	368;"	d
+O_CKEY_MIN	retired/tpch.original/dbgen/dss.h	367;"	d
+O_CKEY_SD	retired/tpch.original/dbgen/dss.h	541;"	d
+O_CLRK_FMT	retired/tpch.original/dbgen/dss.h	373;"	d
+O_CLRK_LEN	retired/tpch.original/dbgen/shared.h	48;"	d
+O_CLRK_SCL	retired/tpch.original/dbgen/dss.h	374;"	d
+O_CLRK_SD	retired/tpch.original/dbgen/dss.h	518;"	d
+O_CLRK_TAG	retired/tpch.original/dbgen/dss.h	372;"	d
+O_CMNT_LEN	retired/tpch.original/dbgen/shared.h	49;"	d
+O_CMNT_MAX	retired/tpch.original/dbgen/shared.h	50;"	d
+O_CMNT_SD	retired/tpch.original/dbgen/shared.h	63;"	d
+O_CREAT	retired/tpch.original/dbgen/bm_utils.c	101;"	d	file:
+O_LCNT_MAX	retired/tpch.original/dbgen/dss.h	376;"	d
+O_LCNT_MIN	retired/tpch.original/dbgen/dss.h	375;"	d
+O_LCNT_SD	retired/tpch.original/dbgen/dss.h	544;"	d
+O_ODATE_MAX	retired/tpch.original/dbgen/dss.h	370;"	d
+O_ODATE_MIN	retired/tpch.original/dbgen/dss.h	369;"	d
+O_ODATE_SD	retired/tpch.original/dbgen/dss.h	519;"	d
+O_OPRIO_LEN	retired/tpch.original/dbgen/shared.h	47;"	d
+O_PRIO_SD	retired/tpch.original/dbgen/dss.h	539;"	d
+O_RDONLY	retired/tpch.original/dbgen/bm_utils.c	95;"	d	file:
+O_SIZE	retired/tpch.original/dbgen/dss.h	366;"	d
+O_SUPP_SD	retired/tpch.original/dbgen/dss.h	517;"	d
+O_WRONLY	retired/tpch.original/dbgen/bm_utils.c	98;"	d	file:
+PAPER	p2d2/greentreesnakes/Makefile	/^PAPER         =$/;"	m
+PAPER	p2d2/greentreesnakes/make.bat	/^	echo.  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter$/;"	v
+PAPEROPT_a4	p2d2/greentreesnakes/Makefile	/^PAPEROPT_a4     = -D latex_paper_size=a4$/;"	m
+PAPEROPT_letter	p2d2/greentreesnakes/Makefile	/^PAPEROPT_letter = -D latex_paper_size=letter$/;"	m
+PART	retired/tpch.original/dbgen/dss.h	88;"	d
+PART_PSUPP	retired/tpch.original/dbgen/dss.h	95;"	d
+PART_SUPP_BRIDGE	retired/tpch.original/dbgen/build.c	58;"	d	file:
+PATCH	retired/tpch.original/dbgen/makefile	/^PATCH=0$/;"	m
+PATCH	retired/tpch.original/dbgen/release.h	6;"	d
+PATH_DFLT	retired/tpch.original/dbgen/dss.h	448;"	d
+PATH_SEP	retired/tpch.original/dbgen/config.h	180;"	d
+PATH_SEP	retired/tpch.original/dbgen/config.h	209;"	d
+PATH_SEP	retired/tpch.original/dbgen/config.h	99;"	d
+PATH_TAG	retired/tpch.original/dbgen/dss.h	447;"	d
+PENNIES	retired/tpch.original/dbgen/dss.h	422;"	d
+PHONE_FMT	retired/tpch.original/dbgen/dss.h	414;"	d
+PHONE_LEN	retired/tpch.original/dbgen/shared.h	59;"	d
+PROG1	retired/tpch.original/dbgen/makefile	/^PROG1 = dbgen$(EXE)$/;"	m
+PROG2	retired/tpch.original/dbgen/makefile	/^PROG2 = qgen$(EXE)$/;"	m
+PROGS	retired/tpch.original/dbgen/makefile	/^PROGS = $(PROG1) $(PROG2)$/;"	m
+PROTO	retired/tpch.original/dbgen/bm_utils.c	112;"	d	file:
+PROTO	retired/tpch.original/dbgen/bm_utils.c	114;"	d	file:
+PROTO	retired/tpch.original/dbgen/dss.h	198;"	d
+PROTO	retired/tpch.original/dbgen/dss.h	200;"	d
+PR_CHR	retired/tpch.original/dbgen/dss.h	480;"	d
+PR_DATE	retired/tpch.original/dbgen/dss.h	484;"	d
+PR_DATE	retired/tpch.original/dbgen/dss.h	487;"	d
+PR_END	retired/tpch.original/dbgen/dss.h	482;"	d
+PR_HUGE	retired/tpch.original/dbgen/dss.h	476;"	d
+PR_HUGE_LAST	retired/tpch.original/dbgen/dss.h	477;"	d
+PR_INT	retired/tpch.original/dbgen/dss.h	475;"	d
+PR_KEY	retired/tpch.original/dbgen/dss.h	478;"	d
+PR_MONEY	retired/tpch.original/dbgen/dss.h	479;"	d
+PR_STR	retired/tpch.original/dbgen/dss.h	472;"	d
+PR_STRT	retired/tpch.original/dbgen/dss.h	481;"	d
+PR_VSTR	retired/tpch.original/dbgen/dss.h	473;"	d
+PR_VSTR_LAST	retired/tpch.original/dbgen/dss.h	474;"	d
+PSUPP	retired/tpch.original/dbgen/dss.h	89;"	d
+PS_CMNT_LEN	retired/tpch.original/dbgen/shared.h	39;"	d
+PS_CMNT_MAX	retired/tpch.original/dbgen/shared.h	40;"	d
+PS_CMNT_SD	retired/tpch.original/dbgen/shared.h	62;"	d
+PS_QTY_MAX	retired/tpch.original/dbgen/dss.h	353;"	d
+PS_QTY_MIN	retired/tpch.original/dbgen/dss.h	352;"	d
+PS_QTY_SD	retired/tpch.original/dbgen/dss.h	515;"	d
+PS_SCST_MAX	retired/tpch.original/dbgen/dss.h	351;"	d
+PS_SCST_MIN	retired/tpch.original/dbgen/dss.h	350;"	d
+PS_SCST_SD	retired/tpch.original/dbgen/dss.h	516;"	d
+PS_SIZE	retired/tpch.original/dbgen/dss.h	347;"	d
+PS_SKEY_MAX	retired/tpch.original/dbgen/dss.h	349;"	d
+PS_SKEY_MIN	retired/tpch.original/dbgen/dss.h	348;"	d
+P_BRND_FMT	retired/tpch.original/dbgen/dss.h	315;"	d
+P_BRND_LEN	retired/tpch.original/dbgen/shared.h	29;"	d
+P_BRND_MAX	retired/tpch.original/dbgen/dss.h	317;"	d
+P_BRND_MIN	retired/tpch.original/dbgen/dss.h	316;"	d
+P_BRND_SD	retired/tpch.original/dbgen/dss.h	510;"	d
+P_BRND_TAG	retired/tpch.original/dbgen/dss.h	314;"	d
+P_CMNT_LEN	retired/tpch.original/dbgen/shared.h	32;"	d
+P_CMNT_MAX	retired/tpch.original/dbgen/shared.h	33;"	d
+P_CMNT_SD	retired/tpch.original/dbgen/shared.h	61;"	d
+P_CNTR_LEN	retired/tpch.original/dbgen/shared.h	31;"	d
+P_CNTR_SD	retired/tpch.original/dbgen/dss.h	513;"	d
+P_MCST_MAX	retired/tpch.original/dbgen/dss.h	321;"	d
+P_MCST_MIN	retired/tpch.original/dbgen/dss.h	320;"	d
+P_MCST_SCL	retired/tpch.original/dbgen/dss.h	322;"	d
+P_MFG_FMT	retired/tpch.original/dbgen/dss.h	311;"	d
+P_MFG_LEN	retired/tpch.original/dbgen/shared.h	28;"	d
+P_MFG_MAX	retired/tpch.original/dbgen/dss.h	313;"	d
+P_MFG_MIN	retired/tpch.original/dbgen/dss.h	312;"	d
+P_MFG_SD	retired/tpch.original/dbgen/dss.h	509;"	d
+P_MFG_TAG	retired/tpch.original/dbgen/dss.h	310;"	d
+P_NAME_LEN	retired/tpch.original/dbgen/shared.h	27;"	d
+P_NAME_SCL	retired/tpch.original/dbgen/dss.h	309;"	d
+P_NAME_SD	retired/tpch.original/dbgen/dss.h	538;"	d
+P_RCST_MAX	retired/tpch.original/dbgen/dss.h	324;"	d
+P_RCST_MIN	retired/tpch.original/dbgen/dss.h	323;"	d
+P_RCST_SCL	retired/tpch.original/dbgen/dss.h	325;"	d
+P_RCST_SD	retired/tpch.original/dbgen/dss.h	514;"	d
+P_SIZE	retired/tpch.original/dbgen/dss.h	308;"	d
+P_SIZE_MAX	retired/tpch.original/dbgen/dss.h	319;"	d
+P_SIZE_MIN	retired/tpch.original/dbgen/dss.h	318;"	d
+P_SIZE_SD	retired/tpch.original/dbgen/dss.h	512;"	d
+P_TYPE_LEN	retired/tpch.original/dbgen/shared.h	30;"	d
+P_TYPE_SD	retired/tpch.original/dbgen/dss.h	511;"	d
+Projection	p2d2/nodes.py	/^class Projection:$/;"	c
+Q11_FRACTION	retired/tpch.original/dbgen/dss.h	423;"	d
+QDIR_DFLT	retired/tpch.original/dbgen/tpcd.h	47;"	d
+QDIR_TAG	retired/tpch.original/dbgen/tpcd.h	46;"	d
+QLEN_MAX	retired/tpch.original/dbgen/tpcd.h	116;"	d
+QSRC	retired/tpch.original/dbgen/makefile	/^QSRC  = $(FQD) $(VARIANTS) $(ANS)$/;"	m
+QUERIES_PER_SET	retired/tpch.original/dbgen/tpcd.h	117;"	d
+QUERY	retired/tpch.original/dbgen/tpcd.h	32;"	d
+RANDOM	retired/tpch.original/dbgen/dss.h	150;"	d
+RANDOM64	retired/tpch.original/dbgen/dss.h	151;"	d
+REFERENCE	retired/tpch.original/dbgen/makefile	/^REFERENCE=reference\/[tcR]*$/;"	m
+REFERENCE_DATA	retired/tpch.original/dbgen/makefile	/^REFERENCE_DATA=referenceData\/[13]*$/;"	m
+REFRESH	retired/tpch.original/dbgen/tpcd.h	33;"	d
+REGION	retired/tpch.original/dbgen/dss.h	97;"	d
+REGION_LEN	retired/tpch.original/dbgen/shared.h	58;"	d
+RELEASE	retired/tpch.original/dbgen/makefile	/^RELEASE=13$/;"	m
+RELEASE	retired/tpch.original/dbgen/release.h	5;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	111;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	127;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	136;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	146;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	152;"	d
+RNG_A	retired/tpch.original/dbgen/config.h	183;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	112;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	126;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	137;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	147;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	153;"	d
+RNG_C	retired/tpch.original/dbgen/config.h	184;"	d
+RNG_PER_SENT	retired/tpch.original/dbgen/dss.h	233;"	d
+R_CMNT_LEN	retired/tpch.original/dbgen/shared.h	23;"	d
+R_CMNT_MAX	retired/tpch.original/dbgen/shared.h	24;"	d
+R_CMNT_SD	retired/tpch.original/dbgen/dss.h	543;"	d
+RelationalExecutor	p2d2/gr-example.py	/^from grizzly.relationaldbexecutor import RelationalExecutor$/;"	i
+RelationalExecutor	p2d2/gr-test.py	/^from grizzly.relationaldbexecutor import RelationalExecutor$/;"	i
+SCRIPTS	retired/tpch.original/dbgen/makefile	/^SCRIPTS= check55.sh column_split.sh dop.sh gen_tasks.sh last_row.sh load_balance.sh new55.sh check_dirs.sh$/;"	m
+SEED	retired/tpch.original/dbgen/tpcd.h	35;"	d
+SEED_T	retired/tpch.original/dbgen/dss.h	/^typedef struct SEED_T {$/;"	s
+SEPARATOR	retired/tpch.original/dbgen/dss.h	456;"	d
+SEQUENCE	retired/tpch.original/dbgen/tpcd.h	132;"	d
+SETS	retired/tpch.original/dbgen/makefile	/^SETS = dists.dss $/;"	m
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	103;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	112;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	58;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	67;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	76;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	85;"	d
+SET_DBASE	retired/tpch.original/dbgen/tpcd.h	94;"	d
+SET_DIGIT	retired/tpch.original/dbgen/bcd2.c	44;"	d	file:
+SET_HANDLER	retired/tpch.original/dbgen/config.h	168;"	d
+SET_HANDLER	retired/tpch.original/dbgen/config.h	201;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	101;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	110;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	56;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	65;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	74;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	83;"	d
+SET_OUTPUT	retired/tpch.original/dbgen/tpcd.h	92;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	102;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	111;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	57;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	66;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	75;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	84;"	d
+SET_ROWCOUNT	retired/tpch.original/dbgen/tpcd.h	93;"	d
+SIGS_DEFINED	retired/tpch.original/dbgen/config.h	179;"	d
+SPARSE_BITS	retired/tpch.original/dbgen/dss.h	145;"	d
+SPARSE_KEEP	retired/tpch.original/dbgen/dss.h	146;"	d
+SPAWN	retired/tpch.original/dbgen/config.h	172;"	d
+SPAWN	retired/tpch.original/dbgen/config.h	175;"	d
+SPAWN	retired/tpch.original/dbgen/config.h	202;"	d
+SPHINXBUILD	p2d2/greentreesnakes/Makefile	/^SPHINXBUILD   = sphinx-build$/;"	m
+SPHINXBUILD	p2d2/greentreesnakes/make.bat	/^	set SPHINXBUILD=sphinx-build$/;"	v
+SPHINXOPTS	p2d2/greentreesnakes/Makefile	/^SPHINXOPTS    =$/;"	m
+SQLGenerator	p2d2/gr-test.py	/^from grizzly.sqlgenerator import SQLGenerator$/;"	i
+SRC	retired/tpch.original/dbgen/makefile	/^SRC  = $(SRC1) $(SRC2)$/;"	m
+SRC1	retired/tpch.original/dbgen/makefile	/^SRC1 = build.c driver.c bm_utils.c rnd.c print.c load_stub.c bcd2.c \\$/;"	m
+SRC2	retired/tpch.original/dbgen/makefile	/^SRC2 = qgen.c varsub.c $/;"	m
+STARTDATE	retired/tpch.original/dbgen/dss.h	415;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	108;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	54;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	63;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	72;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	81;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	90;"	d
+START_TRAN	retired/tpch.original/dbgen/tpcd.h	99;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	104;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	120;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	131;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	141;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	151;"	d
+STDLIB_HAS_GETOPT	retired/tpch.original/dbgen/config.h	161;"	d
+SUPP	retired/tpch.original/dbgen/dss.h	90;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	109;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	121;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	132;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	142;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	154;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	162;"	d
+SUPPORT_64BITS	retired/tpch.original/dbgen/config.h	181;"	d
+SUPP_PER_PART	retired/tpch.original/dbgen/dss.h	410;"	d
+SWAPS	retired/tpch.original/dev-tools/generate_permute_h.c	4;"	d	file:
+S_ABAL_MAX	retired/tpch.original/dbgen/dss.h	333;"	d
+S_ABAL_MIN	retired/tpch.original/dbgen/dss.h	332;"	d
+S_ABAL_SD	retired/tpch.original/dbgen/dss.h	537;"	d
+S_ADDR_LEN	retired/tpch.original/dbgen/shared.h	35;"	d
+S_ADDR_MAX	retired/tpch.original/dbgen/shared.h	36;"	d
+S_ADDR_SD	retired/tpch.original/dbgen/shared.h	66;"	d
+S_CMNT_BBB	retired/tpch.original/dbgen/dss.h	335;"	d
+S_CMNT_LEN	retired/tpch.original/dbgen/shared.h	37;"	d
+S_CMNT_MAX	retired/tpch.original/dbgen/dss.h	334;"	d
+S_CMNT_MAX	retired/tpch.original/dbgen/shared.h	38;"	d
+S_CMNT_SD	retired/tpch.original/dbgen/shared.h	67;"	d
+S_ISFIFO	retired/tpch.original/dbgen/bm_utils.c	82;"	d	file:
+S_ISREG	retired/tpch.original/dbgen/bm_utils.c	81;"	d	file:
+S_NAME_FMT	retired/tpch.original/dbgen/dss.h	331;"	d
+S_NAME_LEN	retired/tpch.original/dbgen/shared.h	34;"	d
+S_NAME_TAG	retired/tpch.original/dbgen/dss.h	330;"	d
+S_NTRG_SD	retired/tpch.original/dbgen/dss.h	535;"	d
+S_PHNE_SD	retired/tpch.original/dbgen/dss.h	536;"	d
+S_SIZE	retired/tpch.original/dbgen/dss.h	329;"	d
+Seed	retired/tpch.original/dbgen/rnd.h	/^seed_t     Seed[MAX_STREAM + 1] =$/;"	v
+Selection	p2d2/nodes.py	/^class Selection:$/;"	c
+Session	wflows/dbs/info_db.py	/^Session = sessionmaker(bind=engine)$/;"	v
+String	wflows/dbs/sqlalchemy-connecttest.py	/^from sqlalchemy import Column, Integer, String$/;"	i
+StringIO	p2d2/gr-test.py	/^    from io import StringIO$/;"	i
+TERMINATE	retired/tpch.original/dbgen/tpcd.h	38;"	d
+TEST_RES	retired/tpch.original/dbgen/makefile	/^TEST_RES = O.res L.res c.res s.res P.res S.res n.res r.res$/;"	m
+TEXT	retired/tpch.original/dbgen/build.c	65;"	d	file:
+TEXT_POOL_SIZE	retired/tpch.original/dbgen/text.c	89;"	d	file:
+TIMING	retired/tpch.original/dbgen/tpcd.h	30;"	d
+TOTDATE	retired/tpch.original/dbgen/dss.h	418;"	d
+TPC	retired/tpch.original/dbgen/dss.h	78;"	d
+TREE_DOC	retired/tpch.original/dbgen/makefile	/^TREE_DOC=tree.readme tree.changes appendix.readme appendix.version answers.readme queries.readme variants.readme$/;"	m
+TREE_ROOT	retired/tpch.original/dbgen/makefile	/^TREE_ROOT=\/tmp\/tree$/;"	m
+T_ALPHA_LEN	retired/tpch.original/dbgen/shared.h	55;"	d
+T_SIZE	retired/tpch.original/dbgen/dss.h	399;"	d
+T_START_DAY	retired/tpch.original/dbgen/dss.h	400;"	d
+TransformTest	tests/test.py	/^class TransformTest(CodeMatcher):$/;"	c
+UNIFORM	retired/tpch.original/dbgen/dss.h	504;"	d
+UNSET	retired/tpch.original/dbgen/permute.c	93;"	d	file:
+UPDATE	retired/tpch.original/dbgen/dss.h	98;"	d
+UPD_PCT	retired/tpch.original/dbgen/dss.h	419;"	d
+UnifInt	retired/tpch.original/dbgen/rnd.c	/^UnifInt(DSS_HUGE nLow, DSS_HUGE nHigh, long nStream)$/;"	f
+User	wflows/dbs/sqlalchemy-connecttest.py	/^class User(Base):$/;"	c
+VARIANTS	retired/tpch.original/dbgen/makefile	/^VARIANTS= variants\/8a.sql variants\/12a.sql variants\/13a.sql variants\/14a.sql variants\/15a.sql $/;"	m
+VERBOSE	retired/tpch.original/dbgen/tpcd.h	29;"	d
+VERSION	retired/tpch.original/dbgen/makefile	/^VERSION=2$/;"	m
+VERSION	retired/tpch.original/dbgen/release.h	4;"	d
+VRF_CHR	retired/tpch.original/dbgen/dss.h	499;"	d
+VRF_END	retired/tpch.original/dbgen/dss.h	501;"	d
+VRF_HUGE	retired/tpch.original/dbgen/dss.h	496;"	d
+VRF_INT	retired/tpch.original/dbgen/dss.h	495;"	d
+VRF_MONEY	retired/tpch.original/dbgen/dss.h	498;"	d
+VRF_STR	retired/tpch.original/dbgen/dss.h	494;"	d
+VRF_STRT	retired/tpch.original/dbgen/dss.h	500;"	d
+VSTR_MAX	retired/tpch.original/dbgen/rnd.h	57;"	d
+VTAG	retired/tpch.original/dbgen/tpcd.h	44;"	d
+V_STR	retired/tpch.original/dbgen/build.c	64;"	d	file:
+V_STR_HGH	retired/tpch.original/dbgen/shared.h	26;"	d
+V_STR_LOW	retired/tpch.original/dbgen/dss.h	421;"	d
+WAIT	retired/tpch.original/dbgen/config.h	173;"	d
+WAIT	retired/tpch.original/dbgen/config.h	176;"	d
+WAIT	retired/tpch.original/dbgen/config.h	203;"	d
+WIFEXITED	retired/tpch.original/dbgen/config.h	190;"	d
+WIFSIGNALED	retired/tpch.original/dbgen/config.h	191;"	d
+WIFSTOPPED	retired/tpch.original/dbgen/config.h	192;"	d
+WIN32	retired/tpch.original/dbgen/config.h	106;"	d
+WIN32_LEAN_AND_MEAN	retired/tpch.original/dbgen/driver.c	82;"	d	file:
+WIN32_LEAN_AND_MEAN	retired/tpch.original/dbgen/permute.c	58;"	d	file:
+WIN32_LEAN_AND_MEAN	retired/tpch.original/dbgen/text.c	68;"	d	file:
+WINDOWS_IDE	retired/tpch.original/dbgen/makefile	/^WINDOWS_IDE = tpch.dsw dbgen.dsp tpch.sln tpch.vcproj qgen.vcproj$/;"	m
+WORD_DIVISOR	retired/tpch.original/dbgen/bcd2.c	38;"	d	file:
+WORKLOAD	retired/tpch.original/dbgen/makefile	/^WORKLOAD = TPCH$/;"	m
+WSTOPSIG	retired/tpch.original/dbgen/config.h	194;"	d
+WTERMSIG	retired/tpch.original/dbgen/config.h	193;"	d
+YF_INTERVAL	wflows/ba_populate_db.py	/^YF_INTERVAL = '30m' #1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo$/;"	v
+_INCLUDE_POSIX_SOURCE	retired/tpch.original/dbgen/config.h	119;"	d
+__init__	p2d2/ast_example.py	/^    def __init__(self):$/;"	m	class:Analyzer
+__init__	p2d2/greentreesnakes/examples/wrap_integers.py	/^    def __init__(self, value):$/;"	m	class:Integer
+__init__	p2d2/main.py	/^    def __init__(self):$/;"	m	class:Analyzer
+__init__	p2d2/nodes.py	/^        def __init__(self, source, )h$/;"	m	class:Projection
+__repr__	wflows/dbs/info_db.py	/^    def __repr__(self):$/;"	m	class:myStocks	file:
+__repr__	wflows/dbs/sqlalchemy-connecttest.py	/^def __repr__(self):$/;"	f	file:
+__table__	wflows/dbs/info_db.py	/^    __table__ = mystocksTable$/;"	v	class:myStocks
+__tablename__	wflows/dbs/sqlalchemy-connecttest.py	/^    __tablename__ = 'users'$/;"	v	class:User
+__truediv__	p2d2/greentreesnakes/examples/wrap_integers.py	/^    def __truediv__(self, other):$/;"	m	class:Integer	file:
+_format	p2d2/astpp.py	/^    def _format(node, level=0):$/;"	f	function:dump
+_format	p2d2/greentreesnakes/astpp.py	/^    def _format(node, level=0):$/;"	f	function:dump
+a	p2d2/gr-example.py	/^a = g.agg(col="actor2name", aggType=AggregateType.COUNT)$/;"	v
+a	p2d2/pandastest.py	/^a = pd.read_sql_query('SELECT * FROM customer', conn)$/;"	v
+a	wflows/pg_sel.py	/^a = pd.read_sql_query('SELECT * FROM customer', conn)$/;"	v
+a_rnd	retired/tpch.original/dbgen/bm_utils.c	/^a_rnd(int min, int max, int column, char *dest)$/;"	f
+acctbal	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            acctbal;$/;"	m	struct:__anon10
+acctbal	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            acctbal;$/;"	m	struct:__anon5
+actor	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE actor ($/;"	t
+actor.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (actor_id),$/;"	F
+actor.actor_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE actor ($/;"	F
+actor.first_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  actor_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+actor.last_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  first_name VARCHAR(45) NOT NULL,$/;"	F
+actor.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  last_name VARCHAR(45) NOT NULL,$/;"	F
+actor_info	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE DEFINER=CURRENT_USER SQL SECURITY INVOKER VIEW actor_info$/;"	V
+address	retired/tpch.original/dbgen/dsstypes.h	/^    char            address[C_ADDR_MAX + 1];$/;"	m	struct:__anon5
+address	retired/tpch.original/dbgen/dsstypes.h	/^    char            address[S_ADDR_MAX + 1];$/;"	m	struct:__anon10
+address	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE address ($/;"	t
+address.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (address_id),$/;"	F
+address.address	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+address.address2	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address VARCHAR(50) NOT NULL,$/;"	F
+address.address_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE address ($/;"	F
+address.city_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  district VARCHAR(20) NOT NULL,$/;"	F
+address.district	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address2 VARCHAR(50) DEFAULT NULL,$/;"	F
+address.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  phone VARCHAR(20) NOT NULL,$/;"	F
+address.phone	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  postal_code VARCHAR(10) DEFAULT NULL,$/;"	F
+address.postal_code	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  city_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+adjectives	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution adjectives;$/;"	v
+adjectives	retired/tpch.original/dbgen/text.c	/^      adjectives,$/;"	v
+advanceStream	retired/tpch.original/dbgen/speed_seed.c	/^advanceStream(int nStream, DSS_HUGE nCalls, int bUse64Bit)$/;"	f
+adverbs	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution adverbs;$/;"	v
+adverbs	retired/tpch.original/dbgen/text.c	/^      adverbs,$/;"	v
+agg_str	retired/tpch.original/dbgen/bm_utils.c	/^agg_str(distribution *set, long count, long col, char *dest)$/;"	f
+alen	retired/tpch.original/dbgen/dsstypes.h	/^    int             alen;$/;"	m	struct:__anon10
+alen	retired/tpch.original/dbgen/dsstypes.h	/^    int             alen;$/;"	m	struct:__anon5
+alpha	retired/tpch.original/dbgen/dsstypes.h	/^    char            alpha[DATE_LEN];$/;"	m	struct:__anon11
+alpha_num	retired/tpch.original/dbgen/bm_utils.c	/^static char alpha_num[65] =$/;"	v	file:
+argparse	p2d2/argparse_factory.py	/^import argparse$/;"	i
+argparse_factory	p2d2/main.py	/^from . import argparse_factory$/;"	i
+articles	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution articles;$/;"	v
+articles	retired/tpch.original/dbgen/text.c	/^      articles,$/;"	v
+asc_date	retired/tpch.original/dbgen/qgen.c	/^char **asc_date;$/;"	v
+assert_equal	p2d2/greentreesnakes/examples/test_framework/run.py	/^def assert_equal(a, b):$/;"	f
+ast	p2d2/ast_example.py	/^import ast$/;"	i
+ast	p2d2/greentreesnakes/astutils.py	/^import ast$/;"	i
+ast	p2d2/greentreesnakes/examples/test_framework/run.py	/^import ast$/;"	i
+ast	p2d2/greentreesnakes/examples/wrap_integers.py	/^import ast$/;"	i
+ast	p2d2/main.py	/^import ast$/;"	i
+ast	p2d2/nodes.py	/^import ast$/;"	i
+ast	p2d2/walking.py	/^import ast$/;"	i
+astpp	p2d2/main.py	/^import astpp$/;"	i
+astpp	p2d2/walking.py	/^import astpp$/;"	i
+auxillaries	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution auxillaries;$/;"	v
+auxillaries	retired/tpch.original/dbgen/text.c	/^      auxillaries,$/;"	v
+bTableSet	retired/tpch.original/dbgen/driver.c	/^static int bTableSet = 0;$/;"	v	file:
+base	retired/tpch.original/dbgen/dss.h	/^   DSS_HUGE      base;$/;"	m	struct:__anon4
+bcd2_add	retired/tpch.original/dbgen/bcd2.c	/^bcd2_add(long *bcd_low, long *bcd_high, long addend)$/;"	f
+bcd2_bin	retired/tpch.original/dbgen/bcd2.c	/^bcd2_bin(long *dest, long bcd)$/;"	f
+bcd2_cmp	retired/tpch.original/dbgen/bcd2.c	/^bcd2_cmp(long *low1, long *high1, long comp)$/;"	f
+bcd2_div	retired/tpch.original/dbgen/bcd2.c	/^bcd2_div(long *bcd_low, long *bcd_high, long divisor)$/;"	f
+bcd2_mod	retired/tpch.original/dbgen/bcd2.c	/^bcd2_mod(long *bcd_low, long *bcd_high, long modulo)$/;"	f
+bcd2_mul	retired/tpch.original/dbgen/bcd2.c	/^bcd2_mul(long *bcd_low, long *bcd_high, long multiplier)$/;"	f
+bcd2_sub	retired/tpch.original/dbgen/bcd2.c	/^bcd2_sub(long *bcd_low, long *bcd_high, long subend)$/;"	f
+bin_bcd2	retired/tpch.original/dbgen/bcd2.c	/^bin_bcd2(long binary, long *low_res, long *high_res)$/;"	f
+boundary	retired/tpch.original/dbgen/dss.h	/^	DSS_HUGE boundary;$/;"	m	struct:SEED_T
+brand	retired/tpch.original/dbgen/dsstypes.h	/^    char           brand[P_BRND_LEN + 1];$/;"	m	struct:__anon9
+brands	retired/tpch.original/dbgen/varsub.c	/^long brands[25] = {11,12,13,14,15,21,22,23,24,25,31,32,33,34,35,$/;"	v
+c_mseg_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution c_mseg_set;$/;"	v
+category	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE category ($/;"	t
+category.category_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE category ($/;"	F
+category.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  name VARCHAR(25) NOT NULL,$/;"	F
+category.name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  category_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+ccode	retired/tpch.original/dbgen/varsub.c	/^long ccode[25] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};$/;"	v
+cdate	retired/tpch.original/dbgen/dsstypes.h	/^    char            cdate[DATE_LEN];$/;"	m	struct:__anon6
+cell_magic	p2d2/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+cell_magic	p2d2/greentreesnakes/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+child	retired/tpch.original/dbgen/dss.h	/^   int       child;$/;"	m	struct:__anon4
+children	retired/tpch.original/dbgen/dss.h	/^EXTERN long children;$/;"	v
+city	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE city ($/;"	t
+city.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (city_id),$/;"	F
+city.city	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  city_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+city.city_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE city ($/;"	F
+city.country_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  city VARCHAR(50) NOT NULL,$/;"	F
+city.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  country_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int             clen;$/;"	m	struct:__anon10
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int             clen;$/;"	m	struct:__anon12
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int             clen;$/;"	m	struct:__anon5
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int            clen;$/;"	m	struct:__anon6
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int            clen;$/;"	m	struct:__anon7
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int            clen;$/;"	m	struct:__anon8
+clen	retired/tpch.original/dbgen/dsstypes.h	/^    int            clen;$/;"	m	struct:__anon9
+clerk	retired/tpch.original/dbgen/dsstypes.h	/^    char            clerk[O_CLRK_LEN + 1];$/;"	m	struct:__anon7
+close_direct	retired/tpch.original/dbgen/load_stub.c	/^close_direct(void)$/;"	f
+cnt	p2d2/gr-example.py	/^cnt = j.count()$/;"	v
+co	p2d2/greentreesnakes/examples/wrap_integers.py	/^co = compile(tree, "<ast>", "exec")$/;"	v
+code	p2d2/greentreesnakes/examples/test_framework/run.py	/^    code = f.read()$/;"	v
+code	p2d2/greentreesnakes/examples/wrap_integers.py	/^code = "print((1\/10)+(2\/10))"$/;"	v
+code	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            code;$/;"	m	struct:__anon12
+code2ir	p2d2/main.py	/^def code2ir():$/;"	f
+code_t	retired/tpch.original/dbgen/dsstypes.h	/^}               code_t;$/;"	t	typeref:struct:__anon12
+colors	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution colors;$/;"	v
+comment	retired/tpch.original/dbgen/dss.h	/^   char     *comment;$/;"	m	struct:__anon4
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char            comment[C_CMNT_MAX + 1];$/;"	m	struct:__anon5
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char            comment[N_CMNT_MAX + 1];$/;"	m	struct:__anon12
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char            comment[O_CMNT_MAX + 1];$/;"	m	struct:__anon7
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char            comment[S_CMNT_MAX + 1];$/;"	m	struct:__anon10
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char           comment[L_CMNT_MAX + 1];$/;"	m	struct:__anon6
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char           comment[PS_CMNT_MAX + 1];$/;"	m	struct:__anon8
+comment	retired/tpch.original/dbgen/dsstypes.h	/^    char           comment[P_CMNT_MAX + 1];$/;"	m	struct:__anon9
+con	p2d2/gr-connect.py	/^con = sqlite3.connect("grizzly.db")$/;"	v
+con	p2d2/gr-example.py	/^con = sqlite3.connect("grizzly.db")$/;"	v
+con	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           con=engine)$/;"	v
+conn	p2d2/pandastest.py	/^conn = pgconn.get() #gives us a connection to PostgreSQL. $/;"	v
+conn	wflows/pg_sel.py	/^conn = pgconn.get() #gives us a connection to PostgreSQL. $/;"	v
+container	retired/tpch.original/dbgen/dsstypes.h	/^    char           container[P_CNTR_LEN + 1];$/;"	m	struct:__anon9
+cop	p2d2/pandastest.py	/^cop = a.loc[:,['c_custkey','c_name','c_acctbal']].copy()$/;"	v
+cop	wflows/pg_sel.py	/^cop = a.loc[:,['c_custkey','c_name','c_acctbal']].copy()$/;"	v
+copyright	p2d2/greentreesnakes/conf.py	/^copyright = u'2012, Thomas Kluyver'$/;"	v
+count	retired/tpch.original/dbgen/dss.h	/^   int      count;$/;"	m	struct:__anon3
+count	wflows/dbs/info_db.py	/^count = session.query(myStocks).count()$/;"	v
+country	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE country ($/;"	t
+country.country	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  country_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+country.country_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE country ($/;"	F
+country.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  country VARCHAR(50) NOT NULL,$/;"	F
+create_engine	wflows/dbs/sqlalchemy-connecttest.py	/^from sqlalchemy import create_engine$/;"	i
+csv	wflows/ba_populate_db.py	/^import csv$/;"	i
+custkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            custkey;$/;"	m	struct:__anon5
+custkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE        custkey;$/;"	m	struct:__anon7
+customer	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE customer ($/;"	t
+customer.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_address_id (address_id),$/;"	F
+customer.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_store_id (store_id),$/;"	F
+customer.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (customer_id),$/;"	F
+customer.active	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+customer.address_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  email VARCHAR(50) DEFAULT NULL,$/;"	F
+customer.create_date	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  active BOOLEAN NOT NULL DEFAULT TRUE,$/;"	F
+customer.customer_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE customer ($/;"	F
+customer.email	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  last_name VARCHAR(45) NOT NULL,$/;"	F
+customer.first_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  store_id TINYINT UNSIGNED NOT NULL,$/;"	F
+customer.last_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  first_name VARCHAR(45) NOT NULL,$/;"	F
+customer.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  create_date DATETIME NOT NULL,$/;"	F
+customer.store_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  customer_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+customer_list	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW customer_list$/;"	V
+customer_t	retired/tpch.original/dbgen/dsstypes.h	/^}               customer_t;$/;"	t	typeref:struct:__anon5
+dM	retired/tpch.original/dbgen/rnd.h	/^double   dM = 2147483647.0;$/;"	v
+d_path	retired/tpch.original/dbgen/dss.h	/^EXTERN char *d_path;$/;"	v
+day	retired/tpch.original/dbgen/dsstypes.h	/^    long            day;$/;"	m	struct:__anon11
+days	retired/tpch.original/dbgen/build.c	/^	long            days;$/;"	m	struct:__anon1	file:
+db_name	retired/tpch.original/dbgen/qgen.c	/^char *db_name = NULL;$/;"	v
+dbg_print	retired/tpch.original/dbgen/print.c	/^dbg_print(int format, FILE *target, void *data, int len, int sep)$/;"	f
+dbg_text	retired/tpch.original/dbgen/text.c	/^dbg_text(char *tgt, int min, int max, int sd)$/;"	f
+dcnt	retired/tpch.original/dbgen/build.c	/^	long            dcnt;$/;"	m	struct:__anon1	file:
+declarative_base	wflows/dbs/info_db.py	/^from sqlalchemy.ext.declarative import declarative_base$/;"	i
+declarative_base	wflows/dbs/sqlalchemy-connecttest.py	/^from sqlalchemy.ext.declarative import declarative_base$/;"	i
+defaults	retired/tpch.original/dbgen/varsub.c	/^char *defaults[24][11] =$/;"	v
+delete_segment	retired/tpch.original/dbgen/dss.h	/^EXTERN int delete_segment;$/;"	v
+delete_segments	retired/tpch.original/dbgen/dss.h	/^EXTERN int delete_segments;$/;"	v
+design	p2d2/pandastest.py	/^def design():$/;"	f
+df	p2d2/gr-connect.py	/^df = grizzly.read_table("events", con)$/;"	v
+df	p2d2/gr-example.py	/^df = df[["actor1name","actor2name"]]$/;"	v
+df	p2d2/gr-example.py	/^df = grizzly.read_table("events")$/;"	v
+df	p2d2/pandas-random-df.py	/^df = pd.DataFrame(np.random.randint(0,12,size=(12, 4)), columns=list('ABCD'))$/;"	v
+df1	p2d2/gr-example.py	/^df1 = grizzly.read_table("t1")$/;"	v
+df2	p2d2/gr-example.py	/^df2 = grizzly.read_table("t2")$/;"	v
+df_is_view	p2d2/pandasviewscopystest.py	/^def df_is_view(data):$/;"	f
+diceroll	p2d2/greentreesnakes/examples/test_framework/asserts.py	/^diceroll = random.randint(1, 6)$/;"	v
+discount	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            discount;$/;"	m	struct:__anon6
+distribution	retired/tpch.original/dbgen/dss.h	/^}         distribution;$/;"	t	typeref:struct:__anon3
+doMatchSnipped	p2d2/gr-test.py	/^  def doMatchSnipped(self, snipped, template, removeLinebreaks):$/;"	m	class:CodeMatcher
+doMatchSnipped	tests/test.py	/^  def doMatchSnipped(self, snipped, template, removeLinebreaks):$/;"	m	class:CodeMatcher
+download_and_push_stock	wflows/ba_populate_db.py	/^def download_and_push_stock(stock_name):$/;"	f
+dss_random	retired/tpch.original/dbgen/rnd.c	/^dss_random(DSS_HUGE *tgt, DSS_HUGE lower, DSS_HUGE upper, long stream)$/;"	f
+dss_random64	retired/tpch.original/dbgen/rng64.c	/^dss_random64(DSS_HUGE *tgt, DSS_HUGE nLow, DSS_HUGE nHigh, long nStream)$/;"	f
+dss_time_t	retired/tpch.original/dbgen/dsstypes.h	/^} dss_time_t;               $/;"	t	typeref:struct:__anon11
+dsscasecmp	retired/tpch.original/dbgen/bm_utils.c	/^dsscasecmp(char *s1, char *s2)$/;"	f
+dssncasecmp	retired/tpch.original/dbgen/bm_utils.c	/^dssncasecmp(char *s1, char *s2, int n)$/;"	f
+dump	p2d2/astpp.py	/^def dump(node, annotate_fields=True, include_attributes=False, indent='  '):$/;"	f
+dump	p2d2/greentreesnakes/astpp.py	/^def dump(node, annotate_fields=True, include_attributes=False, indent='  '):$/;"	f
+dump_ast	p2d2/astpp.py	/^        def dump_ast(self, line, cell):$/;"	m	class:load_ipython_extension.AstMagics
+dump_ast	p2d2/greentreesnakes/astpp.py	/^        def dump_ast(self, line, cell):$/;"	m	class:load_ipython_extension.AstMagics
+dump_seeds	retired/tpch.original/dbgen/rnd.c	/^dump_seeds(int tbl)$/;"	f
+e_str	retired/tpch.original/dbgen/bm_utils.c	/^e_str(distribution *d, int min, int max, int stream, char *dest)$/;"	f
+end	p2d2/greentreesnakes/make.bat	/^:end$/;"	l
+engine	wflows/ba_max.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:password@localhost\/satest', echo=True)$/;"	v
+engine	wflows/ba_max_np.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:password@localhost\/satest', echo=True)$/;"	v
+engine	wflows/ba_max_sql.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:password@localhost\/satest', echo=True)$/;"	v
+engine	wflows/ba_populate_db.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:password@localhost\/satest', echo=True)$/;"	v
+engine	wflows/dbs/info_db.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:mydeb@localhost\/satest', echo=False)$/;"	v
+engine	wflows/dbs/sqlalchemy-connecttest.py	/^engine = create_engine('mysql:\/\/mydeb:mydeb@localhost\/satest', echo=True)$/;"	v
+engine	wflows/dbs/yfinance_sa_create_table_explicit.py	/^engine = sa.create_engine('mysql+pymysql:\/\/mydeb:mydeb@localhost\/satest', echo=True)$/;"	v
+env_config	retired/tpch.original/dbgen/bm_utils.c	/^env_config(char *var, char *dflt)$/;"	f
+eol	retired/tpch.original/dbgen/permute.c	/^char *eol[2] = {" ", "},"};$/;"	v
+eprice	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            eprice;$/;"	m	struct:__anon6
+exclude_patterns	p2d2/greentreesnakes/conf.py	/^exclude_patterns = ['_build']$/;"	v
+extensions	p2d2/greentreesnakes/conf.py	/^extensions = ['sphinx.ext.intersphinx']$/;"	v
+fake_a_rnd	retired/tpch.original/dbgen/speed_seed.c	/^fake_a_rnd(int min, int max, int column)$/;"	f
+fdopen	retired/tpch.original/dbgen/bm_utils.c	89;"	d	file:
+filename	p2d2/greentreesnakes/examples/test_framework/run.py	/^filename = "asserts.py"$/;"	v
+film	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film ($/;"	t
+film.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_language_id (language_id),$/;"	F
+film.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_title (title),$/;"	F
+film.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (film_id),$/;"	F
+film.description	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  title VARCHAR(128) NOT NULL,$/;"	F
+film.film_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film ($/;"	F
+film.language_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  release_year YEAR DEFAULT NULL,$/;"	F
+film.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  special_features SET('Trailers','Commentaries','Deleted Scenes','Behind the Scenes') DEFAULT NULL,$/;"	F
+film.length	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rental_rate DECIMAL(4,2) NOT NULL DEFAULT 4.99,$/;"	F
+film.original_language_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  language_id TINYINT UNSIGNED NOT NULL,$/;"	F
+film.rating	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  replacement_cost DECIMAL(5,2) NOT NULL DEFAULT 19.99,$/;"	F
+film.release_year	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  description TEXT DEFAULT NULL,$/;"	F
+film.rental_duration	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  original_language_id TINYINT UNSIGNED DEFAULT NULL,$/;"	F
+film.rental_rate	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rental_duration TINYINT UNSIGNED NOT NULL DEFAULT 3,$/;"	F
+film.replacement_cost	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  length SMALLINT UNSIGNED DEFAULT NULL,$/;"	F
+film.special_features	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rating ENUM('G','PG','PG-13','R','NC-17') DEFAULT 'G',$/;"	F
+film.title	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  film_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+film_actor	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_actor ($/;"	t
+film_actor.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (actor_id,film_id),$/;"	F
+film_actor.actor_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_actor ($/;"	F
+film_actor.film_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  actor_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+film_actor.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  film_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+film_category	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_category ($/;"	t
+film_category.category_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  film_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+film_category.film_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_category ($/;"	F
+film_category.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  category_id TINYINT UNSIGNED NOT NULL,$/;"	F
+film_in_stock	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE PROCEDURE film_in_stock(IN p_film_id INT, IN p_store_id INT, OUT p_film_count INT)$/;"	p
+film_list	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW film_list$/;"	V
+film_not_in_stock	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE PROCEDURE film_not_in_stock(IN p_film_id INT, IN p_store_id INT, OUT p_film_count INT)$/;"	p
+film_text	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_text ($/;"	t
+film_text.FULLTEXT	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (film_id),$/;"	F
+film_text.description	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  title VARCHAR(255) NOT NULL,$/;"	F
+film_text.film_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE film_text ($/;"	F
+film_text.title	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  film_id SMALLINT NOT NULL,$/;"	F
+firstData	wflows/dbs/yfinance_sa_create_table_explicit.py	/^firstData=stockData.head(2)$/;"	v
+firstElem	wflows/dbs/info_db.py	/^firstElem=session.query(myStocks).order_by(myStocks.Datetime.desc()).first()$/;"	v
+flags	retired/tpch.original/dbgen/tpcd.h	/^EXTERN int flags;$/;"	v
+flt_scale	retired/tpch.original/dbgen/driver.c	/^double flt_scale;$/;"	v
+flt_scale	retired/tpch.original/dbgen/qgen.c	/^double flt_scale;$/;"	v
+force	retired/tpch.original/dbgen/dss.h	/^EXTERN long force;$/;"	v
+fromdocs	p2d2/pandastest.py	/^def fromdocs():$/;"	f
+fullname	wflows/dbs/sqlalchemy-connecttest.py	/^    fullname = Column(String(50))$/;"	v	class:User
+g	p2d2/gr-example.py	/^g = df.groupby(["year","actor1name"])$/;"	v
+gen_phone	retired/tpch.original/dbgen/build.c	/^gen_phone(DSS_HUGE ind, char *target, long seed)$/;"	f	file:
+gen_seed	retired/tpch.original/dbgen/dss.h	/^   long      (*gen_seed)();$/;"	m	struct:__anon4
+gen_tbl	retired/tpch.original/dbgen/driver.c	/^gen_tbl (int tnum, DSS_HUGE start, DSS_HUGE count, long upd_num)$/;"	f
+get	p2d2/pgconn.py	/^def get():$/;"	f
+get	wflows/pgconn.py	/^def get():$/;"	f
+get_customer_balance	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE FUNCTION get_customer_balance(p_customer_id INT, p_effective_date DATETIME) RETURNS DECIMAL(5,2)$/;"	f
+get_snp100	wflows/ba_populate_db.py	/^def get_snp100():$/;"	f
+getopt	retired/tpch.original/dbgen/bm_utils.c	/^getopt(int ac, char **av, char *opt)$/;"	f
+getpid	retired/tpch.original/dbgen/config.h	177;"	d
+grammar	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution grammar;$/;"	v
+grammar	retired/tpch.original/dbgen/text.c	/^      grammar,$/;"	v
+grizzly	p2d2/gr-connect.py	/^import grizzly$/;"	i
+grizzly	p2d2/gr-example.py	/^import grizzly$/;"	i
+grizzly	p2d2/gr-test.py	/^import grizzly$/;"	i
+grizzly	p2d2/main.py	/^import grizzly$/;"	i
+group_by	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           group_by="ticker")$/;"	v
+hd_cust	retired/tpch.original/dbgen/load_stub.c	/^hd_cust (FILE *f)$/;"	f
+hd_line	retired/tpch.original/dbgen/load_stub.c	/^hd_line (FILE *f)$/;"	f
+hd_nation	retired/tpch.original/dbgen/load_stub.c	/^hd_nation (FILE *f)$/;"	f
+hd_order	retired/tpch.original/dbgen/load_stub.c	/^hd_order (FILE *f)$/;"	f
+hd_order_line	retired/tpch.original/dbgen/load_stub.c	/^hd_order_line (FILE *f)$/;"	f
+hd_part	retired/tpch.original/dbgen/load_stub.c	/^hd_part (FILE *f)$/;"	f
+hd_part_psupp	retired/tpch.original/dbgen/load_stub.c	/^hd_part_psupp (FILE *f)$/;"	f
+hd_psupp	retired/tpch.original/dbgen/load_stub.c	/^hd_psupp (FILE *f)$/;"	f
+hd_region	retired/tpch.original/dbgen/load_stub.c	/^hd_region (FILE *f)$/;"	f
+hd_supp	retired/tpch.original/dbgen/load_stub.c	/^hd_supp (FILE *f)$/;"	f
+help	p2d2/astpp.py	/^            help="The mode in which to parse the code. Can be exec (the default), "$/;"	v	class:load_ipython_extension.AstMagics
+help	p2d2/astpp.py	/^            help="Whether to preserve the type comments in the AST"$/;"	v	class:load_ipython_extension.AstMagics
+help	p2d2/greentreesnakes/astpp.py	/^            help="The mode in which to parse the code. Can be exec (the default), "$/;"	v	class:load_ipython_extension.AstMagics
+help	p2d2/greentreesnakes/astpp.py	/^            help="Whether to preserve the type comments in the AST"$/;"	v	class:load_ipython_extension.AstMagics
+html_static_path	p2d2/greentreesnakes/conf.py	/^html_static_path = ['_static']$/;"	v
+html_theme	p2d2/greentreesnakes/conf.py	/^html_theme = 'default'$/;"	v
+htmlhelp_basename	p2d2/greentreesnakes/conf.py	/^htmlhelp_basename = 'GreenTreeSnakesdoc'$/;"	v
+id	wflows/dbs/sqlalchemy-connecttest.py	/^    id = Column(Integer, primary_key=True)$/;"	v	class:User
+ifile	retired/tpch.original/dbgen/tpcd.h	/^EXTERN char *ifile;$/;"	v
+index_col	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           index_col=['Datetime','Company'] ,$/;"	v
+insert_lineitem_segment	retired/tpch.original/dbgen/dss.h	/^EXTERN int insert_lineitem_segment;$/;"	v
+insert_orders_segment	retired/tpch.original/dbgen/dss.h	/^EXTERN int insert_orders_segment;$/;"	v
+insert_segments	retired/tpch.original/dbgen/dss.h	/^EXTERN int insert_segments;$/;"	v
+int32_t	retired/tpch.original/dbgen/rnd.c	88;"	d	file:
+intersphinx_mapping	p2d2/greentreesnakes/conf.py	/^intersphinx_mapping = {'python': ('http:\/\/docs.python.org\/3', None)}$/;"	v
+interval	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           interval = "5m",$/;"	v
+inventory	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE inventory ($/;"	t
+inventory.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_film_id (film_id),$/;"	F
+inventory.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (inventory_id),$/;"	F
+inventory.film_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  inventory_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+inventory.inventory_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE inventory ($/;"	F
+inventory.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  store_id TINYINT UNSIGNED NOT NULL,$/;"	F
+inventory.store_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  film_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+inventory_held_by_customer	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE FUNCTION inventory_held_by_customer(p_inventory_id INT) RETURNS INT$/;"	f
+inventory_in_stock	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE FUNCTION inventory_in_stock(p_inventory_id INT) RETURNS BOOLEAN$/;"	f
+io	p2d2/pandasviewscopystest.py	/^import io$/;"	i
+ir2bytecode	p2d2/main.py	/^def ir2bytecode():$/;"	f
+j	p2d2/gr-example.py	/^j  = df1.join(df2, on = (df1.actor1name == df2.actor2name) | (df1["actor1countrycode"] <= df2["actor2countrycode"]), how="left outer")$/;"	v
+join	retired/tpch.original/dbgen/dsstypes.h	/^    long            join;$/;"	m	struct:__anon12
+julian	retired/tpch.original/dbgen/bm_utils.c	/^julian(long date)$/;"	f
+l	retired/tpch.original/dbgen/dsstypes.h	/^    line_t          l[O_LCNT_MAX];$/;"	m	struct:__anon7
+l_category_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution l_category_set;$/;"	v
+l_instruct_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution l_instruct_set;$/;"	v
+l_rflag_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution l_rflag_set;$/;"	v
+l_smode_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution l_smode_set;$/;"	v
+language	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE language ($/;"	t
+language.language_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE language ($/;"	F
+language.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  name CHAR(20) NOT NULL,$/;"	F
+language.name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  language_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+lastElem	wflows/dbs/info_db.py	/^lastElem=session.query(myStocks).order_by(myStocks.Datetime.desc()).first()$/;"	v
+latex_documents	p2d2/greentreesnakes/conf.py	/^latex_documents = [$/;"	v
+latex_elements	p2d2/greentreesnakes/conf.py	/^latex_elements = {$/;"	v
+lcnt	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            lcnt;$/;"	m	struct:__anon6
+ld_cust	retired/tpch.original/dbgen/load_stub.c	/^ld_cust (customer_t *cp, int mode)$/;"	f
+ld_line	retired/tpch.original/dbgen/load_stub.c	/^int ld_line (order_t *p, int mode)$/;"	f
+ld_nation	retired/tpch.original/dbgen/load_stub.c	/^ld_nation (code_t *cp, int mode)$/;"	f
+ld_order	retired/tpch.original/dbgen/load_stub.c	/^ld_order (order_t *p, int mode)$/;"	f
+ld_order_line	retired/tpch.original/dbgen/load_stub.c	/^ld_order_line (order_t *p, int mode)$/;"	f
+ld_part	retired/tpch.original/dbgen/load_stub.c	/^ld_part (part_t *pp, int mode)$/;"	f
+ld_part_psupp	retired/tpch.original/dbgen/load_stub.c	/^ld_part_psupp (part_t *p, int mode)$/;"	f
+ld_psupp	retired/tpch.original/dbgen/load_stub.c	/^ld_psupp (part_t *pp, int mode)$/;"	f
+ld_region	retired/tpch.original/dbgen/load_stub.c	/^ld_region (code_t *cp, int mode)$/;"	f
+ld_supp	retired/tpch.original/dbgen/load_stub.c	/^ld_supp (supplier_t *sp, int mode)$/;"	f
+lfile	retired/tpch.original/dbgen/tpcd.h	/^EXTERN char *lfile;$/;"	v
+line_t	retired/tpch.original/dbgen/dsstypes.h	/^}               line_t;$/;"	t	typeref:struct:__anon6
+lines	p2d2/greentreesnakes/examples/test_framework/run.py	/^lines = [None] + code.splitlines()  # None at [0] so we can index lines from 1$/;"	v
+lines	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            lines;$/;"	m	struct:__anon7
+list	retired/tpch.original/dbgen/dss.h	/^   set_member *list;$/;"	m	struct:__anon3
+lnoise	retired/tpch.original/dbgen/dss.h	/^static char lnoise[4] = {'|', '\/', '-', '\\\\' };$/;"	v
+load_dists	retired/tpch.original/dbgen/driver.c	/^load_dists (void)$/;"	f
+load_ipython_extension	p2d2/astpp.py	/^def load_ipython_extension(ip):$/;"	f
+load_ipython_extension	p2d2/greentreesnakes/astpp.py	/^def load_ipython_extension(ip):$/;"	f
+loader	retired/tpch.original/dbgen/dss.h	/^   int       (*loader) ();$/;"	m	struct:__anon4
+lock	retired/tpch.original/dbgen/tests/load_balance.sh	/^lock()$/;"	f
+lstatus	retired/tpch.original/dbgen/dsstypes.h	/^    char            lstatus[1];$/;"	m	struct:__anon6
+magic_arguments	p2d2/astpp.py	/^    from IPython.core import magic_arguments$/;"	i
+magic_arguments	p2d2/greentreesnakes/astpp.py	/^    from IPython.core import magic_arguments$/;"	i
+magics_class	p2d2/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+magics_class	p2d2/greentreesnakes/astpp.py	/^    from IPython.core.magic import Magics, magics_class, cell_magic$/;"	i
+main	p2d2/ast_example.py	/^def main():$/;"	f
+main	p2d2/main.py	/^def main():$/;"	f
+main	p2d2/walking.py	/^def main():$/;"	f
+main	retired/tpch.original/dbgen/bcd2.c	/^main()$/;"	f
+main	retired/tpch.original/dbgen/driver.c	/^main (int ac, char **av)$/;"	f
+main	retired/tpch.original/dbgen/permute.c	/^main(int ac, char *av[])$/;"	f
+main	retired/tpch.original/dbgen/qgen.c	/^int main(int ac, char **av)$/;"	f
+main	retired/tpch.original/dbgen/text.c	/^main()$/;"	f
+main	retired/tpch.original/dev-tools/generate_permute_h.c	/^main(int argc, char *argv[])$/;"	f
+main	tests/test.py	/^import p2d2.main$/;"	i
+main	wflows/ba_max.py	/^def main():$/;"	f
+main	wflows/ba_max_np.py	/^def main():$/;"	f
+main	wflows/ba_max_sql.py	/^def main():$/;"	f
+main	wflows/ba_populate_db.py	/^def main():$/;"	f
+man_pages	p2d2/greentreesnakes/conf.py	/^man_pages = [$/;"	v
+maskcopy	p2d2/pandasviewscopystest.py	/^def maskcopy():$/;"	f
+master_doc	p2d2/greentreesnakes/conf.py	/^master_doc = 'index'$/;"	v
+matchSnipped	p2d2/gr-test.py	/^  def matchSnipped(self, snipped, template, removeLinebreaks: bool = False):$/;"	m	class:CodeMatcher
+matchSnipped	tests/test.py	/^    def matchSnipped(self, snipped, template, removeLinebreaks: bool = False):$/;"	m	class:CodeMatcher
+max	retired/tpch.original/dbgen/dss.h	/^   int      max;$/;"	m	struct:__anon3
+mdes	retired/tpch.original/dbgen/build.c	/^	char           *mdes;$/;"	m	struct:__anon1	file:
+meta	wflows/dbs/info_db.py	/^meta = sa.MetaData()$/;"	v
+metadata	wflows/dbs/yfinance_sa_create_table_explicit.py	/^metadata = sa.MetaData()$/;"	v
+mfgr	retired/tpch.original/dbgen/dsstypes.h	/^    char           mfgr[P_MFG_LEN + 1];$/;"	m	struct:__anon9
+minrow	retired/tpch.original/dbgen/driver.c	/^DSS_HUGE rowcnt = 0, minrow = 0;$/;"	v
+mk_ascdate	retired/tpch.original/dbgen/bm_utils.c	/^mk_ascdate(void)$/;"	f
+mk_cust	retired/tpch.original/dbgen/build.c	/^mk_cust(DSS_HUGE n_cust, customer_t * c)$/;"	f
+mk_nation	retired/tpch.original/dbgen/build.c	/^mk_nation(DSS_HUGE index, code_t * c)$/;"	f
+mk_order	retired/tpch.original/dbgen/build.c	/^mk_order(DSS_HUGE index, order_t * o, long upd_num)$/;"	f
+mk_part	retired/tpch.original/dbgen/build.c	/^mk_part(DSS_HUGE index, part_t * p)$/;"	f
+mk_region	retired/tpch.original/dbgen/build.c	/^mk_region(DSS_HUGE index, code_t * c)$/;"	f
+mk_sparse	retired/tpch.original/dbgen/build.c	/^mk_sparse(DSS_HUGE i, DSS_HUGE * ok, long seq)$/;"	f
+mk_supp	retired/tpch.original/dbgen/build.c	/^mk_supp(DSS_HUGE index, supplier_t * s)$/;"	f
+mk_time	retired/tpch.original/dbgen/build.c	/^mk_time(DSS_HUGE index, dss_time_t * t)$/;"	f
+mktsegment	retired/tpch.original/dbgen/dsstypes.h	/^    char            mktsegment[MAXAGG_LEN + 1];$/;"	m	struct:__anon5
+month	retired/tpch.original/dbgen/dsstypes.h	/^    long            month;$/;"	m	struct:__anon11
+months	retired/tpch.original/dbgen/build.c	/^}               months[] =$/;"	v	typeref:struct:__anon1
+myStocks	wflows/dbs/info_db.py	/^class myStocks(Base):$/;"	c
+myfunc	p2d2/gr-test.py	/^    def myfunc(a: int) -> str:$/;"	f	function:DataFrameTest.test_udf
+mymod	p2d2/gr-test.py	/^    def mymod(s: str) -> int:$/;"	f	function:DataFrameTest.test_groupByComputedCol
+mystocksTable	wflows/dbs/info_db.py	/^mystocksTable = sa.Table('myStocks', meta, autoload=True, autoload_with=engine)$/;"	v
+nA	retired/tpch.original/dbgen/rnd.h	/^static long     nA = 16807;     \/* the multiplier *\/$/;"	v
+nCalls	retired/tpch.original/dbgen/dss.h	/^	DSS_HUGE nCalls;$/;"	m	struct:SEED_T
+nM	retired/tpch.original/dbgen/rnd.h	/^static long     nM = 2147483647;\/* the modulus == 2^31 - 1 *\/$/;"	v
+nQ	retired/tpch.original/dbgen/rnd.h	/^static long     nQ = 127773;    \/* the quotient nM \/ nA *\/$/;"	v
+nR	retired/tpch.original/dbgen/rnd.h	/^static long     nR = 2836;      \/* the remainder nM % nA *\/$/;"	v
+na	p2d2/pandas-random-df.py	/^na = np.random.randint(0,12,size=(12, 4))$/;"	v
+name	retired/tpch.original/dbgen/dss.h	/^   char     *name;$/;"	m	struct:__anon4
+name	retired/tpch.original/dbgen/dsstypes.h	/^    char            name[C_NAME_LEN + 3];$/;"	m	struct:__anon5
+name	retired/tpch.original/dbgen/dsstypes.h	/^    char            name[S_NAME_LEN + 1];$/;"	m	struct:__anon10
+name	retired/tpch.original/dbgen/dsstypes.h	/^    char           name[P_NAME_LEN + 1];$/;"	m	struct:__anon9
+name	wflows/dbs/sqlalchemy-connecttest.py	/^    name = Column(String(50))$/;"	v	class:User
+name_bits	retired/tpch.original/dbgen/speed_seed.c	/^long name_bits[MAX_COLOR \/ BITS_PER_LONG];$/;"	v
+nation_code	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            nation_code;$/;"	m	struct:__anon10
+nation_code	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            nation_code;$/;"	m	struct:__anon5
+nations	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution nations;$/;"	v
+nations2	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution nations2;$/;"	v
+nicer_but_slower_film_list	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW nicer_but_slower_film_list$/;"	V
+nickname	wflows/dbs/sqlalchemy-connecttest.py	/^    nickname = Column(String(50))$/;"	v	class:User
+nlen	retired/tpch.original/dbgen/dsstypes.h	/^    int            nlen;$/;"	m	struct:__anon9
+nouns	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution nouns;$/;"	v
+nouns	retired/tpch.original/dbgen/text.c	/^distribution nouns,$/;"	v
+np	p2d2/pandas-random-df.py	/^import numpy as np$/;"	i
+np	p2d2/pandastest.py	/^import numpy as np$/;"	i
+np	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution np;$/;"	v
+np	retired/tpch.original/dbgen/text.c	/^      np,$/;"	v
+np	wflows/ba_max_np.py	/^import numpy as np$/;"	i
+np	wflows/ba_populate_db.py	/^import numpy as np$/;"	i
+np	wflows/dbs/info_db.py	/^import numpy as np$/;"	i
+np	wflows/dbs/yfinance_sa_create_table_explicit.py	/^import numpy as np$/;"	i
+o_priority_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution o_priority_set;$/;"	v
+odate	retired/tpch.original/dbgen/dsstypes.h	/^    char            odate[DATE_LEN];$/;"	m	struct:__anon7
+ofp	retired/tpch.original/dbgen/tpcd.h	45;"	d
+okey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE	    okey; $/;"	m	struct:__anon6
+okey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE	    okey;$/;"	m	struct:__anon7
+open	retired/tpch.original/dbgen/bm_utils.c	92;"	d	file:
+opriority	retired/tpch.original/dbgen/dsstypes.h	/^    char            opriority[MAXAGG_LEN + 1];$/;"	m	struct:__anon7
+optarg	retired/tpch.original/dbgen/bm_utils.c	/^char *optarg = NULL;$/;"	v
+opterr	retired/tpch.original/dbgen/bm_utils.c	/^int opterr = 0;$/;"	v
+optind	retired/tpch.original/dbgen/bm_utils.c	/^int optind = 0;$/;"	v
+order_t	retired/tpch.original/dbgen/dsstypes.h	/^}               order_t;$/;"	t	typeref:struct:__anon7
+orders_per_cust	retired/tpch.original/dbgen/variants/13a.sql	/^create view orders_per_cust:s (custkey, ordercount) as$/;"	V
+orderstatus	retired/tpch.original/dbgen/dsstypes.h	/^    char            orderstatus;$/;"	m	struct:__anon7
+os	p2d2/greentreesnakes/conf.py	/^import sys, os$/;"	i
+osuff	retired/tpch.original/dbgen/tpcd.h	/^EXTERN char *osuff;$/;"	v
+p	p2d2/pandastest.py	/^p = a.loc[:,'c_custkey'] # probably a view but we take it as a copy$/;"	v
+p	wflows/pg_sel.py	/^p = a.loc[:,'c_custkey'] # probably a view but we take it as a copy$/;"	v
+p2d2	tests/test.py	/^import p2d2.main$/;"	i
+p2d2	tests/test.py	/^import p2d2.pgconn$/;"	i
+p_cntr_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution p_cntr_set;$/;"	v
+p_types_set	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution p_types_set;$/;"	v
+pairs	retired/tpch.original/dbgen/check_answers/pairs.sh	/^pairs()$/;"	f
+parse_args	p2d2/argparse_factory.py	/^def parse_args():$/;"	f
+parse_dates	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           parse_dates=['Datetime'],$/;"	v
+parseprint	p2d2/astpp.py	/^def parseprint(code, filename="<string>", mode="exec", type_comments=False,$/;"	f
+parseprint	p2d2/greentreesnakes/astpp.py	/^def parseprint(code, filename="<string>", mode="exec", type_comments=False,$/;"	f
+part_t	retired/tpch.original/dbgen/dsstypes.h	/^}               part_t;$/;"	t	typeref:struct:__anon9
+partial	retired/tpch.original/dbgen/driver.c	/^partial (int tbl, int s)$/;"	f
+partkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            partkey;$/;"	m	struct:__anon6
+partkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            partkey;$/;"	m	struct:__anon8
+partkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE           partkey;$/;"	m	struct:__anon9
+partsupp_t	retired/tpch.original/dbgen/dsstypes.h	/^}               partsupp_t;$/;"	t	typeref:struct:__anon8
+payment	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE payment ($/;"	t
+payment.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_staff_id (staff_id),$/;"	F
+payment.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (payment_id),$/;"	F
+payment.amount	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rental_id INT DEFAULT NULL,$/;"	F
+payment.customer_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  payment_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+payment.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  payment_date DATETIME NOT NULL,$/;"	F
+payment.payment_date	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  amount DECIMAL(5,2) NOT NULL,$/;"	F
+payment.payment_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE payment ($/;"	F
+payment.rental_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  staff_id TINYINT UNSIGNED NOT NULL,$/;"	F
+payment.staff_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  customer_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+pd	p2d2/pandas-random-df.py	/^import pandas as pd$/;"	i
+pd	p2d2/pandastest.py	/^import pandas as pd$/;"	i
+pd	p2d2/pandasviewscopystest.py	/^import pandas as pd$/;"	i
+pd	wflows/ba_max.py	/^import pandas as pd$/;"	i
+pd	wflows/ba_max_np.py	/^import pandas as pd$/;"	i
+pd	wflows/ba_max_sql.py	/^import pandas as pd$/;"	i
+pd	wflows/ba_populate_db.py	/^import pandas as pd$/;"	i
+pd	wflows/dbs/info_db.py	/^import pandas as pd$/;"	i
+pd	wflows/dbs/yfinance_sa_create_table_explicit.py	/^import pandas as pd$/;"	i
+pd	wflows/pg_sel.py	/^import pandas as pd$/;"	i
+pdp	p2d2/astpp.py	/^pdp = parseprint$/;"	v
+pdp	p2d2/greentreesnakes/astpp.py	/^pdp = parseprint$/;"	v
+period	wflows/dbs/yfinance_sa_create_table_explicit.py	/^                           period= "2d",$/;"	v
+permutation	retired/tpch.original/dbgen/permute.h	/^long permutation[41][22] =$/;"	v
+permute	retired/tpch.original/dbgen/dss.h	/^   long *permute;$/;"	m	struct:__anon3
+permute	retired/tpch.original/dbgen/permute.c	/^void	permute(long *a, int c, long s)$/;"	f
+permute_dist	retired/tpch.original/dbgen/permute.c	/^void	permute_dist(distribution *d, long stream)$/;"	f
+pgconn	p2d2/pandastest.py	/^import pgconn$/;"	i
+pgconn	p2d2/pandasviewscopystest.py	/^    import pgconn$/;"	i
+pgconn	tests/test.py	/^import p2d2.pgconn$/;"	i
+pgconn	wflows/pg_sel.py	/^import pgconn$/;"	i
+phone	retired/tpch.original/dbgen/dsstypes.h	/^    char            phone[PHONE_LEN + 1];$/;"	m	struct:__anon10
+phone	retired/tpch.original/dbgen/dsstypes.h	/^    char            phone[PHONE_LEN + 1];$/;"	m	struct:__anon5
+pick_str	retired/tpch.original/dbgen/bm_utils.c	/^pick_str(distribution *s, int c, char *target)$/;"	f
+pid_t	retired/tpch.original/dbgen/config.h	167;"	d
+pprint	p2d2/ast_example.py	/^from pprint import pprint$/;"	i
+pr_cust	retired/tpch.original/dbgen/print.c	/^pr_cust(customer_t *c, int mode)$/;"	f
+pr_drange	retired/tpch.original/dbgen/print.c	/^pr_drange(int tbl, DSS_HUGE min, DSS_HUGE cnt, long num)$/;"	f
+pr_line	retired/tpch.original/dbgen/print.c	/^pr_line(order_t *o, int mode)$/;"	f
+pr_nation	retired/tpch.original/dbgen/print.c	/^pr_nation(code_t *c, int mode)$/;"	f
+pr_order	retired/tpch.original/dbgen/print.c	/^pr_order(order_t *o, int mode)$/;"	f
+pr_order_line	retired/tpch.original/dbgen/print.c	/^pr_order_line(order_t *o, int mode)$/;"	f
+pr_part	retired/tpch.original/dbgen/print.c	/^pr_part(part_t *part, int mode)$/;"	f
+pr_part_psupp	retired/tpch.original/dbgen/print.c	/^pr_part_psupp(part_t *part, int mode)$/;"	f
+pr_psupp	retired/tpch.original/dbgen/print.c	/^pr_psupp(part_t *part, int mode)$/;"	f
+pr_region	retired/tpch.original/dbgen/print.c	/^pr_region(code_t *c, int mode)$/;"	f
+pr_supp	retired/tpch.original/dbgen/print.c	/^pr_supp(supplier_t *supp, int mode)$/;"	f
+prep_direct	retired/tpch.original/dbgen/load_stub.c	/^prep_direct(void)$/;"	f
+prepositions	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution prepositions;$/;"	v
+prepositions	retired/tpch.original/dbgen/text.c	/^      prepositions,$/;"	v
+print_prep	retired/tpch.original/dbgen/print.c	/^print_prep(int table, int update)$/;"	f
+process_options	retired/tpch.original/dbgen/driver.c	/^process_options (int count, char **vector)$/;"	f
+process_options	retired/tpch.original/dbgen/qgen.c	/^process_options(int cnt, char **args)$/;"	f
+prog	retired/tpch.original/dbgen/qgen.c	/^char *prog;$/;"	v
+project	p2d2/greentreesnakes/conf.py	/^project = u'Green Tree Snakes'$/;"	v
+psycopg2	p2d2/pgconn.py	/^import psycopg2$/;"	i
+psycopg2	wflows/pg_sel.py	/^import psycopg2$/;"	i
+psycopg2	wflows/pgconn.py	/^import psycopg2$/;"	i
+pygments_style	p2d2/greentreesnakes/conf.py	/^pygments_style = 'sphinx'$/;"	v
+q13a	retired/tpch.original/dbgen/qgen.c	/^distribution q13a, q13b;$/;"	v
+q13b	retired/tpch.original/dbgen/qgen.c	/^distribution q13a, q13b;$/;"	v
+qnum	retired/tpch.original/dbgen/qgen.c	/^int qnum;$/;"	v
+qsub	retired/tpch.original/dbgen/qgen.c	/^qsub(char *qtag, int flags)$/;"	f
+qty	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            qty;$/;"	m	struct:__anon8
+quantity	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            quantity;$/;"	m	struct:__anon6
+random	p2d2/greentreesnakes/examples/test_framework/asserts.py	/^import random$/;"	i
+rdate	retired/tpch.original/dbgen/dsstypes.h	/^    char            rdate[DATE_LEN];$/;"	m	struct:__anon6
+re	p2d2/gr-test.py	/^import re$/;"	i
+re	tests/test.py	/^import re$/;"	i
+read_dist	retired/tpch.original/dbgen/bm_utils.c	/^read_dist(char *path, char *name, distribution *target)$/;"	f
+refresh	retired/tpch.original/dbgen/dss.h	/^EXTERN int refresh;$/;"	v
+regions	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution regions;$/;"	v
+release	p2d2/greentreesnakes/conf.py	/^release = '1.0'$/;"	v
+rental	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE rental ($/;"	t
+rental.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_customer_id (customer_id),$/;"	F
+rental.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_inventory_id (inventory_id),$/;"	F
+rental.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  UNIQUE KEY  (rental_date,inventory_id,customer_id),$/;"	F
+rental.customer_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  inventory_id MEDIUMINT UNSIGNED NOT NULL,$/;"	F
+rental.inventory_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rental_date DATETIME NOT NULL,$/;"	F
+rental.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  staff_id TINYINT UNSIGNED NOT NULL,$/;"	F
+rental.rental_date	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  rental_id INT NOT NULL AUTO_INCREMENT,$/;"	F
+rental.rental_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE rental ($/;"	F
+rental.return_date	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  customer_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+rental.staff_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  return_date DATETIME DEFAULT NULL,$/;"	F
+report	p2d2/ast_example.py	/^    def report(self):$/;"	m	class:Analyzer
+report	p2d2/main.py	/^    def report(self):$/;"	m	class:Analyzer
+resume	retired/tpch.original/dbgen/dss.h	/^EXTERN int resume;$/;"	v
+retailprice	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE           retailprice;$/;"	m	struct:__anon9
+revenue	retired/tpch.original/dbgen/queries/15.sql	/^create view revenue:s (supplier_no, total_revenue) as$/;"	V
+revenue	wflows/qgenenv/15.sql	/^create view revenue:s (supplier_no, total_revenue) as$/;"	V
+revenue0	wflows/qgenenv/result.sql	/^create view revenue0 (supplier_no, total_revenue) as$/;"	V
+revenue0	wflows/qgenenv/result2.sql	/^create view revenue0 (supplier_no, total_revenue) as$/;"	V
+revenue0	wflows/qgenenv/result3.sql	/^create view revenue0 (supplier_no, total_revenue) as$/;"	V
+rewards_report	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE PROCEDURE rewards_report ($/;"	p
+rflag	retired/tpch.original/dbgen/dsstypes.h	/^    char            rflag[1];$/;"	m	struct:__anon6
+rndm	retired/tpch.original/dbgen/qgen.c	/^long rndm;$/;"	v
+row_start	retired/tpch.original/dbgen/rnd.c	/^row_start(int t)	\\$/;"	f
+row_stop	retired/tpch.original/dbgen/rnd.c	/^row_stop(int t)	\\$/;"	f
+rowcnt	retired/tpch.original/dbgen/driver.c	/^DSS_HUGE rowcnt = 0, minrow = 0;$/;"	v
+rowcnt	retired/tpch.original/dbgen/tpcd.h	/^int rowcnt;$/;"	v
+rowcnt_dflt	retired/tpch.original/dbgen/tpcd.h	/^int rowcnt_dflt[QUERIES_PER_SET + 1] = $/;"	v
+rpb_routine	retired/tpch.original/dbgen/build.c	/^rpb_routine(DSS_HUGE p)$/;"	f
+rtrim	retired/tpch.original/dbgen/check_answers/cmpq.pl	/^sub rtrim($)$/;"	s
+run	p2d2/greentreesnakes/astutils.py	/^def run(*nodes):$/;"	f
+s	p2d2/pandastest.py	/^s = a.loc[a.loc[:,'c_acctbal']<800]$/;"	v
+s	retired/tpch.original/dbgen/dsstypes.h	/^    partsupp_t     s[SUPP_PER_PART];$/;"	m	struct:__anon9
+s	wflows/pg_sel.py	/^s = a.loc[a.loc[:,'c_acctbal']<800]$/;"	v
+s_cnt	retired/tpch.original/dbgen/tpcd.h	/^EXTERN int s_cnt;$/;"	v
+sa	wflows/ba_max.py	/^import sqlalchemy as sa$/;"	i
+sa	wflows/ba_max_np.py	/^import sqlalchemy as sa$/;"	i
+sa	wflows/ba_max_sql.py	/^import sqlalchemy as sa$/;"	i
+sa	wflows/ba_populate_db.py	/^import sqlalchemy as sa$/;"	i
+sa	wflows/dbs/info_db.py	/^import sqlalchemy as sa$/;"	i
+sa	wflows/dbs/yfinance_sa_create_table_explicit.py	/^import sqlalchemy as sa$/;"	i
+sales_by_film_category	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW sales_by_film_category$/;"	V
+sales_by_store	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW sales_by_store$/;"	V
+scale	retired/tpch.original/dbgen/dss.h	/^EXTERN long scale;$/;"	v
+scost	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            scost;$/;"	m	struct:__anon8
+sd_cust	retired/tpch.original/dbgen/speed_seed.c	/^sd_cust(int child, DSS_HUGE skip_count)$/;"	f
+sd_line	retired/tpch.original/dbgen/speed_seed.c	/^sd_line(int child, DSS_HUGE skip_count)$/;"	f
+sd_order	retired/tpch.original/dbgen/speed_seed.c	/^sd_order(int child, DSS_HUGE skip_count)        $/;"	f
+sd_part	retired/tpch.original/dbgen/speed_seed.c	/^sd_part(int child, DSS_HUGE skip_count)$/;"	f
+sd_psupp	retired/tpch.original/dbgen/speed_seed.c	/^sd_psupp(int child, DSS_HUGE skip_count)$/;"	f
+sd_supp	retired/tpch.original/dbgen/speed_seed.c	/^sd_supp(int child, DSS_HUGE skip_count)$/;"	f
+sdate	retired/tpch.original/dbgen/dsstypes.h	/^    char            sdate[DATE_LEN];$/;"	m	struct:__anon6
+secondData	wflows/dbs/yfinance_sa_create_table_explicit.py	/^secondData=stockData[2:3]$/;"	v
+seed	retired/tpch.original/dbgen/permute.c	/^long seed;$/;"	v
+seed_t	retired/tpch.original/dbgen/dss.h	/^	} seed_t;$/;"	t	typeref:struct:SEED_T
+session	wflows/dbs/info_db.py	/^session = Session()$/;"	v
+sessionmaker	wflows/dbs/info_db.py	/^from sqlalchemy.orm import sessionmaker$/;"	i
+setUp	p2d2/gr-test.py	/^  def setUp(self):$/;"	m	class:DataFrameTest
+setUp	tests/test.py	/^    def setUp(self):$/;"	m	class:TransformTest
+set_files	retired/tpch.original/dbgen/driver.c	/^set_files (int i, int pload)$/;"	f
+set_member	retired/tpch.original/dbgen/dss.h	/^}         set_member;$/;"	t	typeref:struct:__anon2
+set_seeds	retired/tpch.original/dbgen/dss.h	/^EXTERN int	set_seeds;$/;"	v
+set_state	retired/tpch.original/dbgen/bm_utils.c	/^set_state(int table, long sf, long procs, long step, DSS_HUGE *extra_rows)$/;"	f
+setup	retired/tpch.original/dbgen/qgen.c	/^setup(void)$/;"	f
+shipinstruct	retired/tpch.original/dbgen/dsstypes.h	/^    char           shipinstruct[MAXAGG_LEN + 1];$/;"	m	struct:__anon6
+shipmode	retired/tpch.original/dbgen/dsstypes.h	/^    char           shipmode[MAXAGG_LEN + 1];$/;"	m	struct:__anon6
+size	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE           size;$/;"	m	struct:__anon9
+sizes	retired/tpch.original/dbgen/varsub.c	/^long sizes[50] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,$/;"	v
+snum	retired/tpch.original/dbgen/qgen.c	/^int snum = -1;$/;"	v
+source_suffix	p2d2/greentreesnakes/conf.py	/^source_suffix = '.rst'$/;"	v
+spawn_args	retired/tpch.original/dbgen/driver.c	/^char *spawn_args[25];$/;"	v
+spriority	retired/tpch.original/dbgen/dsstypes.h	/^    long            spriority;$/;"	m	struct:__anon7
+sql_DF	wflows/dbs/yfinance_sa_create_table_explicit.py	/^sql_DF = pd.read_sql_table("mystocks",$/;"	v
+sqlite3	p2d2/gr-connect.py	/^import sqlite3$/;"	i
+sqlite3	p2d2/gr-example.py	/^import sqlite3$/;"	i
+sqlite3	p2d2/gr-test.py	/^import sqlite3$/;"	i
+sqlite3	p2d2/main.py	/^import sqlite3$/;"	i
+staff	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE staff ($/;"	t
+staff.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  KEY idx_fk_store_id (store_id),$/;"	F
+staff.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  PRIMARY KEY  (staff_id),$/;"	F
+staff.active	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  store_id TINYINT UNSIGNED NOT NULL,$/;"	F
+staff.address_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  last_name VARCHAR(45) NOT NULL,$/;"	F
+staff.email	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  picture BLOB DEFAULT NULL,$/;"	F
+staff.first_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  staff_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+staff.last_name	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  first_name VARCHAR(45) NOT NULL,$/;"	F
+staff.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  password VARCHAR(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,$/;"	F
+staff.password	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  username VARCHAR(16) NOT NULL,$/;"	F
+staff.picture	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+staff.staff_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE staff ($/;"	F
+staff.store_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  email VARCHAR(50) DEFAULT NULL,$/;"	F
+staff.username	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  active BOOLEAN NOT NULL DEFAULT TRUE,$/;"	F
+staff_list	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE VIEW staff_list$/;"	V
+stat	retired/tpch.original/dbgen/bm_utils.c	86;"	d	file:
+step	retired/tpch.original/dbgen/dss.h	/^EXTERN int  step;$/;"	v
+stockData	wflows/dbs/yfinance_sa_create_table_explicit.py	/^stockData = yfinance.download(["EBAY","AAPL","MSFT"],$/;"	v
+stockData	wflows/dbs/yfinance_sa_create_table_explicit.py	/^stockData=stockData.stack(level=0)$/;"	v
+store	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE store ($/;"	t
+store.KEY	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  UNIQUE KEY idx_unique_manager (manager_staff_id),$/;"	F
+store.address_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  manager_staff_id TINYINT UNSIGNED NOT NULL,$/;"	F
+store.last_update	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  address_id SMALLINT UNSIGNED NOT NULL,$/;"	F
+store.manager_staff_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^  store_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,$/;"	F
+store.store_id	wflows/dbs/sakila-db/sakila-db/sakila-schema.sql	/^CREATE TABLE store ($/;"	F
+strdup	retired/tpch.original/dbgen/config.h	196;"	d
+stream	retired/tpch.original/dbgen/tpcd.h	/^EXTERN int stream;$/;"	v
+strip_comments	retired/tpch.original/dbgen/qgen.c	/^strip_comments(char *line)$/;"	f
+suppkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            suppkey;$/;"	m	struct:__anon10
+suppkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            suppkey;$/;"	m	struct:__anon6
+suppkey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            suppkey;$/;"	m	struct:__anon8
+supplier_t	retired/tpch.original/dbgen/dsstypes.h	/^}               supplier_t;$/;"	t	typeref:struct:__anon10
+sys	p2d2/astpp.py	/^    import sys, tokenize$/;"	i
+sys	p2d2/astpp.py	/^import sys$/;"	i
+sys	p2d2/gr-test.py	/^    import sys$/;"	i
+sys	p2d2/greentreesnakes/astpp.py	/^    import sys, tokenize$/;"	i
+sys	p2d2/greentreesnakes/astpp.py	/^import sys$/;"	i
+sys	p2d2/greentreesnakes/conf.py	/^import sys, os$/;"	i
+table	retired/tpch.original/dbgen/dss.h	/^	long table;$/;"	m	struct:SEED_T
+table	retired/tpch.original/dbgen/dss.h	/^EXTERN long table;$/;"	v
+tax	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            tax;$/;"	m	struct:__anon6
+tbl_open	retired/tpch.original/dbgen/bm_utils.c	/^tbl_open(int tbl, char *mode)$/;"	f
+tdef	retired/tpch.original/dbgen/dss.h	/^}         tdef;$/;"	t	typeref:struct:__anon4
+tdefs	retired/tpch.original/dbgen/driver.c	/^tdef tdefs[] =$/;"	v
+tdefs	retired/tpch.original/dbgen/permute.c	/^tdef tdefs = { NULL };$/;"	v
+tdefs	retired/tpch.original/dbgen/qgen.c	/^tdef tdefs = { NULL };$/;"	v
+tdefs	retired/tpch.original/dbgen/text.c	/^tdef tdefs[1] = { NULL };$/;"	v
+tearDown	p2d2/gr-test.py	/^  def tearDown(self):$/;"	m	class:DataFrameTest
+tearDown	tests/test.py	/^  def tearDown(self):$/;"	m	class:TransformTest
+templates_path	p2d2/greentreesnakes/conf.py	/^templates_path = ['_templates']$/;"	v
+terminators	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution terminators;$/;"	v
+terminators	retired/tpch.original/dbgen/text.c	/^      terminators,$/;"	v
+test_DistinctAll	p2d2/gr-test.py	/^  def test_DistinctAll(self):$/;"	m	class:DataFrameTest
+test_DistinctOneCol	p2d2/gr-test.py	/^  def test_DistinctOneCol(self):$/;"	m	class:DataFrameTest
+test_DistinctTwoCols	p2d2/gr-test.py	/^  def test_DistinctTwoCols(self):$/;"	m	class:DataFrameTest
+test_Eq	p2d2/gr-test.py	/^  def test_Eq(self):$/;"	m	class:DataFrameTest
+test_Ge	p2d2/gr-test.py	/^  def test_Ge(self):$/;"	m	class:DataFrameTest
+test_Gt	p2d2/gr-test.py	/^  def test_Gt(self):$/;"	m	class:DataFrameTest
+test_Le	p2d2/gr-test.py	/^  def test_Le(self):$/;"	m	class:DataFrameTest
+test_Lt	p2d2/gr-test.py	/^  def test_Lt(self):$/;"	m	class:DataFrameTest
+test_Ne	p2d2/gr-test.py	/^  def test_Ne(self):$/;"	m	class:DataFrameTest
+test_New	p2d2/gr-test.py	/^  def test_New(self):$/;"	m	class:DataFrameTest
+test_New	tests/test.py	/^  def test_New(self):$/;"	m	class:TransformTest
+test_ViewJoin	p2d2/gr-test.py	/^  def test_ViewJoin(self):$/;"	m	class:DataFrameTest
+test_collect	p2d2/gr-test.py	/^  def test_collect(self):$/;"	m	class:DataFrameTest
+test_collectWithHeader	p2d2/gr-test.py	/^  def test_collectWithHeader(self):$/;"	m	class:DataFrameTest
+test_complexJoin	p2d2/gr-test.py	/^  def test_complexJoin(self):$/;"	m	class:DataFrameTest
+test_externaltable	p2d2/gr-test.py	/^  def test_externaltable(self):$/;"	m	class:DataFrameTest
+test_groupByComputedCol	p2d2/gr-test.py	/^  def test_groupByComputedCol(self):$/;"	m	class:DataFrameTest
+test_groupByTableAgg	p2d2/gr-test.py	/^  def test_groupByTableAgg(self):$/;"	m	class:DataFrameTest
+test_groupByTableAggStar	p2d2/gr-test.py	/^  def test_groupByTableAggStar(self):$/;"	m	class:DataFrameTest
+test_groupByWithAggTwice	p2d2/gr-test.py	/^  def test_groupByWithAggTwice(self):$/;"	m	class:DataFrameTest
+test_groupby	p2d2/gr-test.py	/^  def test_groupby(self):$/;"	m	class:DataFrameTest
+test_joinTest	p2d2/gr-test.py	/^  def test_joinTest(self):$/;"	m	class:DataFrameTest
+test_limitExec	p2d2/gr-test.py	/^  def test_limitExec(self):$/;"	m	class:DataFrameTest
+test_limitgen	p2d2/gr-test.py	/^  def test_limitgen(self):$/;"	m	class:DataFrameTest
+test_mapDataFrame	p2d2/gr-test.py	/^  def test_mapDataFrame(self):$/;"	m	class:DataFrameTest
+test_namespace	p2d2/greentreesnakes/examples/test_framework/run.py	/^test_namespace = {'assert_equal': assert_equal}$/;"	v
+test_orderingDESC	p2d2/gr-test.py	/^  def test_orderingDESC(self):$/;"	m	class:DataFrameTest
+test_orderingMulti	p2d2/gr-test.py	/^  def test_orderingMulti(self):$/;"	m	class:DataFrameTest
+test_orderingMultiDESC	p2d2/gr-test.py	/^  def test_orderingMultiDESC(self):$/;"	m	class:DataFrameTest
+test_orderingMultiRef	p2d2/gr-test.py	/^  def test_orderingMultiRef(self):$/;"	m	class:DataFrameTest
+test_orderingMultiSingleRef	p2d2/gr-test.py	/^  def test_orderingMultiSingleRef(self):$/;"	m	class:DataFrameTest
+test_orderingdefault	p2d2/gr-test.py	/^  def test_orderingdefault(self):$/;"	m	class:DataFrameTest
+test_selectColumnWithFilter	p2d2/gr-test.py	/^  def test_selectColumnWithFilter(self):$/;"	m	class:DataFrameTest
+test_selectCountCol	p2d2/gr-test.py	/^  def test_selectCountCol(self):$/;"	m	class:DataFrameTest
+test_selectCountStar	p2d2/gr-test.py	/^  def test_selectCountStar(self):$/;"	m	class:DataFrameTest
+test_selectStar	p2d2/gr-test.py	/^  def test_selectStar(self):$/;"	m	class:DataFrameTest
+test_selectStarFilter	p2d2/gr-test.py	/^  def test_selectStarFilter(self):$/;"	m	class:DataFrameTest
+test_selectStarFilterString	p2d2/gr-test.py	/^  def test_selectStarFilterString(self):$/;"	m	class:DataFrameTest
+test_selectStarGroupBy	p2d2/gr-test.py	/^  def test_selectStarGroupBy(self):$/;"	m	class:DataFrameTest
+test_show	p2d2/gr-test.py	/^  def test_show(self):$/;"	m	class:DataFrameTest
+test_showPretty	p2d2/gr-test.py	/^  def test_showPretty(self):$/;"	m	class:DataFrameTest
+test_sliceExec	p2d2/gr-test.py	/^  def test_sliceExec(self):$/;"	m	class:DataFrameTest
+test_sliceGen	p2d2/gr-test.py	/^  def test_sliceGen(self):$/;"	m	class:DataFrameTest
+test_toString	p2d2/gr-test.py	/^  def test_toString(self):$/;"	m	class:DataFrameTest
+test_triJoin	p2d2/gr-test.py	/^  def test_triJoin(self):$/;"	m	class:DataFrameTest
+test_udf	p2d2/gr-test.py	/^  def test_udf(self):$/;"	m	class:DataFrameTest
+texinfo_documents	p2d2/greentreesnakes/conf.py	/^texinfo_documents = [$/;"	v
+text	retired/tpch.original/dbgen/dss.h	/^   char     *text;$/;"	m	struct:__anon2
+text	retired/tpch.original/dbgen/dsstypes.h	/^    char            *text;$/;"	m	struct:__anon12
+tfile	retired/tpch.original/dbgen/tpcd.h	/^EXTERN char *tfile;$/;"	v
+timekey	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            timekey;$/;"	m	struct:__anon11
+tlen	retired/tpch.original/dbgen/dsstypes.h	/^    int            tlen;$/;"	m	struct:__anon9
+tokenize	p2d2/astpp.py	/^    import sys, tokenize$/;"	i
+tokenize	p2d2/greentreesnakes/astpp.py	/^    import sys, tokenize$/;"	i
+totalprice	retired/tpch.original/dbgen/dsstypes.h	/^    DSS_HUGE            totalprice;$/;"	m	struct:__anon7
+tpch2df	p2d2/pandasviewscopystest.py	/^def tpch2df(tbl:str):$/;"	f
+transform	p2d2/main.py	/^def transform(source: str):$/;"	f
+tree	p2d2/greentreesnakes/examples/test_framework/run.py	/^tree = AssertCmpTransformer().visit(tree)$/;"	v
+tree	p2d2/greentreesnakes/examples/test_framework/run.py	/^tree = ast.parse(code)$/;"	v
+tree	p2d2/greentreesnakes/examples/wrap_integers.py	/^tree = IntegerWrapper().visit(tree)$/;"	v
+tree	p2d2/greentreesnakes/examples/wrap_integers.py	/^tree = ast.parse(code)$/;"	v
+txt_np	retired/tpch.original/dbgen/text.c	/^txt_np(char *dest, int sd) $/;"	f	file:
+txt_sentence	retired/tpch.original/dbgen/text.c	/^txt_sentence(char *dest, int sd) $/;"	f	file:
+txt_vp	retired/tpch.original/dbgen/text.c	/^txt_vp(char *dest, int sd) $/;"	f	file:
+type	retired/tpch.original/dbgen/dsstypes.h	/^    char           type[P_TYPE_LEN + 1];$/;"	m	struct:__anon9
+unittest	p2d2/gr-test.py	/^import unittest$/;"	i
+unittest	tests/test.py	/^import unittest$/;"	i
+unjulian	retired/tpch.original/dbgen/bm_utils.c	/^unjulian(long date)$/;"	f
+unlock	retired/tpch.original/dbgen/tests/load_balance.sh	/^unlock()$/;"	f
+upd_num	retired/tpch.original/dbgen/driver.c	/^long upd_num = 0;$/;"	v
+updates	retired/tpch.original/dbgen/dss.h	/^EXTERN long updates;$/;"	v
+usage	retired/tpch.original/dbgen/driver.c	/^usage (void)$/;"	f
+usage	retired/tpch.original/dbgen/dss.h	/^	DSS_HUGE usage;$/;"	m	struct:SEED_T
+usage	retired/tpch.original/dbgen/qgen.c	/^usage(void)$/;"	f
+usage	retired/tpch.original/dbgen/tests/last_row.sh	/^usage()$/;"	f
+usage	retired/tpch.original/dbgen/tests/load_balance.sh	/^usage()$/;"	f
+usage	retired/tpch.original/dbgen/tests/new55.sh	/^usage()$/;"	f
+user	wflows/dbs/yfinance_sa_create_table_explicit.py	/^user = sa.Table('mystocks', metadata,$/;"	v
+validate_options	retired/tpch.original/dbgen/driver.c	/^void validate_options(void)$/;"	f
+value	retired/tpch.original/dbgen/dss.h	/^	DSS_HUGE value;$/;"	m	struct:SEED_T
+varsub	retired/tpch.original/dbgen/varsub.c	/^varsub(int qnum, int vnum, int flags)$/;"	f
+verbose	retired/tpch.original/dbgen/dss.h	/^EXTERN long verbose;$/;"	v
+verbs	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution verbs;$/;"	v
+verbs	retired/tpch.original/dbgen/text.c	/^      verbs,$/;"	v
+version	p2d2/greentreesnakes/conf.py	/^version = '1.0'$/;"	v
+visit_Assert	p2d2/greentreesnakes/examples/test_framework/run.py	/^    def visit_Assert(self, node):$/;"	m	class:AssertCmpTransformer
+visit_FunctionDef	p2d2/ast_example.py	/^    def visit_FunctionDef(self, node):$/;"	m	class:Analyzer
+visit_FunctionDef	p2d2/main.py	/^    def visit_FunctionDef(self, node):$/;"	m	class:Analyzer
+visit_Import	p2d2/ast_example.py	/^    def visit_Import(self, node):$/;"	m	class:Analyzer
+visit_Import	p2d2/main.py	/^    def visit_Import(self, node):$/;"	m	class:Analyzer
+visit_ImportFrom	p2d2/ast_example.py	/^    def visit_ImportFrom(self, node):$/;"	m	class:Analyzer
+visit_ImportFrom	p2d2/main.py	/^    def visit_ImportFrom(self, node):$/;"	m	class:Analyzer
+visit_Num	p2d2/greentreesnakes/examples/wrap_integers.py	/^    def visit_Num(self, node):$/;"	m	class:IntegerWrapper
+vp	retired/tpch.original/dbgen/dss.h	/^EXTERN distribution vp;$/;"	v
+vp	retired/tpch.original/dbgen/text.c	/^      vp;$/;"	v
+vtotal	retired/tpch.original/dbgen/dss.h	/^   DSS_HUGE vtotal;$/;"	m	struct:__anon4
+week	retired/tpch.original/dbgen/dsstypes.h	/^    long            week;$/;"	m	struct:__anon11
+weight	retired/tpch.original/dbgen/dss.h	/^   long      weight;$/;"	m	struct:__anon2
+write_bytecode	p2d2/main.py	/^def write_bytecode(bytecode):$/;"	f
+year	retired/tpch.original/dbgen/dsstypes.h	/^    long            year;$/;"	m	struct:__anon11
+yes_no	retired/tpch.original/dbgen/bm_utils.c	/^yes_no(char *prompt)$/;"	f
+yfinance	wflows/ba_populate_db.py	/^import yfinance$/;"	i
+yfinance	wflows/dbs/info_db.py	/^import yfinance$/;"	i
+yfinance	wflows/dbs/yfinance_sa_create_table_explicit.py	/^import yfinance$/;"	i

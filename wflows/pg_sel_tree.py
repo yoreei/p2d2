@@ -8,31 +8,53 @@ Module(body=[
     Import(names=[
         alias(name='psycopg2', asname=None),
       ], lineno=3, col_offset=0, end_lineno=3, end_col_offset=15),
+    Import(names=[
+        alias(name='pgconn', asname=None),
+      ], lineno=4, col_offset=0, end_lineno=4, end_col_offset=13),
     Assign(targets=[
-        Name(id='conn', ctx=Store(), lineno=5, col_offset=0, end_lineno=5, end_col_offset=4),
-      ], value=Call(func=Attribute(value=Name(id='psycopg2', ctx=Load(), lineno=5, col_offset=7, end_lineno=5, end_col_offset=15), attr='connect', ctx=Load(), lineno=5, col_offset=7, end_lineno=5, end_col_offset=23), args=[
-        Constant(value='host=localhost dbname=tpch user=vagrant password=vagrant', kind=None, lineno=5, col_offset=24, end_lineno=5, end_col_offset=82),
-      ], keywords=[], lineno=5, col_offset=7, end_lineno=5, end_col_offset=83), type_comment=None, lineno=5, col_offset=0, end_lineno=5, end_col_offset=83),
+        Name(id='conn', ctx=Store(), lineno=8, col_offset=0, end_lineno=8, end_col_offset=4),
+      ], value=Call(func=Attribute(value=Name(id='pgconn', ctx=Load(), lineno=8, col_offset=7, end_lineno=8, end_col_offset=13), attr='get', ctx=Load(), lineno=8, col_offset=7, end_lineno=8, end_col_offset=17), args=[], keywords=[], lineno=8, col_offset=7, end_lineno=8, end_col_offset=19), type_comment=None, lineno=8, col_offset=0, end_lineno=8, end_col_offset=19),
     Assign(targets=[
-        Name(id='df', ctx=Store(), lineno=7, col_offset=0, end_lineno=7, end_col_offset=2),
-      ], value=Call(func=Attribute(value=Name(id='pd', ctx=Load(), lineno=7, col_offset=5, end_lineno=7, end_col_offset=7), attr='read_sql_query', ctx=Load(), lineno=7, col_offset=5, end_lineno=7, end_col_offset=22), args=[
-        Constant(value='SELECT * FROM CUSTOMER', kind=None, lineno=7, col_offset=23, end_lineno=7, end_col_offset=47),
-        Name(id='conn', ctx=Load(), lineno=7, col_offset=49, end_lineno=7, end_col_offset=53),
-      ], keywords=[], lineno=7, col_offset=5, end_lineno=7, end_col_offset=54), type_comment=None, lineno=7, col_offset=0, end_lineno=7, end_col_offset=54),
+        Name(id='a', ctx=Store(), lineno=9, col_offset=0, end_lineno=9, end_col_offset=1),
+      ], value=Call(func=Attribute(value=Name(id='pd', ctx=Load(), lineno=9, col_offset=4, end_lineno=9, end_col_offset=6), attr='read_sql_query', ctx=Load(), lineno=9, col_offset=4, end_lineno=9, end_col_offset=21), args=[
+        Constant(value='SELECT * FROM customer', kind=None, lineno=9, col_offset=22, end_lineno=9, end_col_offset=46),
+        Name(id='conn', ctx=Load(), lineno=9, col_offset=48, end_lineno=9, end_col_offset=52),
+      ], keywords=[], lineno=9, col_offset=4, end_lineno=9, end_col_offset=53), type_comment=None, lineno=9, col_offset=0, end_lineno=9, end_col_offset=53),
     Assign(targets=[
-        Name(id='df', ctx=Store(), lineno=10, col_offset=0, end_lineno=10, end_col_offset=2),
-      ], value=Subscript(value=Name(id='df', ctx=Load(), lineno=10, col_offset=5, end_lineno=10, end_col_offset=7), slice=Index(value=Constant(value='c_name', kind=None, lineno=10, col_offset=8, end_lineno=10, end_col_offset=16)), ctx=Load(), lineno=10, col_offset=5, end_lineno=10, end_col_offset=17), type_comment=None, lineno=10, col_offset=0, end_lineno=10, end_col_offset=17),
+        Name(id='p', ctx=Store(), lineno=10, col_offset=0, end_lineno=10, end_col_offset=1),
+      ], value=Subscript(value=Attribute(value=Name(id='a', ctx=Load(), lineno=10, col_offset=4, end_lineno=10, end_col_offset=5), attr='loc', ctx=Load(), lineno=10, col_offset=4, end_lineno=10, end_col_offset=9), slice=ExtSlice(dims=[
+        Slice(lower=None, upper=None, step=None),
+        Index(value=Constant(value='c_custkey', kind=None, lineno=10, col_offset=12, end_lineno=10, end_col_offset=23)),
+      ]), ctx=Load(), lineno=10, col_offset=4, end_lineno=10, end_col_offset=24), type_comment=None, lineno=10, col_offset=0, end_lineno=10, end_col_offset=24),
     Assign(targets=[
-        Name(id='asn', ctx=Store(), lineno=11, col_offset=0, end_lineno=11, end_col_offset=3),
-      ], value=Constant(value=3, kind=None, lineno=11, col_offset=6, end_lineno=11, end_col_offset=7), type_comment=None, lineno=11, col_offset=0, end_lineno=11, end_col_offset=7),
+        Name(id='cop', ctx=Store(), lineno=11, col_offset=0, end_lineno=11, end_col_offset=3),
+      ], value=Call(func=Attribute(value=Subscript(value=Attribute(value=Name(id='a', ctx=Load(), lineno=11, col_offset=6, end_lineno=11, end_col_offset=7), attr='loc', ctx=Load(), lineno=11, col_offset=6, end_lineno=11, end_col_offset=11), slice=ExtSlice(dims=[
+        Slice(lower=None, upper=None, step=None),
+        Index(value=List(elts=[
+            Constant(value='c_custkey', kind=None, lineno=11, col_offset=15, end_lineno=11, end_col_offset=26),
+            Constant(value='c_name', kind=None, lineno=11, col_offset=27, end_lineno=11, end_col_offset=35),
+            Constant(value='c_acctbal', kind=None, lineno=11, col_offset=36, end_lineno=11, end_col_offset=47),
+          ], ctx=Load(), lineno=11, col_offset=14, end_lineno=11, end_col_offset=48)),
+      ]), ctx=Load(), lineno=11, col_offset=6, end_lineno=11, end_col_offset=49), attr='copy', ctx=Load(), lineno=11, col_offset=6, end_lineno=11, end_col_offset=54), args=[], keywords=[], lineno=11, col_offset=6, end_lineno=11, end_col_offset=56), type_comment=None, lineno=11, col_offset=0, end_lineno=11, end_col_offset=56),
     Assign(targets=[
-        Name(id='ans2', ctx=Store(), lineno=12, col_offset=0, end_lineno=12, end_col_offset=4),
-      ], value=Name(id='asn', ctx=Load(), lineno=12, col_offset=7, end_lineno=12, end_col_offset=10), type_comment=None, lineno=12, col_offset=0, end_lineno=12, end_col_offset=10),
+        Name(id='s', ctx=Store(), lineno=12, col_offset=0, end_lineno=12, end_col_offset=1),
+      ], value=Subscript(value=Attribute(value=Name(id='a', ctx=Load(), lineno=12, col_offset=4, end_lineno=12, end_col_offset=5), attr='loc', ctx=Load(), lineno=12, col_offset=4, end_lineno=12, end_col_offset=9), slice=Index(value=Compare(left=Subscript(value=Attribute(value=Name(id='a', ctx=Load(), lineno=12, col_offset=10, end_lineno=12, end_col_offset=11), attr='loc', ctx=Load(), lineno=12, col_offset=10, end_lineno=12, end_col_offset=15), slice=ExtSlice(dims=[
+        Slice(lower=None, upper=None, step=None),
+        Index(value=Constant(value='c_acctbal', kind=None, lineno=12, col_offset=18, end_lineno=12, end_col_offset=29)),
+      ]), ctx=Load(), lineno=12, col_offset=10, end_lineno=12, end_col_offset=30), ops=[
+        Lt(),
+      ], comparators=[
+        Constant(value=800, kind=None, lineno=12, col_offset=31, end_lineno=12, end_col_offset=34),
+      ], lineno=12, col_offset=10, end_lineno=12, end_col_offset=34)), ctx=Load(), lineno=12, col_offset=4, end_lineno=12, end_col_offset=35), type_comment=None, lineno=12, col_offset=0, end_lineno=12, end_col_offset=35),
     Assign(targets=[
-        Name(id='ans3', ctx=Store(), lineno=13, col_offset=0, end_lineno=13, end_col_offset=4),
-      ], value=BinOp(left=Constant(value=3, kind=None, lineno=13, col_offset=7, end_lineno=13, end_col_offset=8), op=Add(), right=Constant(value=5, kind=None, lineno=13, col_offset=9, end_lineno=13, end_col_offset=10), lineno=13, col_offset=7, end_lineno=13, end_col_offset=10), type_comment=None, lineno=13, col_offset=0, end_lineno=13, end_col_offset=10),
-    Expr(value=Call(func=Name(id='print', ctx=Load(), lineno=15, col_offset=0, end_lineno=15, end_col_offset=5), args=[
-        Name(id='df', ctx=Load(), lineno=15, col_offset=7, end_lineno=15, end_col_offset=9),
-      ], keywords=[], lineno=15, col_offset=0, end_lineno=15, end_col_offset=10), lineno=15, col_offset=0, end_lineno=15, end_col_offset=10),
+        Subscript(value=Attribute(value=Name(id='a', ctx=Load(), lineno=13, col_offset=0, end_lineno=13, end_col_offset=1), attr='loc', ctx=Load(), lineno=13, col_offset=0, end_lineno=13, end_col_offset=5), slice=Index(value=Tuple(elts=[
+            Compare(left=Subscript(value=Name(id='a', ctx=Load(), lineno=13, col_offset=6, end_lineno=13, end_col_offset=7), slice=Index(value=Constant(value='c_acctbal', kind=None, lineno=13, col_offset=8, end_lineno=13, end_col_offset=19)), ctx=Load(), lineno=13, col_offset=6, end_lineno=13, end_col_offset=20), ops=[
+                Lt(),
+              ], comparators=[
+                Constant(value=800, kind=None, lineno=13, col_offset=23, end_lineno=13, end_col_offset=26),
+              ], lineno=13, col_offset=6, end_lineno=13, end_col_offset=26),
+            Constant(value='c_acctbal', kind=None, lineno=13, col_offset=28, end_lineno=13, end_col_offset=39),
+          ], ctx=Load(), lineno=13, col_offset=6, end_lineno=13, end_col_offset=39)), ctx=Store(), lineno=13, col_offset=0, end_lineno=13, end_col_offset=40),
+      ], value=Constant(value=4, kind=None, lineno=13, col_offset=43, end_lineno=13, end_col_offset=44), type_comment=None, lineno=13, col_offset=0, end_lineno=13, end_col_offset=44),
   ], type_ignores=[])
 
