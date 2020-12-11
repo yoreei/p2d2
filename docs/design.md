@@ -41,9 +41,11 @@ pd.set_option('mode.chained_assignment','raise')
 
 This will raise an exception in the above example. However, sometimes the exception is not raised:
 
+```python
 z = pd.DataFrame([[11,12,13],[21,22,23],[31,32,33]]
 y = z.iloc[:,0] # take column [11,12,13]
 y.iloc[2]=500
+```
 
 But we are not done with views yet:
 
@@ -123,18 +125,22 @@ vi = a.iloc[:, 0:0] # copy
 ```
 
 ### Relational selection can be done only with this syntax: .loc[condition]
+
 ```python
 sel = a.loc[a.loc[:,'custkey']<5]
 sel._is_view # False
 ```
+
 Which is similar to SQL: `WHERE custkey < 5`
 My own testing and Stackoverflow suggest that .loc[.loc[condition]] will always return a copy.
 
 ### Relational projection can be done only with indexes
+
 ```python
 proj = a.iloc[:, 0] # view
 projc= a.iloc[:, 0:0] # copy
 ```
+
 But this is useless to us because we are working with an RDBMS
 
 ### Conclusion
