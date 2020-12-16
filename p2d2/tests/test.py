@@ -3,11 +3,8 @@ import sqlite3
 
 import re
 
-import grizzly
-from grizzly.aggregates import AggregateType
-from grizzly.sqlgenerator import SQLGenerator
-from grizzly.relationaldbexecutor import RelationalExecutor
-
+import p2d2.__main__
+import p2d2.nodes as nodes
 class CodeMatcher(unittest.TestCase):
     
 
@@ -62,19 +59,34 @@ conn = pgconn.get()
 
     def tearDown(self):
         del self.testcode
+    
+    def test_procedural_representation(self):
 
-    def test_proj(self):
-        self.testcode +="""
+        code ="""
 a = pd.read_sql_query('SELECT * FROM customer', conn)
-b = a.loc[:,['c_custkey','c_name','c_acctbal']] # we assume a projection is always a copy
+b = a.loc[:,['c_custkey','c_nationkey','c_acctbal']] # we assume a projection is always a copy
 machineLearningAlgorithm(b)
-"""
-        opR = p2b2.code2OpR()
-        pull = p2b2.getPull('b')
-        actual = p2b2.pull2sql(pull)
+ignoreme()
+    """
+        actual=p2d2.__main__.code2pr(code)
         
-        expected ='SELECT c_custkey, c_name, c_acctbal FROM customer'
-        self.assertEqual(actual, expected)
+        assert type(actual.body[0]) == nodes.P2D2_Assign
+        assert type(actual.body[1]) == nodes.P2D2_Assign
+        assert type(actual.body[2]) == nodes.Action
+        
+
+#    def test_proj(self):
+#        self.testcode +="""
+#a = pd.read_sql_query('SELECT * FROM customer', conn)
+#b = a.loc[:,['c_custkey','c_name','c_acctbal']] # we assume a projection is always a copy
+#machineLearningAlgorithm(b)
+#"""
+#        opR = p2b2.code2OpR()
+#        pull = p2b2.getPull('b')
+#        actual = p2b2.pull2sql(pull)
+#        
+#        expected ='SELECT c_custkey, c_name, c_acctbal FROM customer'
+#        self.assertEqual(actual, expected)
 
 #    def test_groupby(self):
 #        df = grizzly.read_table("events")

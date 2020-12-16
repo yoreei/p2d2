@@ -5,11 +5,12 @@ import _ast
 #import grizzly
 #import sqlite3
 
-import argparse_factory
-import nodes
-import astpp
+from . import argparse_factory
+from . import nodes
+from . import astpp
 
 class Ast2pr(ast.NodeTransformer):
+    ids = [] # saves var names for Sink detection
 
     def visit_Assign(self, node):
 #        return ast.copy_location(ast.Subscript(
@@ -26,16 +27,15 @@ class Ast2pr(ast.NodeTransformer):
                 dbtable = nodes.DBTable(dtable_conn, dtable_src, dtable_orig)
 
                 tar=node.targets[0].id 
+                Ast2pr.ids +=[tar]
                 src = dbtable
                 inPlace = False # because rel. table -> variable
                 orig = node
-                p2b2_assign = nodes.P2B2_Assign(tar, inPlace, src, orig) 
-                return p2b2_assign 
+                p2d2_assign = nodes.P2D2_Assign(tar, inPlace, src, orig) 
+                return p2d2_assign 
         except (AttributeError):
 
             pass
-  #      print('here')
-  #      breakpoint()
         try:
  
             if type(node.value)==_ast.Subscript and \
@@ -54,54 +54,181 @@ type(node.value.value)==_ast.Attribute and \
                         proj = nodes.Projection(cols,src,node)
                         
                         tar = node.targets[0].id
+                        Ast2pr.ids += [tar]
                         inPlace = tar == src
-                        return nodes.P2B2Assign(tar,inPlace,proj,node)
-        except (AttributeError):
+                        return nodes.P2D2_Assign(tar,inPlace,proj,node)
+        except AttributeError as e:
+            print(e)
             return node
-                     
+        
+#        if is_action(node):
+def iter_ids(tree):
+#TODO with getattr()
+    for node in tree.body:
+        if type(node)==nodes.P2D2_Assign:
+            yield node.tar
+
+def wrap_actions(tree):
+
+    for count in range(0,len(tree.body)):
+        topnode = tree.body[count]
+        if not isinstance(topnode, nodes.P2D2_Node):
+            for child in ast.walk(topnode):
+                if type(child)==ast.Name and child.id in iter_ids(tree):
+                    action = nodes.Action(child.id, topnode)
+                    tree.body[count] = action
+def insert_pulls(tree):
+    """
+    Works in-place
+    """
+    for count in reversed(range(len(tree.body))):
+        if type(tree.body[count]) == nodes.Action:
+            tar = tree.body[count].src.name
+            src = tree.body[count].src.name
+            tree.body.insert(count, nodes.Pull(tar, src, None))
             
-
-
-
-#    Assign(targets=[
-#        Name(id='a', ctx=Store(), lineno=9, col_offset=0, end_lineno=9, end_col_offset=1),
-#      ], value=Call(func=Attribute(value=Name(id='pd', ctx=Load(), lineno=9, col_offset=4, end_lineno=9, end_col_offset=6), attr='read_sql_query', ctx=Load(), lineno=9, col_offset=4, end_lineno=9, end_col_offset=21), args=[
-#        Constant(value='SELECT * FROM customer', kind=None, lineno=9, col_offset=22, end_lineno=9, end_col_offset=46),
-#        Name(id='conn', ctx=Load(), lineno=9, col_offset=48, end_lineno=9, end_col_offset=52),
-#      ], keywords=[], lineno=9, col_offset=4, end_lineno=9, end_col_offset=53), type_comment=None, lineno=9, col_offset=0, end_lineno=9, end_col_offset=53),
-
+                    
+    
 def main():
     args = argparse_factory.parse_args()
     with open(args.filepath, "r") as source:
         analyze(source)
 
-#def transform(source: str):
-#    ir = code2ir(source)
-#    bytecode = ir2bytecode(ir)
-#    write_bytecode(bytecode)
-#
-#    tree = ast.parse(source.read())
-#
-#    analyzer = Analyzer()
-#    analyzer.visit(tree)
-#    analyzer.report()
+def lp(*trees, dump=astpp.dump):
+    """long print"""
+    breakpoint()
+    for tree in trees:
+        print(dump(tree))
+        print('\n-------\n')
+def sp(*trees):
+    def _short_print(tree):
+        return tree.body
+    for tree in trees:
+        for el in tree.body:
+            print(type(el).__name__)
 
-def code2pr(code=None):
+def code2pr(code):
+    """
+    Converts a code string to Procedural Representation (#1 ir). There are 2 substages to achieving PR:
+    1. Wrap supported operations
+    2. Wrap actions (depends on completion of 1.)
+    """
+    codetree = ast.parse(code)
+    pr= Ast2pr().visit(codetree)
+    wrap_actions(pr)
+    insert_pulls(pr)
+    return pr
+
+def code2imr(code=None):
+    """
+    """
+
     code ="""
 a = pd.read_sql_query('SELECT * FROM customer', conn)
-b = a.loc[:,['c_custkey','c_name','c_acctbal']] # we assume a projection is always a copy
+b = a.loc[:,['c_custkey','c_nationkey','c_acctbal']] # we assume a projection is always a copy
+b = b.loc[:,['c_acctbal']]
+b = b.loc[:,['c_acctbal']]
+b = b.loc[:,['c_acctbal']]
 machineLearningAlgorithm(b)
-"""
-    codetree = ast.parse(code)
+print(a)
+print(b)
+ignoreme()
+    """
+    def name_update(body, name):
+        def up_src(node, name):
+            src = getattr(node, 'src', None)
 
-    return Ast2pr().visit(codetree)
+            if type(src) == nodes.NameStep:
+                if src.name == name:
+                    src.count+=1
+            else:
+                up_src(node.src, name)
 
-def code2imr(code):
+        def up_tar(node, name):
+            #not all of our nodes have a tar
+            if getattr(node, 'tar', None) == name:
+                node.tar.count+=1
+
+        for node in body:
+            if isinstance(node, nodes.P2D2_Node):
+                up_src(node, name)
+                up_tar(node, name)
+        
     pr = code2pr(code)
+    namecount={}
+    for i in range(0,len(pr.body)):
+        node = pr.body[i]
+        if getattr(node, 'inPlace', False):
+            node.tar.count+=1
+            name_update(pr.body[i+1:], node.tar.name)
+    
+    imr=pr
+    breakpoint()
+    return imr            
+    
     
 
-def code2opR(code):
+def code2opR(code=None):
+    code ="""
+a = pd.read_sql_query('SELECT * FROM customer', conn)
+b = a.loc[:,['c_custkey','c_nationkey','c_acctbal']] # we assume a projection is always a copy
+b = b.loc[:,['c_acctbal']]
+b = b.loc[:,['c_acctbal']]
+b = b.loc[:,['c_acctbal']]
+machineLearningAlgorithm(b)
+print(a)
+print(b)
+ignoreme()
+    """
+#    def isoptimized(node):
+#        if getrootattr(node)==nodes.DBTable:
+#            return True
+#        else:
+#            return False
+#    def optimize(body, node):
+#        if isoptimized(node):
+#            return node
+#        else:
+#            getrootattr(node, 'src')=findbytar(body,  
+
+    def getrootattr(node, attr):
+        """
+        Follows the attribute and the attribute's attribute, etc. until a node no longer has the specified attribute. Then, return the node
+        """
+        if not hasattr(node, attr):
+            return node
+        else:
+            return getrootattr(getattr(node, attr), attr)   
+    def setrootattr(node, attr):
+        pass
+        #TODO
+        
+    def findbytar(body, tar:nodes.NameStep):
+        for node in body:
+            if getattr(node, 'tar', None).__repr__() == tar.__repr__():
+                return node 
+
+
+    def build_pipeline(body, node):
+        print('build_pipeline on node', node)
+        if type(getrootattr(node, 'src')) == nodes.DBTable:
+            return
+        else:
+            root = getrootattr(node, 'src')
+            root = findbytar(body, getrootattr(node, 'src'))
+            breakpoint()
+            return build_pipeline(body, node)
+        
     imr = code2imr(code)
+    
+    for node in imr.body:
+        print('main loop on node:', node)
+        if type(node)==nodes.Pull:
+            build_pipeline(imr.body, node) 
+
+    opr=imr
+    breakpoint()
+    return opr
 
 def code2bytecode(code):
     pass
@@ -131,6 +258,35 @@ def write_bytecode(bytecode):
 #    def report(self):
 #        pprint(self.stats)
 
+#def transform(source: str):
+#    ir = code2ir(source)
+#    bytecode = ir2bytecode(ir)
+#    write_bytecode(bytecode)
+#
+#    tree = ast.parse(source.read())
+#
+#    analyzer = Analyzer()
+#    analyzer.visit(tree)
+#    analyzer.report()
 
-#if __name__ == "__main__":
+#def wrap_src(body):
+#    def _drill_down(node, attr_name):
+#        attr = getattr(node, attr_name, None)
+#
+#        if type(attr) == str:
+#            setattr(node, attr_name, NameStep(attr)
+#        elif hasattr(attr, attr_name):
+#            _drill_down(attr, attr_name)
+#
+#    for node in body:
+#        _drill_down(node)
+
+
+#class NameDict(dict):
+#    def stepname(self, name:str):
+#        return name+'_p2d2_'+str(self.get(name, 1))
+
+if __name__ == "__main__":
+    #code2opR()
+    code2imr()
 #    main()
