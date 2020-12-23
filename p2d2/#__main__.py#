@@ -29,8 +29,8 @@ class Ast2pr(ast.NodeTransformer):
                 src = dbtable
                 inPlace = False # because rel. table -> variable
                 orig = node
-                p2b2_assign = nodes.P2B2_Assign(tar, inPlace, src, orig) 
-                return p2b2_assign 
+                p2d2_assign = nodes.P2B2_Assign(tar, inPlace, src, orig) 
+                return p2d2_assign 
         except (AttributeError):
 
             pass

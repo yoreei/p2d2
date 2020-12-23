@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bento/ubuntu-20.04"
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.hostname = "p2b2"
-  config.vm.define "p2b2"
+  config.vm.hostname = "p2d2"
+  config.vm.define "p2d2"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

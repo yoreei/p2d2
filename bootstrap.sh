@@ -23,7 +23,7 @@ ln -s /vagrant/p2d2/astpp.py /home/vagrant/bin/astpp
 
 
 rm ~/.bashrc
-echo export PYTHONPATH=$PYTHONPATH:/vagrant/p2b2/p2b2 >> ~/.bashrc
+echo export PYTHONPATH=$PYTHONPATH:/vagrant/p2d2/p2d2 >> ~/.bashrc
 echo alias ls=\'ls -F\' >> ~/.bashrc
 echo alias pd=\'python3 -m pdb -c continue\' >> ~/.bashrc
 #sudo apt-get install -y vim ack ack-grep git

@@ -56,7 +56,6 @@ def parseprint(code, filename="<string>", mode="exec", type_comments=False,
     else:
         node = parse(code, mode=mode)   # An ode to the code
     print(dump(node, **kwargs))
-    breakpoint()
 
 # Short name: pdp = parse, dump, print
 pdp = parseprint

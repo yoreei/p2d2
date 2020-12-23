@@ -219,24 +219,24 @@ Notice how tbl_a is mutable.
 There are benefits and downsides to adding this representation. The idea of the IMR is to force the representation of the dataflow to happen as if all variables are immutable (think Haskell). This alone represents a nudge away from Python's procedural style and towards the style of SQL queries we aim to generate. Admittedly, DBMSs themselves do not have mutability constraints, after all one can freely create and manipulate (temporary) tables, however, due to SQL's declarativeness we usually do not think of mutable dataframes while constructing queries, instead, the focus is on stringing operations together to achieve the result.
 
 ```python
-Assign(tar = tbl_a_p2b2state_1, src = DBTable(name='customer', conn=conn))
-Assign(tar = tbl_b, src = Projection(cols = ['c_custkey', 'c_name', 'c_acctbal'], src = tbl_a_p2b2state_1))
+Assign(tar = tbl_a_p2d2state_1, src = DBTable(name='customer', conn=conn))
+Assign(tar = tbl_b, src = Projection(cols = ['c_custkey', 'c_name', 'c_acctbal'], src = tbl_a_p2d2state_1))
 Assign (tar = tbl_c, src = Selection (cols = ['acctbal'], cond = '<800', src = tbl_b))
-Assign (tar = tbl_a_p2b2state_2, src = Update (sel = Selection(..), proj = Proj(..), op = '=4' src = tbl_a_p2b2state_1)),
+Assign (tar = tbl_a_p2d2state_2, src = Update (sel = Selection(..), proj = Proj(..), op = '=4' src = tbl_a_p2d2state_1)),
 Pull(tar= 'var_b', src = tbl_b),
 Action(dependency = 'var_a'),
-Pull(tar= 'var_a', src = tbl_a_p2b2state_2),
+Pull(tar= 'var_a', src = tbl_a_p2d2state_2),
 Action(dependency = 'var_a'),
 Ignored(),
 Ignored(),
 ...
 ```
 
-Now it is much clearer that we are pulling the data-state tbl_a_p2b2state_2 into the Python runtime. tbl_a_p2b2state_2 doesn't change with time, so it is not a question of WHEN to pull var_a, only WHAT query generates it. 
+Now it is much clearer that we are pulling the data-state tbl_a_p2d2state_2 into the Python runtime. tbl_a_p2d2state_2 doesn't change with time, so it is not a question of WHEN to pull var_a, only WHAT query generates it. 
 
 #### Note on Views:
 
-If we decide to support Views we will have to keep the attribute `inPlace = True`. That's important because we do not yet want to forget about the fact that the Assign operation is done in place. In this scenario, var_b (which is tbl_b pulled to the Python runtime.) is actually a selection of tbl_a_p2b2state_2, not tbl_a_p2b2state_1! In the next step, we "resolve" (delete and forget about) views by changing the source of the selection inside the view.
+If we decide to support Views we will have to keep the attribute `inPlace = True`. That's important because we do not yet want to forget about the fact that the Assign operation is done in place. In this scenario, var_b (which is tbl_b pulled to the Python runtime.) is actually a selection of tbl_a_p2d2state_2, not tbl_a_p2d2state_1! In the next step, we "resolve" (delete and forget about) views by changing the source of the selection inside the view.
 
 #### Available Nodes (IMR):
 
@@ -250,7 +250,7 @@ The last part of the translation pipeline, OpR resembles an AST tree of a progra
 
     DBTable=customer
         |
-        a_1 # short for tbl_a_p2b2state_*
+        a_1 # short for tbl_a_p2d2state_*
         /\
       b    a_2
      /\    |
@@ -285,7 +285,7 @@ This example is too short to demonstrate forks. Lets imagine there is an addtion
 ```
     DBTable=customer
         |
-        a_1 # short for tbl_a_p2b2state_*
+        a_1 # short for tbl_a_p2d2state_*
         |
         f
         /\

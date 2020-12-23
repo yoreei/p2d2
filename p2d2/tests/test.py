@@ -81,9 +81,9 @@ ignoreme()
 #b = a.loc[:,['c_custkey','c_name','c_acctbal']] # we assume a projection is always a copy
 #machineLearningAlgorithm(b)
 #"""
-#        opR = p2b2.code2OpR()
-#        pull = p2b2.getPull('b')
-#        actual = p2b2.pull2sql(pull)
+#        opR = p2d2.code2OpR()
+#        pull = p2d2.getPull('b')
+#        actual = p2d2.pull2sql(pull)
 #        
 #        expected ='SELECT c_custkey, c_name, c_acctbal FROM customer'
 #        self.assertEqual(actual, expected)
