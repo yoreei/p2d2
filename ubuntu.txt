@@ -1,5 +1,5 @@
 python3-pip
 postgresql
 postgresql-contrib
+postgresql-plpython3-12
 libpq-dev
-
