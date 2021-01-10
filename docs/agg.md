@@ -130,3 +130,26 @@ _Syntax for non-grouped (grand total) aggregations_:
 df2.max().to_frame().T
 ```
 
+# Mapping Pandas Aggregations to SQL Aggregations
+
+Pandas           | Numpy       |Scipy (if exists) | Postgres  | MySQL (if different)
+-------------------------------|---------------------------------------------------
+DataFrame.max    | numpy.amax  |                  | MAX()     |
+DataFrame.mean   | numpy.mean  |                  | AVG()     |
+DataFrame.min    | numpy.amin  |                  | MIN()     |
+DataFrame.sum    | numpy.sum   |                  | SUM()     |
+DataFrame.std    | numpy.std   |                  | STDDEV()  | STD()
+DataFrame.var    | numpy.var   |                  | VARIANCE()|
+DataFrame.mode   | NONE        | scipy.stats.mode | MODE()    |
+DataFrame.median | numpy.median|                  | external\*|
+DataFrame.sample |             |                  | external\*|
+
+external\*: This function is not part of the built-in functions of the RDBMS, but can be added either through SQL or through C:
+
+Ulib agg https://wiki.postgresql.org/wiki/Ulib_agg contains useful snippets for aggregate functions not part of Postgres' SQL:
+
+*median*
+
+*random* (similar to Pandas sample)
+
+For simplicity, the optimizer will assume that the function definitions of *median* and *random* are loaded in the RDBMS.

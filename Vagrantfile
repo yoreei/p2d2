@@ -20,7 +20,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network"
   # customize memory. Be generous
   config.vm.provider "hyperv" do |v|
-      v.memory = 24576
+      v.maxmemory = 24576
+      v.memory = 512
       v.cpus = 4
   end
   # Disable automatic box update checking. If you disable this, then

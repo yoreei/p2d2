@@ -1,6 +1,12 @@
 # data
 *.tbl
 
+# vagrant
+.vagrant/
+
+# retired
+.retired/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,3 +18,13 @@ __pycache__/
 # vim
 tags/
 *.swp
+
+#other
+*.jpeg
+*.jpg
+*.png
+*.pdf
+
+.vagrant/machines/p2d2/hyperv/synced_folders
+*.vhdx
+.vagrant/machines/p2d2/hyperv/Virtual Hard Disks/ubuntu-20.04-amd64.vhdx
