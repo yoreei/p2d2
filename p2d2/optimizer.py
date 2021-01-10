@@ -3,6 +3,7 @@ import ast
 import _ast
 
 from . import astpp
+pp = astpp.parseprint
 # https://stackoverflow.com/questions/31174295/getattr-and-setattr-on-nested-subobjects-chained-properties
 import functools
 
@@ -25,16 +26,46 @@ def getsub(subscriptable, index, default):
         subvalue = default
     return subvalue
 
-nodedict={}
+def getkeyword(keywords, arg):
+    for keyword in keywords:
+         if keyword.arg==arg:
+            value = keyword.value
+    return value
 
-def nestify_query(query:str, alias):
-    """
-    Makes sure that the `query` can be the subquery of another query
-    """
-    # nice to have: check if query already nestified
-    return f'({query} AS {alias})' 
+class Nodedict(dict):
+    def addnode(self, tar, node):
+        self[tar] = self.get(tar,{})
+        self[tar].update(node)
+
+nodedict=Nodedict()
 
 class Ast2pr(ast.NodeTransformer):
+    def is_proj(self, node):
+        if type(node.value)==_ast.Subscript and \
+            rgetattr(node, 'value.value.attr')=='loc' and \
+            type(node.value.slice)==_ast.ExtSlice:
+                return True
+        return False
+    
+    def is_sel(self, node):
+        if type(node.value)==_ast.Subscript and \
+            rgetattr(node, 'value.value.attr')=='loc' and \
+            type(node.value.slice)==_ast.Index and \
+            type(node.value.slice.value)==_ast.Name:
+                return True
+        return False
+    def is_mask(self,node):
+        if hasattr(node.value, 'comparators'):
+            return True
+        return False
+    def is_join(self, node):
+        if type(node.value)==ast.Call and \
+            type(node.value.func)==ast.Attribute and \
+            node.value.func.attr=='merge':
+                return True         
+    def is_agg():
+        pass
+        #TODO
 
     def visit_Assign(self, node):
 #        return ast.copy_location(ast.Subscript(
@@ -47,34 +78,116 @@ class Ast2pr(ast.NodeTransformer):
             query = node.value.args[0].value # 'SELECT * FROM customer'
             conn = node.value.args[1].id # 'conn'
             #src = dtable_query.split()[-1] # 'customer'
+            #TODO use addnode
             nodedict[tar]={
                 node.lineno:{ 
-                    'sql': nestify_query(query, f'{tar}_{node.lineno}'),
-                    'unresolved': None}}
+                    'sql': query,
+                    'unresolved': []}}
             return
         
-        dims = rgetattr(node, 'value.slice.dims', None)
-        proj = rgetattr(getsub(dims,1,None), 'value.elts', None)
-        if proj:
+        if self.is_proj(node): 
+        #dims = rgetattr(node, 'value.slice.dims', None)
+        #proj = rgetattr(getsub(dims,1,None), 'value.elts', None)
+            proj = node.value.slice.dims[1].value.elts
             cols=[e.value for e in proj]
             src = node.value.value.value.id
             tar = node.targets[0].id
-            nodedict[tar] = nodedict.get(tar,{})
-            nodedict[tar].update({
+            nodedict.addnode(tar, {
                 node.lineno:{
-                    'sql': '(SELECT '+','.join(cols)+' FROM {} AS '+f'{tar}_{node.lineno})',
-                    'unresolved': src}})
+                    'sql': 'SELECT '+','.join(cols)+' FROM {}',
+                    'unresolved': [src]}})
             return
-
-        return node
         
-def resolve(name, lineno):
-    if nodedict[name][lineno]['unresolved'] == None:
-        return nodedict[name][lineno]['sql']
-    else:
-        unresolved = nodedict[name][lineno]['unresolved']
-        return nodedict[name][lineno]['sql'].format(\
-            resolve(unresolved, lastdef(unresolved, lineno)))
+        if self.is_mask(node):
+            case={
+            _ast.LtE:'<=',
+            _ast.Lt:'<',
+            _ast.GtE:'>=',
+            _ast.Gt:'>',
+            _ast.Eq:'==',
+            _ast.NotEq:'!='
+            }
+            compare_type = case[node.value.ops[0].__class__] # '<'
+            col = node.value.left.slice.dims[1].value.value # 'c_custkey'
+            comparator = str(node.value.comparators[0].value) # '5'
+            tar = node.targets[0].id
+            
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql': col+compare_type+comparator,
+                    'unresolved': []}})
+            return
+        if self.is_sel(node):
+            tar = node.targets[0].id
+            src = node.value.value.value.id
+            maskname=node.value.slice.value.id
+           
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql': 'SELECT * FROM {} WHERE {{}}',
+                    'unresolved': [src, maskname]}})
+            return
+    
+        if self.is_join(node):
+            tar = node.targets[0].id 
+            left = node.value.func.value.id
+            keywords = node.value.keywords
+            right = getkeyword(keywords, 'right').id
+            how = getkeyword(keywords, 'how').value
+            left_on = getkeyword(keywords, 'left_on').value
+            right_on = getkeyword(keywords, 'right_on').value
+            
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql':'SELECT * FROM {} INNER JOIN {{}} ON '+f'{left_on}={right_on};',
+                    'unresolved': [left, right]}})
+            return
+            
+        
+        return node
+def formatsql(sql:str, put:str, alias:str):
+    """
+    When a query is a subquery, it needs to be enclosed in braces and given an alias, (outside of the braces, like this:
+
+    ... FROM (SELECT * FROM CUSTOMER) AS c1
+    
+    The problem is that at the top level, an SQL query CANNOT be formatted as a subquery, i.e:
+    
+    (SELECT * FROM CUSTOMER) AS c1
+    
+    is an invalid SQL query if run alone like this. This function makes sure that only real subqueries are aliased.
+    """
+    enclosed = '('+put+f') AS {alias}'
+    return sql.format(enclosed)
+        
+def resolve(name, callno):
+    """callno is the line where the unresolved names are called, Not where they are defined"""
+    defno = lastdef(name, callno)
+    unresolved = nodedict[name][defno]['unresolved']
+    sql = nodedict[name][defno]['sql']
+    for child in unresolved:
+        alias = child+'_'+str(defno)
+        sql = formatsql(sql, resolve(child, defno), alias) 
+    
+    return sql
+
+#def resolve(unresolved, callno):
+#    """callno is the line where the unresolved names are called, Not where they are defined"""
+#    name = unresolved.pop(0)
+#    if unresolved != []:
+#        print('>1!')
+#        first = resolve([name], callno)
+#        last = resolve(unresolved, callno)
+#        breakpoint()
+#        return first, last 
+#    
+#    defno = lastdef(name, callno)
+#    new_unresolved = nodedict[name][defno]['unresolved']
+#    if new_unresolved == None:
+#        return nodedict[name][defno]['sql']
+#    else:
+#        return nodedict[name][defno]['sql'].format(\
+#            *resolve(new_unresolved.copy(), defno))
     
 def lastdef(name, belowline):
     belowkeys=[k for k in nodedict[name].keys() if k<belowline]
@@ -82,6 +195,7 @@ def lastdef(name, belowline):
     return max(belowkeys)
 
 def requires(node):
+    """Use on potential Actions to see if they depend on optimized nodes"""
     reqs=[]
     for child in ast.walk(node):
         if type(child)==ast.Name and child.id in nodedict.keys():
@@ -109,9 +223,11 @@ def insert_pulls(tree):
     for node in tree.body:
         reqs = requires(node)
         for name in reqs:
+            print(name)
+            print(node.lineno)
             lastdef_lineno = lastdef(name, node.lineno)
             if (name, lastdef_lineno) in pulled: continue
-            sql = resolve(name, lastdef_lineno) 
+            sql = resolve(name, node.lineno) 
             opt_body+=[gen_pullnode(name, lastdef_lineno, sql)]
             pulled+=[(name, lastdef_lineno)]
 
@@ -138,32 +254,18 @@ import time
 #        fc.write(py_compile.MAGIC)
 
 def optimize(source:str):
+    global parsetree
     parsetree = ast.parse(source)
     # removes supported nodes from parsetree in-place and populates global nodedict
     Ast2pr().visit(parsetree)
     opt_parsetree = insert_pulls(parsetree)
-    # breakpoint()
+    breakpoint()
     return compile(opt_parsetree, 'optimized_ast', 'exec')
 
 if __name__=='__main__':
     # This submodule is to be executed from __main__.py, this is here for interactive debugging
-    testcode="""
-import pandas as pd
-import psycopg2
-
-conn = psycopg2.connect(f"host=localhost dbname=tpch user=vagrant password=vagrant")
-
-a = pd.read_sql_query('SELECT * FROM customer', conn)
-b = a.loc[:,['c_custkey','c_nationkey','c_acctbal']] # we assume a projection is always a copy
-b = b.loc[:,['c_acctbal']]
-b = b.loc[:,['c_acctbal']]
-b = b.loc[:,['c_acctbal']]
-print(b)
-print(a)
-print(b)
-print("the end")
-"""
-    # populate nodedict
-    optimize(testcode) 
+    with open('wflows/projsel.py', "r") as source_file:
+        source = source_file.read()
     
-    print(resolve('b', lastdef('b', 100)))
+    optimize(source) 
+    

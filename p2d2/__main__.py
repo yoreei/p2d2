@@ -18,13 +18,11 @@ if __name__ == "__main__":
     with open(args.filepath, "r") as source_file:
         source = source_file.read()
 
-    unoptimized_bcode = compile(source, args.filepath, 'exec')
     optimized_bcode = optimizer.optimize(source)
-    breakpoint()
+    unoptimized_bcode = compile(source, args.filepath, 'exec')
     
-    time_unopt = bench(unoptimized_bcode)
-    print('done benching unopt')
     time_opt = bench(optimized_bcode)
+    time_unopt = bench(unoptimized_bcode)
     report.loc[len(report)] = [args.filepath,time_unopt,time_opt]
     
     print(report)

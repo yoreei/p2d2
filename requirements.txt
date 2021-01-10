@@ -1,0 +1,6 @@
+psycopg2
+modin[ray]
+scikit-learn
+pandas
+#grizzly-sql
+#beautifultable #grizzly tests dependency

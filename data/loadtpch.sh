@@ -13,17 +13,16 @@ $(<dss.ddl)
 EOF
 
 #copy data to tables
-psql COPY customer FROM '/vagrant/data/customer.tbl' WITH DELIMITER '|';
 
-#psql <<EOF
-#\c tpch;
-#COPY customer FROM '/vagrant/data/customer.tbl' WITH DELIMITER '|';
-#COPY lineitem FROM '/vagrant/data/lineitem.tbl' WITH DELIMITER '|';
-#COPY nation FROM '/vagrant/data/nation.tbl' WITH DELIMITER '|';
-#COPY orders FROM '/vagrant/data/orders.tbl' WITH DELIMITER '|';
-#COPY part FROM '/vagrant/data/part.tbl' WITH DELIMITER '|';
-#COPY partsupp FROM '/vagrant/data/partsupp.tbl' WITH DELIMITER '|';
-#COPY region FROM '/vagrant/data/region.tbl' WITH DELIMITER '|';
-#COPY supplier FROM '/vagrant/data/supplier.tbl' WITH DELIMITER '|';
-#EOF
+psql <<EOF
+\c tpch;
+\COPY customer FROM 'customer.tbl' WITH DELIMITER '|';
+\COPY lineitem FROM 'lineitem.tbl' WITH DELIMITER '|';
+\COPY nation FROM 'nation.tbl' WITH DELIMITER '|';
+\COPY orders FROM 'orders.tbl' WITH DELIMITER '|';
+\COPY part FROM 'part.tbl' WITH DELIMITER '|';
+\COPY partsupp FROM 'partsupp.tbl' WITH DELIMITER '|';
+\COPY region FROM 'region.tbl' WITH DELIMITER '|';
+\COPY supplier FROM 'supplier.tbl' WITH DELIMITER '|';
+EOF
 

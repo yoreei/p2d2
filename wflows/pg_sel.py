@@ -3,7 +3,7 @@ import pandas as pd
 import psycopg2
 import pgconn
 
-#conn = psycopg2.connect("host=localhost dbname=tpch user=vagrant password=vagrant")
+#conn = psycopg2.connect("host=localhost dbname=tpch user=p2d2 password=p2d2")
 
 conn = pgconn.get() #gives us a connection to PostgreSQL. 
 a = pd.read_sql_query('SELECT * FROM customer', conn)
