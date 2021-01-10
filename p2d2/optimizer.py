@@ -39,6 +39,17 @@ class Nodedict(dict):
 
 nodedict=Nodedict()
 
+aggs = {
+     'max ':' MAX ',
+     'mean ':' AVG ',
+     'min ':' MIN ',
+     'sum ':' SUM ',
+     'std ':' STDDEV ',
+     'var ':' VARIANCE',
+     'mode ':' MODE ',
+     'median':' MEDIAN',
+     'sample':' RANDOM',
+}
 class Ast2pr(ast.NodeTransformer):
     def is_proj(self, node):
         if type(node.value)==_ast.Subscript and \
@@ -64,7 +75,18 @@ class Ast2pr(ast.NodeTransformer):
             node.value.func.attr=='merge':
                 return True         
     def is_agg():
-        pass
+        if type(node.value)==ast.Attribute and\
+             node.value.attr=='T' and\
+             type(node.value.value)==ast.Call and\
+             type(node.value.value.func)==ast.Attribute and\
+             node.value.value.func.attr=='to_frame' and\
+             type(node.value.value.func.value)==ast.Attribute and\
+             node.value.value.func.value.attr in aggs.keys():
+                return True
+        else:
+            return False
+ 
+
         #TODO
 
     def visit_Assign(self, node):
@@ -143,6 +165,13 @@ class Ast2pr(ast.NodeTransformer):
                     'unresolved': [left, right]}})
             return
             
+        if self. is_agg(node):
+            tar = node.targets[0].id #maxi
+            col = 
+            agg_type = node.value.value.func.value.attr
+            sql = 'SELECT '+aggs[agg_type]+'('
+            #TODO finish
+            return
         
         return node
 def formatsql(sql:str, put:str, alias:str):
