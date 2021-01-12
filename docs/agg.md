@@ -153,3 +153,14 @@ Ulib agg https://wiki.postgresql.org/wiki/Ulib_agg contains useful snippets for 
 *random* (similar to Pandas sample)
 
 For simplicity, the optimizer will assume that the function definitions of *median* and *random* are loaded in the RDBMS.
+
+
+# Missing explicitness
+
+The chosen syntax for aggregations, the functions max, mean, min, etc. is simple, but lacks explicitness, meaning that:
+
+```python
+df.max()
+```
+
+means "find the max of all columns". However, SQL does not work this way, explicit naming of the columns is required. This is one more reason to dive into PLPython and create dynamic queries.
