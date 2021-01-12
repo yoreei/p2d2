@@ -89,9 +89,9 @@ FROM CUSTOMER;
 
 __The problem is the output format___. The sql query results in:
 
- c_nationkey | c_acctbal
--------------|-----------
-     1801005 |   9999.99
+|c_nationkey | c_acctbal|
+|------------|----------|
+|1801005 |   9999.99|
 
 None of Pandas' standard aggregation methods produce a result the same format as SQL. To overcome this, we should either:
 
