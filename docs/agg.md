@@ -90,7 +90,7 @@ FROM CUSTOMER;
 __The problem is the output format___. The sql query results in:
 
  c_nationkey | c_acctbal
--------------+-----------
+-------------|-----------
      1801005 |   9999.99
 
 None of Pandas' standard aggregation methods produce a result the same format as SQL. To overcome this, we should either:
@@ -133,7 +133,7 @@ df2.max().to_frame().T
 # Mapping Pandas Aggregations to SQL Aggregations
 
 Pandas           | Numpy       |Scipy (if exists) | Postgres  | MySQL (if different)
--------------------------------|---------------------------------------------------
+-----------------|-------------|------------------|-----------|--------------------
 DataFrame.max    | numpy.amax  |                  | MAX()     |
 DataFrame.mean   | numpy.mean  |                  | AVG()     |
 DataFrame.min    | numpy.amin  |                  | MIN()     |
