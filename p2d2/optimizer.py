@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import ast
 import _ast
+import psycopg2
+
 
 from . import astpp
 pp = astpp.parseprint
@@ -40,15 +42,15 @@ class Nodedict(dict):
 nodedict=Nodedict()
 
 aggs = {
-     'max ':' MAX ',
-     'mean ':' AVG ',
-     'min ':' MIN ',
-     'sum ':' SUM ',
-     'std ':' STDDEV ',
-     'var ':' VARIANCE',
-     'mode ':' MODE ',
-     'median':' MEDIAN',
-     'sample':' RANDOM',
+     'max':'MAX({0}) AS {0}',
+     'mean':'AVG({0}) AS {0}',
+     'min':'MIN({0}) AS {0}',
+     'sum':'SUM({0}) AS {0}',
+     'std':'STDDEV({0}) AS {0}',
+     'var':'VARIANCE({0}) AS {0}',
+     'mode':'mode() WITHIN GROUP (ORDER BY {0}) AS {0}',
+     'median':'MEDIAN({0}) AS {0}',
+     'sample':'RANDOM({0}) AS {0}',
 }
 class Ast2pr(ast.NodeTransformer):
     def is_proj(self, node):
@@ -74,20 +76,57 @@ class Ast2pr(ast.NodeTransformer):
             type(node.value.func)==ast.Attribute and \
             node.value.func.attr=='merge':
                 return True         
-    def is_agg():
+    def is_simple_agg(self, node):
         if type(node.value)==ast.Attribute and\
              node.value.attr=='T' and\
              type(node.value.value)==ast.Call and\
              type(node.value.value.func)==ast.Attribute and\
              node.value.value.func.attr=='to_frame' and\
-             type(node.value.value.func.value)==ast.Attribute and\
-             node.value.value.func.value.attr in aggs.keys():
+             type(node.value.value.func.value)==ast.Call and\
+             type(node.value.value.func.value.func) == ast.Attribute and\
+             node.value.value.func.value.func.attr in aggs.keys():
+                return True
+        else:
+            return False
+
+    def is_mode(self, node):
+        if type(node.value)==ast.Call and\
+             type(node.value.func)==ast.Attribute and\
+             node.value.func.attr=='head' and\
+             node.value.args[0].value== 1 and\
+             type(node.value.func.value)==ast.Call and\
+             type(node.value.func.value.func)==ast.Attribute and\
+             node.value.func.value.func.attr=='mode':
+                return True 
+        else:
+            return False
+    def is_sample(self, node):
+        if type(node.value)==ast.Call and \
+            type(node.value.func)==ast.Attribute and \
+            node.value.func.attr=='sample' and \
+            len(node.value.args)==1:
                 return True
         else:
             return False
  
 
-        #TODO
+    def fetch_colnames(self, name, lineno):
+        # unhardcode
+        conn = psycopg2.connect(f"host=localhost dbname=tpch user=p2d2 password=p2d2")
+        cur = conn.cursor()
+        src_query = resolve(name, lineno)
+        cur.execute(f"create or replace temp view aggview as {src_query}")
+        cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name='aggview'")
+        colnames_nested = cur.fetchall() # nested like [('c_custkey'),('c_acctbal)]
+        cur.close()
+        conn.close()
+        return [item for sublist in colnames_nested for item in sublist] # unnest like ['c_custkey'..]
+
+    def build_aggregate_list(self, agg_type: str, colnames: list):
+        aggregate_list = [] 
+        for name in colnames:
+            aggregate_list=aggregate_list+[aggs[agg_type].format(name)]
+        return ', '.join(aggregate_list)
 
     def visit_Assign(self, node):
 #        return ast.copy_location(ast.Subscript(
@@ -165,12 +204,38 @@ class Ast2pr(ast.NodeTransformer):
                     'unresolved': [left, right]}})
             return
             
-        if self. is_agg(node):
+        if self.is_simple_agg(node):
             tar = node.targets[0].id #maxi
-            col = 
-            agg_type = node.value.value.func.value.attr
-            sql = 'SELECT '+aggs[agg_type]+'('
-            #TODO finish
+            src = node.value.value.func.value.func.value.id
+            agg_type = node.value.value.func.value.func.attr
+            colnames = self.fetch_colnames(src, node.lineno)
+            
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql':'SELECT '+ self.build_aggregate_list(agg_type, colnames) + ' FROM {}',
+                    'unresolved': [src]}})
+            return
+        
+        if self.is_mode(node):
+            tar = node.targets[0].id
+            src = node.value.func.value.func.value.id
+            agg_type = 'mode'
+            colnames = self.fetch_colnames(src, node.lineno)
+            
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql':'SELECT '+ self.build_aggregate_list(agg_type, colnames) + ' FROM {}',
+                    'unresolved': [src]}})
+            return
+        if self.is_sample(node):
+            tar = node.targets[0].id
+            src = node.value.func.value.id
+            nrows = node.value.args[0].value
+        
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql':'select * from {} order by random() '+f'limit {nrows};',
+                    'unresolved':[src]}})
             return
         
         return node
@@ -199,24 +264,6 @@ def resolve(name, callno):
         sql = formatsql(sql, resolve(child, defno), alias) 
     
     return sql
-
-#def resolve(unresolved, callno):
-#    """callno is the line where the unresolved names are called, Not where they are defined"""
-#    name = unresolved.pop(0)
-#    if unresolved != []:
-#        print('>1!')
-#        first = resolve([name], callno)
-#        last = resolve(unresolved, callno)
-#        breakpoint()
-#        return first, last 
-#    
-#    defno = lastdef(name, callno)
-#    new_unresolved = nodedict[name][defno]['unresolved']
-#    if new_unresolved == None:
-#        return nodedict[name][defno]['sql']
-#    else:
-#        return nodedict[name][defno]['sql'].format(\
-#            *resolve(new_unresolved.copy(), defno))
     
 def lastdef(name, belowline):
     belowkeys=[k for k in nodedict[name].keys() if k<belowline]

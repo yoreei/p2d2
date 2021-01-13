@@ -5,19 +5,21 @@ import psycopg2
 
 conn = psycopg2.connect(f"host=localhost dbname=tpch user=p2d2 password=p2d2")
 
-df2 = pd.read_sql_query('SELECT * FROM customer', conn)
-proj2 = df2.loc[:,['c_custkey', 'c_nationkey', 'c_mktsegment', 'c_acctbal']]
+df = pd.read_sql_query('SELECT * FROM customer', conn)
+proj1 = df.loc[:,['c_custkey', 'c_nationkey', 'c_acctbal']]
+proj2 = df.loc[:,['c_custkey', 'c_nationkey', 'c_mktsegment', 'c_acctbal']]
 
-maxi = proj2.max.to_frame().T
-mean = proj2.mean.to_frame().T 
-mini = proj2.min.to_frame().T 
-sumi = proj2.sum.to_frame().T  
-std = proj2.std.to_frame().T   
-var = proj2.var.to_frame().T   
-mode = proj2.mode.to_frame().T  
-median = proj2.median.to_frame().T
-sample = proj2.sample.to_frame().T
-
+maxi = proj1.max().to_frame().T
+mean = proj1.mean().to_frame().T 
+mini = proj1.min().to_frame().T 
+sumi = proj1.sum().to_frame().T  
+std = proj1.std().to_frame().T   
+var = proj1.var().to_frame().T   
+median = proj1.median().to_frame().T
+mode = proj1.mode().head(1)
+sample1 = proj1.sample(1)
+sample2 = proj1.sample(10)
+"""
 gmaxi =    proj2.groupby('c_nationkey').max
 gmean =    proj2.groupby('c_nationkey').mean   
 gmini =    proj2.groupby('c_nationkey').min    
@@ -37,17 +39,31 @@ ggvar =   proj2.groupby(['c_nationkey', 'c_mktsegment']).var
 ggmode =  proj2.groupby(['c_nationkey', 'c_mktsegment']).mode   
 ggmedian =proj2.groupby(['c_nationkey', 'c_mktsegment']).median 
 ggsample =proj2.groupby(['c_nationkey', 'c_mktsegment']).sample 
+"""
 
-print(f'{maxi=}')
-print(f'{mean=}')
-print(f'{mini=}')
-print(f'{sumi=}')
-print(f'{std=}')
-print(f'{var=}')
-print(f'{mode=}')
-print(f'{median=}')
-print(f'{sample=}')
+print('maxi')
+print(maxi)
+print('mean')
+print(mean   )
+print('mini') 
+print(mini   )
+print('sumi'   )
+print(sumi   )
+print('std'    )
+print(std    )
+print('var'  )
+print(var    )
+print('median'  )
+print(median  )
+print('mode'   )
+print(mode   )
+print('sample1'  )
+print(sample1  )
+print('sample2'  )
+print(sample2  )
 
+
+"""
 print(f'{gmaxi=}')
 print(f'{gmean=}')
 print(f'{gmini=}')
@@ -67,3 +83,4 @@ print(f'{ggvar=}')
 print(f'{ggmode=}')
 print(f'{ggmedian=}')
 print(f'{ggsample=}')
+"""

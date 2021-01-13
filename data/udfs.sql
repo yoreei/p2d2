@@ -32,3 +32,6 @@ CREATE AGGREGATE median(numeric) (
   FINALFUNC=_final_median,
   INITCOND='{}'
 );
+
+-- SELECT * FROM my_table TABLESAMPLE SYSTEM_ROWS(100);
+CREATE EXTENSION tsm_system_rows;

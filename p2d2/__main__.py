@@ -22,6 +22,7 @@ if __name__ == "__main__":
     unoptimized_bcode = compile(source, args.filepath, 'exec')
     
     time_opt = bench(optimized_bcode)
+    print('-----------OPTIMIZED DONE, RUNNING UNOPTIMIZED-----')
     time_unopt = bench(unoptimized_bcode)
     report.loc[len(report)] = [args.filepath,time_unopt,time_opt]
     
