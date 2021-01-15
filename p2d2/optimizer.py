@@ -78,6 +78,7 @@ class Ast2pr(ast.NodeTransformer):
                 return True         
 
     def is_groupby_simple(self,node):
+        pass
 
     def is_simple_agg(self, node):
         if type(node.value)==ast.Attribute and\
@@ -111,8 +112,6 @@ class Ast2pr(ast.NodeTransformer):
                 return True
         else:
             return False
-
- 
 
     def fetch_colnames(self, name, lineno):
         # unhardcode
@@ -320,18 +319,6 @@ def insert_pulls(tree):
 import marshal
 import py_compile
 import time
-
-#def compile_to_file(tree):
-#    # https://stackoverflow.com/questions/8627835/generate-pyc-from-python-ast
-#    # make this work
-#    codeobject = compile(tree, '<string>', 'exec')
-#    with open('output.pyc', 'wb') as fc:
-#        fc.write('\0\0\0\0')
-#        py_compile.wr_long(fc, long(time.time()))
-#        marshal.dump(codeobject, fc)
-#        fc.flush()
-#        fc.seek(0, 0)
-#        fc.write(py_compile.MAGIC)
 
 def optimize(source:str):
     global parsetree
