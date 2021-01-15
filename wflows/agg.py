@@ -8,6 +8,7 @@ conn = psycopg2.connect(f"host=localhost dbname=tpch user=p2d2 password=p2d2")
 df = pd.read_sql_query('SELECT * FROM customer', conn)
 proj1 = df.loc[:,['c_custkey', 'c_nationkey', 'c_acctbal']]
 proj2 = df.loc[:,['c_custkey', 'c_nationkey', 'c_mktsegment', 'c_acctbal']]
+nogroup2 = proj1.agg({'c_nationkey': [np.sum,np.max], 'c_acctbal': [np.max]})
 
 maxi = proj1.max().to_frame().T
 mean = proj1.mean().to_frame().T 
@@ -19,16 +20,17 @@ median = proj1.median().to_frame().T
 mode = proj1.mode().head(1)
 sample1 = proj1.sample(1)
 sample2 = proj1.sample(10)
+
+gmaxi =proj2.groupby(['c_nationkey']).max()
+gmean =proj2.groupby(['c_nationkey']).mean() 
+gmini =proj2.groupby(['c_nationkey']).min()  
+gsumi =proj2.groupby(['c_nationkey']).sum()   
+gstd = proj2.groupby(['c_nationkey']).std()   
+gvar = proj2.groupby(['c_nationkey']).var()   
+gmode =proj2.groupby(['c_nationkey']).mode()   
+gmedian =proj2.groupby(['c_nationkey']).median()
+gsample =proj2.groupby(['c_nationkey']).sample() 
 """
-gmaxi =    proj2.groupby('c_nationkey').max
-gmean =    proj2.groupby('c_nationkey').mean   
-gmini =    proj2.groupby('c_nationkey').min    
-gsumi =    proj2.groupby('c_nationkey').sum    
-gstd =     proj2.groupby('c_nationkey').std    
-gvar =     proj2.groupby('c_nationkey').var    
-gmode =    proj2.groupby('c_nationkey').mode   
-gmedian =    proj2.groupby('c_nationkey').median 
-gsample =    proj2.groupby('c_nationkey').sample 
 
 ggmaxi =  proj2.groupby(['c_nationkey', 'c_mktsegment']).max
 ggmean =  proj2.groupby(['c_nationkey', 'c_mktsegment']).mean   
@@ -63,7 +65,6 @@ print('sample2'  )
 print(sample2  )
 
 
-"""
 print(f'{gmaxi=}')
 print(f'{gmean=}')
 print(f'{gmini=}')
@@ -73,6 +74,7 @@ print(f'{gvar=}')
 print(f'{gmode=}')
 print(f'{gmedian=}')
 print(f'{gsample=}')
+"""
 
 print(f'{ggmaxi=}')
 print(f'{ggmean=}')

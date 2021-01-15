@@ -3,6 +3,7 @@
 
 # vagrant
 .vagrant/
+Vagrantfile.local
 
 # retired
 .retired/

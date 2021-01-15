@@ -5,7 +5,7 @@ https://www.kaggle.com/corochann/covid-19-current-situation-in-2021
     DataFrame.replace
     ~ (bitwise negation after mask)
     DataFrame.merge (on multiple cols)
-    DataFrame.drop
+    DataFrame.drop (specific case of projection)
     DataFrame.groupby().sum()
     DataFrame.fillna
     pandas.concat (like UNION ALL)
@@ -35,7 +35,11 @@ Hard:
 
 
 
+index
+no cache
+with/without analysis
 
+what is migration? data migrationl
 
 
 

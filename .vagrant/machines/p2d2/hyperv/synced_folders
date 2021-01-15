@@ -1,1 +1,1 @@
-{"smb":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/git/p2d2","disabled":false,"__vagrantfile":true,"smb_username":"mecheto","smb_id":"vgt-5d940b6a7e27fa8cdddb5b9977e0028a-6ad5fdbcbf2eaa93bd62f92333a2e6e5","smb_host":"169.254.177.33","owner":"vagrant","group":"vagrant"}}}
+{"smb":{"/vagrant":{"smb_username":"mecheto","guestpath":"/vagrant","hostpath":"D:/git/p2d2","disabled":false,"__vagrantfile":true,"smb_id":"vgt-5d940b6a7e27fa8cdddb5b9977e0028a-6ad5fdbcbf2eaa93bd62f92333a2e6e5","smb_host":"169.254.41.119","owner":"vagrant","group":"vagrant"}}}

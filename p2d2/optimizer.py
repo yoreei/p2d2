@@ -76,6 +76,9 @@ class Ast2pr(ast.NodeTransformer):
             type(node.value.func)==ast.Attribute and \
             node.value.func.attr=='merge':
                 return True         
+
+    def is_groupby_simple(self,node):
+
     def is_simple_agg(self, node):
         if type(node.value)==ast.Attribute and\
              node.value.attr=='T' and\
@@ -108,6 +111,7 @@ class Ast2pr(ast.NodeTransformer):
                 return True
         else:
             return False
+
  
 
     def fetch_colnames(self, name, lineno):

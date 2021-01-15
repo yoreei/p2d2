@@ -1,0 +1,1 @@
+config.vm.synced_folder ".", "/vagrant", smb_username: "username", smb_password:"password"

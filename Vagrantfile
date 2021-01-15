@@ -24,6 +24,10 @@ Vagrant.configure("2") do |config|
       v.memory = 512
       v.cpus = 4
   end
+
+  if File.exists?("Vagrantfile.local") then
+    eval(IO.read("Vagrantfile.local"), binding)
+  end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
