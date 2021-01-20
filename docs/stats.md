@@ -1,27 +1,27 @@
 # Statistics for the Optimizer
 
-To obtain as much value from the benchmarks as possible, a flexible benchmarking framework will be built. Ideally, we should have the following variables:
+To obtain as much value from the benchmarks as possible, a flexible benchmarking framework will be built. Ideally, we should have the factors:
 
-- scale10 / scale20 / scale30 /... scale200 (tpch scale factor used in the benchmark)
+1. scale10 / scale20 / scale30 /... scale200 (tpch scale factor used in the benchmark)
 
-- warm_up / no_warm_up
+2. warm_up / no_warm_up
 
-- drop_cache / no_drop_cache
+3. index / no_index
 
-- opt_include / opt_exclude / no_opt  (if optimization time should be included/excluded or if not optimization should be performed)
+4. opt_include / opt_exclude / no_opt  (if optimization time should be included/excluded or if not optimization should be performed)
 
-- net_local / net_lan / net_wan ("stealing" this from the Don't hold my data hostage paper)
+5. net_local / net_lan / net_wan ("stealing" this from the Don't hold my data hostage paper)
 
-And the following measurements:
+And the following response variables:
 
 wall_time, db_time, mem_usage_db, mem_usage_py, network_utilization, cpu utilization
 
 ## The measurements in-depth:
 
-- What does mem_usage mean? Average, Maximum?
+- What does mem_usage mean? Average / *Maximum*?
+- What tool(s) do we use to perform the measurements? is *top* enough?
 - At what interval should they be measured to balance correctness/performance impact?
 - How do we measure mem_usage_db? Do we take the (peak/average) mem usage und substract the idle mem usage?
-- What tool(s) do we use to perform the measurements?
 
 ### wall_time
 
@@ -65,7 +65,7 @@ SELECT queryid, query, total_time, calls from pg_stat_statements;
 The output:
 
        queryid       |               query               | total_time | calls
-------------------------------------------------------------------------------
+---------------------|-----------------------------------|------------|-------
  4127066443358369148 | select pg_stat_statements_reset() |   0.174501 |     1
  8824814412070308173 | select * from customer            | 145.979456 |     1
 
@@ -174,7 +174,7 @@ This document will present two options for recording measurement data and will w
 
 Example Dataframe: 
 
-i   scale   warm_up drop_cache  opt_include net_limit   |   wall_time   cpu_utilization mem_usage_db    mem_usage_py    MB_served
+i   scale   warm_up index  opt_include net_limit   |   wall_time   cpu_utilization mem_usage_db    mem_usage_py    MB_served
 1   10      False   False       0           50              10000       
 2
 3
@@ -189,7 +189,7 @@ i   scale   warm_up drop_cache  opt_include net_limit   |   wall_time   cpu_util
 Interesting article about benchmarking with top and awk: https://yunmingzhang.wordpress.com/2014/04/01/using-top-ps-and-awk-for-benchmarking-cpu-and-memory-utilization-in-a-cluster-environment/
 
 pre_once_l=['warm_up', 'no_warm_up']
-pre_every_l=['drop_caches', 'no_drop_cache']
+pre_every_l=['index', 'no_index']
 stopwatch_l=['stopwatch_opt', 'stopwatch_noopt']
 
 
