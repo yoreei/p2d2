@@ -1,5 +1,5 @@
 Host p2d2
-  HostName 172.17.229.244
+  HostName 192.168.232.67
   User vagrant
   Port 22
   UserKnownHostsFile /dev/null

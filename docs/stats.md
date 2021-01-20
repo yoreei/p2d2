@@ -16,12 +16,17 @@ And the following response variables:
 
 wall_time, db_time, mem_usage_db, mem_usage_py, network_utilization, cpu utilization
 
-## The measurements in-depth:
+## Unanswered questions 
 
+- Is mem_usage_db relevant?
 - What does mem_usage mean? Average / *Maximum*?
 - What tool(s) do we use to perform the measurements? is *top* enough?
 - At what interval should they be measured to balance correctness/performance impact?
 - How do we measure mem_usage_db? Do we take the (peak/average) mem usage und substract the idle mem usage?
+- Why is %CPU interesting? What can we derive from it? Btw, %CPU is counter-intuitive:
+http://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html
+
+Interesting article about benchmarking with top and awk: https://yunmingzhang.wordpress.com/2014/04/01/using-top-ps-and-awk-for-benchmarking-cpu-and-memory-utilization-in-a-cluster-environment/
 
 ### wall_time
 
@@ -76,9 +81,24 @@ The output will contain as many rows as the number of queries that the optimizer
 *total_time* is acumulative, which means that we don't have to calculate total_time\*calls to account for duplicate queries - that's already done for us.
 
 
-### mem_usage_db and mem_usage_py,
+### mem_usage_db
 
 Recap: The optimized AND unoptimized versions of the workflow run *inside* the process of the benchmarker. The benchmarker process "hangs" until the workflow is finished, so to look at the RAM usage of the DB we need to create another thread which will monitor postgresql's memory usage during execution. What tools can we use to monitor the memory?
+
+```
+|vagrant@p2d2:~$ top -b -n1 |grep 'postgres\|RES'
+|    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+|    904 postgres  20   0  219432  16476  16200 S   0.0   0.2   0:00.14 postgres
+|    964 postgres  20   0  219532   3960   3668 S   0.0   0.1   0:00.00 postgres
+|    965 postgres  20   0  219432   3260   3040 S   0.0   0.0   0:00.05 postgres
+|    966 postgres  20   0  219432   4708   4488 S   0.0   0.1   0:00.02 postgres
+|    967 postgres  20   0  220104   4464   4008 S   0.0   0.1   0:00.10 postgres
+|    968 postgres  20   0   72952   2272   1816 S   0.0   0.0   0:00.10 postgres
+|    969 postgres  20   0  219864   2404   2168 S   0.0   0.0   0:00.00 postgres
+|   1839 postgres  20   0  220384  12028  10668 S   0.0   0.2   0:10.48 postgres
+```
+
+Then sum the RES column.
 
 from *man top*:
 
@@ -114,7 +134,13 @@ from *man top*:
     VIRT - everything in-use and/or reserved (all quadrants)
 ```
 
-Now, which memory measurement should we use? _RES_ seems like a good choice?
+### mem_usage_py
+
+Either using the same method as mem_usage_db OR perhaps a tool inside python:
+
+https://pypi.org/project/memory-profiler/
+
+Open to suggestions
 
 ### network_utilization
 
@@ -136,13 +162,9 @@ After running the data science workflow, the benchmarker will extract the querie
 
 ### CPU
 
-Considering that we are already measuring a lot, measuring CPU utilization might be superfluous. The problem is, _we "promised" this in the proposal_.
+See "Unanswered questions"
 
 both time and top give info about CPU utilization but check this out:
-
-http://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html
-
-(that doesn't mean we shouldn't use top, but it's useful to know WHAT we are measuring)
 
 
 ## Factors in-depth
@@ -160,38 +182,29 @@ http://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html
 
 https://serverfault.com/questions/507658/limit-incoming-and-outgoing-bandwidth-and-latency-in-linux
 
-## Value/Cost ratio
-
-In practice, some of these variables might not be worth considering the cost adds up _exponentially_.
-
-the _bandwidth_ variable probably needs shrinking/trimming, I am open to suggestions.
-
 ## Benchmark Dataframe anatomy
-
-This document will present two options for recording measurement data and will weigh the pros and cons of each. Excuse my bad statistics terminology:
-
-### The "Variable" method:
 
 Example Dataframe: 
 
-i   scale   warm_up index  opt_include net_limit   |   wall_time   cpu_utilization mem_usage_db    mem_usage_py    MB_served
-1   10      False   False       0           50              10000       
-2
-3
-4
-5
-6
-7
-8
-9
+i|scale|warm_up|index|opt|net|*wall_time|cpu_utilization|mem_usage_db|mem_usage_py|net_usage*
+1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
 
 
-Interesting article about benchmarking with top and awk: https://yunmingzhang.wordpress.com/2014/04/01/using-top-ps-and-awk-for-benchmarking-cpu-and-memory-utilization-in-a-cluster-environment/
+
 
 pre_once_l=['warm_up', 'no_warm_up']
 pre_every_l=['index', 'no_index']
 stopwatch_l=['stopwatch_opt', 'stopwatch_noopt']
 
+
+# After Benchmarking
+
+1. Save the benchmarking dataframe to file
+
+2. Load file in jupyter notebook and make plots
 
 # Retired text
 GNU time:
