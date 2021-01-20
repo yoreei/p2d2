@@ -186,19 +186,23 @@ https://serverfault.com/questions/507658/limit-incoming-and-outgoing-bandwidth-a
 
 Example Dataframe: 
 
-i|scale|warm_up|index|opt|net|wall_time|cpu_utilization|mem_usage_db|mem_usage_py|net_usage
--|-----|-------|-----|---|---|---------|---------------|------------|------------|------------
-1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
-1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
-1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
-1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+scale|warm_up|index|opt|net|wall_time|cpu_utilization|mem_usage_db|mem_usage_py|net_usage
+-----|-------|-----|---|---|---------|---------------|------------|------------|------------
+   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'no'|'lan'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'no'|'wan'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'include'|'loc'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'include'|'lan'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'include'|'wan'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'exclude'|'loc'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'exclude'|'lan'|200000| 20| 12000| 13000 | 14000
+   10|False  |False|'exclude'|'wan'|200000| 20| 12000| 13000 | 14000
+   10|False  |True|'no'|'loc'|200000| 20| 12000| 13000 | 14000
+   10|False  |True|'no'|'lan'|200000| 20| 12000| 13000 | 14000
+   10|False  |True|'no'|'wan'|200000| 20| 12000| 13000 | 14000
+   10|False  |True|'include'|'loc'|200000| 20| 12000| 13000 | 14000
+   10|False  |True|'include'|'lan'|200000| 20| 12000| 13000 | 14000
 
-
-
-
-pre_once_l=['warm_up', 'no_warm_up']
-pre_every_l=['index', 'no_index']
-stopwatch_l=['stopwatch_opt', 'stopwatch_noopt']
 
 
 # After Benchmarking
