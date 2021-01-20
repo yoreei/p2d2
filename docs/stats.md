@@ -187,7 +187,7 @@ https://serverfault.com/questions/507658/limit-incoming-and-outgoing-bandwidth-a
 Example Dataframe: 
 
 i|scale|warm_up|index|opt|net|wall_time|cpu_utilization|mem_usage_db|mem_usage_py|net_usage
-----------------------------------------------------------------------------------------------
+-|-----|-------|-----|---|---|---------|---------------|------------|------------|------------
 1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
 1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
 1|   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
