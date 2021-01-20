@@ -64,7 +64,7 @@ SELECT queryid, query, total_time, calls from pg_stat_statements;
 
 The output:
 
-       queryid       |               query               | total_time | calls
+queryid|query|total_time|calls
 ---------------------|-----------------------------------|------------|-------
  4127066443358369148 | select pg_stat_statements_reset() |   0.174501 |     1
  8824814412070308173 | select * from customer            | 145.979456 |     1
