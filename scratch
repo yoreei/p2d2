@@ -1,1 +1,0 @@
-SELECT * FROM (SELECT o_orderstatus,o_custkey FROM (SELECT * FROM orders) AS df1_9) AS df1_12 INNER JOIN (SELECT c_custkey,c_acctbal FROM (SELECT * FROM customer) AS df2_10) AS df2_12 ON o_custkey=c_custkey;

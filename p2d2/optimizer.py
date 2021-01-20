@@ -78,7 +78,15 @@ class Ast2pr(ast.NodeTransformer):
                 return True         
 
     def is_groupby_simple(self,node):
-        pass
+        if type(node.value)==ast.Call and\
+            type(node.value.func)==ast.Attribute and\
+            node.value.func.attr in aggs.keys() and \
+            type(node.value.func.value)==ast.Call and\
+            type(node.value.func.value.func)==ast.Attribute and\
+            node.value.func.value.func.attr=='groupby':
+                return True
+        else:
+            return False
 
     def is_simple_agg(self, node):
         if type(node.value)==ast.Attribute and\
@@ -240,6 +248,21 @@ class Ast2pr(ast.NodeTransformer):
                     'sql':'select * from {} order by random() '+f'limit {nrows};',
                     'unresolved':[src]}})
             return
+
+        if self.is_groupby_simple(node):
+            tar = node.targets[0].id
+            src = node.value.func.value.func.value.id
+            groupby_cols = [el.value for el in node.value.func.value.args[0].elts]
+            agg_type=node.value.func.attr
+            all_cols = self.fetch_colnames(src, node.lineno)
+            agg_cols = list(set(all_cols)-set(groupby_cols))
+             
+            nodedict.addnode(tar,{
+                node.lineno:{
+                    'sql':'SELECT '+','.join(groupby_cols)+','+self.build_aggregate_list(agg_type, agg_cols)+ ' FROM {}\
+                    GROUP BY '+','.join(groupby_cols)+' ORDER BY '+','.join(groupby_cols),
+                    'unresolved': [src]}})
+            return
         
         return node
 def formatsql(sql:str, put:str, alias:str):
@@ -302,8 +325,6 @@ def insert_pulls(tree):
     for node in tree.body:
         reqs = requires(node)
         for name in reqs:
-            print(name)
-            print(node.lineno)
             lastdef_lineno = lastdef(name, node.lineno)
             if (name, lastdef_lineno) in pulled: continue
             sql = resolve(name, node.lineno) 
@@ -320,19 +341,17 @@ import marshal
 import py_compile
 import time
 
-def optimize(source:str):
-    global parsetree
-    parsetree = ast.parse(source)
+def optimize(parsetree):
     # removes supported nodes from parsetree in-place and populates global nodedict
     Ast2pr().visit(parsetree)
     opt_parsetree = insert_pulls(parsetree)
     breakpoint()
-    return compile(opt_parsetree, 'optimized_ast', 'exec')
+    return opt_parsetree
 
 if __name__=='__main__':
     # This submodule is to be executed from __main__.py, this is here for interactive debugging
     with open('wflows/projsel.py', "r") as source_file:
         source = source_file.read()
-    
-    optimize(source) 
+     
+    optimize(ast.parse(source)) 
     
