@@ -1,11 +1,11 @@
-Host default
-  HostName 127.0.0.1
+Host p2d2
+  HostName 172.18.77.249
   User vagrant
-  Port 2222
+  Port 22
   UserKnownHostsFile /dev/null
   StrictHostKeyChecking no
   PasswordAuthentication no
-  IdentityFile D:/git/p2d2/.vagrant/machines/default/virtualbox/private_key
+  IdentityFile D:/git/p2d2/.vagrant/machines/p2d2/hyperv/private_key
   IdentitiesOnly yes
   LogLevel FATAL
 

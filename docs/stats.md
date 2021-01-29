@@ -134,15 +134,15 @@ from *man top*:
     VIRT - everything in-use and/or reserved (all quadrants)
 ```
 
-### mem_usage_py
+### mem\_usage\_py
 
-Either using the same method as mem_usage_db OR perhaps a tool inside python:
+Either using the same method as mem\_usage\_db OR perhaps a tool inside python:
 
 https://pypi.org/project/memory-profiler/
 
 Open to suggestions
 
-### network_utilization
+### network\_utilization
 
 We need to be able to measure the size of the data that is transfered from the DB to the Python runtime.
 
@@ -158,7 +158,7 @@ This calculation does not take into account any compression techniques but it sh
 
 #### Network utilization: Implementation detail:
 
-After running the data science workflow, the benchmarker will extract the queries produced by the optimizer and run an EXPLAIN query on them. To easily extract the queries we can use pg_stat_statements
+After running the data science workflow, the benchmarker will extract the queries produced by the optimizer and run an EXPLAIN query on them. To easily extract the queries we can use pg\_stat\_statements
 
 ### CPU
 
@@ -186,24 +186,40 @@ https://serverfault.com/questions/507658/limit-incoming-and-outgoing-bandwidth-a
 
 Example Dataframe: 
 
-scale|warm_up|index|opt|net|wall_time|cpu_utilization|mem_usage_db|mem_usage_py|net_usage
------|-------|-----|---|---|---------|---------------|------------|------------|------------
-   10|False  |False|'no'|'loc'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'no'|'lan'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'no'|'wan'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'include'|'loc'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'include'|'lan'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'include'|'wan'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'exclude'|'loc'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'exclude'|'lan'|200000| 20| 12000| 13000 | 14000
-   10|False  |False|'exclude'|'wan'|200000| 20| 12000| 13000 | 14000
-   10|False  |True|'no'|'loc'|200000| 20| 12000| 13000 | 14000
-   10|False  |True|'no'|'lan'|200000| 20| 12000| 13000 | 14000
-   10|False  |True|'no'|'wan'|200000| 20| 12000| 13000 | 14000
-   10|False  |True|'include'|'loc'|200000| 20| 12000| 13000 | 14000
-   10|False  |True|'include'|'lan'|200000| 20| 12000| 13000 | 14000
+ver|scale|warm\_up|index|opt|net|run|wall\_time|cpu\_utilization|mem\_usage\_db|mem\_usage\_py|net\_usage
+---|-----|--------|-----|---|---|---|----------|----------------|--------------|--------------|---
+1|10|False  |False|'no'|'loc'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'loc'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'loc'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'lan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'lan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'lan'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'wan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'wan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'no'|'wan'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'loc'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'loc'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'loc'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'lan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'lan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'lan'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'wan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'wan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'include'|'wan'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'loc'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'loc'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'loc'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'lan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'lan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'lan'|3|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'wan'|1|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'wan'|2|200000| 20| 12000| 13000 | 14000
+1|10|False  |False|'exclude'|'wan'|3|200000| 20| 12000| 13000 | 14000
 
 
+*ver* is the version of the optimizer in use. Useful for comparing different implementations without needing to add more columns
+
+*run* is the iteration of the benchmark. Every benchmark is repeatet N times. To get the average of a dependent variable, group by all the other factors except 'run' and do an aggregation on 'wall\_time'
 
 # After Benchmarking
 

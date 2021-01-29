@@ -1,86 +1,145 @@
 #!/usr/bin/env python3
-import pandas
+import subprocess
+import functools
+import importlib
 import timeit
 import ast
+
+import pandas
+import psycopg2
 
 from . import argparse_factory
 from . import optimizer
 
-def get_connstr(parsetree):
-    for node in parsetree.body:
-        if type(node) == ast.Assign and\
-        type(node.value)== ast.Call and\
-        type(node.value.func)==ast.Attribute and\
-        node.value.func.attr == 'connect' and\
-        type(node.value.func.value)==ast.Name and\
-        node.value.func.value.id=='psychopg2':
-            return node.value.args[0].value
+C_TIMES = 2
+#ADDON_FACTORS = ['ver', 'scale', 'index', 'net']
 
-def drop_caches():
-    pass
+
 def warm_up(bytecode, times):
     for _ in range(times):
         exec(bytecode)
 
-def disable_index():
-    """
+ver_list=['p2d2.optimizer', 'p2d2.optimizer1']
+def ver(parsetree, nextf):
+    global optimizer
+    res_df=pandas.DataFrame()
+    for ver in ver_list:
+        optimizer = importlib.import_module(ver)
+
+        subres_df = nextf(parsetree)
+        subres_df['ver']=ver
+        res_df=res_df.append(subres_df)
+
+def scale(parsetree, nextf):
+    pgbouncer_ini_template='
+[databases]
+tpch = host=localhost dbname=tpch{}
+'
+    res_df=pandas.DataFrame()
+
+    for scale_num in [1,10,100]
+        pgbouncer_ini=pgbouncer_ini_template.format(scale_num)
+        with open('pgbouncer.ini', 'w') as pgbouncer_ini_file:
+            pgbouncer_ini_file.write(pgbouncer_ini)
+        sts = subprocess.Popen(["/usr/bin/sudo", 'service', 'pgbouncer', 'restart'], shell=False).wait()
+        assert sts==0
+        
+        subres_df = nextf(parsetree)
+        subres_df['scale']=scale_num
+        res_df=res_df.append(subres_df)
+        
+    return res_df
+        
+
+def index(parsetree, nextf):
+    def get_connstr(parsetree):
+        for node in parsetree.body:
+            if type(node) == ast.Assign and\
+            type(node.value)== ast.Call and\
+            type(node.value.func)==ast.Attribute and\
+            node.value.func.attr == 'connect' and\
+            type(node.value.func.value)==ast.Name and\
+            node.value.func.value.id=='psychopg2':
+                return node.value.args[0].value
+
+    toggle_index_template="""
 UPDATE pg_index
-SET indisready=false
+SET indisready={}
 WHERE indrelid = (
     SELECT oid
     FROM pg_class
 );
 """
-    pass
-def enable_index():
+    res_df = pandas.DataFrame()
+    for state in ['true', 'false']:
+        toggle_index=toggle_index_template.format(state)
+
+        conn = psycopg2.connect('host=localhost dbname=tpch user=p2d2 password=p2d2')
+        cur = conn.cursor()
+        cur.execute(toggle_index)
+        sql_return = cur.fetchall() # nested like [('c_custkey'),('c_acctbal)]
+        cur.close()
+        conn.close()
+        print('test sql_return')
+        breakpoint()
+        #assert sql_return
+
+        bool_state = True if state=='true' else False
+        subres_df = nextf(parsetree)
+        subres_df['index']=bool_state
+        res_df=res_df.append(subres_df)
+        
+    return res_df
+
+def net(parsetree, nextf):
+    print('net')
     pass
 
-def stopwatch_noopt():
-    return timeit.timeit(timeit_run, number=1)
-def stopwatch_opt():
-    pass
-
-def skip():
-    return None
- 
-#pre_once_l=[warm_up, no_warm_up]
-#pre_every_l=[drop_caches, no_drop_cache]
-#stopwatch_l=[stopwatch_opt, stopwatch_noopt]
-
+ADDON_FACTORS = [scale]
 #TODO test bench_all, add crosstab, aggregations and many files
-def bench_all(bytecode, times, bench_df):
-    pre_once_l=['warm_up', 'no_warm_up']
-    pre_every_l=['drop_caches', 'no_drop_cache']
-    stopwatch_l=['stopwatch_opt', 'stopwatch_noopt']
+def bench_all(parsetree, connstr):
+    for factor in ADDON_FACTORS:
+        factor(parsetree, basic_bench)
+    
+    return basic_bench(parsetree)
 
-    benchmark_ll=[pre_once_l, pre_every_l, stopwatch_l]
-    index = pd.MultiIndex.from_product(index)
-    benchmark_df = pd.DataFrame(columns=index)
 
-    new_row={}
-    for col_tuple in benchmark_df.columns.values: #('a','B','1')
-        pre_once=col_tuple[0]
-        pre_every=col_tuple[1]
-        stopwatch=col_tuple[2]
-        
-        time_l = bench_factory(bytecode, times, pre_once, pre_every, stopwatch)
-        time_series = pd.Series(time_l)
-        new_col={col_tuple:time_series}
-        
-        benchmark_df = benchmark_df.append(new_col, ignore_index=True)
-        
+def basic_bench(parsetree):
+    #dep_vars= ['wall_time', 'cpu_utilization', 'mem_usage_db', 'mem_usage_py', 'net_usage']
+    def optimize_run(parsetree):
+        exec(compile(optimizer.optimize(parsetree), 'str', 'exec')),
+        return
 
-def bench_factory(bytecode, times, pre_once, pre_every, stopwatch):
-    pre_once()
-    time_l=[]
-    for _ in range(times):
-        pre_every()
-        time_l += [stopwatch()]
-    return time_l
+    time_incl=[]
+    for i in range(C_TIMES):
+        time_incl += [{
+            'opt': 'incl',
+            'rep': i,
+            'wall_time': timeit.timeit(lambda: optimize_run(parsetree), number=1),
+             'cpu_utilization':0,
+             'mem_usage_db':0,
+             'mem_usage_py':0,
+             'net_usage':0,
+            }]
+
+    time_excl=[]
+    opt_parsetree = optimizer.optimize(parsetree)
+    opt_bcode = compile(opt_parsetree, 'str', 'exec')
+    for i in range(C_TIMES):
+        time_excl += [{
+            'opt': 'excl',
+            'rep': i,
+            'wall_time': timeit.timeit(lambda: exec(opt_bcode), number=1),
+             'cpu_utilization':0,
+             'mem_usage_db':0,
+             'mem_usage_py':0,
+             'net_usage':0,
+            }]
+
+    return pandas.DataFrame(time_incl+time_excl)
 
 if __name__ == "__main__":
     args = argparse_factory.parse_args()
-    report = pandas.DataFrame(columns=['wflow', 'time_unopt', 'time_opt'])
     #TODO if path is directory:
     # iterate on files inside
     # else:
@@ -88,19 +147,6 @@ if __name__ == "__main__":
         parsetree = ast.parse(source_file.read())
 
     connstr = get_connstr(parsetree)
-
-    opt_parsetree = optimizer.optimize(parsetree)
-
-    opt_bcode = compile(opt_parsetree, args.filepath, 'exec')
-    bcode = compile(parsetree, args.filepath, 'exec')
-    
-    time_opt = bench(opt_parsetree, 5)
-    print('-----------OPTIMIZED DONE, RUNNING UNOPTIMIZED-----')
-    time_unopt = bench(bcode, 5)
-    report.loc[len(report)] = [args.filepath,time_unopt,time_opt]
+    report = bench_all(parsetree, connstr)
     
     print(report)
-    
-    
-
-#TODO Use a profile to detect which parts take the most time

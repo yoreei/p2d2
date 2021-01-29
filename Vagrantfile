@@ -20,10 +20,11 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network"
   # customize memory. Be generous
   config.vm.provider "hyperv" do |v|
-      v.maxmemory = 24576
-      v.memory = 512
+      v.maxmemory = 25576
+      v.memory = 16000
       v.cpus = 4
   end
+  config.vm.disk :disk, name: "backup", size: "10GB"
 
   if File.exists?("Vagrantfile.local") then
     eval(IO.read("Vagrantfile.local"), binding)

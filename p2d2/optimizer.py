@@ -345,7 +345,6 @@ def optimize(parsetree):
     # removes supported nodes from parsetree in-place and populates global nodedict
     Ast2pr().visit(parsetree)
     opt_parsetree = insert_pulls(parsetree)
-    breakpoint()
     return opt_parsetree
 
 if __name__=='__main__':
