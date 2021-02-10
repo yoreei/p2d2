@@ -24,7 +24,8 @@ Vagrant.configure("2") do |config|
       v.memory = 16000
       v.cpus = 4
   end
-  config.vm.disk :disk, name: "backup", size: "10GB"
+  
+  config.vm.disk :disk, name: "data", size: "250GB"
 
   if File.exists?("Vagrantfile.local") then
     eval(IO.read("Vagrantfile.local"), binding)
