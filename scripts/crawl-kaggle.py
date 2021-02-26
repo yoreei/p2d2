@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pathlib import Path
 from io import StringIO
 import pandas as pd
@@ -8,6 +9,7 @@ import os
 base = Path('../data/')
 
 if not (base / 'competitions.csv').exists():
+    print('competitions.csv missing, downloading list...')
     data = []
     page_no, output = 1, ""
     while output.strip() != 'No competitions found':
@@ -18,6 +20,7 @@ if not (base / 'competitions.csv').exists():
     competitions = pd.concat(data)
     competitions.to_csv(base / 'competitions.csv', index=False)
 else:
+    print('competitions.csv found')
     competitions = pd.read_csv(base / 'competitions.csv')
     print(list(competitions), competitions.shape)
     print(competitions)
@@ -26,22 +29,24 @@ else:
 
 
 if not (base / 'kernels.csv').exists():
+    print('kernels.csv not found. Downloading list')
     data = []
     for idx, competition in enumerate(competitions.ref):
         page_no, output = 1, ""
         while output.strip() != 'No kernels found':
-        # kaggle kernels pull -k [KERNEL] -p /path/to/download -m
-        output = os.popen(f'kaggle kernels list --page-size 100 --competition {competition} --language python -p {page_no} -v').read()
-        df = pd.read_csv(StringIO(output))
-        df['competition_ref'] = competition
-        data.append(df)
-        page_no += 1
-        print("Competition", competition, f"done. {idx+1}/{competitions.shape[0]}")
+            # kaggle kernels pull -k [KERNEL] -p /path/to/download -m
+            output = os.popen(f'kaggle kernels list --page-size 100 --competition {competition} --language python -p {page_no} -v').read()
+            df = pd.read_csv(StringIO(output))
+            df['competition_ref'] = competition
+            data.append(df)
+            page_no += 1
+            print("Competition", competition, f"done. {idx+1}/{competitions.shape[0]}")
 
     kernels = pd.concat(data)
     kernels.to_csv(base / 'kernels.csv', index=False)
 
 else:
+    print('kernels.csv found')
     kernels = pd.read_csv(base / 'kernels.csv')
     print(list(kernels), kernels.shape)
 
@@ -57,4 +62,9 @@ for kernel, competition in zip(kernels.ref, kernels.competition_ref):
 for competition in np.unique(kernels.competition_ref):
     folder = base / 'kaggle' / competition / 'data'
     folder.mkdir(parents=True, exist_ok=True)
-    os.system(f'kaggle competitions download -p {folder} {competition}')
+    print(f'crawl-kaggle: Downloading {competition}')
+    output = os.system(f'kaggle competitions download -p {folder} {competition}')
+    print(f'crawl-kaggle: Kaggle command output: {output}')
+
+#filter tabular data
+#variance of grammar

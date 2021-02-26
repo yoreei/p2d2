@@ -1,9 +1,21 @@
 # data
+data/
 *.tbl
 
+#jupyter
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
 # vagrant
+ssh16
+ssh8
 .vagrant/
 Vagrantfile.local
+
 
 # retired
 .retired/
