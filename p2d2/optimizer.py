@@ -2,6 +2,7 @@
 import ast
 import _ast
 import psycopg2
+import copy
 
 
 from . import astpp
@@ -59,7 +60,7 @@ class Ast2pr(ast.NodeTransformer):
             type(node.value.slice)==_ast.ExtSlice:
                 return True
         return False
-    
+
     def is_sel(self, node):
         if type(node.value)==_ast.Subscript and \
             rgetattr(node, 'value.value.attr')=='loc' and \
@@ -75,7 +76,7 @@ class Ast2pr(ast.NodeTransformer):
         if type(node.value)==ast.Call and \
             type(node.value.func)==ast.Attribute and \
             node.value.func.attr=='merge':
-                return True         
+                return True
 
     def is_groupby_simple(self,node):
         if type(node.value)==ast.Call and\
@@ -156,8 +157,8 @@ class Ast2pr(ast.NodeTransformer):
                     'sql': query,
                     'unresolved': []}}
             return
-        
-        if self.is_proj(node): 
+
+        if self.is_proj(node):
         #dims = rgetattr(node, 'value.slice.dims', None)
         #proj = rgetattr(getsub(dims,1,None), 'value.elts', None)
             proj = node.value.slice.dims[1].value.elts
@@ -169,7 +170,7 @@ class Ast2pr(ast.NodeTransformer):
                     'sql': 'SELECT '+','.join(cols)+' FROM {}',
                     'unresolved': [src]}})
             return
-        
+
         if self.is_mask(node):
             case={
             _ast.LtE:'<=',
@@ -183,7 +184,7 @@ class Ast2pr(ast.NodeTransformer):
             col = node.value.left.slice.dims[1].value.value # 'c_custkey'
             comparator = str(node.value.comparators[0].value) # '5'
             tar = node.targets[0].id
-            
+
             nodedict.addnode(tar,{
                 node.lineno:{
                     'sql': col+compare_type+comparator,
@@ -193,10 +194,11 @@ class Ast2pr(ast.NodeTransformer):
             tar = node.targets[0].id
             src = node.value.value.value.id
             maskname=node.value.slice.value.id
+            masksql = resolve(maskname, node.lineno) 
            
             nodedict.addnode(tar,{
                 node.lineno:{
-                    'sql': 'SELECT * FROM {} WHERE {{}}',
+                    'sql': 'SELECT * FROM {} WHERE '+masksql,
                     'unresolved': [src, maskname]}})
             return
     
@@ -267,19 +269,19 @@ class Ast2pr(ast.NodeTransformer):
         return node
 def formatsql(sql:str, put:str, alias:str):
     """
-    When a query is a subquery, it needs to be enclosed in braces and given an alias, (outside of the braces, like this:
+    When a query is a subquery, it needs to be enclosed in braces and given an alias, (outside of the braces), like this:
 
     ... FROM (SELECT * FROM CUSTOMER) AS c1
-    
+
     The problem is that at the top level, an SQL query CANNOT be formatted as a subquery, i.e:
-    
+
     (SELECT * FROM CUSTOMER) AS c1
-    
+
     is an invalid SQL query if run alone like this. This function makes sure that only real subqueries are aliased.
     """
     enclosed = '('+put+f') AS {alias}'
     return sql.format(enclosed)
-        
+
 def resolve(name, callno):
     """callno is the line where the unresolved names are called, Not where they are defined"""
     defno = lastdef(name, callno)
@@ -287,10 +289,10 @@ def resolve(name, callno):
     sql = nodedict[name][defno]['sql']
     for child in unresolved:
         alias = child+'_'+str(defno)
-        sql = formatsql(sql, resolve(child, defno), alias) 
-    
+        sql = formatsql(sql, resolve(child, defno), alias)
+
     return sql
-    
+
 def lastdef(name, belowline):
     belowkeys=[k for k in nodedict[name].keys() if k<belowline]
     assert len(belowkeys)>0, f'can\'t find {name} below {belowline}'
@@ -332,17 +334,18 @@ def insert_pulls(tree):
             pulled+=[(name, lastdef_lineno)]
 
         opt_body+=[node]
-    
+
     opt_tree = ast.Module(body=opt_body, type_ignores=[])
-    
+
     return ast.fix_missing_locations(opt_tree) 
 
 import marshal
 import py_compile
 import time
 
-def optimize(parsetree):
+def optimize(parsetree_orig):
     # removes supported nodes from parsetree in-place and populates global nodedict
+    parsetree=copy.deepcopy(parsetree_orig)
     Ast2pr().visit(parsetree)
     opt_parsetree = insert_pulls(parsetree)
     return opt_parsetree
@@ -353,4 +356,4 @@ if __name__=='__main__':
         source = source_file.read()
      
     optimize(ast.parse(source)) 
-    
+

@@ -3,7 +3,10 @@ postgresql
 postgresql-contrib
 postgresql-plpython3-12
 libpq-dev
-pgbouncer
 git
 make
 gcc
+mosh
+graphviz
+graphviz-dev
+fonts-noto-mono

@@ -11,6 +11,7 @@ From http://alexleone.blogspot.co.uk/2010/01/python-ast-pretty-printer.html
 import sys
 from ast import *
 
+
 def dump(node, annotate_fields=True, include_attributes=False, indent='  '):
     """
     Return a formatted dump of the tree in *node*.  This is mainly useful for
@@ -96,3 +97,13 @@ if __name__ == '__main__':
 
         parseprint(fstr, filename=filename, include_attributes=True)
         print()
+
+def dumpln(node):
+    if type(node)==Module:
+        rootl=node.body
+    elif type(node)==list:
+        rootl=node
+    else:
+        raise NameError('wrong input')
+    for subnode in rootl:
+        print(f'{subnode.lineno}: {dump(subnode)}\n'+'-'*10)

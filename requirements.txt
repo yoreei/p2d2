@@ -2,5 +2,9 @@ psycopg2
 modin[ray]
 scikit-learn
 pandas
+jupyterlab
+kaggle
 #grizzly-sql
 #beautifultable #grizzly tests dependency
+networkx
+pygraphviz
