@@ -9,7 +9,7 @@ from . import astpp
 pp = astpp.parseprint
 # https://stackoverflow.com/questions/31174295/getattr-and-setattr-on-nested-subobjects-chained-properties
 import functools
-
+CONNSTR='' # set me!
 def rsetattr(obj, attr, val):
     pre, _, post = attr.rpartition('.')
     return setattr(rgetattr(obj, pre) if pre else obj, post, val)
@@ -124,7 +124,8 @@ class Ast2pr(ast.NodeTransformer):
 
     def fetch_colnames(self, name, lineno):
         # unhardcode
-        conn = psycopg2.connect(f"host=localhost dbname=tpch user=p2d2 password=p2d2")
+        
+        conn = psycopg2.connect(CONNSTR)
         cur = conn.cursor()
         src_query = resolve(name, lineno)
         cur.execute(f"create or replace temp view aggview as {src_query}")
@@ -343,7 +344,9 @@ import marshal
 import py_compile
 import time
 
-def optimize(parsetree_orig):
+def optimize(parsetree_orig, connstr_loc):
+    global CONNSTR
+    CONNSTR=connstr_loc
     # removes supported nodes from parsetree in-place and populates global nodedict
     parsetree=copy.deepcopy(parsetree_orig)
     Ast2pr().visit(parsetree)

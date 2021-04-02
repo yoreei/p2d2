@@ -15,7 +15,14 @@ C_MAGENTA='#6C71C4'
 #C_MAGENTA(BOLD)='#6C71C4'
 C_CYAN='#2AA198'
 #C_CYAN(BOLD)='#2AA198'
-VAR={'fontcolor':C_YELLOW,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'qwer'}
-FINAL={'fontcolor':C_BLUE,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'NotoMono'}
+PYLOAD={'fontcolor':C_YELLOW,'color':C_BLACK,'style':'filled','fillcolor':"#FFFFFF", 'fontname':'qwer'}
+DBSTORE={'fontcolor':C_MAGENTA,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'NotoMono'}
 OPERATOR={'fontcolor':C_BLACK,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'NotoMono'}
-SOURCE={'fontcolor':C_RED,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'NotoMono'}
+DBLOAD={'fontcolor':C_RED,'color':C_BLACK,'style':'filled','fillcolor':C_BACKGROUND, 'fontname':'NotoMono'}
+PYSTORE={'fontcolor':C_BLUE,'color':C_BLACK,'style':'filled', 'fillcolor':'#FFFFFF', 'fontname':'NotoMono'}
+ACTION={'fontcolor':C_BLACK,'color':C_BLACK,'style':'filled', 'fillcolor':'#FFFFFF', 'fontname':'NotoMono'}
+
+def TO(node, TYPE):
+    for key, value in TYPE.items():
+        node[key]=value
+    return node

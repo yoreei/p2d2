@@ -1,9 +1,49 @@
 #!/usr/bin/env python3
+import multiprocessing as mp
+mp.set_start_method('spawn')
+import psutil
+import time
+import astunparse
+
+def foo():
+    a=[]
+    while True:
+       a+=[numpy.ones((1_000_000,))]
+
+
+def timeit(fn, *args, **kwargs):
+    start_clock = time.perf_counter()
+    result=fn (*args, **kwargs)
+    end_clock = time.perf_counter()
+    timeit_time=end_clock-start_clock
+    return (result, timeit_time)
+class Monitor:
+    def spawn(self, fn, *args, **kwargs):
+        self.start_mem=self.available()
+        p = mp.Process(target=fn, args=args, kwargs=kwargs)
+        p.start()
+        while p.exitcode==None:
+            self.diffs+=[self.start_mem-self.available()]
+            #print(self.diffs[-1])
+            p.join(0.01)
+        if p.exitcode == -9:
+            self.oom=True
+        self.exitcode=p.exitcode
+
+    def available(self):
+        return psutil.virtual_memory().available
+    def __init__(self,fn, *args, **kwargs):
+        self.oom=False
+        self.diffs=[]
+        _, self.time = timeit(self.spawn, fn, *args, **kwargs)
+    #def report(self):
+    #    return pd.Series(self.diffs)
+
 import subprocess
 import functools
 import importlib
-import timeit
 import ast
+import os
 
 import pandas
 import psycopg2
@@ -16,6 +56,8 @@ from . import astpdb
 C_TIMES = 2
 CONNSTRTEMPLATE='host=localhost dbname=tpch{} user=postgres password=postgres'
 CONNSTR=CONNSTRTEMPLATE.format(1)
+CMD_ARGS = argparse_factory.parse_args()
+
 def shape_traffic(area:str):
 
     child = subprocess.Popen(['/bin/bash',
@@ -53,7 +95,7 @@ def warm_up(bytecode, times):
     for _ in range(times):
         exec(bytecode)
 
-def ver(parsetree, nextlist):
+def ver(nextlist, parsetree):
     nextf=nextlist.pop()
     res_df=pandas.DataFrame()
     global optimizer
@@ -63,14 +105,14 @@ def ver(parsetree, nextlist):
 
         optimizer = importlib.import_module(ver)
 
-        subres_df = nextf(parsetree, nextlist[:])
+        subres_df = nextf(nextlist[:], parsetree)
 
         subres_df['ver']=ver
         res_df=res_df.append(subres_df)
 
     return res_df
 
-def scale(parsetree, nextlist):
+def scale(nextlist, parsetree):
 
     nextf=nextlist.pop()
     res_df=pandas.DataFrame()
@@ -80,14 +122,14 @@ def scale(parsetree, nextlist):
 
         CONNSTR=CONNSTRTEMPLATE.format(scale_num)
         parsetree=change_conn(parsetree, CONNSTR)
-        subres_df = nextf(parsetree, nextlist[:])
+        subres_df = nextf(nextlist[:], parsetree)
         subres_df['scale']=scale_num
         res_df=res_df.append(subres_df)
 
     return res_df
 
 
-def index(parsetree, nextlist):
+def index(nextlist, parsetree):
     nextf=nextlist.pop()
     res_df = pandas.DataFrame()
 
@@ -95,14 +137,14 @@ def index(parsetree, nextlist):
         print(f'**index {state}')
         db_return=exec_sql(f'call set_indexes({state});')
 
-        subres_df = nextf(parsetree, nextlist[:])
+        subres_df = nextf(nextlist[:], parsetree)
         subres_df['index']=state
         res_df=res_df.append(subres_df)
 
     return res_df
 
 
-def net(parsetree, nextlist):
+def net(nextlist, parsetree):
     nextf=nextlist.pop()
     res_df = pandas.DataFrame()
     # reset any rules before starting
@@ -111,58 +153,61 @@ def net(parsetree, nextlist):
         print(f'**{area}')
         
         shape_traffic(area)
-        subres_df = nextf(parsetree, nextlist[:])
+        subres_df = nextf(nextlist[:], parsetree)
         subres_df['net']=area
         res_df=res_df.append(subres_df)
 
     return res_df
 
-def basic_bench(parsetree, nextlist):
-    def optimize_run(parsetree):
-        opt_parsetree = optimizer.optimize(parsetree)
-        opt_bcode = compile(opt_parsetree, 'str', 'exec')
-        exec(opt_bcode)
-        return
+def wflows(nextlist):
+    DIR='wflowscost/'
+    if CMD_ARGS.infile:
+        files=CMD_ARGS.infile
+    else:
+        files=os.listdir(DIR)
+    nextf=nextlist.pop()
+    res_df = pandas.DataFrame()
+    for f in files:
+        with open(DIR+f, "r") as file_source:
+            parsetree = ast.parse(file_source.read())
+        
+        subres_df = nextf(nextlist[:], parsetree)
+        subres_df['wflow']=f
+        res_df=res_df.append(subres_df)
+
+    return res_df
+
+def basic_bench(nextlist, parsetree):
+    #breakpoint()
+    opt_parsetree, opt_time = timeit(optimizer.optimize, parsetree, CONNSTR)
+
+    #opt_bcode = compile(opt_parsetree, 'str', 'exec')
+    opt_code=astunparse.unparse(opt_parsetree)
+    mon=Monitor(exec, opt_code)
 
     #breakpoint()
     time_incl=[]
     for i in range(C_TIMES):
         time_incl += [{
-            'opt': 'incl',
+            'oom': mon.oom,
+            'opt_time': opt_time,
             'rep': i,
-            'wall_time': timeit.timeit(lambda: optimize_run(parsetree), number=1),
+            'wall_time': mon.time,
              'cpu_utilization':0,
-             'mem_usage':0,
+             'mem_usage':mon.diffs,
              'net_usage':0,
             }]
+        #print(time_incl[-1])
 
-    time_excl=[]
-    opt_parsetree = optimizer.optimize(parsetree)
-    opt_bcode = compile(opt_parsetree, 'str', 'exec')
-    for i in range(C_TIMES):
-        time_excl += [{
-            'opt': 'excl',
-            'rep': i,
-            'wall_time': timeit.timeit(lambda: exec(opt_bcode), number=1),
-             'cpu_utilization':0,
-             'mem_usage':0,
-             'net_usage':0,
-            }]
+    return pandas.DataFrame(time_incl)
 
-    return pandas.DataFrame(time_incl+time_excl)
-
-def bench_all(parsetree, nextlist):
-    return nextlist.pop()(parsetree, nextlist)
+def bench_all(nextlist, *args):
+    return nextlist.pop()(nextlist, *args)
 
 if __name__ == "__main__":
-    args = argparse_factory.parse_args()
-    #TODO if path is directory:
-    # iterate on files inside
-    # else:
-    with open(args.filepath, "r") as source_file:
-        parsetree = ast.parse(source_file.read())
 
-    report = bench_all(parsetree, [basic_bench, ver, index, net, scale])
-    
+    benchlist=[basic_bench, ver, index, net, scale, wflows]
+
+    report = bench_all(benchlist)
     report.to_csv('/vagrant/docs/bench_results.csv', index=False)
     print(report)

@@ -8,3 +8,5 @@ kaggle
 #beautifultable #grizzly tests dependency
 networkx
 pygraphviz
+psutil
+astunparse

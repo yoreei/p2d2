@@ -1,19 +1,29 @@
-C_TEXT='#C5C8C6'
-C_TEXT_BOLD='#C5C8C6'
-C_BACKGROUND='#1D1F21'
-C_BLACK='#1D1F21'
-C_BLACK_BOLD='#969896'
-C_RED='#CC342B'
-C_RED_BOLD='#CC342B'
-C_GREEN='#198844'
-C_GREEN_BOLD='#198844'
-C_YELLOW='#FBA922'
-C_YELLOW_BOLD='#FBA922'
-C_BLUE='#3971ED'
-C_BLUE_BOLD='#3971ED'
-C_MAGENTA='#A36AC7'
-C_MAGENTA_BOLD='#A36AC7'
-C_CYAN='#3971ED'
-C_CYAN_BOLD='#3971ED'
-C_WHITE='#C5C8C6'
-C_WHITE_BOLD='#FFFFFF'
+PRiA.add_node('A', **SOURCE)
+PRiA.add_node('B', **SOURCE)
+PRiA.add_node('C(1)', **FINAL)
+PRiA.add_node('C(2)', label='C', **VAR)
+PRiA.add_node('D', **SOURCE)
+PRiA.add_node('E(2)', **FINAL)
+PRiA.add_node('Π10', label='Π', **OPERATOR)
+PRiA.add_node('⋈10', label='⋈', **OPERATOR)
+PRiA.add_node('Π11', label='Π', **OPERATOR)
+PRiA.add_node('σ11', label='σ', **OPERATOR)
+PRiA.add_node('Π20', label='Π', **OPERATOR)
+PRiA.add_node('σ20', label='σ', **OPERATOR)
+PRiA.add_node('⋈20', label='⋈', **OPERATOR)
+PRiA.add_node('Π21', label='Π', **OPERATOR)
+PRiA.add_node('σ21', label='σ', **OPERATOR)
+
+PRiA.add_edge('A', 'Π10',color=C_BLACK)
+PRiA.add_edge('⋈10', 'C(1)',color=C_BLACK)
+PRiA.add_edge('B', 'Π11',color=C_BLACK)
+PRiA.add_edge('Π11', 'σ11',color=C_BLACK)
+PRiA.add_edge('σ11', '⋈10',color=C_BLACK)
+
+PRiA.add_edge('C(2)', 'Π20',color=C_BLACK)
+PRiA.add_edge('Π20', 'σ20',color=C_BLACK)
+PRiA.add_edge('σ20', '⋈20',color=C_BLACK)
+PRiA.add_edge('⋈20', 'E(2)',color=C_BLACK)
+PRiA.add_edge('D', 'Π21',color=C_BLACK)
+PRiA.add_edge('Π21', 'σ21',color=C_BLACK)
+PRiA.add_edge('σ21', '⋈20',color=C_BLACK)
