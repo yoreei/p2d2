@@ -1,0 +1,13 @@
+pandas.DataFrame: {
+    append: 65,
+    max: 0.278
+}
+pandas.Series: {
+    hr: 63,
+    avg: 0.288
+  }
+pandas:{
+    read_sql: {
+        args: [sql, con],
+        kwargs: {index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None}}
+}

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 import argparse
 
+
 def parse_args():
-    parser = argparse.ArgumentParser(description="Optimize Python programs by performing pushdown to the underlying RDBMS")
+    parser = argparse.ArgumentParser(
+        description="Optimize Python programs by performing pushdown to the underlying RDBMS"
+    )
     parser.add_argument(
-        'infile',
-        nargs='?',
-        type=argparse.FileType('r'),
-        help='if empty use wflowscost')
-#    parser.add_argument("-o", "--optimize", action="store_true",
-#                        help="only optimize program, without running it")
-    parser.add_argument("-v", "--verbose", action="store_true",
-                        help="prints the generated SQL queries")
+        "infile", nargs="?", type=argparse.FileType("r"), help="if empty use wflowscost"
+    )
+    #    parser.add_argument("-o", "--optimize", action="store_true",
+    #                        help="only optimize program, without running it")
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", help="prints the generated SQL queries"
+    )
     return parser.parse_args()

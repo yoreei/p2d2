@@ -10,3 +10,4 @@ networkx
 pygraphviz
 psutil
 astunparse
+pylint

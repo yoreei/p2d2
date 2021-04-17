@@ -6,19 +6,18 @@ import numpy as np
 import os
 
 
+base = Path("G:/")
 
-base = Path('G:/')
-
-if not (base / 'kernels.csv').exists():
-    print('kernels.csv not found')
+if not (base / "kernels.csv").exists():
+    print("kernels.csv not found")
     exit()
 
 #
 
-kernels=pd.read_csv(base / 'kernels.csv', index_col=False)
+kernels = pd.read_csv(base / "kernels.csv", index_col=False)
 for kernel, competition in zip(kernels.ref, kernels.competition_ref):
-    folder = base / 'kernels' / competition
+    folder = base / "kernels" / competition
     folder.mkdir(parents=True, exist_ok=True)
-    os.system(f'kaggle kernels pull {kernel} -p {folder}')
+    os.system(f"kaggle kernels pull {kernel} -p {folder}")
 
-#variance of grammar
+# variance of grammar
