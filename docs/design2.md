@@ -59,14 +59,13 @@ ON O_CUSTKEY=C_CUSTKEY;
 ```
 The result:
 
-
- o_orderstatus | o_custkey | c_custkey | c_acctbal
----------------+-----------+-----------+----------
- F             |     55624 |     55624 |    818.33
- O             |    124828 |    124828 |   6629.21
- O             |     28547 |     28547 |   2095.42
- F             |     84487 |     84487 |   -659.55
- O             |     29101 |     29101 |   2261.04
+| o_orderstatus | o_custkey | c_custkey | c_acctbal|
+|---------------|-----------|-----------|----------|
+| F             |     55624 |     55624 |    818.33|
+| O             |    124828 |    124828 |   6629.21|
+| O             |     28547 |     28547 |   2095.42|
+| F             |     84487 |     84487 |   -659.55|
+| O             |     29101 |     29101 |   2261.04|
 
 And the "equivalent" pandas code:
 
@@ -90,14 +89,14 @@ print(joined)
 The result:
 
 
-       |o_orderstatus| o_custkey| c_acctbal
--------|-------------|----------|----------
-0      |            O|     36901|   4809.84
-45920  |            F|     36901|   4809.84
-140227 |            F|     36901|   4809.84
-239018 |            F|     36901|   4809.84
-293029 |            O|     36901|   4809.84
-...    |          ...|       ...|       ...
+|       |o_orderstatus| o_custkey| c_acctbal|
+|-------|-------------|----------|----------|
+|0      |            O|     36901|   4809.84|
+|45920  |            F|     36901|   4809.84|
+|140227 |            F|     36901|   4809.84|
+|239018 |            F|     36901|   4809.84|
+|293029 |            O|     36901|   4809.84|
+|...    |          ...|       ...|       ...|
 
 
 Notice the number of named columns:
@@ -256,13 +255,14 @@ The result:
 SELECT * FROM (SELECT _t1.o_custkey,_t1.o_orderstatus FROM (SELECT * FROM orders _t0) _t1) _t7 inner JOIN (SELECT _t3.c_custkey,_t3.c_acctbal FROM (SELECT * FROM customer _t2) _t3) _t8 ON _t7.o_custkey = _t8.c_custkey
 ```
 
- o_custkey | o_orderstatus | c_custkey | c_acctbal
-   55624   |       F       |   55624   |  818.33
-  124828   |       O       |  124828   |  6629.21
-   28547   |       O       |   28547   |  2095.42
-   84487   |       F       |   84487   |  -659.55
-   29101   |       O       |   29101   |  2261.04
-   71134   |       F       |   71134   |  398.12
+| o_custkey | o_orderstatus | c_custkey | c_acctbal|
+|-----------|---------------|-----------|----------|
+|   55624   |       F       |   55624   |  818.33  |
+|  124828   |       O       |  124828   |  6629.21 |
+|   28547   |       O       |   28547   |  2095.42 |
+|   84487   |       F       |   84487   |  -659.55 |
+|   29101   |       O       |   29101   |  2261.04 |
+|   71134   |       F       |   71134   |  398.12  |
 ....
 
 So, to compare directly, when joining 2 tables with 2 columns each on 1 column, the resulting table has the following columns:

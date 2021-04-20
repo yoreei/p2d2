@@ -1,8 +1,8 @@
 import random
-from .. import log
+# from .. import log
 
-logger = log.getLogger(__name__)
-logger.info("Mocking execution")
+# logger = log.getLogger(__name__)
+# logger.info("Mocking execution")
 
 
 def timeit(fn, *args, **kwargs):

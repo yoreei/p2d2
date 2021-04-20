@@ -7,7 +7,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
     datefmt="%m-%d %H:%M",
-    filename="mylog.log",
+    filename="logs/mylog.log",
     filemode="w",
 )
 # define a Handler which writes INFO messages or higher to the sys.stderr
@@ -18,10 +18,10 @@ formatter = logging.Formatter("%(name)-12s: %(levelname)-8s %(message)s")
 # console.setFormatter(formatter)
 # logging.getLogger('').addHandler(console)
 
-debuglog = logging.FileHandler("debug.log")
+debuglog = logging.FileHandler("logs/debug.log")
 debuglog.setLevel(logging.DEBUG)
 logging.getLogger("").addHandler(debuglog)
 
-infolog = logging.FileHandler("info.log")
+infolog = logging.FileHandler("logs/info.log")
 infolog.setLevel(logging.INFO)
 logging.getLogger("").addHandler(infolog)

@@ -28,28 +28,7 @@ Hard:
     pandas.cut
 
 
-
-
-
-
-
-
-
-index
-no cache
-with/without analysis
-
-what is migration? data migrationl
-
-
-
-
-
-
-
-
-
-
+```
 # melt
 df
    A  B  C
@@ -84,8 +63,8 @@ Very Good  1513  2400  2164  2299  1824  1204  678
 Good        662   933   909   871   702   522  307
 Fair        163   224   312   314   303   175  119
 
-
 # map
 
 title_mapping = {"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}
 dataset.map(title_mapping)
+```

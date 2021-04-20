@@ -1,14 +1,14 @@
 import unittest
-import p2d2.__main__
+import p2d2.__main__ as benchmarker
 from .mock import monitor as mock_monitor
 
 
 class MockMonitorTestCase(unittest.TestCase):
     def setUp(self):
-        p2d2.monitor = mock_monitor
+        benchmarker.monitor = mock_monitor
 
     def test_runs(self):
-        p2d2.main()
+        benchmarker.main()
         self.assertEqual(True, True)
 
 

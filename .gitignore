@@ -1,6 +1,7 @@
 # data
 data/
 *.tbl
+logs/
 
 #jupyter
 .ipynb_checkpoints

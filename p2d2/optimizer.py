@@ -8,7 +8,8 @@ import copy
 # https://stackoverflow.com/questions/31174295/getattr-and-setattr-on-nested-subobjects-chained-properties
 import functools
 
-CONNSTR = ""  # set me!
+CONNSTR = ""  # set me! example:
+# CONNSTR = "host=localhost dbname=tpch1 user=postgres password=postgres"
 
 
 def rsetattr(obj, attr, val):
@@ -442,11 +443,15 @@ import time
 
 
 def optimize(parsetree_orig, connstr_loc):
+    if type(parsetree_orig)==str:
+        parsetree_orig = ast.parse(parsetree_orig)
+
     global CONNSTR
     CONNSTR = connstr_loc
     # removes supported nodes from parsetree in-place and populates global nodedict
     parsetree = copy.deepcopy(parsetree_orig)
     Ast2pr().visit(parsetree)
     opt_parsetree = insert_pulls(parsetree)
+    print(type(opt_parsetree))
     return opt_parsetree
 
