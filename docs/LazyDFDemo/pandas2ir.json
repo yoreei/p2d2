@@ -1,0 +1,28 @@
+{"head":{
+    "mappings":[
+        {
+            "args": ["num"],
+            "argtypes": ["int"],
+            "maps": "LIMIT",
+            "mapsargs": ["num"]
+        }
+    ]
+
+},
+"__getitem__":{
+    "mappings":[
+        {
+            "args": ["cols"],
+            "argtypes": ["list"],
+            "maps": "PROJECTION",
+            "mapsargs": ["cols"]
+        },
+        {
+            "args": ["mask"],
+            "argtypes": ["LazyDataFrame"],
+            "maps": "SELECTION",
+            "mapsargs": ["mask"]
+        }
+    ]
+}
+}

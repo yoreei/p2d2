@@ -47,4 +47,4 @@ pylist_app = pylist.append(10)  # 14
 parsed = astroid.parse(code)
 body = parsed.body
 inf = body[6].value.infer()
-next(inf)
+print(next(inf))

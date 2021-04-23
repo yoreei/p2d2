@@ -1,0 +1,87 @@
+{[
+    {
+        "ismodule": true,
+        "type": "pandas",
+        "methods":[
+            {
+                "attrname":"read_sql_table",
+                "args":["str", "object"],
+                "kwargs":{},
+                "maps":{
+                    "ir":"DBSOURCE({})",
+                    "type":"pandas.DataFrame"
+                }
+            }
+        ]
+    },
+    {
+        "ismodule": false,
+        "type": "pandas.DataFrame",
+        "methods":[
+            {
+                "attrname":"__getitem__",
+                "args":["pandas.DataFrame"],
+                "kwargs":{},
+                "maps":{
+                    "ir":"SELECTION({},{_instance}",
+                    "type":"pandas.DataFrame"
+                }
+            },
+            {
+                "attrname":"__getitem__",
+                "args":["str"],
+                "kwargs":{},
+                "maps":{
+                    "ir":"PROJECTION({},{_instance}",
+                    "type":"pandas.DataFrame"
+                }
+            },
+            {
+                "attrname":"__getitem__",
+                "args":["list"],
+                "kwargs":{},
+                "maps":{
+                    "ir":"PROJECTION({},{_instance}",
+                    "type":"pandas.DataFrame"
+                }
+            },
+            {
+                "attrname":"head",
+                "args":["str", "object"],
+                "kwargs":{},
+                "maps":{
+                    "type":"pandas.DataFrame"
+                }
+            },
+            {
+                "attrname":"merge",
+                "args":["str", "object"],
+                "kwargs":{},
+                "maps":{
+                    "type":"pandas.DataFrame"
+                }
+            },
+            {
+                "attrname":"groupby",
+                "args":["str", "object"],
+                "kwargs":{},
+                "maps":{
+                    "type":"pandas.GroupBy"
+                }
+            }
+        ]
+    },
+    {
+        "ismodule":false,
+        "type":"pandas.GroupBy",
+        "methods":{
+            "max":{
+                "args":[],
+                "kwargs":{},
+                "maps":{
+                    "type":"pandas.DataFrame"
+                }
+            }
+        }
+    }
+]}

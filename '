@@ -32,12 +32,12 @@ sel = a.loc[mask]
 
 action(sel)
 """
-    desugar.all()
-    inference()
-    parsed = astroid.parse(code)
+desugar.all()
+inference()
+parsed = astroid.parse(code)
 
-    optimize(parsed)
-    inferred = parsed.body[6].value.inferred()[0]
-    breakpoint()
+optimize(parsed)
+inferred = parsed.body[6].value.inferred()[0]
+breakpoint()
 
-    #print (list(parsed.body[10].value.infer()))
+#print (list(parsed.body[10].value.infer()))
