@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
 import astroid
-from . import desugar
+#if __name__=='__main__':
+#    import desugar
+#else:
+#    from . import desugar
+from .desugar import desugar
 
 def inference():
     with open('/vagrant/p2d2/infer/dataframe.pyi') as interface_file:
@@ -10,9 +14,11 @@ def inference():
     
 def optimize(parsed):
     calls = parsed.nodes_of_class(astroid.node_classes.Call)
+    return ""
         
 
 if __name__=='__main__':
+    
     code="""
 import pandas # 0
 import psycopg2 # 1
@@ -25,18 +31,18 @@ c = b.head(5) # 6
 a = pandas.DataFrame() # 7
 b = a['l_custid'] # 8
 c = b.head(5) # 9
-mask = a.loc[:, "l_discount"] <= 0.05  # roughly in the middle
+#mask = a.loc[:, "l_discount"] <= 0.05  # roughly in the middle
 l=list(reversed([1,2,3]))
 
 sel = a.loc[mask]
 
 action(sel)
 """
-    desugar.all()
+    desugar(code)
     inference()
     parsed = astroid.parse(code)
 
-    optimize(parsed)
+    #optimize(parsed)
     inferred = parsed.body[6].value.inferred()[0]
     breakpoint()
 
