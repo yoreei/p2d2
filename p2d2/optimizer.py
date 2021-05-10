@@ -6,14 +6,15 @@ import astroid
 #else:
 #    from . import desugar
 from .desugar import desugar
+from .uniquify import uniquify
+from .inference import inference
 
-def inference():
-    with open('/vagrant/p2d2/infer/dataframe.pyi') as interface_file:
-        interface_parsed = astroid.parse(interface_file.read())
-    astroid.register_module_extender(astroid.MANAGER, "pandas", lambda x=interface_parsed: x)
     
-def optimize(parsed):
+def optimize(code:str):
+    code_nosugar:str = desugar(code)
+    code_unique:str = uniquify(code_nosugar)
     calls = parsed.nodes_of_class(astroid.node_classes.Call)
+    parsed.as_string() # produces python code from AST
     return ""
         
 
@@ -39,7 +40,6 @@ sel = a.loc[mask]
 action(sel)
 """
     desugar(code)
-    inference()
     parsed = astroid.parse(code)
 
     #optimize(parsed)
