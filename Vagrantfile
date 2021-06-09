@@ -17,7 +17,9 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "p2d2"
 
   config.vm.define "p2d2"
-  config.vm.network "public_network"
+  # config.vm.network "public_network"
+  config.vm.network "private_network", ip: "192.168.50.4"
+  # also try with this one: 172.16.0.0
   # customize memory. Be generous
   config.vm.provider "hyperv" do |v|
       v.maxmemory = 25576

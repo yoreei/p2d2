@@ -1,6 +1,6 @@
 import unittest
 import astroid
-from p2d2.optimizer import inference
+from p2d2.infer.inference import inference
 
 
 class TestInfer(unittest.TestCase):
@@ -83,6 +83,18 @@ class TestInfer(unittest.TestCase):
         checkNode = parsed.body[4].value
         self.typeEqual(checkNode, "pandas.DataFrame")
 
+    def test_getitem_kwargs(self):
+        code = """import pandas # 0
+t = pandas.read_sql_table("table", object()) # 1
+m = t.__getitem__(key = "col") > 5 # 2
+p = t.__getitem__(key = m) # 3
+"""
+        parsed = astroid.parse(code)
+        checkNode_m = parsed.body[2].value
+        self.typeEqual(checkNode_m, "pandas.DataFrame")
+
+        checkNode_p = parsed.body[3].value
+        self.typeEqual(checkNode_p, "pandas.DataFrame")
     # commented out because redundant
 
     # def test_sel(self):
@@ -173,6 +185,23 @@ class TestInfer(unittest.TestCase):
 
         # pd.DataFrame
         checkNode = parsed.body[2].value.func.args[0].func.args[0]
+        self.typeEqual(checkNode, "pandas.DataFrame")
+
+    def test_read_sql_table(self):
+        code = """import pandas  # 0
+t = pandas.read_sql_table("table", object()) # 1
+        """
+        parsed = astroid.parse(code)
+        checkNode = parsed.body[1].value
+        self.typeEqual(checkNode, "pandas.DataFrame")
+
+    def test_getitem_key(self):
+        code = """import pandas # 0
+t = pandas.read_sql_table("table", object()) # 1
+m = t.__getitem__(key = "col") > 5 # 2
+        """
+        parsed = astroid.parse(code)
+        checkNode = parsed.body[2].value
         self.typeEqual(checkNode, "pandas.DataFrame")
 
 #    def test_generic(self):

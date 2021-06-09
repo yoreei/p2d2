@@ -9,7 +9,7 @@ def assertFrameEqual(df1, df2, **kwds ):
 
 class TestAPI (unittest.TestCase):
     def setUp(self):
-        pass
+        inference()
 
     def test_join(self):
         code="""

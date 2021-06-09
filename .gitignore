@@ -2,6 +2,8 @@
 data/
 *.tbl
 logs/
+docs/reports/
+docs/old_reports/
 
 #jupyter
 .ipynb_checkpoints

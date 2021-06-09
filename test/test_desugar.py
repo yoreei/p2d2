@@ -1,5 +1,5 @@
 import unittest
-from p2d2.desugar import desugar
+from p2d2.preprocessor.desugar import desugar
 
 
 class TestDesugar(unittest.TestCase):

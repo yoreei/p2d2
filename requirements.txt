@@ -12,3 +12,4 @@ psutil
 astunparse
 pylint
 redbaron
+nose2

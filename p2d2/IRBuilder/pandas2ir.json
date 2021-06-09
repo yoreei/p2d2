@@ -1,0 +1,157 @@
+{[
+    {
+        "req":{
+            "parenttype": "pandas",
+            "attrname":"read_sql_table",
+            "kwarg_values":{},
+            "kwarg_types":{"table_name":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"DBSOURCE({table_name})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"pandas.DataFrame"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"SELECTION({},{__instance}",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION({key},{__instance})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"list"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION({key},{__instance})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"head",
+            "kwarg_values":{},
+            "kwarg_types":{"n":"int"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"HEAD({n}, {__instance})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"merge",
+            "kwarg_values":{},
+            "kwarg_types":{"right":"pandas.DataFrame",
+                "how":"str", "on":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"JOIN({right}, {how}, {on}, {__instance})",
+            "type":"pandasDataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"groupby",
+            "kwarg_values":{},
+            "kwarg_types":{"by":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir": "state[__instance]",
+            "type":"pandas.GroupBy",
+            "state":["by"]
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"max",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"MAX({__columns}, {__instance})",
+            "type":"unsupported",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype": "pandas.DataFrame",
+            "attrname":"min",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"MIN({__columns}, {__instance})",
+            "type":"unsupported",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype":"pandas.GroupBy",
+            "attrname":"max",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"MAX({state[parentname]['by']}, {__instance})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    },
+    {
+        "req":{
+            "parenttype":"pandas.GroupBy",
+            "attrname":"min",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"MIN({state[parentname]['by']}, {__instance})",
+            "type":"pandas.DataFrame",
+            "state": []
+        }
+    }
+]}

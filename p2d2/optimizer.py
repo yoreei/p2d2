@@ -5,17 +5,37 @@ import astroid
 #    import desugar
 #else:
 #    from . import desugar
-from .desugar import desugar
-from .uniquify import uniquify
-from .inference import inference
+from .infer import inference
+from .preprocessor import preprocess
+from .IRBuilder.classifier import Classifier
+from .IRBuilder import code_traverser
 
     
-def optimize(code:str):
-    code_nosugar:str = desugar(code)
-    code_unique:str = uniquify(code_nosugar)
-    calls = parsed.nodes_of_class(astroid.node_classes.Call)
-    parsed.as_string() # produces python code from AST
-    return ""
+def optimize(raw_code:str, conn_info:str)->str:
+    """The main entry point to the optimizer. This activates the whole pipeline as seen on the overview diagram. 
+    Input: code read from file
+    Output: The optimized, ready-to-run version of the code
+    """
+    raw_code = p2d2_setup(raw_code, conn_info)
+    code:str = preprocess(raw_code)    
+    ast:astroid.Module = astroid.parse(code)
+    ast.last_p2d2_node = 3
+    eagerfiable:set = code_traverser.lazify(ast)
+    code_traverser.eagerfy(ast, eagerfiable)
+    return ast.as_string() # Python code from AST
+
+def p2d2_setup(code:str, conn_info:str) -> None:
+    """
+    Our optimizer depends on a few libraries (psychopg2 and pandas) 
+    """
+    code = f"""import pandas
+    import psycopg2
+    conn = psycopg2.connect({conn_info})
+    cur = conn.cursor()
+    """ + code
+    return code
+    
+    
         
 
 if __name__=='__main__':
@@ -39,11 +59,3 @@ sel = a.loc[mask]
 
 action(sel)
 """
-    desugar(code)
-    parsed = astroid.parse(code)
-
-    #optimize(parsed)
-    inferred = parsed.body[6].value.inferred()[0]
-    breakpoint()
-
-    #print (list(parsed.body[10].value.infer()))
