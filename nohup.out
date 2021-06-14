@@ -1,701 +1,354 @@
-2021-06-07 15:35:38,661 p2d2.benchmarker.main INFO     DIR='benchmarks/base/'
-2021-06-07 15:35:38,670 p2d2.benchmarker.main INFO     f='micro_join.py'
-2021-06-07 15:35:38,676 p2d2.benchmarker.main INFO     scale=1
-
-
-2021-06-07 15:35:38,697 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 13:29:29,230 p2d2.benchmarker.main INFO     BENCH_DIR='benchmarks/base/'
+2021-06-13 13:29:29,282 p2d2.benchmarker.main INFO     f='micro_join.py'
+2021-06-13 13:29:29,290 p2d2.benchmarker.main INFO     scale=1
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 15:35:38,724 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 15:35:38,748 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:36:48,924 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 15:36:48,946 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:37:57,027 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 15:37:57,201 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 15:37:57,274 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:39:07,439 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 15:39:07,539 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:40:17,416 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 15:40:17,717 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 15:40:17,738 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:41:27,657 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 15:41:27,679 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:42:35,901 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 13:29:29,517 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 15:42:35,920 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 13:29:29,567 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 13:29:30,401 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:30:44,743 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:31:54,962 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 13:31:54,986 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:33:03,624 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:34:15,664 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 13:34:15,727 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 13:34:15,824 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:35:24,054 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:36:33,159 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 13:36:33,257 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:37:42,569 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:38:52,404 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 13:38:52,703 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 13:38:52,725 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:40:00,836 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:41:11,419 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 13:41:11,444 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:42:23,400 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:43:32,433 p2d2.benchmarker.main INFO     scale=10
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 15:42:35,948 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 15:42:37,114 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:50:57,610 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 15:51:01,758 p2d2.benchmarker.main INFO     executing...
-2021-06-07 15:56:10,750 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 15:56:12,734 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 15:56:13,764 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:00:49,047 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:00:50,749 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:06:01,354 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 16:06:03,628 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:06:04,654 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:11:05,205 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:11:06,686 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:16:31,189 p2d2.benchmarker.main INFO     f='micro_max.py'
-2021-06-07 16:16:31,790 p2d2.benchmarker.main INFO     scale=1
+2021-06-13 13:43:32,451 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:16:33,612 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 13:43:32,477 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 13:43:34,867 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 13:49:23,211 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 13:55:42,945 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 13:55:45,742 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:00:32,192 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:06:11,603 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 14:06:13,848 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:06:15,189 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:11:05,404 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:17:16,649 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:17:19,020 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:22:03,336 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:26:42,750 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 14:26:45,259 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:26:46,434 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:31:10,775 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:36:27,545 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:36:29,632 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:41:25,359 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:48:01,483 p2d2.benchmarker.main INFO     f='micro_max.py'
+2021-06-13 14:48:02,033 p2d2.benchmarker.main INFO     scale=1
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:16:33,715 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:16:34,957 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:16:59,225 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:16:59,294 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:17:06,063 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 16:17:06,123 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:17:06,325 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:17:13,120 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:17:13,244 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:17:20,198 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 16:17:20,496 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:17:20,518 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:17:26,994 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:17:27,017 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:17:37,632 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 14:48:04,011 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:17:37,651 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 14:48:04,066 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:48:05,844 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:48:31,054 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:48:37,877 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:48:37,935 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:48:44,423 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:48:50,989 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 14:48:51,055 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:48:51,181 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:48:58,076 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:49:05,065 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:49:05,191 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:49:12,090 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:49:18,968 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 14:49:19,317 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:49:19,438 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:49:25,963 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:49:32,596 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:49:32,618 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:49:39,132 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:49:45,895 p2d2.benchmarker.main INFO     scale=10
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:17:37,678 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:17:37,714 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:20:15,504 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:20:15,630 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:22:16,932 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 16:22:18,564 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:22:19,466 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:24:08,737 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:24:09,214 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:26:06,652 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 16:26:08,598 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:26:09,323 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:28:09,132 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:28:09,932 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:30:18,035 p2d2.benchmarker.main INFO     f='micro_proj.py'
-2021-06-07 16:30:18,277 p2d2.benchmarker.main INFO     scale=1
+2021-06-13 14:49:45,914 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:30:19,868 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 14:49:45,941 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:49:46,136 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:52:26,594 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:54:23,009 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 14:54:24,446 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 14:56:22,600 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 14:58:18,244 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 14:58:20,213 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 14:58:21,576 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:00:21,452 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:02:30,964 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:02:32,255 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:04:34,276 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:06:58,871 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 15:07:00,464 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:07:01,819 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:09:04,391 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:11:30,671 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:11:32,126 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:13:35,665 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:16:13,203 p2d2.benchmarker.main INFO     f='micro_proj.py'
+2021-06-13 15:16:13,282 p2d2.benchmarker.main INFO     scale=1
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:30:19,916 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:30:20,995 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:31:31,063 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:31:31,450 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:32:29,967 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 16:32:30,032 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:32:30,130 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:33:29,195 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:33:29,298 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:34:30,388 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 16:34:30,687 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:34:30,729 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:35:31,295 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:35:31,318 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:36:32,437 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 15:16:14,548 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:36:32,455 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 15:16:14,581 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:16:16,060 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:17:21,766 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:18:20,662 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:18:20,688 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:19:19,181 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:20:17,458 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 15:20:17,520 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:20:17,645 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:21:16,558 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:22:16,069 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:22:16,193 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:23:15,047 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:24:13,410 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 15:24:13,941 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:24:13,964 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:25:13,005 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:26:12,007 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:26:12,031 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:27:11,158 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:28:10,192 p2d2.benchmarker.main INFO     scale=10
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 16:36:32,483 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:36:32,833 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:44:05,118 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:44:06,322 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:49:44,443 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 16:49:46,419 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 16:49:47,724 p2d2.benchmarker.main INFO     executing...
-2021-06-07 16:55:11,204 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 16:55:12,852 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:00:46,000 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 17:00:48,840 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:00:50,013 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:05:41,665 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:05:43,090 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:10:19,625 p2d2.benchmarker.main INFO     f='micro_sel.py'
-2021-06-07 17:10:20,266 p2d2.benchmarker.main INFO     scale=1
+2021-06-13 15:28:10,212 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:10:22,362 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 15:28:10,240 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:28:10,323 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:33:51,453 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:39:15,955 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 15:39:18,040 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:44:36,419 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 15:50:09,745 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 15:50:12,033 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 15:50:13,405 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 15:55:15,841 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 16:00:41,805 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 16:00:44,171 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 16:26:23,664 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 16:34:05,052 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 16:34:07,363 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 16:34:08,812 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 16:39:21,134 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 16:51:59,137 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 16:52:02,112 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:03:26,990 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:09:15,453 p2d2.benchmarker.main INFO     f='micro_sel.py'
+2021-06-13 17:09:15,691 p2d2.benchmarker.main INFO     scale=1
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:10:22,466 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:10:23,946 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:11:31,551 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:11:31,588 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:12:31,571 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 17:12:31,637 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:12:31,761 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:13:32,822 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:13:33,049 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:14:32,066 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 17:14:32,369 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:14:32,392 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:15:33,129 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:15:33,153 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:16:34,464 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 17:09:17,472 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:16:34,484 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 17:09:17,569 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 17:09:19,425 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:10:27,911 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:11:26,469 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 17:11:26,508 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:12:27,415 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:13:26,944 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 17:13:28,818 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 17:13:28,942 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:14:28,405 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:15:28,614 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 17:15:28,767 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:16:30,224 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:17:29,512 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 17:17:30,058 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 17:17:30,083 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:18:28,240 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:19:27,205 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 17:19:27,229 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:20:25,261 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:21:22,861 p2d2.benchmarker.main INFO     scale=10
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:16:34,513 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:16:34,537 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:21:37,514 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:21:39,563 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:27:20,498 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 17:27:22,687 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:27:24,009 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:35:41,536 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:35:43,242 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:40:57,171 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 17:40:59,297 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:41:00,275 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:46:57,202 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:46:59,119 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:51:36,342 p2d2.benchmarker.main INFO     DIR='benchmarks/optimized/'
-2021-06-07 17:51:36,748 p2d2.benchmarker.main INFO     f='micro_join.py'
-2021-06-07 17:51:36,976 p2d2.benchmarker.main INFO     scale=1
+2021-06-13 17:21:22,879 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:51:38,989 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 17:21:22,910 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 17:21:25,165 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:26:57,366 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 17:31:29,774 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 17:31:31,887 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 17:42:00,042 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 18:01:33,248 p2d2.benchmarker.main INFO     area='wan'
+
+
+2021-06-13 18:01:35,340 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 18:01:36,451 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 18:06:47,946 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 18:12:27,472 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 18:12:29,801 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 18:17:42,625 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 18:22:33,975 p2d2.benchmarker.main INFO     area='loc'
+
+
+2021-06-13 18:22:36,641 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 18:22:38,086 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 18:29:44,652 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 18:34:39,865 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 18:34:41,912 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 18:39:38,377 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 18:47:39,265 p2d2.benchmarker.main INFO     BENCH_DIR='benchmarks/modin/'
+2021-06-13 18:47:39,453 p2d2.benchmarker.main INFO     f='micro_join.py'
+2021-06-13 18:47:39,590 p2d2.benchmarker.main INFO     scale=1
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 17:51:39,082 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:51:40,677 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:53:48,287 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:53:48,312 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:55:32,876 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 17:55:32,934 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:55:33,643 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:57:18,787 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 17:57:18,884 p2d2.benchmarker.main INFO     executing...
-2021-06-07 17:59:06,007 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 17:59:06,539 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 17:59:06,562 p2d2.benchmarker.main INFO     executing...
-2021-06-07 18:00:51,027 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 18:00:51,175 p2d2.benchmarker.main INFO     executing...
-2021-06-07 18:02:38,436 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 18:47:41,851 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 18:02:38,454 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 18:02:38,480 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 18:02:40,266 p2d2.benchmarker.main INFO     executing...
-2021-06-07 18:20:14,833 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 18:20:16,750 p2d2.benchmarker.main INFO     executing...
-2021-06-07 18:39:32,316 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 18:39:34,939 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 18:39:36,177 p2d2.benchmarker.main INFO     executing...
-2021-06-07 18:56:58,103 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 18:57:00,036 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:15:55,047 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:15:57,177 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:15:58,114 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:33:46,086 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:33:47,904 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:51:30,250 p2d2.benchmarker.main INFO     f='micro_max.py'
-2021-06-07 19:51:30,676 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:51:32,441 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:51:32,558 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:51:33,861 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:51:55,388 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:51:55,413 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:51:56,341 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 19:51:56,439 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:51:56,595 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:51:57,912 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:51:58,036 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:51:59,463 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:51:59,761 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:51:59,784 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:52:00,698 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:52:00,720 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:52:01,752 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:52:01,772 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:52:01,801 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:52:01,845 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:09,397 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:54:09,422 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:14,202 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 19:54:14,262 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:54:14,386 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:27,533 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:54:27,659 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:32,604 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:54:32,901 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:54:32,926 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:37,465 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:54:37,487 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:42,061 p2d2.benchmarker.main INFO     f='micro_proj.py'
-2021-06-07 19:54:42,158 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:54:42,177 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:54:42,206 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:54:42,232 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:46,435 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:54:46,494 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:50,691 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 19:54:50,751 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:54:50,875 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:54:55,768 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:54:55,892 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:55:00,513 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:55:00,856 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:55:00,879 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:55:05,111 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:55:05,132 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:55:09,524 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:55:09,543 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:55:09,615 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:55:09,639 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:55:49,843 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:55:50,540 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:56:37,327 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 19:56:38,756 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:56:38,892 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:57:22,522 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:57:22,756 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:58:05,847 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:58:06,264 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:58:06,288 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:58:49,432 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:58:49,548 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:33,295 p2d2.benchmarker.main INFO     f='micro_sel.py'
-2021-06-07 19:59:33,365 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:59:33,401 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 19:59:33,446 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:59:33,473 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:51,506 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:59:51,531 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:53,027 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 19:59:53,088 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:59:53,211 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:55,546 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:59:55,670 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:57,572 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 19:59:57,870 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 19:59:57,894 p2d2.benchmarker.main INFO     executing...
-2021-06-07 19:59:59,601 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 19:59:59,623 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:01,207 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:00:01,226 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:00:01,254 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:00:01,300 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:15,789 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:00:15,814 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:25,414 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-07 20:00:25,473 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:00:25,599 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:35,848 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:00:35,971 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:46,132 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-07 20:00:46,479 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:00:46,603 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:00:56,157 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:00:56,181 p2d2.benchmarker.main INFO     executing...
-2021-06-07 20:01:05,992 p2d2.benchmarker.main INFO     DIR='benchmarks/modin/'
-2021-06-07 20:01:06,059 p2d2.benchmarker.main INFO     f='micro_join.py'
-2021-06-07 20:01:06,063 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:01:06,083 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:01:06,111 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:01:06,167 p2d2.benchmarker.main INFO     executing...
+2021-06-13 18:47:41,914 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 18:47:43,596 p2d2.benchmarker.main INFO     rep=0
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:04:45,446 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:04:46,641 p2d2.benchmarker.main INFO     executing...
+2021-06-13 18:51:16,829 p2d2.benchmarker.main INFO     rep=1
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:08:08,095 p2d2.benchmarker.main INFO     area='wan'
+2021-06-13 18:54:17,044 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 18:54:17,070 p2d2.benchmarker.main INFO     rep=0
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 18:57:17,271 p2d2.benchmarker.main INFO     rep=1
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 19:00:14,433 p2d2.benchmarker.main INFO     area='wan'
 
 
-2021-06-07 20:08:09,142 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:08:09,589 p2d2.benchmarker.main INFO     executing...
+2021-06-13 19:00:14,499 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 19:00:14,720 p2d2.benchmarker.main INFO     rep=0
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:11:26,176 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:11:26,532 p2d2.benchmarker.main INFO     executing...
+2021-06-13 19:03:13,520 p2d2.benchmarker.main INFO     rep=1
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:14:35,120 p2d2.benchmarker.main INFO     area='loc'
+2021-06-13 19:06:09,478 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 19:06:09,701 p2d2.benchmarker.main INFO     rep=0
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 19:09:06,563 p2d2.benchmarker.main INFO     rep=1
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 19:12:08,884 p2d2.benchmarker.main INFO     area='loc'
 
 
-2021-06-07 20:14:35,697 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:14:35,737 p2d2.benchmarker.main INFO     executing...
+2021-06-13 19:12:09,465 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 19:12:09,700 p2d2.benchmarker.main INFO     rep=0
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:17:38,415 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 20:17:38,471 p2d2.benchmarker.main INFO     executing...
+2021-06-13 19:15:08,086 p2d2.benchmarker.main INFO     rep=1
 UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
 UserWarning: `read_sql_query` defaulting to pandas implementation.
 To request implementation, send an email to feature_requests@modin.org.
 UserWarning: `read_sql_query` defaulting to pandas implementation.
-2021-06-07 20:20:41,510 p2d2.benchmarker.main INFO     scale=10
+2021-06-13 19:18:08,779 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 19:18:08,889 p2d2.benchmarker.main INFO     rep=0
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 19:21:06,291 p2d2.benchmarker.main INFO     rep=1
+UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+To request implementation, send an email to feature_requests@modin.org.
+UserWarning: `read_sql_query` defaulting to pandas implementation.
+2021-06-13 19:24:03,120 p2d2.benchmarker.main INFO     scale=10
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:20:41,932 p2d2.benchmarker.main INFO     area='lan'
+2021-06-13 19:24:03,140 p2d2.benchmarker.main INFO     area='lan'
 
 Error: Cannot delete qdisc with handle of zero.
-2021-06-07 20:20:42,028 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 20:20:42,131 p2d2.benchmarker.main INFO     executing...
-2021-06-07 21:27:52,005 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 21:28:02,295 p2d2.benchmarker.main INFO     executing...
-2021-06-07 22:01:34,737 p2d2.benchmarker.main INFO     area='wan'
+2021-06-13 19:24:03,168 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 19:24:04,478 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 20:16:18,154 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 21:17:32,342 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 21:17:42,380 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 21:54:23,397 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 22:26:32,507 p2d2.benchmarker.main INFO     area='wan'
 
 
-2021-06-07 22:01:44,218 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 22:01:56,501 p2d2.benchmarker.main INFO     executing...
-2021-06-07 22:57:04,835 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-07 22:57:23,563 p2d2.benchmarker.main INFO     executing...
-2021-06-07 23:48:20,812 p2d2.benchmarker.main INFO     area='loc'
+2021-06-13 22:26:39,151 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-13 22:26:49,516 p2d2.benchmarker.main INFO     rep=0
+2021-06-13 23:08:33,774 p2d2.benchmarker.main INFO     rep=1
+2021-06-13 23:45:44,810 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-13 23:45:53,476 p2d2.benchmarker.main INFO     rep=0
+2021-06-14 00:28:26,284 p2d2.benchmarker.main INFO     rep=1
+2021-06-14 01:03:22,207 p2d2.benchmarker.main INFO     area='loc'
 
 
-2021-06-07 23:48:47,630 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-07 23:48:58,908 p2d2.benchmarker.main INFO     executing...
-2021-06-08 00:53:42,618 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 00:53:57,721 p2d2.benchmarker.main INFO     executing...
-2021-06-08 01:23:00,128 p2d2.benchmarker.main INFO     f='micro_max.py'
-2021-06-08 01:23:02,481 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:23:25,884 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:23:26,379 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:23:38,693 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:24:23,857 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:24:23,881 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:24:34,659 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 01:24:34,725 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:24:34,850 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:24:46,440 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:24:46,563 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:24:58,461 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 01:24:58,762 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:24:58,892 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:25:09,614 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:25:09,637 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:25:21,559 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:25:21,579 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:25:21,608 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:25:21,633 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:28:09,430 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:28:10,051 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:31:09,346 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 01:31:11,234 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:31:12,329 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:33:48,323 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:33:49,986 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:36:17,268 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 01:36:19,084 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:36:20,215 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:39:05,735 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:39:07,266 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:41:47,924 p2d2.benchmarker.main INFO     f='micro_proj.py'
-2021-06-08 01:41:48,248 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:41:49,913 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:41:49,962 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:41:51,569 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:44:21,379 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:44:21,521 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:46:34,408 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 01:46:34,865 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:46:35,013 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:49:01,220 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:49:01,453 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:51:10,856 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 01:51:11,424 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:51:11,457 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:53:25,208 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 01:53:25,324 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 01:55:35,070 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:55:35,220 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 01:55:35,252 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 01:55:35,277 p2d2.benchmarker.main INFO     executing...
-2021-06-08 02:57:53,305 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 02:58:14,857 p2d2.benchmarker.main INFO     executing...
-2021-06-08 03:46:30,399 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 03:46:31,435 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 03:46:32,539 p2d2.benchmarker.main INFO     executing...
-2021-06-08 04:27:05,328 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 04:27:07,813 p2d2.benchmarker.main INFO     executing...
-2021-06-08 05:09:12,561 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 05:09:20,021 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 05:09:24,938 p2d2.benchmarker.main INFO     executing...
-2021-06-08 05:58:50,011 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 05:58:51,581 p2d2.benchmarker.main INFO     executing...
-2021-06-08 07:21:05,524 p2d2.benchmarker.main INFO     f='micro_sel.py'
-2021-06-08 07:21:06,177 p2d2.benchmarker.main INFO     scale=1
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 07:21:07,440 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 07:21:07,543 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 07:21:09,042 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:23:39,619 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 07:23:39,643 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:25:47,355 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 07:25:47,533 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 07:25:47,683 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:27:55,976 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 07:27:56,132 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:30:05,109 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 07:30:05,410 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 07:30:05,433 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:32:11,229 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 07:32:11,251 p2d2.benchmarker.main INFO     executing...
-UserWarning: Modin Ray engine was started with 58 GB free space avaliable, if it is not enough for your application, please set environment variable MODIN_ON_RAY_PLASMA_DIR=/directory/without/space/limiting
-UserWarning: `read_sql_query` defaulting to pandas implementation.
-To request implementation, send an email to feature_requests@modin.org.
-2021-06-08 07:34:16,128 p2d2.benchmarker.main INFO     scale=10
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 07:34:16,149 p2d2.benchmarker.main INFO     area='lan'
-
-Error: Cannot delete qdisc with handle of zero.
-2021-06-08 07:34:16,181 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 07:34:16,206 p2d2.benchmarker.main INFO     executing...
-2021-06-08 08:15:08,321 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 08:15:18,138 p2d2.benchmarker.main INFO     executing...
-2021-06-08 09:22:53,529 p2d2.benchmarker.main INFO     area='wan'
-
-
-2021-06-08 09:22:57,875 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 09:22:59,335 p2d2.benchmarker.main INFO     executing...
-2021-06-08 10:24:57,922 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 10:25:00,104 p2d2.benchmarker.main INFO     executing...
-2021-06-08 11:15:50,601 p2d2.benchmarker.main INFO     area='loc'
-
-
-2021-06-08 11:15:52,908 p2d2.benchmarker.main INFO     indexing='true'
-2021-06-08 11:15:54,355 p2d2.benchmarker.main INFO     executing...
-2021-06-08 11:58:33,301 p2d2.benchmarker.main INFO     indexing='false'
-2021-06-08 11:58:35,557 p2d2.benchmarker.main INFO     executing...
-      oom  rep    wall_time  ...  scale          wflow  optimizer
-0   False    0    70.140103  ...      1  micro_join.py       base
-1   False    1    70.140103  ...      1  micro_join.py       base
-0   False    0    68.071907  ...      1  micro_join.py       base
-1   False    1    68.071907  ...      1  micro_join.py       base
-0   False    0    70.110070  ...      1  micro_join.py       base
-..    ...  ...          ...  ...    ...            ...        ...
-1    True    1  2961.974650  ...     10   micro_sel.py      modin
-0    True    0  2478.512316  ...     10   micro_sel.py      modin
-1    True    1  2478.512316  ...     10   micro_sel.py      modin
-0    True    0  3014.658953  ...     10   micro_sel.py      modin
-1    True    1  3014.658953  ...     10   micro_sel.py      modin
-
-[288 rows x 11 columns]
+2021-06-14 01:03:30,875 p2d2.benchmarker.main INFO     indexing='true'
+2021-06-14 01:03:38,781 p2d2.benchmarker.main INFO     rep=0
+2021-06-14 01:39:31,269 p2d2.benchmarker.main INFO     rep=1
+2021-06-14 02:14:36,692 p2d2.benchmarker.main INFO     indexing='false'
+2021-06-14 02:14:48,319 p2d2.benchmarker.main INFO     rep=0

@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "p2d2"
   # config.vm.network "public_network"
   config.vm.network "private_network", ip: "192.168.50.4"
-  # also try with this one: 172.16.0.0
+  # hyper-v does not support static ip addresses but at least using a private_network means that switching wifi networks does not leave the vm without an IPv4 address.
   # customize memory. Be generous
   config.vm.provider "hyperv" do |v|
       v.maxmemory = 25576

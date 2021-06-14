@@ -14,6 +14,7 @@ def ast_find(root, node_type) -> typing.Generator:
 
 def count_functions(parsed) -> pd.DataFrame:
     calls = ast_find(parsed, ast.Call)
+    subscripts = ast_find(parsed, ast.Subscript)
     # uncomment below to ignore the tail of long fluid interface lines
     # calls = filter(lambda x: isinstance(x.func, ast.Name), calls)
     counter = Counter()
@@ -26,6 +27,8 @@ def count_functions(parsed) -> pd.DataFrame:
             func_name = call.func.attr # attrname in astroid parlance
 
         counter[func_name] += 1
+
+    counter["__getitem__"] += len(list(subscripts))
         
     return pd.DataFrame(counter.most_common(), columns=["Function", "Counter"])
 
@@ -59,9 +62,16 @@ if __name__ == "__main__":
     TODO: include library in case the call is: library.function
     """
 
-    report = in_all_files("G:/bachelor/bigsample")
-    report.to_csv("func_report7Jul.csv", index=False)
-    print("---counting complete---")
+    try:
+        report = in_all_files("G:/bachelor/bigsample")
+        report.to_csv("func_report9Jul.csv", index=False)
+    except Exception as e:
+        raise e
+    finally:
+        import sys
+        sys.path.append("../p2d2/benchmarker")
+        import finished_hook
+        finished_hook.fire()
 
     # import doctest
     # doctest.testmod()

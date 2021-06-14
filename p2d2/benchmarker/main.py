@@ -4,17 +4,19 @@ Produces csv reports from microbenchmarks
 """
 import subprocess
 import os
+from datetime import datetime
 
 import pandas
 import psycopg2
 
-from . import logrotate
 from . import log
-from . import monitor
+from . import monitor as mon
 
 logger = log.getLogger(__name__)
 
 C_TIMES = 2
+# default value used for shorter pipelines runs
+CONNSTR = f"host=localhost dbname=tpch1 user=p2d2 password=p2d2"
 
 
 def shape_traffic(area: str):
@@ -84,37 +86,27 @@ def net(nextlist, code):
     return res_df
 
 def optimizers(nextlist):
-    global DIR
+    global BENCH_DIR
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
 
-    DIR = "benchmarks/base/" # global
-    logger.info(f"{DIR=}")
-    subres_df = nextf(nextlist[:])
-    subres_df["optimizer"] = "base"
-    res_df = res_df.append(subres_df)
-
-    DIR = "benchmarks/optimized/" # global
-    logger.info(f"{DIR=}")
-    subres_df = nextf(nextlist[:])
-    subres_df["optimizer"] = "optimized"
-    res_df = res_df.append(subres_df)
-
-    DIR = "benchmarks/modin/" # global
-    logger.info(f"{DIR=}")
-    subres_df = nextf(nextlist[:])
-    subres_df["optimizer"] = "modin"
-    res_df = res_df.append(subres_df)
+    dirs = os.listdir("benchmarks") # relative paths
+    for optimizer in dirs:
+        BENCH_DIR = f"benchmarks/{optimizer}/" # global
+        logger.info(f"{BENCH_DIR=}")
+        subres_df = nextf(nextlist[:])
+        subres_df["optimizer"] = optimizer
+        res_df = res_df.append(subres_df)
 
     return res_df
 
 def wflows(nextlist):
-    files = os.listdir(DIR)
+    files = os.listdir(BENCH_DIR)
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
     for f in files:
         logger.info(f"{f=}")
-        with open(DIR + f, "r") as file_source:
+        with open(BENCH_DIR + f, "r") as file_source:
             code = file_source.read()
 
         subres_df = nextf(nextlist[:], code)
@@ -125,26 +117,14 @@ def wflows(nextlist):
 
 
 def basic_bench(nextlist, code):
-    logger.info(f"executing...")
-    mon = monitor.Monitor(exec, code, {"CONNSTR":CONNSTR})
-    # opt_time = read from metafiles
 
-    # breakpoint()
-    time_incl = []
-    for i in range(C_TIMES):
-        time_incl += [
-            {
-                "oom": mon.oom,
-                # "opt_time": opt_time,
-                "rep": i,
-                "wall_time": mon.time,
-                "cpu_utilization": 0,
-                "mem_usage": mon.diffs,
-                "net_usage": 0,
-            }
-        ]
+    all_reps = []
+    for rep in range(C_TIMES):
+        logger.info(f"{rep=}")
+        rep_stats: pandas.DataFrame = mon.monitor(code,{"CONNSTR":CONNSTR}, {})
+        rep_stats['rep'] = rep
 
-    return pandas.DataFrame(time_incl)
+    return rep_stats
 
 
 def bench_all(nextlist, *args):
@@ -153,19 +133,22 @@ def bench_all(nextlist, *args):
 
 def main():
     benchlist = [basic_bench, index, net, scale, wflows, optimizers]
+    # shorterlist = [basic_bench, wflows, optimizers]
 
     report = bench_all(benchlist)
-    report_filename = "bench_report9Jul.csv"
-    logrotate.write(report, report_filename)
-    # find max memory usage
-    df['mem_usage']=df['mem_usage'].apply(lambda x: max(x))
+    current_date = datetime.now().strftime('%m-%d--%H-%M')
+    report_filename = f"bench_report{current_date}.feather"
 
-    # convert to MB
-    df['mem_usage']=df['mem_usage'].apply(lambda x: x//10**6)
-
-    df.to_csv(report_filename+".max", index=False)
+    report.reset_index(drop=True, inplace=True)
+    report.to_feather(report_filename, compression='uncompressed')
     print(report)
 
 
 if __name__ == "__main__":
-    main()
+    try:                                                 
+        main()
+    except Exception as e:                               
+        raise e                                          
+    finally:                                             
+        from benchmarker import finished_hook
+        finished_hook.fire()                             

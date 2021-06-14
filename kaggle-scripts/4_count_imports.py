@@ -24,7 +24,8 @@ def count_functions(parsed) -> pd.DataFrame:
 
     importFroms = ast_find(parsed, ast.ImportFrom)
     for importFrom in importFroms:
-            counter[importFrom.module] = [True]
+            leftmost_name = importFrom.module.split(".")[0]
+            counter[leftmost_name] = [True]
         
     return pd.DataFrame(counter)
 
@@ -57,7 +58,10 @@ if __name__ == "__main__":
 
     try:
         report = in_all_files("G:/bachelor/bigsample")
-        report.to_csv("import_report8Jul.csv", index=False)
+        report.fillna(False, inplace=True)
+        report.reset_index(inplace=True)
+        report['Kernel']=report['Kernel'].astype(str)
+        report.to_feather("import_report9Jul.feather")
     except Exception as e:
         raise e
     finally:
