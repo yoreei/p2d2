@@ -1,0 +1,35 @@
+---
+- name: Set up benchmarker
+  hosts: awsp2d2
+  remote_user: ubuntu
+  # remote_user: user
+  # become: yes
+  # become_method: sudo
+
+
+  tasks:
+    - name: test connection
+      become: yes
+      apt:
+        name: vim
+        state: present
+
+    - name: Read-write git checkout from github
+      become: yes
+      ansible.builtin.git:
+        repo: git@github.com:yordangrigorov97/p2d2.git
+        dest: /vagrant
+        depth: 1
+        accept_hostkey: yes
+
+    - name: Install pip3
+      become: yes
+      apt:
+        name: python3-pip
+        update_cache: yes
+        state: present
+
+    - name: Install specified python requirements
+      become: yes
+      pip:
+        requirements: /vagrant/requirements.txt
