@@ -8,28 +8,47 @@
 
 
   tasks:
-    - name: test connection
+    - name: install dependencies
       become: yes
       apt:
-        name: vim
-        state: present
+        update-cache: yes
+        pkg:
+        - python3-pip
+        - postgresql
+        - postgresql-contrib
+        - postgresql-plpython3-12
+        - libpq-dev
+        - git
+        - make
+        - gcc
+        - mosh
 
-    - name: Read-write git checkout from github
+
+    - name: send private key (dangerous)
+      ansible.builtin.copy:
+        src: ~/.ssh/id_ed25519
+        dest: ~/.ssh/id_ed25519
+        owner: ubuntu
+        mode: '0400'
+
+    - name: Create app dir if not exist
       become: yes
+      ansible.builtin.file:
+        path: /vagrant
+        state: directory
+        mode: '0777'
+
+    - name: Clone from git
+      # become: yes
       ansible.builtin.git:
         repo: git@github.com:yordangrigorov97/p2d2.git
         dest: /vagrant
         depth: 1
         accept_hostkey: yes
 
-    - name: Install pip3
-      become: yes
-      apt:
-        name: python3-pip
-        update_cache: yes
-        state: present
-
-    - name: Install specified python requirements
+    - name: Install python requirements
       become: yes
       pip:
         requirements: /vagrant/requirements.txt
+             
+

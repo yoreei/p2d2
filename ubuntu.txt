@@ -7,6 +7,3 @@ git
 make
 gcc
 mosh
-graphviz
-graphviz-dev
-fonts-noto-mono
