@@ -7,3 +7,4 @@ git
 make
 gcc
 mosh
+libicu-dev

@@ -10,3 +10,7 @@ astunparse
 pylint
 redbaron
 nose2
+
+#csvkit dependencies
+pyicu
+csvkit

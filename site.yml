@@ -50,5 +50,12 @@
       become: yes
       pip:
         requirements: /vagrant/requirements.txt
+
+    # Now you have to manually generate data for the benchmarks and import them to postgresql
+    # see deployment-scripts/1prepare_postgresql.sh
+    #
+    # - name: Create a new database with name "acme"
+    #   community.postgresql.postgresql_db:
+    #     name: acme
              
 

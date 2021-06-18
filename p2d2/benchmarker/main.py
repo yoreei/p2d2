@@ -133,11 +133,11 @@ def bench_all(nextlist, *args):
 
 def main():
     benchlist = [basic_bench, index, net, scale, wflows, optimizers]
-    # shorterlist = [basic_bench, wflows, optimizers]
+    shorterlist = [basic_bench, wflows, optimizers]
 
-    report = bench_all(benchlist)
+    report = bench_all(shorterlist)
     current_date = datetime.now().strftime('%m-%d--%H-%M')
-    report_filename = f"bench_report{current_date}.feather"
+    report_filename = f"kaggle-bench{current_date}.feather"
 
     report.reset_index(drop=True, inplace=True)
     report.to_feather(report_filename, compression='uncompressed')
