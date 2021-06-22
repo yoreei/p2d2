@@ -22,8 +22,8 @@ Vagrant.configure("2") do |config|
   # hyper-v does not support static ip addresses but at least using a private_network means that switching wifi networks does not leave the vm without an IPv4 address.
   # customize memory. Be generous
   config.vm.provider "hyperv" do |v|
-      v.maxmemory = 25576
-      v.memory = 16000
+      v.maxmemory = 20000
+      v.memory = 20000
       v.cpus = 4
   end
   

@@ -101,6 +101,10 @@ WITH projected_sentiments AS (
     WHERE time_zone IN ('Eastern Time', 'Central Time', 'Pacific Time', 'Mountain Time', 'Alaska Time', 'Hawaii Time')
   )
 
+-- We could also fork timezone_fixes_join and drop 
+--['user_id','track_id','sentiment','sentiment_score','instrumentalness','liveness','speechiness', 'danceability','valence','loudness','tempo','acousticness','energy','mode','key']
+-- but that would increase network cost
+
 
 SELECT * FROM timezone_fixed_join;
 

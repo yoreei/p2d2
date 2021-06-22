@@ -22,6 +22,7 @@
         - make
         - gcc
         - mosh
+        - tmux
 
 
     - name: send private key (dangerous)

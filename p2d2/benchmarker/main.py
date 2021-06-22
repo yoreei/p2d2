@@ -90,9 +90,9 @@ def optimizers(nextlist):
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
 
-    dirs = os.listdir("benchmarks") # relative paths
+    dirs = os.listdir(BENCHMARK_TYPE) # relative paths
     for optimizer in dirs:
-        BENCH_DIR = f"benchmarks/{optimizer}/" # global
+        BENCH_DIR = f"{BENCHMARK_TYPE}/{optimizer}/" # global
         logger.info(f"{BENCH_DIR=}")
         subres_df = nextf(nextlist[:])
         subres_df["optimizer"] = optimizer
@@ -131,11 +131,28 @@ def bench_all(nextlist, *args):
     return nextlist.pop()(nextlist, *args)
 
 
-def main():
+def micro_main():
     benchlist = [basic_bench, index, net, scale, wflows, optimizers]
-    shorterlist = [basic_bench, wflows, optimizers]
+    global BENCHMARKER_TYPE
+    BENCHMARKER_TYPE = "benchmarks"
 
+    report = bench_all(benchlist)
+    current_date = datetime.now().strftime('%m-%d--%H-%M')
+    report_filename = f"micro-bench{current_date}.feather"
+
+    report.reset_index(drop=True, inplace=True)
+    report.to_feather(report_filename, compression='uncompressed')
+    print(report)
+
+def kaggle_main():
+    shorterlist = [basic_bench, wflows, optimizers]
+    global BENCHMARKER_TYPE
+    BENCHMARKER_TYPE = "kaggle-benchmarks"
+
+    db_return = exec_sql(f"call set_indexes(true);")
+    shape_traffic("wan")
     report = bench_all(shorterlist)
+    shape_traffic("loc")
     current_date = datetime.now().strftime('%m-%d--%H-%M')
     report_filename = f"kaggle-bench{current_date}.feather"
 
@@ -143,12 +160,3 @@ def main():
     report.to_feather(report_filename, compression='uncompressed')
     print(report)
 
-
-if __name__ == "__main__":
-    try:                                                 
-        main()
-    except Exception as e:                               
-        raise e                                          
-    finally:                                             
-        from benchmarker import finished_hook
-        finished_hook.fire()                             
