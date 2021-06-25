@@ -16,7 +16,6 @@ logger = log.getLogger(__name__)
 
 C_TIMES = 2
 # default value used for shorter pipelines runs
-CONNSTR = f"host=localhost dbname=tpch1 user=p2d2 password=p2d2"
 
 
 def shape_traffic(area: str):
@@ -132,6 +131,8 @@ def bench_all(nextlist, *args):
 
 
 def micro_main():
+    global CONNSTR 
+    CONNSTR= f"host=localhost dbname=tpch1 user=root password=root"
     benchlist = [basic_bench, index, net, scale, wflows, optimizers]
     global BENCHMARKER_TYPE
     BENCHMARKER_TYPE = "benchmarks"
@@ -145,6 +146,8 @@ def micro_main():
     print(report)
 
 def kaggle_main():
+    global CONNSTR 
+    CONNSTR = f"host=localhost dbname=module4 user=root password=root"
     shorterlist = [basic_bench, wflows, optimizers]
     global BENCHMARKER_TYPE
     BENCHMARKER_TYPE = "kaggle-benchmarks"

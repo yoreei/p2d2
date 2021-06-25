@@ -26,21 +26,12 @@ EOF
         \COPY "${RELNAME}" FROM ${file} WITH DELIMITER '|';
 EOF
     done
-    # taken from https://github.com/tvondra/pg_tpch/blob/master/dss/tpch-index.sql
-    sudo -u postgres psql<<EOF
-\c "${DBNAME}"
 
-CREATE UNIQUE INDEX IDX_ORDERS_CUSTKEY ON ORDERS (O_ORDERKEY);
 
-CREATE UNIQUE INDEX IDX_LINEITEM_ORDERKEY ON LINEITEM (L_ORDERKEY);
-CREATE UNIQUE INDEX IDX_LINEITEM_ORDERKEY ON LINEITEM (L_LINENUMBER);
-
-EOF
-
-    # untested
-    for udf in /vagrant/sql/*
-    do
-        sudo -u postgres psql "${DBNAME}" < "${udf}"
-    done
-
-done
+#    # untested
+#    for udf in /vagrant/sql/*
+#    do
+#        sudo -u postgres psql "${DBNAME}" < "${udf}"
+#    done
+#
+#done

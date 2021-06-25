@@ -15,9 +15,9 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 # For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
 
 import os
-for dirname, _, filenames in os.walk('/kaggle/input'):
-    for filename in filenames:
-        print(os.path.join(dirname, filename))
+#for dirname, _, filenames in os.walk('/kaggle/input'):
+#    for filename in filenames:
+#        print(os.path.join(dirname, filename))
 
 # Any results you write to the current directory are saved as output.
 
@@ -203,7 +203,7 @@ df1.info()
 # In[ ]:
 
 
-df1.sort_index(by='hashtag', ascending=[False])
+df1.sort_values(by='hashtag', ascending=[False])
 
 
 # In[ ]:
