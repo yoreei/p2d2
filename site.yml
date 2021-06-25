@@ -1,13 +1,13 @@
 ---
 - name: Set up benchmarker
-  hosts: awsp2d2
-  remote_user: ubuntu
-  # remote_user: user
+  hosts: dima
+  remote_user: yordan
   # become: yes
   # become_method: sudo
 
 
   tasks:
+    
     - name: install dependencies
       become: yes
       apt:
@@ -29,7 +29,7 @@
       ansible.builtin.copy:
         src: ~/.ssh/id_ed25519
         dest: ~/.ssh/id_ed25519
-        owner: ubuntu
+        owner: "{{ansible_user}}"
         mode: '0400'
 
     - name: Create app dir if not exist
