@@ -59,12 +59,12 @@
     # pipelining = True
     
     # in ~/.ansible.cfg
-    - name: Create postgres p2d2 user
+    - name: Create postgres root user
       become: yes
       become_user: postgres
       postgresql_user:
-        name: p2d2
-        password: p2d2
+        name: root
+        password: root
         role_attr_flags: SUPERUSER
 
     - name: Create postgres disable_nestloop_user user
@@ -82,16 +82,24 @@
         # db: postgres
         query: ALTER ROLE disable_nestloop_user SET enable_nestloop=off
 
-    - name: Create a new database for p2d2 user (ease interactivity)
+        #    - name: Create a new database for p2d2 user (ease interactivity)
+        #      become: yes
+        #      become_user: postgres
+        #      postgresql_db:
+        #        name: p2d2
+        
+    - name: Create a new database for root user (ease interactivity)
       become: yes
       become_user: postgres
       postgresql_db:
-        name: p2d2
+        name: root
+        password: root
     
     - name: Create a new database for disable_nestloop_user user (ease interactivity)
       become: yes
       become_user: postgres
       postgresql_db:
+        name: disable_nestloop_user
         name: disable_nestloop_user
 
 
