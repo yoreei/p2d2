@@ -1,7 +1,7 @@
 ---
 - name: Set up benchmarker
-  hosts: dima
-  remote_user: yordan
+  hosts: localhost
+  # remote_user: yordan
   # become: yes
   # become_method: sudo
 
@@ -39,7 +39,7 @@
         state: directory
         mode: '0777'
 
-    - name: Clone from git
+    - name: Clone/Pull from git
       # become: yes
       ansible.builtin.git:
         repo: git@github.com:yordangrigorov97/p2d2.git
@@ -52,7 +52,13 @@
       pip:
         requirements: /vagrant/requirements.txt
       
-        # UNTESTED
+    # Requires :
+    
+    # [defaults]
+    # allow_world_readable_tmpfiles = True
+    # pipelining = True
+    
+    # in ~/.ansible.cfg
     - name: Create postgres p2d2 user
       become: yes
       become_user: postgres
@@ -61,11 +67,37 @@
         password: p2d2
         role_attr_flags: SUPERUSER
 
+    - name: Create postgres disable_nestloop_user user
+      become: yes
+      become_user: postgres
+      postgresql_user:
+        name: disable_nestloop_user
+        password: disable_nestloop_user
+        role_attr_flags: SUPERUSER
+
+    - name: disable nestloop for the respective user
+      become: yes
+      become_user: postgres
+      postgresql_query:
+        # db: postgres
+        query: ALTER ROLE disable_nestloop_user SET enable_nestloop=off
+
+    - name: Create a new database for p2d2 user (ease interactivity)
+      become: yes
+      become_user: postgres
+      postgresql_db:
+        name: p2d2
+    
+    - name: Create a new database for disable_nestloop_user user (ease interactivity)
+      become: yes
+      become_user: postgres
+      postgresql_db:
+        name: disable_nestloop_user
+
+
     # Now you have to manually generate data for the benchmarks and import them to postgresql
     # see deployment-scripts/1prepare_postgresql.sh
     #
-    # - name: Create a new database with name "acme"
-    #   community.postgresql.postgresql_db:
-    #     name: acme
+    # pg_restore [connection-option...] [option...] [filename]
              
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ERR="$(sudo tc qdisc del dev lo root 2>&1 > /tmp/loshout)"
+ERR="$(sudo tc qdisc del dev eth0 root 2>&1 > /tmp/loshout)"
 OUT=$(</tmp/loshout)
 echo "$OUT"
 echo "$ERR"
