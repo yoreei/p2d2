@@ -93,13 +93,11 @@
       become_user: postgres
       postgresql_db:
         name: root
-        password: root
     
     - name: Create a new database for disable_nestloop_user user (ease interactivity)
       become: yes
       become_user: postgres
       postgresql_db:
-        name: disable_nestloop_user
         name: disable_nestloop_user
 
 
