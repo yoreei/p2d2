@@ -15,6 +15,7 @@
     },
     {
         "req":{
+            "__comment": "df[mask]",
             "parenttype": "pandas.DataFrame",
             "attrname":"__getitem__",
             "kwarg_values":{},
@@ -29,6 +30,7 @@
     },
     {
         "req":{
+            "__comment": "df['col1']",
             "parenttype": "pandas.DataFrame",
             "attrname":"__getitem__",
             "kwarg_values":{},
@@ -43,6 +45,7 @@
     },
     {
         "req":{
+            "__comment": "df[['col1', 'col2']]",
             "parenttype": "pandas.DataFrame",
             "attrname":"__getitem__",
             "kwarg_values":{},

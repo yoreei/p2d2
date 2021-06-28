@@ -24,16 +24,16 @@ def SELECTION(condition: str, source: str):
 def JOIN(right:str, how:str, on:str, source:str):
     return f"SELECT * FROM {_wrapas(source)} {how} JOIN {right} ON {on}"
 
-def MIN(by:(str or list), source:str):
-    by = list(by) # make sure by is a list
+def MIN(by:list, source:str):
+    by = set(by)
     to_min = __columns() - by
     minfunc = lambda x: f'MIN({x})'
     minfuncs = map(minfunc, to_min) # ['MIN(col1)', 'MIN(col2)']
     
     return f'SELECT {", ".join(minfuncs)} FROM {_wrapas(source)} GROUP BY {by}'
 
-def MAX(by:(str or list), source:str):
-    by = list(by) # make sure by is a list
+def MAX(by:list, source:str):
+    by = set(by)
     to_min = __columns - by
     minfunc = lambda x: f'MIN({x})'
     minfuncs = map(minfunc, to_min) # ['MIN(col1)', 'MIN(col2)']

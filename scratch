@@ -1,6 +1,12 @@
-SELECT a.attname, format_type(a.atttypid, a.atttypmod) AS data_type
-FROM   pg_index i
-JOIN   pg_attribute a ON a.attrelid = i.indrelid
-                     AND a.attnum = ANY(i.indkey)
-WHERE  i.indrelid = 'lineitem'::regclass
-AND    i.indisprimary;
+df3['time_zone'].replace('Eastern Time (US & Canada)', 'Eastern Time',inplace=True)
+df3['time_zone'].replace('Central Time (US & Canada)', 'Central Time',inplace=True)
+df3['time_zone'].replace('Pacific Time (US & Canada)', 'Pacific Time',inplace=True)
+df3['time_zone'].replace('Mountain Time (US & Canada)', 'Mountain Time',inplace=True)
+df3['time_zone'].replace('Alaska', 'Alaska Time',inplace=True)
+df3['time_zone'].replace('Hawaii', 'Hawaii Time',inplace=True)
+df3['time_zone'].replace('Arizona', 'Mountain Time',inplace=True)
+df3['time_zone'].replace('America/Chicago', 'Central Time',inplace=True)
+df3['time_zone'].replace('America/New_York', 'Eastern Time',inplace=True)
+df3['time_zone'].replace('America/Los_Angeles', 'Pacific Time',inplace=True)
+df3['time_zone'].replace('America/Denver', 'Mountain Time',inplace=True)
+df3['time_zone'].replace('America/Detroit', 'Eastern Time',inplace=True)

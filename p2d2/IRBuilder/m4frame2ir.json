@@ -1,0 +1,82 @@
+{[
+    {
+        "req":{
+            "__commnet": "pandas.read_sql_query('select * ..', conn)",
+            "parenttype": "pandas",
+            "attrname":"read_sql_query",
+            "kwarg_values":{},
+            "kwarg_types":{"table_name":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"DBSOURCE({table_name})",
+            "type":"p2d2.DataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df[['col1', 'col2']]",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"list"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION({key},{__instance})",
+            "type":"p2d2.DataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df['col1']",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"str"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION([{key}],{__instance})",
+            "type":"p2d2.Series",
+            "state": {"series_column":"{kwarg_values['key']}"}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df1.merge(right=df2, how='inner', on='hashtag'",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"merge",
+            "kwarg_values":{},
+            "kwarg_types":{"right":"p2d2.DataFrame",
+                "how":"str", "on":"str"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"JOIN({right}, {how}, {on}, {__instance})",
+            "type":"pandasDataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.dropna(subset=['hashtag'])",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"dropna",
+            "kwarg_values":{},
+            "kwarg_types":{"subset":"list"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir": "DROPNA({subset}, {__instance})",
+            "type":"p2d2.DataFrame",
+            "state":{}
+        }
+    }
+]}

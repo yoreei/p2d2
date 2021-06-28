@@ -1,0 +1,150 @@
+{[
+    {
+        "req":{
+            "__commnet": "pandas.read_sql_query('select * ..', conn)",
+            "parenttype": "pandas",
+            "attrname":"read_sql_query",
+            "kwarg_values":{},
+            "kwarg_types":{"table_name":"str"}
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"DBSOURCE({table_name})",
+            "type":"pandas.DataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "counts[counts >= 50]",
+            "parenttype": "pandas.Series",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"pandas.DataFrame"},
+            "parent_state":["mask_operator", "mask_operand",
+                 "mask_operand_type", "series_column"]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"SELECTION({parent_state['series_column']}, {parent_state['mask_operator']}, {parent_state['mask_operand']}, {parent_state['mask_operand_type']}, {__instance}",
+            "type":"pandas.DataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "counts >= 50",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__ge__",
+            "kwarg_values":{},
+            "kwarg_types":{"other":"int"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"__instance",
+            "type":"pandas.DataFrame",
+            "state": {"mask_operator":">=", "mask_operand":"{kwarg_values['other'}",
+                "mask_operand_type":"int"}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df.isin(pop_user_list)",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"isin",
+            "kwarg_values":{},
+            "kwarg_types":{"values":"pandas.Series"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"__instance",
+            "type":"pandas.DataFrame",
+            "state": {"mask_operator":" IN ", "mask_operand":"{kwarg_values['values']}", "mask_operand_type":"pandas.Series"}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df[['col1', 'col2']]",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"list"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION({key},{__instance})",
+            "type":"pandas.DataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df['col1']",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"str"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"PROJECTION([{key}],{__instance})",
+            "type":"pandas.Series",
+            "state": {"series_column":"{kwarg_values['key']}"}
+        }
+    },
+    {
+        "req":{
+            "__comment": "df1.merge(right=df2, how='inner', on='hashtag'",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"merge",
+            "kwarg_values":{},
+            "kwarg_types":{"right":"pandas.DataFrame",
+                "how":"str", "on":"str"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir":"JOIN({right}, {how}, {on}, {__instance})",
+            "type":"pandasDataFrame",
+            "state": {}
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.dropna(subset=['hashtag'])",
+            "parenttype": "pandas.DataFrame",
+            "attrname":"dropna",
+            "kwarg_values":{},
+            "kwarg_types":{"subset":"list"},
+            "parent_state":[]
+        },
+        "maps":{
+            "modifies": [],
+            "ir": "DROPNA({subset}, {__instance})",
+            "type":"pandas.DataFrame",
+            "state":{}
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.value_counts()",
+            "parenttype": "pandas.Series",
+            "attrname":"value_counts",
+            "kwarg_values":{},
+            "kwarg_types":{},
+            "parent_state":["series_column"]
+        },
+        "maps":{
+            "modifies": [],
+            "ir": "COUNT([__state[__parent_name]['series_column']], 'count_col', {__instance})",
+            "type":"pandas.Series",
+            "state":{"index":"__state[__parent_name]['series_column']",
+                "series_column": "count_col"}
+        }
+    }
+    
+]}
