@@ -3,6 +3,13 @@ from p2d2.benchmarker import finished_hook
 import p2d2.benchmarker.main as main 
 # import p2d2.benchmarker.bench_main as main 
 import sys
+import getpass
+
+if getpass.getuser() != 'root':
+    print("run as root")
+    exit()
+
+
 if sys.argv[1] == 'kaggle':
     main = main.kaggle_main
 elif sys.argv[1] == 'micro':
