@@ -18,8 +18,11 @@ import helppd2sql
 
 # In[2]:
 
+conn = psycopg2.connect(f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user")
 
-sentiment_values = pd.read_csv('../data/chelseapower/fixed_sentiment_values.csv')
+sentiment_values = pd.read_sql_query('select * from sentiment_values', con=conn)
+user_track = pd.read_sql_query('select * from user_track', con=conn)
+context_content_features = pd.read_sql_query('select * from context_content_features', con=conn)
 
 
 # In[3]:
@@ -65,7 +68,6 @@ dropna_sentiments.rename(columns = {'ol_score':'sentiment_score'}, inplace = Tru
 # In[9]:
 
 
-user_track = pd.read_csv('../data/chelseapower/user_track_hashtag_timestamp.csv')
 
 
 # In[10]:
@@ -99,8 +101,6 @@ pop_user = dropna_user[dropna_user['track_id'].
 # In[36]:
 
 
-context_content_features = pd.read_csv(
-    '../data/chelseapower/fixed_context_content_features.csv')
 
 
 # In[65]:
