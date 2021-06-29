@@ -28,8 +28,6 @@ Eager mappings are not part of the Intermediate Representation, but are an impor
 
 #### Examples:
 
-- Register database connection with the optimizer
-
 - Fetch column data from the RDBMS
 
 - Set database options

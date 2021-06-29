@@ -14,7 +14,7 @@ from . import monitor as mon
 
 logger = log.getLogger(__name__)
 
-C_TIMES = 2
+C_TIMES = 3
 # default value used for shorter pipelines runs
 
 
@@ -58,7 +58,7 @@ def index(nextlist, code):
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
 
-    for indexing in ["true", "false"]:
+    for indexing in ["false", "true"]:
         logger.info(f"{indexing=}")
         db_return = exec_sql(f"call set_indexes({indexing});")
 
@@ -147,15 +147,12 @@ def micro_main():
 
 def kaggle_main():
     global CONNSTR 
-    CONNSTR = f"host=localhost dbname=module4 user=root password=root"
-    shorterlist = [basic_bench, wflows, optimizers]
+    CONNSTR = f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user"
+    shorterlist = [basic_bench, index, net, wflows, optimizers]
     global BENCHMARKER_TYPE
     BENCHMARKER_TYPE = "kaggle-benchmarks"
 
-    db_return = exec_sql(f"call set_indexes(true);")
-    shape_traffic("wan")
     report = bench_all(shorterlist)
-    shape_traffic("loc")
     current_date = datetime.now().strftime('%m-%d--%H-%M')
     report_filename = f"kaggle-bench{current_date}.feather"
 
