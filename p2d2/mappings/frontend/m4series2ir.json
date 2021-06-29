@@ -1,0 +1,138 @@
+{[
+    {
+        "req":{
+            "__comment": "counts[counts >= 50]; TODO: generalize this to NDFrame",
+            "parenttype": "p2d2.Series",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"p2d2.StaticMask"}
+        },
+        "maps":{
+            "ir":"STATIC_SELECTION('series_column', {__state[__kwarg_names['key']]['mask_operator']}, {__state[__kwarg_names['key']]['mask_operand']}, {__state[__kwarg_names['key']]['mask_operand_type']}, {__state[__parent_name]['ir']}",
+            "modifies": "__name",
+            "columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series"
+        }
+    },
+    {
+        "req":{
+            "__comment": "popular.index",
+            "parenttype": "p2d2.Series",
+            "attrname":"__getattr__",
+            "kwarg_values":{"name":"index"},
+            "kwarg_types":{"name":"str"}
+        },
+        "maps":{
+            "ir":"PROJECTION(['index'], {__state[__parent_name]['ir']}",
+            "modifies": "__name",
+            "columns": "'list'",
+            "type":"p2d2.list"
+        }
+    },
+    {
+        "req":{
+            "__comment": "counts >= 50; TODO generalize simple datatypes",
+            "parenttype": "p2d2.Series",
+            "attrname":"__ge__",
+            "kwarg_values":{},
+            "kwarg_types":{"other":"int"}
+        },
+        "maps":{
+            "ir":"",
+            "modifies": "__name",
+            "columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series",
+            "mask_column": "__state[__parent_name]['last_projection']",
+            "mask_operator":">=",
+            "mask_operand":"{kwarg_values['other'}",
+            "mask_operand_type":"{kwarg_types['other']}"
+        }
+    },
+    {
+        "req":{
+            "__comment": "dropna_context['lang'] == 'en'; TODO generalize simple datatypes",
+            "parenttype": "p2d2.Series",
+            "attrname":"__eq__",
+            "kwarg_values":{},
+            "kwarg_types":{"other":"str"}
+        },
+        "maps":{
+            "ir":"",
+            "modifies": "__name",
+            "columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series",
+            "mask_column": "__state[__parent_name]['last_projection']",
+            "mask_operator":"=",
+            "mask_operand":"{kwarg_values['other'}",
+            "mask_operand_type":"{kwarg_types['other']}"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df.isin(pop_user_list)",
+            "parenttype": "p2d2.Series",
+            "attrname":"isin",
+            "kwarg_values":{},
+            "kwarg_types":{"values":"p2d2.list"}
+        },
+        "maps":{
+            "ir":"",
+            "modifies": "__name",
+            "columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series",
+            "last_projection": "__state[__parent_name]['last_projection']",
+            "mask_operator":" IN ",
+            "mask_operand":"{__kwarg_names['values']}", 
+            "mask_operand_type":"p2d2.Series"
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.value_counts()",
+            "parenttype": "p2d2.Series",
+            "attrname":"value_counts",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "ir": "COUNT({[__state[__parent_name]['columns'][1]]}, 'index','series_column', {__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns":"__state[__parent_name]['columns']", 
+            "type":"p2d2.Series"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df['col1'].replace('a', 'b', inplace=True)",
+            "parenttype": "p2d2.Series",
+            "attrname":"replace",
+            "kwarg_values":{"inplace":"True"},
+            "kwarg_types":{"to_replace":"str", "value":"str"}
+        },
+        "maps":{
+            "ir": "CASE({kwarg_values['to_replace']}, {kwarg_values['value']}, {__state[__parent_name]['original_columns']}, {__state[__parent_name]['ir']})",
+            "modifies": "__parent_name",
+            "columns":"__state[__parent_name]['original_columns']", 
+            "type":"p2d2.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df.isin(['Hawaii', 'Alaska'])",
+            "parenttype": "p2d2.Series",
+            "attrname":"isin",
+            "kwarg_values":{},
+            "kwarg_types":{"values":"list"}
+        },
+        "maps":{
+            "ir":"",
+            "modifies": "__name",
+            "columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series",
+            "last_projection": "__state[__parent_name]['last_projection']",
+            "mask_operator":" IN ",
+            "mask_operand":"{kwarg_values['values']}", 
+            "mask_operand_type":"p2d2.Series"
+        }
+    }
+]}

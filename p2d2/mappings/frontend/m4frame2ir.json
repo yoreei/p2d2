@@ -1,0 +1,142 @@
+{[
+    {
+        "req":{
+            "__comment": "psycopg2.connect(..); # DB_CONN special name mapping",
+            "parenttype": "psycopg2",
+            "attrname":"connect",
+            "kwarg_values":{},
+            "kwarg_types":{"dsn":"str"}
+        },
+        "maps":{
+            "ir":"psycopg2.connect({kwarg_values['dsn']})",
+            "modifies": "P2D2_CONN",
+            "columns": "",
+            "type":"p2d2.CONN"
+        }
+    },
+    {
+        "req":{
+            "__comment": "p2ds.dbpull(name='df123'); # DBPULL backwards mapping",
+            "parenttype": "p2d2",
+            "attrname":"dbpull",
+            "kwarg_values":{},
+            "kwarg_types":{}
+        },
+        "maps":{
+            "ir":"pandas.read_sql_query({__state[kwarg_values['name']['ir']]}, conn={P2D2_CONN})",
+            "modifies": "__name",
+            "columns": "{__state[kwarg_values['name']['columns']})",
+            "type":"pandas.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "pandas.read_sql_query('select * ..', conn)",
+            "parenttype": "pandas",
+            "attrname":"read_sql_query",
+            "kwarg_values":{},
+            "kwarg_types":{"query":"str"}
+        },
+        "maps":{
+            "ir":"DBSOURCE({table_name})",
+            "modifies": "__name",
+            "columns": "__fetch_columns(kwarg_values['query'])",
+            "type":"p2d2.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df[['col1', 'col2']]",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"list"}
+        },
+        "maps":{
+            "ir":"PROJECTION({kwarg_values['key']}, {__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns" : "kwarg_types['key']",
+            "type":"p2d2.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df['col1']",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"str"}
+        },
+        "maps":{
+            "ir":"PROJECTION([{kwarg_values['key']}],{__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns" : "['index', 'series_column']",
+            "last_projection": "kwarg_values['key']",
+            "original_columns": "__state[__parent_name]['columns']",
+            "type":"p2d2.Series"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df[df['hashtag'].isin(df['hashtag'].value_counts()>50)]",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"__getitem__",
+            "kwarg_values":{},
+            "kwarg_types":{"key":"p2d2.Series"}
+        },
+        "maps":{
+            "ir":"DYNAMIC_SELECTION({__state[__kwarg_names]['key']['mask_column']}, {__state[__kwarg_names]['key']['mask_operator']}, {__state[__kwarg_names]['key']['mask_operand']}, {__state[__parent_name]['ir'])",
+            "modifies": "__name",
+            "columns" : "__state[__parent_name]['columns']",
+            "type":"p2d2.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "df1.merge(right=df2, how='inner', on='hashtag')",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"merge",
+            "kwarg_values":{},
+            "kwarg_types":{"right":"p2d2.DataFrame",
+                "how":"str", "on":"str"}
+        },
+        "maps":{
+            "ir":"JOIN({right}, {how}, {on}, {__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns" : "list(set(__state[__parent_name]['columns'])+set(kwarg_values['right']['columns']))",
+            "type":"pandas.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.dropna(subset=['hashtag'])",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"dropna",
+            "kwarg_values":{},
+            "kwarg_types":{"subset":"list"}
+        },
+        "maps":{
+            "ir": "DROPNA({subset}, {__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns" : "__state[__parent_name]['columns']",
+            "state":{},
+            "type":"p2d2.DataFrame"
+        }
+    },
+    {
+        "req":{
+            "__comment": "user_track.drop(columns=['col1', 'col2'])",
+            "parenttype": "p2d2.DataFrame",
+            "attrname":"drop",
+            "kwarg_values":{},
+            "kwarg_types":{"columns":"list"}
+        },
+        "maps":{
+            "ir": "PROJECTION({list(set(__state[__parent_name]['columns']) - set(kwarg_values['columns']))}, {__state[__parent_name]['ir']})",
+            "modifies": "__name",
+            "columns" : "list(set(__state[__parent_name]['columns']) - set(kwarg_values['columns']))",
+            "state":{},
+            "type":"p2d2.DataFrame"
+        }
+    }
+]}

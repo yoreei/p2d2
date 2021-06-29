@@ -1,22 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-import helppd2sql
-import pandas
-import psycopg2
-
-conn = psycopg2.connect(f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user")
-
-
-proj_sent_query = """
-    SELECT hashtag, ol_score, ol_avg
-    FROM sentiment_values;
-"""
-
-cte_statements = """
 WITH 
 dropna_user AS (
     SELECT * FROM user_track
@@ -114,16 +95,3 @@ df23_drop AS(
     FROM df23
 )
 """
-report = helppd2sql.new_report()
-for cte in ['dropna_user', 'pop_user_list', 'pop_user', 'pop_context_list',
-            'pop_context', 'proj_context', 'dropna_context', 'english_context',
-            'rename_content_features', 'usa_context', 'df23', 'df23_drop']
-    cte_query = cte_statements + "select * from " + cte + ";"
-    start_clock = time.perf_counter()
-    df = pd.read_sql_query(cte_query, con=conn)
-    helppd2sql.report_add(report, cte, df)
-    calc_time = time.perf_counter() - start_clock
-    print(f"{cte} calc_time")
-report_df = pandas.DataFrame(report)
-report_df('sql_report.csv', index=False)
-

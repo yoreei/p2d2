@@ -10,9 +10,9 @@ In dictionary "maps", we have access to the following information:
 
 ```
 __state: dict
-__instance: str
 __parent_name: str
 __kwarg_names: dict
+__name
 ```
 
 As well as all data inside the "req" dictionary, with the exception of the "```__comment```" entry:
@@ -29,12 +29,12 @@ kwarg_values: dict
 
 ### Examples:
 
-#### Get 'mask_operand' of argument 'key':
+#### Get ```'mask_operand'``` of argument 'key':
 ```
 __state[__kwarg_names['key']]['mask_operand']
 ```
 
-#### Get 'series_column' of parent:
+#### Get ```'series_column'``` of parent:
 
 ```
 __state[__parent_name]['series_column']
