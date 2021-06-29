@@ -101,8 +101,9 @@
         name: disable_nestloop_user
 
 
-    # Now you have to manually generate data for the benchmarks and import them to postgresql
-    # see deployment-scripts/1prepare_postgresql.sh
+        # Now you have to:
+        # 1. load the dumps to postgresql
+        # 2. activate the udfs for all databases
     #
     # pg_restore [connection-option...] [option...] [filename]
              

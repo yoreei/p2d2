@@ -5,7 +5,7 @@
 
 
 import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import pandas 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from numpy import array
@@ -14,16 +14,22 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 import time
 import helppd2sql
+import psycopg2
 
 
 # In[2]:
 
+start_clock = time.perf_counter()
 conn = psycopg2.connect(f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user")
 
-sentiment_values = pd.read_sql_query('select * from sentiment_values', con=conn)
-user_track = pd.read_sql_query('select * from user_track', con=conn)
-context_content_features = pd.read_sql_query('select * from context_content_features', con=conn)
+sentiment_values = pandas.read_sql_query('select * from sentiment_values', con=conn)
+user_track = pandas.read_sql_query('select * from user_track', con=conn)
+context_content_features = pandas.read_sql_query('select * from context_content_features', con=conn)
 
+calc_time = time.perf_counter() - start_clock
+print(f"db_time: {calc_time}")
+
+start_clock = time.perf_counter()
 
 # In[3]:
 
@@ -108,7 +114,7 @@ pop_user = dropna_user[dropna_user['track_id'].
 
 counts3 = context_content_features['track_id'].value_counts()
 popular3 = counts3[counts3 >= 50]
-pop_context_index = popular3.index
+pop_context_list = popular3.index
 
 
 # In[66]:
@@ -214,10 +220,12 @@ helppd2sql.drop2select(df23_drop)
 
 # In[ ]:
 
+calc_time = time.perf_counter() - start_clock
+print(f"python_time: {calc_time}")
 
-report = helppd2sql.global_report()
+env = globals().copy()
+report = helppd2sql.global_report(env)
 report_df = pandas.DataFrame(report)
 report_df.to_csv('pandas_report.csv', index=False)
 df23_drop.to_csv('df23_drop_p.csv', index=False)
-exit()
 

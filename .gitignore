@@ -4,6 +4,7 @@ data/
 logs/
 docs/reports/
 docs/old_reports/
+kaggle-originals/data/
 
 #jupyter
 .ipynb_checkpoints
