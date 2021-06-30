@@ -13,7 +13,7 @@ select
 from
 	lineitem
 where
-	l_shipdate <= date '1998-12-01' - interval ':1' day (3)
+	l_shipdate <= date '1998-09-01'
 group by
 	l_returnflag,
 	l_linestatus
@@ -29,9 +29,11 @@ import time
 
 start_clock = time.perf_counter()
     
-conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
+# conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
+conn = psycopg2.connect(CONN)
 # variable CONN should be provided by the overseeing script. See benchmarker/main.py
 
 result = pd.read_sql_query(query, con=conn)
 #SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
+print(time.perf_counter() - start_clock)

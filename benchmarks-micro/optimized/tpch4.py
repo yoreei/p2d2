@@ -5,8 +5,8 @@ select
 from
 	orders
 where
-	o_orderdate >= date ':1'
-	and o_orderdate < date ':1' + interval '3' month
+	o_orderdate >= date '1997-07-01'
+	and o_orderdate < date '1997-07-01' + interval '3' month
 	and exists (
 		select
 			*
@@ -29,7 +29,8 @@ import time
 
 start_clock = time.perf_counter()
     
-conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
+# conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
+conn = psycopg2.connect(CONN)
 # variable CONN should be provided by the overseeing script. See benchmarker/main.py
 
 result = pd.read_sql_query(query, con=conn)

@@ -1,4 +1,6 @@
-query="""
+-- using 1433771997 as a seed to the RNG
+
+
 select
 	s_acctbal,
 	s_name,
@@ -43,19 +45,3 @@ order by
 	s_name,
 	p_partkey
 LIMIT 100;
-"""
-import pandas as pd
-import numpy as np
-
-import psycopg2
-import time
-
-start_clock = time.perf_counter()
-    
-# conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
-conn = psycopg2.connect(CONN)
-# variable CONN should be provided by the overseeing script. See benchmarker/main.py
-
-result = pd.read_sql_query(query, con=conn)
-#SHARED_DB_TIME is multiprocessing.Value
-SHARED_DB_TIME.value = time.perf_counter() - start_clock
