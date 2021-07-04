@@ -100,6 +100,7 @@
       postgresql_db:
         name: disable_nestloop_user
 
+      # increase postgresql max_connections to 1000
 
         # Now you have to:
         # 1. load the dumps to postgresql

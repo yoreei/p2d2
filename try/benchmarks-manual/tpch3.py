@@ -1,26 +1,22 @@
-import modin.pandas as pd
+import pandas as pd
 import numpy as np
 
 import psycopg2
-from sqlalchemy import create_engine
 import time
 
 start_clock = time.perf_counter()
     
 ### DEBUG:
-CONNSTR='postgresql://root:root@localhost/tpch1'
+CONNSTR="host=localhost dbname=tpch1 user=root password=root"
 from types import SimpleNamespace
 SHARED_DB_TIME=SimpleNamespace()
 ### END DEBUG
 
+conn = psycopg2.connect(CONNSTR)
 
-print('before read_sql')
-customer = pd.read_sql("SELECT * FROM customer", con=CONNSTR)
-print('downloaded customer')
-orders = pd.read_sql("SELECT * FROM orders", parse_dates=['o_orderdate'], con=CONNSTR)
-print('downloaded orders')
-lineitem = pd.read_sql("SELECT * FROM lineitem", parse_dates = ['l_shipdate', 'l_commitdate', 'l_receiptdate'], con=CONNSTR)
-print('downloaded lineitem')
+customer = pd.read_sql_query("SELECT * FROM customer", con=conn)
+orders = pd.read_sql_query("SELECT * FROM orders", parse_dates=['o_orderdate'], con=conn)
+lineitem = pd.read_sql_query("SELECT * FROM lineitem", parse_dates = ['l_shipdate', 'l_commitdate', 'l_receiptdate'], con=conn)
 #SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 

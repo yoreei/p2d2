@@ -8,7 +8,7 @@ def action(name):
 
 start_clock = time.perf_counter()
 conn = psycopg2.connect(CONNSTR)
-# variable CONN should be provided by the overseeing script. See benchmarker/main.py
+# variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py
 df1 = pd.read_sql_query("SELECT * FROM lineitem", conn)
 df2 = pd.read_sql_query("SELECT * FROM orders", conn)
 

@@ -14,7 +14,7 @@ from . import monitor as mon
 
 logger = log.getLogger(__name__)
 
-C_TIMES = 3
+C_TIMES = 3 # CONFIG THIS
 # default value used for shorter pipelines runs
 
 
@@ -43,10 +43,10 @@ def scale(nextlist, code):
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
 
-    for scale in [1, 10]:
+    for scale in [1, 10, 100]: # CONFIG THIS
         logger.info(f"{scale=}")
         global CONNSTR
-        CONNSTR = f"host=localhost dbname=tpch{scale} user=p2d2 password=p2d2"
+        CONNSTR = CONNSTR.format(dbname=f'tpch{scale}')
         subres_df = nextf(nextlist[:], code)
         subres_df["scale"] = scale
         res_df = res_df.append(subres_df)
@@ -86,12 +86,13 @@ def net(nextlist, code):
 
 def optimizers(nextlist):
     global BENCH_DIR
+    global BENCHMARKER_TYPE
     nextf = nextlist.pop()
     res_df = pandas.DataFrame()
 
-    dirs = os.listdir(BENCHMARK_TYPE) # relative paths
+    dirs = os.listdir(BENCHMARKER_TYPE) # relative paths
     for optimizer in dirs:
-        BENCH_DIR = f"{BENCHMARK_TYPE}/{optimizer}/" # global
+        BENCH_DIR = f"{BENCHMARKER_TYPE}/{optimizer}/" # global
         logger.info(f"{BENCH_DIR=}")
         subres_df = nextf(nextlist[:])
         subres_df["optimizer"] = optimizer
@@ -132,10 +133,10 @@ def bench_all(nextlist, *args):
 
 def micro_main():
     global CONNSTR 
-    CONNSTR= f"host=localhost dbname=tpch1 user=root password=root"
+    CONNSTR= "host=localhost dbname={dbname} user=root password=root"
     benchlist = [basic_bench, index, net, scale, wflows, optimizers]
     global BENCHMARKER_TYPE
-    BENCHMARKER_TYPE = "benchmarks"
+    BENCHMARKER_TYPE = "benchmarks-micro"
 
     report = bench_all(benchlist)
     current_date = datetime.now().strftime('%m-%d--%H-%M')
@@ -147,10 +148,10 @@ def micro_main():
 
 def kaggle_main():
     global CONNSTR 
-    CONNSTR = f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user"
+    CONNSTR = "host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user"
     shorterlist = [basic_bench, index, net, wflows, optimizers]
     global BENCHMARKER_TYPE
-    BENCHMARKER_TYPE = "kaggle-benchmarks"
+    BENCHMARKER_TYPE = "benchmarks-kaggle"
 
     report = bench_all(shorterlist)
     current_date = datetime.now().strftime('%m-%d--%H-%M')

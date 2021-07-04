@@ -6,18 +6,25 @@ import time
 
 start_clock = time.perf_counter()
     
+### DEBUG:
+CONNSTR='postgresql://root:root@localhost/tpch1'
+from types import SimpleNamespace
+SHARED_DB_TIME=SimpleNamespace()
+### END DEBUG
+
 # conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
-conn = psycopg2.connect(CONN)
-# variable CONN should be provided by the overseeing script. See benchmarker/main.py
+#conn = psycopg2.connect(CONNSTR)
+# variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py
 
 
-customer = pd.read_sql_query("SELECT * FROM customer", con=conn)
-orders = pd.read_sql_query("SELECT * FROM orders", parse_dates=['o_orderdate'], con=conn)
-lineitem = pd.read_sql_query("SELECT * FROM lineitem", parse_dates = ['l_shipdate', 'l_commitdate', 'l_receiptdate'], con=conn)
+customer = pd.read_sql("SELECT * FROM customer", con=CONNSTR)
+orders = pd.read_sql("SELECT * FROM orders", parse_dates=['o_orderdate'], con=CONNSTR)
+lineitem = pd.read_sql("SELECT * FROM lineitem", parse_dates = ['l_shipdate', 'l_commitdate', 'l_receiptdate'], con=CONNSTR)
+print("finished downloading")
 #SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 
-customer = customer['c_mktsegment'].astype({'c_mktsegment': 'category'})
+customer = customer.astype({'c_mktsegment': 'category'})
 orders = orders.astype({'o_orderstatus' : 'category', 'o_orderpriority' : 'category'})
 lineitem = lineitem.astype({'l_returnflag': 'category', 'l_linestatus': 'category'})
 

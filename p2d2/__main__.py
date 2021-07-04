@@ -9,11 +9,16 @@ if getpass.getuser() != 'root':
     print("run as root")
     exit()
 
+# check if ray is set up
+import ray
+ray.init(address='auto', _redis_password='root')
+ray.shutdown()
+
 
 if sys.argv[1] == 'kaggle':
     main = main.kaggle_main
 elif sys.argv[1] == 'micro':
-    main = main.kaggle_micro
+    main = main.micro_main
 else:
     print('kaggle or micro')
     exit()
