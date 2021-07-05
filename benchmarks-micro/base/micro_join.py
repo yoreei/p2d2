@@ -1,4 +1,5 @@
 import time
+
 start_clock = time.perf_counter()
 import pandas as pd
 
@@ -6,7 +7,7 @@ import pandas as pd
 df1 = pd.read_sql_query("SELECT * FROM lineitem", CONNSTR)
 df2 = pd.read_sql_query("SELECT * FROM orders", CONNSTR)
 
-#SHARED_DB_TIME is multiprocessing.Value
+# SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 
 joined = df1.merge(

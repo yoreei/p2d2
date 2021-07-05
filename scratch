@@ -1,12 +1,9 @@
-df3['time_zone'].replace('Eastern Time (US & Canada)', 'Eastern Time',inplace=True)
-df3['time_zone'].replace('Central Time (US & Canada)', 'Central Time',inplace=True)
-df3['time_zone'].replace('Pacific Time (US & Canada)', 'Pacific Time',inplace=True)
-df3['time_zone'].replace('Mountain Time (US & Canada)', 'Mountain Time',inplace=True)
-df3['time_zone'].replace('Alaska', 'Alaska Time',inplace=True)
-df3['time_zone'].replace('Hawaii', 'Hawaii Time',inplace=True)
-df3['time_zone'].replace('Arizona', 'Mountain Time',inplace=True)
-df3['time_zone'].replace('America/Chicago', 'Central Time',inplace=True)
-df3['time_zone'].replace('America/New_York', 'Eastern Time',inplace=True)
-df3['time_zone'].replace('America/Los_Angeles', 'Pacific Time',inplace=True)
-df3['time_zone'].replace('America/Denver', 'Mountain Time',inplace=True)
-df3['time_zone'].replace('America/Detroit', 'Eastern Time',inplace=True)
+
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/base/tpch1.py: Cannot parse: 15:0: 	return np.multiply(extended, np.subtract(1, discount))
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/base/tpch5.py: Cannot parse: 15:0: 	return np.multiply(extended, np.subtract(1, discount))
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/base/tpch4.py: Cannot parse: 15:0: 	return np.multiply(extended, np.subtract(1, discount))
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/modin/tpch4.py: Cannot parse: 14:0: 	return np.multiply(extended, np.subtract(1, discount))
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/modin/tpch1.py: Cannot parse: 14:0: 	return np.multiply(extended, np.subtract(1, discount))
+error: cannot format /cygdrive/e/p2d2/benchmarks-micro/modin/tpch5.py: Cannot parse: 14:0: 	return np.multiply(extended, np.subtract(1, discount))
+Oh no! 💥 💔 💥
+15 files left unchanged, 6 files failed to reformat.

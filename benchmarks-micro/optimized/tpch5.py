@@ -1,4 +1,5 @@
 import time
+
 start_clock = time.perf_counter()
 query = """
 select
@@ -28,8 +29,8 @@ order by
 """
 import pandas as pd
 import numpy as np
-    
+
 result = pd.read_sql_query(query, con=CONNSTR)
-#SHARED_DB_TIME is multiprocessing.Value
+# SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 SHARED_WALL_TIME.value = time.perf_counter() - start_clock

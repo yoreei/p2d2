@@ -137,6 +137,7 @@ def basic_bench(nextlist, code):
 
     all_reps = []
     connstr=CONN_TEMPLATE.format(dbname=DBNAME, user=USER, password=USER)
+    logger.info(connstr)
     for rep in range(C_TIMES):
         logger.info(f"{rep=}")
         rep_stats: pandas.DataFrame = mon.monitor(code,{"CONNSTR":connstr}, {})
