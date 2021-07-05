@@ -1,8 +1,7 @@
+import time
+start_clock = time.perf_counter()
 import pandas as pd
 import numpy as np
-
-import psycopg2
-import time
 
 ### DEBUG
 # CONNSTR='postgresql://root:root@localhost/tpch1'
@@ -12,16 +11,13 @@ import time
 
 
 def udf_disc_price(extended, discount):
+    import numpy as np
 	return np.multiply(extended, np.subtract(1, discount))
 
 def udf_charge(extended, discount, tax):
+    import numpy as np
 	return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
 
-start_clock = time.perf_counter()
-    
-# COnn = psycopg2.connect("host=localhost dbname=tpch1 user=root password=root")
-# conn = psycopg2.connect(CONNSTR)
-# variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py
 
 lineitem = pd.read_sql("SELECT * FROM lineitem", parse_dates = ['l_shipdate', 'l_commitdate', 'l_receiptdate'], con=CONNSTR)
 #SHARED_DB_TIME is multiprocessing.Value
@@ -35,6 +31,8 @@ df['charge']     = udf_charge(df['l_extendedprice'], df['l_discount'], df['l_tax
 result = df.groupby(['l_returnflag', 'l_linestatus'])\
          .agg({'l_quantity': 'sum', 'l_extendedprice': 'sum', 'disc_price': 'sum', 'charge': 'sum',
                  'l_quantity': 'mean', 'l_extendedprice': 'mean', 'l_discount': 'mean', 'l_shipdate': 'count'})
+
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock
 print(time.perf_counter() - start_clock)
 print(f"{result=}")
 print(f"{len(result)=}")

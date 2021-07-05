@@ -115,6 +115,16 @@
         limit_item: nofile
         value: 6400
 
+    - name: Copy .pgpass for root
+      become: yes
+      ansible.builtin.copy:
+        src: /vagrant/ansible/.pgpass
+        dest: /home/root/.pgpass
+        owner: root
+        group: root
+        mode: '0600'
+
+
         # Now you have to:
         # 1. load the dumps to postgresql
         # 2. activate the udfs for all databases

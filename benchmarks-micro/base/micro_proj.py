@@ -1,16 +1,12 @@
-import pandas as pd
-import psycopg2
 import time
-
-
-def action(name):
-    return None
-
-
 start_clock = time.perf_counter()
-conn = psycopg2.connect(CONNSTR)
-a = pd.read_sql_query("SELECT * FROM lineitem", conn)
+
+import pandas as pd
+
+
+a = pd.read_sql_query("SELECT * FROM lineitem", CONNSTR)
 #SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 b = a[['l_linenumber', 'l_orderkey', 'l_comment']]
-action(b)
+
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock
