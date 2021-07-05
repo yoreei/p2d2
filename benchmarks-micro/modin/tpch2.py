@@ -1,8 +1,7 @@
+import time
+start_clock = time.perf_counter()
 import modin.pandas as pd
 import numpy as np
-
-import psycopg2
-import time
 
 ### DEBUG:
 # CONNSTR='postgresql://root:root@localhost/tpch1'
@@ -11,12 +10,13 @@ import time
 ### END DEBUG
 
 def udf_disc_price(extended, discount):
+    import numpy as np
 	return np.multiply(extended, np.subtract(1, discount))
 
 def udf_charge(extended, discount, tax):
+    import numpy as np
 	return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
 
-start_clock = time.perf_counter()
     
 # variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py
 
@@ -41,3 +41,5 @@ pspsnr = psps.merge(nr, left_on="s_nationkey", right_on="n_nationkey")[["ps_part
 aggr = pspsnr.groupby("ps_partkey").agg({'ps_supplycost' : min}).reset_index()
 sj = pspsnr.merge(aggr, left_on=["ps_partkey", "ps_supplycost"], right_on=["ps_partkey", "ps_supplycost"])
 result = sj[["s_acctbal", "s_name", "n_name", "ps_partkey", "p_mfgr", "s_address", "s_phone", "s_comment"]].sort_values(["s_acctbal", "n_name", "s_name", "ps_partkey"], ascending=[False, True, True, True]).head(100)
+
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock

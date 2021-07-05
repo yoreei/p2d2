@@ -39,7 +39,7 @@ tags/
 #other
 *.jpeg
 *.jpg
-*.png
+#*.png
 *.pdf
 
 .vagrant/machines/p2d2/hyperv/synced_folders

@@ -101,12 +101,15 @@
         name: disable_nestloop_user
 
     - name: Set pg max_connections 180 (for modin)
-      community.postgresql.postgresql_set:
+      become: yes
+      become_user: postgres
+      postgresql_set:
         name: max_connections
         value: 180
 
     - name: ulimit -n 6400 for root (for modin)
-      community.general.pam_limits:
+      become: yes
+      pam_limits:
         domain: root
         limit_type: soft
         limit_item: nofile

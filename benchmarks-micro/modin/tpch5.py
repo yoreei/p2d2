@@ -1,7 +1,7 @@
+import time
+start_clock = time.perf_counter()
 import modin.pandas as pd
 import numpy as np
-
-import time
 
 ### DEBUG:
 # CONNSTR='postgresql://root:root@localhost/tpch1'
@@ -10,16 +10,14 @@ import time
 ### END DEBUG
 
 def udf_disc_price(extended, discount):
+    import numpy as np
 	return np.multiply(extended, np.subtract(1, discount))
 
 def udf_charge(extended, discount, tax):
+    import numpy as np
 	return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
 
-start_clock = time.perf_counter()
     
-#conn = psycopg2.connect("host=localhost dbname=tpch10 user=root password=root")
-# variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py
-
 region = pd.read_sql("SELECT * FROM region", con=CONNSTR)
 nation = pd.read_sql("SELECT * FROM nation", con=CONNSTR)
 supplier = pd.read_sql("SELECT * FROM supplier", con=CONNSTR)
@@ -43,4 +41,5 @@ lsnroc = lsnr.merge(oc, left_on=["l_orderkey", "s_nationkey"], right_on=["o_orde
 lsnroc["volume"] = lsnroc.l_extendedprice * (1 - lsnroc.l_discount)
 result = lsnroc.groupby("n_name").agg({'volume' : sum}).reset_index().sort_values("volume", ascending=False)
 
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock
 print(f"{result.columns=}, {len(result)=}")
