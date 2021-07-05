@@ -1,0 +1,6 @@
+# wall_time_overview['wall_time_normalized'] = wall_time_overview.groupby('wflow')['wall_time'].transform(lambda x: (x/x.max()))
+# db_time_ratio = wall_time_overview['db_time']/wall_time_overview['wall_time']
+# wall_time_overview['db_time_normalized'] = db_time_ratio*wall_time_overview['wall_time_normalized']
+# wall_time_overview['python_time_normalized'] = \
+#     wall_time_overview['wall_time_normalized'] - wall_time_overview['db_time_normalized']
+# wall_time_overview
