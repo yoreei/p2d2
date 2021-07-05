@@ -1,5 +1,6 @@
 psycopg2
 modin[ray]
+ray[default]
 scikit-learn
 pandas
 kaggle

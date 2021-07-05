@@ -10,9 +10,9 @@ if getpass.getuser() != 'root':
     exit()
 
 # check if ray is set up
-import ray
-ray.init(address='auto', _redis_password='root')
-ray.shutdown()
+# import ray
+# ray.init(address='auto', _redis_password='root')
+# ray.shutdown()
 
 
 if sys.argv[1] == 'kaggle':
