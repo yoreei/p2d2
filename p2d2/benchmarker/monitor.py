@@ -17,6 +17,7 @@ def monitor(code_str, globals_passed, locals_passed) -> dict:
     mon_df = pandas.DataFrame()
 
     locals_passed['SHARED_DB_TIME'] = mp.Value('f',0)
+    locals_passed['SHARED_WALL_TIME'] = mp.Value('f',0)
     args = (code_str, globals_passed, locals_passed)
     start_mem = available()
     p = mp.Process(target=exec, args=args)
@@ -40,9 +41,10 @@ def monitor(code_str, globals_passed, locals_passed) -> dict:
     mon_df['snapshot_idx'] = snapshot_idx
     
 
-    mon_df['wall_time'] = end_clock - start_clock
+    mon_df['proc_time'] = end_clock - start_clock
     mon_df['exitcode'] = p.exitcode # -9 for oom
     mon_df['db_time'] = locals_passed['SHARED_DB_TIME'].value
+    mon_df['shared_wall_time'] = locals_passed['SHARED_WALL_TIME'].value
     # # insert process_snapshot # not working?
     # mon_df.reset_index(drop=False, inplace=True)
     # mon_df.rename({'index':'process_snapshot'}, inplace=True)

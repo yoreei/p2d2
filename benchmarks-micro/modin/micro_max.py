@@ -1,5 +1,3 @@
-#!/bin/env python3
-# import pandas as pd
 import time
 start_clock = time.perf_counter()
 import modin.pandas as pd

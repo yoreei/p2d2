@@ -1,16 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-import helppd2sql
-import pandas
-import psycopg2
 import time
-
-conn = psycopg2.connect(f"host=localhost dbname=module4 user=disable_nestloop_user password=disable_nestloop_user")
-
+start_clock = time.perf_counter()
+import pandas
 
 proj_sent_query = """
     SELECT hashtag, ol_score, ol_avg
@@ -127,15 +117,18 @@ df23_drop AS(
     FROM df23
 )
 """
-report = helppd2sql.new_report()
-for cte in ['dropna_user', 'counts', 'popular', 'pop_user_list', 'pop_user', 'counts3', 'popular3', 'pop_context_list', 'pop_context', 'proj_context', 'dropna_context', 'english_context', 'rename_content_features', 'usa_context', 'df23', 'df23_drop']:
-    cte_query = cte_statements + "select * from " + cte + ";"
-    start_clock = time.perf_counter()
-    df = pandas.read_sql_query(cte_query, con=conn)
-    helppd2sql.report_add(report, cte, df)
-    calc_time = time.perf_counter() - start_clock
-    print(f"{cte} {calc_time}")
-report_df = pandas.DataFrame(report)
-report_df.to_csv('sql_report.csv', index=False)
-df.to_csv('df23_drop_s.csv', index=False)
+# report = helppd2sql.new_report()
+# for cte in ['dropna_user', 'counts', 'popular', 'pop_user_list', 'pop_user', 'counts3', 'popular3', 'pop_context_list', 'pop_context', 'proj_context', 'dropna_context', 'english_context', 'rename_content_features', 'usa_context', 'df23', 'df23_drop']:
+#     cte_query = cte_statements + "select * from " + cte + ";"
+#     start_clock = time.perf_counter()
+#     df = pandas.read_sql_query(cte_query, con=conn)
+#     helppd2sql.report_add(report, cte, df)
+#     calc_time = time.perf_counter() - start_clock
+#     print(f"{cte} {calc_time}")
+# report_df = pandas.DataFrame(report)
+# report_df.to_csv('sql_report.csv', index=False)
+# df.to_csv('df23_drop_s.csv', index=False)
 
+df = pandas.read_sql_query("select * from df23_drop", con=CONNSTR)
+SHARED_DB_TIME = time.perf_counter() - start_clock
+SHARED_WALL_TIME = time.perf_counter() - start_clock

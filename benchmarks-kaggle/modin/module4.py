@@ -2,7 +2,7 @@ import time
 start_clock = time.perf_counter()
 
 import numpy as np # linear algebra
-import pandas 
+import modin.pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from numpy import array

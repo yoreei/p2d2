@@ -119,7 +119,7 @@
       become: yes
       ansible.builtin.copy:
         src: /vagrant/ansible/.pgpass
-        dest: /home/root/.pgpass
+        dest: /root/.pgpass
         owner: root
         group: root
         mode: '0600'
