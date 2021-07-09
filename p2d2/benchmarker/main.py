@@ -33,6 +33,10 @@ def columnize(df, **kwargs) -> None:
         df[key] = value
 
 
+def kaggle_main():
+    pass
+
+
 def micro_main():
     """
     1.{5end_to_end} tpch 1,2,3,4,5 with scale 1, 10
