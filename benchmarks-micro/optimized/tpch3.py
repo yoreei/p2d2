@@ -1,4 +1,5 @@
 import time
+import sqlalchemy
 start_clock = time.perf_counter()
 query = """
 select
