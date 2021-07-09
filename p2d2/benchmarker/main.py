@@ -14,170 +14,112 @@ from . import monitor as mon
 
 logger = log.getLogger(__name__)
 
-C_TIMES = 2 # CONFIG THIS
-# default value used for shorter pipelines runs
-
 
 def shape_traffic(area: str):
-
     child = subprocess.Popen(["/bin/bash", f"./net/{area}.sh"])
     child.communicate()
     rc = child.returncode
     assert rc == 0
     return rc
 
-# FIX CONNSTR IF NEEDED
-# def exec_sql(query):
-#     # global CONNSTR we don't change it
-#     conn = psycopg2.connect(CONNSTR)
-#     cur = conn.cursor()
-#     cur.execute(query)
-#     try:
-#         db_return = cur.fetchall()  # nested: [('c_custkey'),('c_acctbal)]
-#     except psycopg2.ProgrammingError:  # if no results
-#         db_return = 0
-#     cur.close()
-#     conn.close()
-#     return db_return
 
-def scale(nextlist, code):
-    global DBNAME
-    nextf = nextlist.pop()
-    res_df = pandas.DataFrame()
-
-    for scale in [1, 10]: # CONFIG THIS
-        logger.info(f"{scale=}")
-        DBNAME=f'tpch{scale}'
-        subres_df = nextf(nextlist[:], code)
-        subres_df["scale"] = scale
-        res_df = res_df.append(subres_df)
-
-    return res_df
-
-
-# FIX CONNSTR IF NEEDED
-# def index(nextlist, code):
-#     nextf = nextlist.pop()
-#     res_df = pandas.DataFrame()
-# 
-#     for indexing in ["false", "true"]:
-#         logger.info(f"{indexing=}")
-#         db_return = exec_sql(f"call set_indexes({indexing});")
-# 
-#         subres_df = nextf(nextlist[:], code)
-#         subres_df["index"] = indexing
-#         res_df = res_df.append(subres_df)
-# 
-#     return res_df
-
-def user(nextlist, code):
-    global USER
-    nextf = nextlist.pop()
-    res_df = pandas.DataFrame()
-
-    for cur_user in ["root", "disable_nestloop_user"]:
-        USER = cur_user
-        logger.info(f"{USER=}")
-
-        subres_df = nextf(nextlist[:], code)
-        subres_df["user"] = cur_user
-        res_df = res_df.append(subres_df)
-
-    return res_df
-
-
-def net(nextlist, code):
-    nextf = nextlist.pop()
-    res_df = pandas.DataFrame()
-    # reset any rules before starting
-    shape_traffic("loc")
-    for area in ["lan", "wan", "loc"]:
-        logger.info(f"{area=}")
-
-        shape_traffic(area)
-        subres_df = nextf(nextlist[:], code)
-        subres_df["net"] = area
-        res_df = res_df.append(subres_df)
-
-    return res_df
-
-def optimizers(nextlist):
-    global BENCH_DIR
-    global BENCHMARKER_TYPE
-    nextf = nextlist.pop()
-    res_df = pandas.DataFrame()
-
-    dirs = os.listdir(BENCHMARKER_TYPE) # relative paths
-    for optimizer in dirs:
-        BENCH_DIR = f"{BENCHMARKER_TYPE}/{optimizer}/" # global
-        logger.info(f"{BENCH_DIR=}")
-        subres_df = nextf(nextlist[:])
-        subres_df["optimizer"] = optimizer
-        res_df = res_df.append(subres_df)
-
-    return res_df
-
-def wflows(nextlist):
-    files = os.listdir(BENCH_DIR)
-    nextf = nextlist.pop()
-    res_df = pandas.DataFrame()
-    for f in files:
-        logger.info(f"{f=}")
-        with open(BENCH_DIR + f, "r") as file_source:
-            code = file_source.read()
-
-        subres_df = nextf(nextlist[:], code)
-        subres_df["wflow"] = f
-        res_df = res_df.append(subres_df)
-
-    return res_df
-
-
-def basic_bench(nextlist, code):
-
-    all_reps = []
-    connstr=CONN_TEMPLATE.format(dbname=DBNAME, user=USER, password=USER)
-    logger.info(connstr)
-    for rep in range(C_TIMES):
-        logger.info(f"{rep=}")
-        rep_stats: pandas.DataFrame = mon.monitor(code,{"CONNSTR":connstr}, {})
-        rep_stats['rep'] = rep
-
-    return rep_stats
-
-
-def bench_all(nextlist, *args):
-    return nextlist.pop()(nextlist, *args)
+def write(df, name):
+    df.reset_index(drop=True, inplace=True)
+    df.to_feather(name + ".feather", compression="uncompressed")
 
 
 def micro_main():
+    """
+    1.{5end_to_end} tpch 1,2,3,4,5 with scale 1, 10
+    2 {5module4} and 3. module4 | also {5module4mem} and {5module4net}
+    3.{5tpchmodin} tpch 1, 4, 5 with modin on scale 10
+    4.{5micro_scales} micros with scale 1, 10
+    5.{5micro_net} micro join, selection with net=wan and scale 1
+    """
 
-    global CONN_TEMPLATE 
-    CONN_TEMPLATE='postgresql://{user}:{password}@localhost/{dbname}' 
-    benchlist = [basic_bench, user, net, scale, wflows, optimizers]
-    global BENCHMARKER_TYPE
-    BENCHMARKER_TYPE = "benchmarks-micro"
+    def one():
+        name = "5end_to_end"
+        print(name)
+        path = Pathlib("benchmarks-micro")
+        for f in ["tpch1.py", "tpch2.py", "tpch3.py", "tpch4.py", "tpch5.py"]:
+            for bench_dir in ["base", "optimized"]:
+                with open(path / bench_dir / f, "r") as file_source:
+                    code = file_source.read()
 
-    report = bench_all(benchlist)
-    current_date = datetime.now().strftime('%m-%d--%H-%M')
-    report_filename = f"micro-bench{current_date}.feather"
+                connstr = "postgresql://root:root@localhost/tpch1"
+                print(f, bench_dir, connstr)
+                result: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
 
-    report.reset_index(drop=True, inplace=True)
-    report.to_feather(report_filename, compression='uncompressed')
-    print(report)
+                connstr = "postgresql://root:root@localhost/tpch10"
+                print(f, bench_dir, connstr)
+                scale10: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
 
-def kaggle_main():
-    global CONN_TEMPLATE 
-    CONN_TEMPLATE = 'postgresql://{user}:{password}@localhost/module4' 
-    shorterlist = [basic_bench, user, net, wflows, optimizers]
-    global BENCHMARKER_TYPE
-    BENCHMARKER_TYPE = "benchmarks-kaggle"
+                result = result.append(scale10)
+                write(result, name)
 
-    report = bench_all(shorterlist)
-    current_date = datetime.now().strftime('%m-%d--%H-%M')
-    report_filename = f"kaggle-bench{current_date}.feather"
+    def two():
+        name = "5module4"
+        print(name)
+        path = Pathlib("benchmarks-kaggle")
+        f = "module4"
+        for bench_dir in ["base", "optimized"]:
+            with open(path / bench_dir / f, "r") as file_source:
+                code = file_source.read()
 
-    report.reset_index(drop=True, inplace=True)
-    report.to_feather(report_filename, compression='uncompressed')
-    print(report)
+            connstr = "postgresql://root:root@localhost/module4"
+            print(f, bench_dir, connstr)
+            result: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
 
+            write(result, name)
+
+    def three():
+        print("5tpchmodin")
+        path = Pathlib("benchmarks-kaggle")
+        for f in ["tpch1.py", "tpch4.py", "tpch5.py"]:
+            bench_dir = "modin"
+            with open(path / bench_dir / f, "r") as file_source:
+                code = file_source.read()
+
+            connstr = "postgresql://root:root@localhost/tpch10"
+            print(f, bench_dir, connstr)
+            result: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
+
+            write(result, name)
+
+    def four():
+        print("5micro_scales")
+        path = Pathlib("benchmarks-micro")
+        for f in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
+            for bench_dir in ["optimized", "base"]:
+                with open(path / bench_dir / f, "r") as file_source:
+                    code = file_source.read()
+
+                connstr = "postgresql://root:root@localhost/tpch1"
+                print(f, bench_dir, connstr)
+                result: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
+
+                connstr = "postgresql://root:root@localhost/tpch10"
+                print(f, bench_dir, connstr)
+                scale10: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
+
+                result = result.append(scale10)
+                write(result, name)
+
+    def five():
+        print("5micro_net")
+        path = Pathlib("benchmarks-micro")
+        for f in ["micro_join.py", "micro_sel.py"]:
+            for bench_dir in ["optimized", "base"]:
+                with open(path / bench_dir / f, "r") as file_source:
+                    code = file_source.read()
+
+                connstr = "postgresql://root:root@localhost/tpch1"
+                print(f, bench_dir, connstr)
+                shape_traffic("wan")
+                result: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
+                shape_traffic("loc")
+
+                write(result, name)
+
+    shape_traffic("loc")
+    one()

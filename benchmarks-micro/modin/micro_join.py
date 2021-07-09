@@ -4,8 +4,8 @@ import time
 start_clock = time.perf_counter()
 import modin.pandas as pd
 
-df1 = pd.read_sql_query("SELECT * FROM lineitem", CONNSTR)
-df2 = pd.read_sql_query("SELECT * FROM orders", CONNSTR)
+df1 = pd.read_sql("SELECT * FROM lineitem", CONNSTR)
+df2 = pd.read_sql("SELECT * FROM orders", CONNSTR)
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
 
 joined = df1.merge(

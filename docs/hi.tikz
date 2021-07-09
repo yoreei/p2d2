@@ -1,0 +1,97 @@
+% This file was created by tikzplotlib v0.9.9.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{1,0.949019607843137,0.8}
+
+\begin{axis}[
+axis line style={white!80!black},
+tick align=outside,
+tick pos=left,
+x grid style={white!80!black},
+xlabel={Usage in \%},
+xmajorgrids,
+xmin=-4.92723769021197, xmax=103.471991494451,
+xtick style={color=white!15!black},
+y grid style={white!80!black},
+ylabel={Python Library},
+ymajorgrids,
+ymin=0.4, ymax=10.6,
+ytick style={color=white!15!black},
+ytick={1,2,3,4,5,6,7,8,9,10},
+yticklabels={
+  tensorflow,
+  scipy,
+  plotly,
+  learntools,
+  mpl\_toolkits,
+  seaborn,
+  sklearn,
+  matplotlib,
+  numpy,
+  pandas
+}
+]
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,0.55)
+--(axis cs:0,1.45)
+--(axis cs:6.38580636587149,1.45)
+--(axis cs:6.38580636587149,0.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,1.55)
+--(axis cs:0,2.45)
+--(axis cs:7.98281170398919,2.45)
+--(axis cs:7.98281170398919,1.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,2.55)
+--(axis cs:0,3.45)
+--(axis cs:9.34281347597847,3.45)
+--(axis cs:9.34281347597847,2.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,3.55)
+--(axis cs:0,4.45)
+--(axis cs:11.4049659999557,4.45)
+--(axis cs:11.4049659999557,3.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,4.55)
+--(axis cs:0,5.45)
+--(axis cs:16.3023013710767,5.45)
+--(axis cs:16.3023013710767,4.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,5.55)
+--(axis cs:0,6.45)
+--(axis cs:39.8321040157707,6.45)
+--(axis cs:39.8321040157707,5.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,6.55)
+--(axis cs:0,7.45)
+--(axis cs:53.7909495647551,7.45)
+--(axis cs:53.7909495647551,6.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,7.55)
+--(axis cs:0,8.45)
+--(axis cs:67.1362438257248,8.45)
+--(axis cs:67.1362438257248,7.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,8.55)
+--(axis cs:0,9.45)
+--(axis cs:84.5526834562651,9.45)
+--(axis cs:84.5526834562651,8.55)
+--cycle;
+\path [draw=black, fill=color0, line width=0.283592616144883pt]
+(axis cs:0,9.55)
+--(axis cs:0,10.45)
+--(axis cs:98.5447538042395,10.45)
+--(axis cs:98.5447538042395,9.55)
+--cycle;
+
+\end{axis}
+
+\end{tikzpicture}

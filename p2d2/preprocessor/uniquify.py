@@ -1,4 +1,5 @@
 import astroid
 
-def uniquify(code:str):
+
+def uniquify(code: str):
     return code

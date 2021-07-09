@@ -1,9 +1,9 @@
-psycopg2
+pandas
+#psycopg2
 modin[ray]
 ray[default]
 sqlalchemy
 scikit-learn
-pandas
 kaggle
 #grizzly-sql
 #beautifultable #grizzly tests dependency

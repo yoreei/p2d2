@@ -16,6 +16,7 @@ a,b = 1 -> a = 1; b = a
 from redbaron import RedBaron
 from redbaron import nodes
 
+
 def tuplize(params):
     """
     params: could be TupleNode, AtomtrailersNode, etc
@@ -28,10 +29,10 @@ def tuplize(params):
     This function performs this encapsulation IF NECESSARY
     """
     if isinstance(params, nodes.TupleNode) and len(params) > 1:
-        return "("+params.dumps()+")"
+        return "(" + params.dumps() + ")"
     else:
         return params.dumps()
-        
+
 
 def unslice(red):
     for slice_node in red("slice"):
@@ -40,16 +41,18 @@ def unslice(red):
         step = slice_node.step
         slice_node.replace(f"slice({lower},{upper},{step})")
 
+
 def unsubscript(red):
     for subscript_node in red("getitem"):
         # subscript_node => [slice(0,1,2),3]
-        subscript_params= subscript_node.value #  => TupleNode: slice(0,1,2),3
+        subscript_params = subscript_node.value  #  => TupleNode: slice(0,1,2),3
         params_string = tuplize(subscript_params)
         idx = subscript_node.index_on_parent
         dotproxy = subscript_node.parent.value
         name, call = RedBaron(f"__getitem__({params_string})")[0]
-        dotproxy[idx]=name.dumps()
-        dotproxy.insert(idx+1, call.dumps())
+        dotproxy[idx] = name.dumps()
+        dotproxy.insert(idx + 1, call.dumps())
+
 
 def single_target(red):
     """
@@ -59,6 +62,7 @@ def single_target(red):
     """
     pass
 
+
 def desugar(code):
     red = RedBaron(code)
     unslice(red)
@@ -66,6 +70,7 @@ def desugar(code):
     single_target(red)
     return red.dumps()
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     pass
-    #desugar()
+    # desugar()

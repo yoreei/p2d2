@@ -5,8 +5,8 @@ This is part of the backend implementation.
 from p2d2.IRBuilder.db_abc import DB_ABC
 import psycopg2
 
-    
-def __FETCH_COLUMNS(query:str, connstr:str)->list:
+
+def __FETCH_COLUMNS(query: str, connstr: str) -> list:
     conn = psycopg2.connect(connstr)
     cur = conn.cursor()
     src_query = resolve(name, lineno)

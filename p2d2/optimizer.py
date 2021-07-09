@@ -1,46 +1,49 @@
 #!/usr/bin/env python3
 
 import astroid
-#if __name__=='__main__':
+
+# if __name__=='__main__':
 #    import desugar
-#else:
+# else:
 #    from . import desugar
 from .infer import inference
 from .preprocessor import preprocess
 from .IRBuilder.classifier import Classifier
 from .IRBuilder import code_traverser
 
-    
-def optimize(raw_code:str, conn_info:str)->str:
-    """The main entry point to the optimizer. This activates the whole pipeline as seen on the overview diagram. 
+
+def optimize(raw_code: str, conn_info: str) -> str:
+    """The main entry point to the optimizer. This activates the whole pipeline as seen on the overview diagram.
     Input: code read from file
     Output: The optimized, ready-to-run version of the code
     """
     raw_code = p2d2_setup(raw_code, conn_info)
-    code:str = preprocess(raw_code)    
-    ast:astroid.Module = astroid.parse(code)
+    code: str = preprocess(raw_code)
+    ast: astroid.Module = astroid.parse(code)
     ast.last_p2d2_node = 3
-    eagerfiable:set = code_traverser.lazify(ast)
+    eagerfiable: set = code_traverser.lazify(ast)
     code_traverser.eagerfy(ast, eagerfiable)
-    return ast.as_string() # Python code from AST
+    return ast.as_string()  # Python code from AST
 
-def p2d2_setup(code:str, conn_info:str) -> None:
+
+def p2d2_setup(code: str, conn_info: str) -> None:
     """
-    Our optimizer depends on a few libraries (psychopg2 and pandas) 
+    Our optimizer depends on a few libraries (psychopg2 and pandas)
     """
-    code = f"""import pandas
+    code = (
+        f"""import pandas
     import psycopg2
     conn = psycopg2.connect({conn_info})
     cur = conn.cursor()
-    """ + code
+    """
+        + code
+    )
     return code
-    
-    
-        
 
-if __name__=='__main__':
-    
-    code="""
+
+if __name__ == "__main__":
+
+    code = """
 import pandas # 0
 import psycopg2 # 1
 conn = psycopg2.connect(f"host=localhost dbname=tpch user=p2d2 password=p2d2") # 2
