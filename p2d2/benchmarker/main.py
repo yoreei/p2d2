@@ -50,7 +50,7 @@ def micro_main():
         print(name)
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
-        for wflow in ["tpch1.py", "tpch2.py", "tpch3.py", "tpch4.py", "tpch5.py"]:
+        for wflow in ["tpch2.py", "tpch3.py", "tpch1.py", "tpch4.py", "tpch5.py"]:
             for optimizer in ["base", "optimized"]:
                 with open(path / optimizer / wflow, "r") as file_source:
                     code = file_source.read()

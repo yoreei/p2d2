@@ -10,12 +10,12 @@ import numpy as np
 ### END DEBUG
 
 def udf_disc_price(extended, discount):
-    import numpy as np
-	return np.multiply(extended, np.subtract(1, discount))
+    import numpy 
+    return np.multiply(extended, np.subtract(1, discount))
 
 def udf_charge(extended, discount, tax):
-    import numpy as np
-	return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
+    import numpy
+    return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
 
     
 # variable CONNSTR should be provided by the overseeing script. See benchmarker/main.py

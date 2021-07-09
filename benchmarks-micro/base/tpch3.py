@@ -23,12 +23,12 @@ lineitem = lineitem.astype({'l_returnflag': 'category', 'l_linestatus': 'categor
 
 
 def udf_disc_price(extended, discount):
-    import numpy as np
-	return np.multiply(extended, np.subtract(1, discount))
+    import numpy 
+    return np.multiply(extended, np.subtract(1, discount))
 
 def udf_charge(extended, discount, tax):
-    import numpy as np
-	return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
+    import numpy 
+    return np.multiply(extended, np.multiply(np.subtract(1, discount), np.add(1, tax)))
 
 o  = orders[["o_orderkey", "o_custkey", "o_orderdate", "o_shippriority"]][orders.o_orderdate < "1995-03-29"][["o_orderkey", "o_custkey", "o_orderdate", "o_shippriority"]]
 c  = customer[["c_custkey", "c_mktsegment"]][customer.c_mktsegment == "FURNITURE"][["c_custkey", "c_mktsegment"]]

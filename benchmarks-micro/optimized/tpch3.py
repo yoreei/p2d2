@@ -29,6 +29,7 @@ import pandas as pd
 import numpy as np
     
 
+query = sqlalchemy.text(query)
 result = pd.read_sql(query, con=CONNSTR)
 #SHARED_DB_TIME is multiprocessing.Value
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
