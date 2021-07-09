@@ -3,11 +3,10 @@
 Produces csv reports from microbenchmarks
 """
 import subprocess
-import os
 from datetime import datetime
 
 import pandas
-import psycopg2
+from pathlib import Path
 
 from . import log
 from . import monitor as mon
@@ -49,7 +48,7 @@ def micro_main():
     def one():
         name = "5end_to_end"
         print(name)
-        path = Pathlib("benchmarks-micro")
+        path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for wflow in ["tpch1.py", "tpch2.py", "tpch3.py", "tpch4.py", "tpch5.py"]:
             for optimizer in ["base", "optimized"]:
@@ -73,7 +72,7 @@ def micro_main():
     def two():
         name = "5module4"
         print(name)
-        path = Pathlib("benchmarks-kaggle")
+        path = Path("benchmarks-kaggle")
         wflow = "module4"
         result = pandas.DataFrame()
         for optimizer in ["base", "optimized"]:
@@ -90,7 +89,7 @@ def micro_main():
 
     def three():
         print("5tpchmodin")
-        path = Pathlib("benchmarks-kaggle")
+        path = Path("benchmarks-kaggle")
         result = pandas.DataFrame()
         for f in ["tpch1.py", "tpch4.py", "tpch5.py"]:
             bench_dir = "modin"
@@ -107,7 +106,7 @@ def micro_main():
 
     def four():
         print("5micro_scales")
-        path = Pathlib("benchmarks-micro")
+        path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for f in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
             for bench_dir in ["optimized", "base"]:
@@ -130,7 +129,7 @@ def micro_main():
 
     def five():
         print("5micro_net")
-        path = Pathlib("benchmarks-micro")
+        path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for f in ["micro_join.py", "micro_sel.py"]:
             for bench_dir in ["optimized", "base"]:
