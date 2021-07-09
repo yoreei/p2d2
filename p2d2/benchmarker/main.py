@@ -52,17 +52,17 @@ def micro_main():
         result = pandas.DataFrame()
         for wflow in ["tpch1.py", "tpch2.py", "tpch3.py", "tpch4.py", "tpch5.py"]:
             for optimizer in ["base", "optimized"]:
-                with open(path / bench_dir / f, "r") as file_source:
+                with open(path / optimizer / wflow, "r") as file_source:
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(f, bench_dir, connstr)
+                print(wflow, optimizer, connstr)
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow, optimizer, scale=1, net="loc")
                 result = result.append(curr_df)
 
                 connstr = "postgresql://root:root@localhost/tpch10"
-                print(f, bench_dir, connstr)
+                print(wflow, optimizer, connstr)
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow, optimizer, scale=10, net="loc")
                 result = result.append(curr_df)
@@ -76,11 +76,11 @@ def micro_main():
         wflow = "module4"
         result = pandas.DataFrame()
         for optimizer in ["base", "optimized"]:
-            with open(path / bench_dir / f, "r") as file_source:
+            with open(path / optimizer / wflow, "r") as file_source:
                 code = file_source.read()
 
             connstr = "postgresql://disable_nestloop_user:disable_nestloop_user@localhost/module4"
-            print(f, bench_dir, connstr)
+            print(wflow, optimizer, connstr)
             curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
             columnize(curr_df, wflow, optimizer, scale=1, net="loc")
             result = result.append(curr_df)
@@ -91,13 +91,13 @@ def micro_main():
         print("5tpchmodin")
         path = Path("benchmarks-kaggle")
         result = pandas.DataFrame()
-        for f in ["tpch1.py", "tpch4.py", "tpch5.py"]:
-            bench_dir = "modin"
-            with open(path / bench_dir / f, "r") as file_source:
+        for wflow in ["tpch1.py", "tpch4.py", "tpch5.py"]:
+            optimizer = "modin"
+            with open(path / optimizer / wflow, "r") as file_source:
                 code = file_source.read()
 
             connstr = "postgresql://root:root@localhost/tpch10"
-            print(f, bench_dir, connstr)
+            print(wflow, optimizer, connstr)
             curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
             columnize(curr_df, wflow, optimizer, scale=10, net="loc")
             result = result.append(curr_df)
@@ -108,19 +108,19 @@ def micro_main():
         print("5micro_scales")
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
-        for f in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
-            for bench_dir in ["optimized", "base"]:
-                with open(path / bench_dir / f, "r") as file_source:
+        for wflow in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
+            for optimizer in ["optimized", "base"]:
+                with open(path / optimizer / wflow, "r") as file_source:
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(f, bench_dir, connstr)
+                print(wflow, optimizer, connstr)
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow, optimizer, scale=1, net="loc")
                 result = result.append(curr_df)
 
                 connstr = "postgresql://root:root@localhost/tpch10"
-                print(f, bench_dir, connstr)
+                print(wflow, optimizer, connstr)
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow, optimizer, scale=10, net="loc")
                 result = result.append(curr_df)
@@ -131,13 +131,13 @@ def micro_main():
         print("5micro_net")
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
-        for f in ["micro_join.py", "micro_sel.py"]:
-            for bench_dir in ["optimized", "base"]:
-                with open(path / bench_dir / f, "r") as file_source:
+        for wflow in ["micro_join.py", "micro_sel.py"]:
+            for optimizer in ["optimized", "base"]:
+                with open(path / optimizer / wflow, "r") as file_source:
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(f, bench_dir, connstr)
+                print(wflow, optimizer, connstr)
                 shape_traffic("wan")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 shape_traffic("loc")
