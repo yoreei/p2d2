@@ -75,7 +75,7 @@ def micro_main():
         name = "5module4"
         print(name)
         path = Path("benchmarks-kaggle")
-        wflow = "module4"
+        wflow = "module4.py"
         result = pandas.DataFrame()
         for optimizer in ["base", "optimized"]:
             with open(path / optimizer / wflow, "r") as file_source:
