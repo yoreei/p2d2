@@ -91,7 +91,7 @@ def micro_main():
 
     def three():
         print("5tpchmodin")
-        path = Path("benchmarks-kaggle")
+        path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for wflow in ["tpch1.py", "tpch4.py", "tpch5.py"]:
             optimizer = "modin"
