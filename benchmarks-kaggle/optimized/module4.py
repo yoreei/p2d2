@@ -1,4 +1,5 @@
 import time
+import sqlalchemy
 start_clock = time.perf_counter()
 import pandas
 
@@ -7,7 +8,7 @@ proj_sent_query = """
     FROM sentiment_values;
 """
 
-cte_statements = """
+query = """
 WITH 
 dropna_user AS (
     SELECT * FROM user_track
@@ -116,6 +117,8 @@ df23_drop AS(
         "time_zone", "user_id", "hashtag"
     FROM df23
 )
+
+select * from df23_drop
 """
 # report = helppd2sql.new_report()
 # for cte in ['dropna_user', 'counts', 'popular', 'pop_user_list', 'pop_user', 'counts3', 'popular3', 'pop_context_list', 'pop_context', 'proj_context', 'dropna_context', 'english_context', 'rename_content_features', 'usa_context', 'df23', 'df23_drop']:
@@ -129,6 +132,7 @@ df23_drop AS(
 # report_df.to_csv('sql_report.csv', index=False)
 # df.to_csv('df23_drop_s.csv', index=False)
 
-df = pandas.read_sql_query("select * from df23_drop", con=CONNSTR)
+query=sqlalchemy.text(query)
+df = pandas.read_sql(query, con=CONNSTR)
 SHARED_DB_TIME = time.perf_counter() - start_clock
 SHARED_WALL_TIME = time.perf_counter() - start_clock
