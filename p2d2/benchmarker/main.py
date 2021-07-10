@@ -90,7 +90,8 @@ def micro_main():
         write(result, name)
 
     def three():
-        print("5tpchmodin")
+        name = "5tpchmodin"
+        print(name)
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for wflow in ["tpch1.py", "tpch4.py", "tpch5.py"]:
@@ -107,7 +108,8 @@ def micro_main():
         write(result, name)
 
     def four():
-        print("5micro_scales")
+        name = "5micro_scales"
+        print(name)
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for wflow in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
@@ -132,7 +134,8 @@ def micro_main():
         write(result, name)
 
     def five():
-        print("5micro_net")
+        name = "5micro_net"
+        print(name)
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
         for wflow in ["micro_join.py", "micro_sel.py"]:
