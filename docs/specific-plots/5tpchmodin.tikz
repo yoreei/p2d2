@@ -1,0 +1,86 @@
+% This file was created by tikzplotlib v0.9.9.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.372549019607843,0.341176470588235,0.858823529411765}
+\definecolor{color1}{rgb}{0.341176470588235,0.858823529411765,0.372549019607843}
+\definecolor{color2}{rgb}{0.858823529411765,0.372549019607843,0.341176470588235}
+
+\begin{axis}[
+axis background/.style={fill=white!92.156862745098!black},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xlabel={Query},
+xmajorgrids,
+xmin=0.4, xmax=3.6,
+xminorgrids,
+xtick style={color=white!20!black},
+xtick={1,2,3},
+xticklabels={tpch1.py,tpch4.py,tpch5.py},
+y grid style={white},
+ylabel={Time (in sec.)},
+ymajorgrids,
+ymin=-1.46598481598988, ymax=30.7856811357875,
+yminorgrids,
+ytick style={color=white!20!black},
+ytick={0,15.8113883008419,22.3606797749979,27.3861278752583},
+yticklabels={0,250,500,750}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:1.08333333333333,0)
+--(axis cs:1.08333333333333,4.64197620795652)
+--(axis cs:1.25,4.64197620795652)
+--(axis cs:1.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0.916666666666667,0)
+--(axis cs:0.916666666666667,15.7096034716142)
+--(axis cs:1.08333333333333,15.7096034716142)
+--(axis cs:1.08333333333333,0)
+--cycle;
+\path [fill=color2, line width=0.354490770181103pt]
+(axis cs:0.75,0)
+--(axis cs:0.75,27.729813665403)
+--(axis cs:0.916666666666667,27.729813665403)
+--(axis cs:0.916666666666667,0)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:2.08333333333333,0)
+--(axis cs:2.08333333333333,1.80336842075607)
+--(axis cs:2.25,1.80336842075607)
+--(axis cs:2.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:1.91666666666667,0)
+--(axis cs:1.91666666666667,15.5538026336709)
+--(axis cs:2.08333333333333,15.5538026336709)
+--(axis cs:2.08333333333333,0)
+--cycle;
+\path [fill=color2, line width=0.354490770181103pt]
+(axis cs:1.75,0)
+--(axis cs:1.75,29.2699198914042)
+--(axis cs:1.91666666666667,29.2699198914042)
+--(axis cs:1.91666666666667,0)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:3.08333333333333,0)
+--(axis cs:3.08333333333333,1.98873812179807)
+--(axis cs:3.25,1.98873812179807)
+--(axis cs:3.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:2.91666666666667,0)
+--(axis cs:2.91666666666667,13.9627735572184)
+--(axis cs:3.08333333333333,13.9627735572184)
+--(axis cs:3.08333333333333,0)
+--cycle;
+\path [fill=color2, line width=0.354490770181103pt]
+(axis cs:2.75,0)
+--(axis cs:2.75,29.3196963197977)
+--(axis cs:2.91666666666667,29.3196963197977)
+--(axis cs:2.91666666666667,0)
+--cycle;
+
+\end{axis}
+
+\end{tikzpicture}

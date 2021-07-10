@@ -11,79 +11,67 @@ tick align=outside,
 tick pos=left,
 x grid style={white},
 xmajorgrids,
-xmin=0.4, xmax=5.6,
+xmin=0.4, xmax=4.6,
 xminorgrids,
 xtick style={color=white!20!black},
-xtick={1,2,3,4,5},
-xticklabels={tpch1,tpch2,tpch3,tpch4,tpch5},
+xtick={1,2,3,4},
+xticklabels={join,max,proj,sel},
 y grid style={white},
 ylabel={Time (in sec.)},
 ymajorgrids,
-ymin=-0.456888812439496, ymax=9.59466506122942,
+ymin=-0.529460054700943, ymax=11.1186611487198,
 yminorgrids,
 ytick style={color=white!20!black},
-ytick={0,5,7.07106781186548,8.66025403784439},
-yticklabels={0,25,50,75}
+ytick={0,5.47722557505166,7.74596669241483,9.48683298050514,10.9544511501033},
+yticklabels={0,30,60,90,120}
 ]
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:1,0)
---(axis cs:1,1.65476123908468)
---(axis cs:1.25,1.65476123908468)
+--(axis cs:1,10.5892010940189)
+--(axis cs:1.25,10.5892010940189)
 --(axis cs:1.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:0.75,0)
---(axis cs:0.75,8.67972441767576)
---(axis cs:1,8.67972441767576)
+--(axis cs:0.75,9.03199210632358)
+--(axis cs:1,9.03199210632358)
 --(axis cs:1,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:2,0)
---(axis cs:2,0.9182564467202)
---(axis cs:2.25,0.9182564467202)
+--(axis cs:2,0.909298504892595)
+--(axis cs:2.25,0.909298504892595)
 --(axis cs:2.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:1.75,0)
---(axis cs:1.75,2.26511782527082)
---(axis cs:2,2.26511782527082)
+--(axis cs:1.75,3.35622794429984)
+--(axis cs:2,3.35622794429984)
 --(axis cs:2,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:3,0)
---(axis cs:3,0.954550849137606)
---(axis cs:3.25,0.954550849137606)
+--(axis cs:3,3.3283086735005)
+--(axis cs:3.25,3.3283086735005)
 --(axis cs:3.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:2.75,0)
---(axis cs:2.75,9.0691188450685)
---(axis cs:3,9.0691188450685)
+--(axis cs:2.75,8.29743958472187)
+--(axis cs:3,8.29743958472187)
 --(axis cs:3,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:4,0)
---(axis cs:4,0.813471067119231)
---(axis cs:4.25,0.813471067119231)
+--(axis cs:4,1.1764342563643)
+--(axis cs:4.25,1.1764342563643)
 --(axis cs:4.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:3.75,0)
---(axis cs:3.75,9.00129605603974)
---(axis cs:4,9.00129605603974)
+--(axis cs:3.75,8.29422949157345)
+--(axis cs:4,8.29422949157345)
 --(axis cs:4,0)
---cycle;
-\path [fill=color0, line width=0.354490770181103pt]
-(axis cs:5,0)
---(axis cs:5,0.820196306991356)
---(axis cs:5.25,0.820196306991356)
---(axis cs:5.25,0)
---cycle;
-\path [fill=color1, line width=0.354490770181103pt]
-(axis cs:4.75,0)
---(axis cs:4.75,9.13777624878992)
---(axis cs:5,9.13777624878992)
---(axis cs:5,0)
 --cycle;
 
 \path [draw=none, fill=white!85.0980392156863!black]
@@ -105,14 +93,14 @@ tick pos=left,
 x grid style={white},
 xlabel={Query},
 xmajorgrids,
-xmin=0.4, xmax=5.6,
+xmin=0.4, xmax=4.6,
 xminorgrids,
 xtick style={color=white!20!black},
-xtick={1,2,3,4,5},
-xticklabels={tpch1,tpch2,tpch3,tpch4,tpch5},
+xtick={1,2,3,4},
+xticklabels={join,max,proj,sel},
 y grid style={white},
 ymajorgrids,
-ymin=-1.46598481598988, ymax=30.7856811357875,
+ymin=-1.43795588686453, ymax=30.1970736241551,
 yminorgrids,
 ytick style={color=white!20!black},
 ytick={0,15.8113883008419,22.3606797749979,27.3861278752583},
@@ -120,63 +108,51 @@ yticklabels={0,250,500,750}
 ]
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:1,0)
---(axis cs:1,4.64197620795652)
---(axis cs:1.25,4.64197620795652)
+--(axis cs:1,0)
+--(axis cs:1.25,0)
 --(axis cs:1.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:0.75,0)
---(axis cs:0.75,27.729813665403)
---(axis cs:1,27.729813665403)
+--(axis cs:0.75,28.7591177372906)
+--(axis cs:1,28.7591177372906)
 --(axis cs:1,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:2,0)
---(axis cs:2,3.03827772819568)
---(axis cs:2.25,3.03827772819568)
+--(axis cs:2,2.03982249160846)
+--(axis cs:2.25,2.03982249160846)
 --(axis cs:2.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:1.75,0)
---(axis cs:1.75,6.94427516815715)
---(axis cs:2,6.94427516815715)
+--(axis cs:1.75,10.6110802517409)
+--(axis cs:2,10.6110802517409)
 --(axis cs:2,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:3,0)
---(axis cs:3,2.7805117366648)
---(axis cs:3.25,2.7805117366648)
+--(axis cs:3,10.5023862761125)
+--(axis cs:3.25,10.5023862761125)
 --(axis cs:3.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:2.75,0)
---(axis cs:2.75,28.9272695958248)
---(axis cs:3,28.9272695958248)
+--(axis cs:2.75,26.5216275615888)
+--(axis cs:3,26.5216275615888)
 --(axis cs:3,0)
 --cycle;
 \path [fill=color0, line width=0.354490770181103pt]
 (axis cs:4,0)
---(axis cs:4,1.80336842075607)
---(axis cs:4.25,1.80336842075607)
+--(axis cs:4,3.01849339502233)
+--(axis cs:4.25,3.01849339502233)
 --(axis cs:4.25,0)
 --cycle;
 \path [fill=color1, line width=0.354490770181103pt]
 (axis cs:3.75,0)
---(axis cs:3.75,29.2699198914042)
---(axis cs:4,29.2699198914042)
+--(axis cs:3.75,26.4477265330979)
+--(axis cs:4,26.4477265330979)
 --(axis cs:4,0)
---cycle;
-\path [fill=color0, line width=0.354490770181103pt]
-(axis cs:5,0)
---(axis cs:5,1.98873812179807)
---(axis cs:5.25,1.98873812179807)
---(axis cs:5.25,0)
---cycle;
-\path [fill=color1, line width=0.354490770181103pt]
-(axis cs:4.75,0)
---(axis cs:4.75,29.3196963197977)
---(axis cs:5,29.3196963197977)
---(axis cs:5,0)
 --cycle;
 
 \path [draw=none, fill=white!85.0980392156863!black]

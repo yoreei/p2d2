@@ -6,6 +6,6 @@ import pandas as pd
 
 a = pd.read_sql_query("SELECT * FROM lineitem", CONNSTR)
 SHARED_DB_TIME.value = time.perf_counter() - start_clock
-b = a[a["l_linenumber"] <= 0.05]
+b = a[a["l_linenumber"] <= 2]
 
 SHARED_WALL_TIME.value = time.perf_counter() - start_clock

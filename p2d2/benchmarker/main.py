@@ -138,22 +138,34 @@ def micro_main():
         print(name)
         path = Path("benchmarks-micro")
         result = pandas.DataFrame()
-        for wflow in ["micro_join.py", "micro_sel.py"]:
+        for wflow in ["micro_join.py", "micro_sel.py", "micro_proj.py", "micro_max.py"]:
             for optimizer in ["optimized", "base"]:
                 with open(path / optimizer / wflow, "r") as file_source:
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                logger.info(f"{wflow} {optimizer} {connstr}")
+
+                # wan
+                logger.info(f"wan {wflow} {optimizer} {connstr}")
                 shape_traffic("wan")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 shape_traffic("loc")
                 columnize(
-                    curr_df, wflow=wflow, optimizer=optimizer, scale=10, net="loc"
+                    curr_df, wflow=wflow, optimizer=optimizer, scale=1, net="wan"
+                )
+                result = result.append(curr_df)
+
+                # lan
+                logger.info(f"lan {wflow} {optimizer} {connstr}")
+                shape_traffic("lan")
+                curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
+                shape_traffic("loc")
+                columnize(
+                    curr_df, wflow=wflow, optimizer=optimizer, scale=1, net="lan"
                 )
                 result = result.append(curr_df)
 
         write(result, name)
 
     shape_traffic("loc")
-    two()
+    five()

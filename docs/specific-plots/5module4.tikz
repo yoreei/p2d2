@@ -1,0 +1,77 @@
+% This file was created by tikzplotlib v0.9.9.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.372549019607843,0.341176470588235,0.858823529411765}
+\definecolor{color1}{rgb}{0.341176470588235,0.858823529411765,0.372549019607843}
+\definecolor{color2}{rgb}{0.858823529411765,0.372549019607843,0.341176470588235}
+
+\begin{axis}[
+axis background/.style={fill=white!92.156862745098!black},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xlabel={Optimization Method},
+xmajorgrids,
+xmin=0.4, xmax=2.6,
+xminorgrids,
+xtick style={color=white!20!black},
+xtick={1,2},
+xticklabels={base,optimized},
+y grid style={white},
+ylabel={Time (in sec.)},
+ymajorgrids,
+ymin=-14.2410545446777, ymax=299.062145438232,
+yminorgrids,
+ytick style={color=white!20!black}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0.85,0)
+--(axis cs:0.85,181.833969116211)
+--(axis cs:1.15,181.833969116211)
+--(axis cs:1.15,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0.85,181.833969116211)
+--(axis cs:0.85,228.338790893555)
+--(axis cs:1.15,228.338790893555)
+--(axis cs:1.15,181.833969116211)
+--cycle;
+\path [fill=color2, line width=0.354490770181103pt]
+(axis cs:0.85,228.338790893555)
+--(axis cs:0.85,284.821090893555)
+--(axis cs:1.15,284.821090893555)
+--(axis cs:1.15,228.338790893555)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:1.85,0)
+--(axis cs:1.85,75.1594161987305)
+--(axis cs:2.15,75.1594161987305)
+--(axis cs:2.15,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:1.85,75.1594161987305)
+--(axis cs:1.85,75.1594390869141)
+--(axis cs:2.15,75.1594390869141)
+--(axis cs:2.15,75.1594161987305)
+--cycle;
+\path [fill=color2, line width=0.354490770181103pt]
+(axis cs:1.85,75.1594390869141)
+--(axis cs:1.85,131.641739086914)
+--(axis cs:2.15,131.641739086914)
+--(axis cs:2.15,75.1594390869141)
+--cycle;
+
+\path [draw=none, fill=white!85.0980392156863!black]
+(axis cs:0,1)
+--(axis cs:1,1)
+--(axis cs:1,1.05373677248677)
+--(axis cs:0,1.05373677248677)
+--cycle;
+\draw (axis cs:0.5,1.02686838624339) node[
+  scale=0.44,
+  text=white!10.1960784313725!black,
+  rotate=0.0
+]{module4.py};
+\end{axis}
+
+\end{tikzpicture}

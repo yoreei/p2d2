@@ -1,0 +1,123 @@
+% This file was created by tikzplotlib v0.9.9.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.341176470588235,0.827450980392157,0.858823529411765}
+\definecolor{color1}{rgb}{0.858823529411765,0.372549019607843,0.341176470588235}
+
+\begin{groupplot}[group style={group size=2 by 1}]
+\nextgroupplot[
+axis background/.style={fill=white!92.156862745098!black},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xmajorgrids,
+xmin=0.4, xmax=2.6,
+xminorgrids,
+xtick style={color=white!20!black},
+xtick={1,2},
+xticklabels={join,sel},
+y grid style={white},
+ylabel={Time (in sec.)},
+ymajorgrids,
+ymin=-0.529460054700943, ymax=11.1186611487198,
+yminorgrids,
+ytick style={color=white!20!black},
+ytick={0,5.47722557505166,7.74596669241483,9.48683298050514,10.9544511501033},
+yticklabels={0,30,60,90,120}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:1,0)
+--(axis cs:1,10.5892010940189)
+--(axis cs:1.25,10.5892010940189)
+--(axis cs:1.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0.75,0)
+--(axis cs:0.75,9.03199210632358)
+--(axis cs:1,9.03199210632358)
+--(axis cs:1,0)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:2,0)
+--(axis cs:2,1.1764342563643)
+--(axis cs:2.25,1.1764342563643)
+--(axis cs:2.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:1.75,0)
+--(axis cs:1.75,8.29422949157345)
+--(axis cs:2,8.29422949157345)
+--(axis cs:2,0)
+--cycle;
+
+\path [draw=none, fill=white!85.0980392156863!black]
+(axis cs:0,1)
+--(axis cs:1,1)
+--(axis cs:1,1.12896825396825)
+--(axis cs:0,1.12896825396825)
+--cycle;
+\draw (axis cs:0.5,1.06448412698413) node[
+  scale=0.44,
+  text=white!10.1960784313725!black,
+  rotate=0.0
+]{loc};
+
+\nextgroupplot[
+axis background/.style={fill=white!92.156862745098!black},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xlabel={Query},
+xmajorgrids,
+xmin=0.4, xmax=2.6,
+xminorgrids,
+xtick style={color=white!20!black},
+xtick={1,2},
+xticklabels={join,sel},
+y grid style={white},
+ymajorgrids,
+ymin=-0.904413422227724, ymax=18.9926818667822,
+yminorgrids,
+ytick style={color=white!20!black},
+ytick={0,10,14.142135623731,17.3205080756888},
+yticklabels={0,100,200,300}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:1,0)
+--(axis cs:1,18.0882684445545)
+--(axis cs:1.25,18.0882684445545)
+--(axis cs:1.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0.75,0)
+--(axis cs:0.75,15.2101760932314)
+--(axis cs:1,15.2101760932314)
+--(axis cs:1,0)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:2,0)
+--(axis cs:2,1.50923484957163)
+--(axis cs:2.25,1.50923484957163)
+--(axis cs:2.25,0)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:1.75,0)
+--(axis cs:1.75,13.8696245657805)
+--(axis cs:2,13.8696245657805)
+--(axis cs:2,0)
+--cycle;
+
+\path [draw=none, fill=white!85.0980392156863!black]
+(axis cs:0,1)
+--(axis cs:1,1)
+--(axis cs:1,1.12896825396825)
+--(axis cs:0,1.12896825396825)
+--cycle;
+\draw (axis cs:0.5,1.06448412698413) node[
+  scale=0.44,
+  text=white!10.1960784313725!black,
+  rotate=0.0
+]{wan};
+\end{groupplot}
+
+\end{tikzpicture}

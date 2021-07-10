@@ -1,0 +1,172 @@
+% This file was created by tikzplotlib v0.9.9.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.341176470588235,0.827450980392157,0.858823529411765}
+\definecolor{color1}{rgb}{0.858823529411765,0.372549019607843,0.341176470588235}
+
+\begin{groupplot}[group style={group size=2 by 1}]
+\nextgroupplot[
+axis background/.style={fill=white!92.156862745098!black},
+tick align=outside,
+tick pos=left,
+x grid style={white},
+xmajorgrids,
+xmin=-0.0728816396117705, xmax=1.53051443184718,
+xminorgrids,
+xtick style={color=white!20!black},
+xtick={0,0.707106781186548,1,1.22474487139159,1.4142135623731},
+xticklabels={0,0.5,1,1.5,2},
+y grid style={white},
+ylabel={Query},
+ymajorgrids,
+ymin=0.4, ymax=4.6,
+yminorgrids,
+ytick style={color=white!20!black},
+ytick={1,2,3,4},
+yticklabels={join,max,proj,sel}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,1)
+--(axis cs:0,1.25)
+--(axis cs:1.45763279223541,1.25)
+--(axis cs:1.45763279223541,1)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,0.75)
+--(axis cs:0,1)
+--(axis cs:1.20966951313158,1)
+--(axis cs:1.20966951313158,0.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,2)
+--(axis cs:0,2.25)
+--(axis cs:0.00507326324962543,2.25)
+--(axis cs:0.00507326324962543,2)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,1.75)
+--(axis cs:0,2)
+--(axis cs:0.27002209168881,2)
+--(axis cs:0.27002209168881,1.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,3)
+--(axis cs:0,3.25)
+--(axis cs:0.270026017265004,3.25)
+--(axis cs:0.270026017265004,3)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,2.75)
+--(axis cs:0,3)
+--(axis cs:1.10865215103747,3)
+--(axis cs:1.10865215103747,2.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,4)
+--(axis cs:0,4.25)
+--(axis cs:0.00407394158033716,4.25)
+--(axis cs:0.00407394158033716,4)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,3.75)
+--(axis cs:0,4)
+--(axis cs:1.10865117146919,4)
+--(axis cs:1.10865117146919,3.75)
+--cycle;
+
+\path [draw=none, fill=white!85.0980392156863!black]
+(axis cs:0,1)
+--(axis cs:1,1)
+--(axis cs:1,1.12896825396825)
+--(axis cs:0,1.12896825396825)
+--cycle;
+\draw (axis cs:0.5,1.06448412698413) node[
+  scale=0.44,
+  text=white!10.1960784313725!black,
+  rotate=0.0
+]{scale 1};
+
+\nextgroupplot[
+axis background/.style={fill=white!92.156862745098!black},
+scaled y ticks=manual:{}{\pgfmathparse{#1}},
+tick align=outside,
+x grid style={white},
+xlabel={Network Transfer (in GB)},
+xmajorgrids,
+xmin=-0.232054217867291, xmax=4.8731385752131,
+xminorgrids,
+xtick pos=left,
+xtick style={color=white!20!black},
+xtick={0,2.23606797749979,3.16227766016838,3.87298334620742,4.47213595499958},
+xticklabels={0,5,10,15,20},
+y grid style={white},
+ymajorgrids,
+ymajorticks=false,
+ymin=0.4, ymax=4.6,
+yminorgrids,
+ytick style={color=white!20!black},
+yticklabels={}
+]
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,1)
+--(axis cs:0,1.25)
+--(axis cs:4.64108435734581,1.25)
+--(axis cs:4.64108435734581,1)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,0.75)
+--(axis cs:0,1)
+--(axis cs:3.85226616746559,1)
+--(axis cs:3.85226616746559,0.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,2)
+--(axis cs:0,2.25)
+--(axis cs:0.00527276018798504,2.25)
+--(axis cs:0.00527276018798504,2)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,1.75)
+--(axis cs:0,2)
+--(axis cs:0.853617457647159,2)
+--(axis cs:0.853617457647159,1.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,3)
+--(axis cs:0,3.25)
+--(axis cs:0.853616253359787,3.25)
+--(axis cs:0.853616253359787,3)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,2.75)
+--(axis cs:0,3)
+--(axis cs:3.53102222663636,3)
+--(axis cs:3.53102222663636,2.75)
+--cycle;
+\path [fill=color0, line width=0.354490770181103pt]
+(axis cs:0,4)
+--(axis cs:0,4.25)
+--(axis cs:0.00434580257259807,4.25)
+--(axis cs:0.00434580257259807,4)
+--cycle;
+\path [fill=color1, line width=0.354490770181103pt]
+(axis cs:0,3.75)
+--(axis cs:0,4)
+--(axis cs:3.5310220708741,4)
+--(axis cs:3.5310220708741,3.75)
+--cycle;
+
+\path [draw=none, fill=white!85.0980392156863!black]
+(axis cs:0,1)
+--(axis cs:1,1)
+--(axis cs:1,1.12896825396825)
+--(axis cs:0,1.12896825396825)
+--cycle;
+\draw (axis cs:0.5,1.06448412698413) node[
+  scale=0.44,
+  text=white!10.1960784313725!black,
+  rotate=0.0
+]{scale 10};
+\end{groupplot}
+
+\end{tikzpicture}
