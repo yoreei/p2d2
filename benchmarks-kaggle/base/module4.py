@@ -130,7 +130,7 @@ len(pop_context)
 
 proj_context = pop_context.drop(
     columns=['coordinates','id','place','geo','artist_id','tweet_lang'])
-helppd2sql.drop2select(proj_context)
+# helppd2sql.drop2select(proj_context)
 
 
 # In[19]:
@@ -173,7 +173,7 @@ english_context['time_zone'].replace('America/New_York', 'Eastern Time', inplace
 english_context['time_zone'].replace('America/Los_Angeles', 'Pacific Time', inplace=True)
 english_context['time_zone'].replace('America/Denver', 'Mountain Time', inplace=True)
 english_context['time_zone'].replace('America/Detroit', 'Eastern Time', inplace=True)
-helppd2sql.drop2select(english_context)
+# helppd2sql.drop2select(english_context)
 
 
 # In[23]:
@@ -195,7 +195,7 @@ df23 = usa_context.merge(
 
 
 df23_drop = df23.drop(columns=['created_at'])
-helppd2sql.drop2select(df23_drop)
+# helppd2sql.drop2select(df23_drop)
 
 
 # In[ ]:

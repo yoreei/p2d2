@@ -3,6 +3,7 @@ data/
 *.tbl
 logs/
 docs/reports/
+docs/specific-reports
 docs/old_reports/
 kaggle-originals/data/
 
