@@ -134,5 +134,5 @@ select * from df23_drop
 
 query=sqlalchemy.text(query)
 df = pandas.read_sql(query, con=CONNSTR)
-SHARED_DB_TIME = time.perf_counter() - start_clock
-SHARED_WALL_TIME = time.perf_counter() - start_clock
+SHARED_DB_TIME.value = time.perf_counter() - start_clock
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock

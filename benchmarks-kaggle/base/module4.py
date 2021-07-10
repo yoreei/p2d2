@@ -14,7 +14,7 @@ sentiment_values = pandas.read_sql_query('select * from sentiment_values', con=C
 user_track = pandas.read_sql_query('select * from user_track', con=CONNSTR)
 context_content_features = pandas.read_sql_query('select * from context_content_features', con=CONNSTR)
 
-SHARED_DB_TIME = time.perf_counter() - start_clock
+SHARED_DB_TIME.value = time.perf_counter() - start_clock
 print(f"db_time: {SHARED_DB_TIME}")
 
 proj_sent = sentiment_values[['hashtag', 'ol_score', 'ol_avg']]
@@ -208,4 +208,4 @@ df23_drop = df23.drop(columns=['created_at'])
 # report_df.to_csv('pandas_report.csv', index=False)
 # df23_drop.to_csv('df23_drop_p.csv', index=False)
 
-SHARED_WALL_TIME = time.perf_counter() - start_clock
+SHARED_WALL_TIME.value = time.perf_counter() - start_clock

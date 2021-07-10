@@ -56,13 +56,13 @@ def micro_main():
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(wflow, optimizer, connstr)
+                logger.info(f"{scale} {optimizer} {connstr}")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow=wflow, optimizer=optimizer, scale=1, net="loc")
                 result = result.append(curr_df)
 
                 connstr = "postgresql://root:root@localhost/tpch10"
-                print(wflow, optimizer, connstr)
+                logger.info(f"{scale} {optimizer} {connstr}")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(
                     curr_df, wflow=wflow, optimizer=optimizer, scale=10, net="loc"
@@ -82,7 +82,7 @@ def micro_main():
                 code = file_source.read()
 
             connstr = "postgresql://disable_nestloop_user:disable_nestloop_user@localhost/module4"
-            print(wflow, optimizer, connstr)
+            logger.info(f"{scale} {optimizer} {connstr}")
             curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
             columnize(curr_df, wflow=wflow, optimizer=optimizer, scale=1, net="loc")
             result = result.append(curr_df)
@@ -100,7 +100,7 @@ def micro_main():
                 code = file_source.read()
 
             connstr = "postgresql://root:root@localhost/tpch10"
-            print(wflow, optimizer, connstr)
+            logger.info(f"{scale} {optimizer} {connstr}")
             curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
             columnize(curr_df, wflow=wflow, optimizer=optimizer, scale=10, net="loc")
             result = result.append(curr_df)
@@ -118,13 +118,13 @@ def micro_main():
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(wflow, optimizer, connstr)
+                logger.info(f"{scale} {optimizer} {connstr}")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(curr_df, wflow=wflow, optimizer=optimizer, scale=1, net="loc")
                 result = result.append(curr_df)
 
                 connstr = "postgresql://root:root@localhost/tpch10"
-                print(wflow, optimizer, connstr)
+                logger.info(f"{scale} {optimizer} {connstr}")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 columnize(
                     curr_df, wflow=wflow, optimizer=optimizer, scale=10, net="loc"
@@ -144,7 +144,7 @@ def micro_main():
                     code = file_source.read()
 
                 connstr = "postgresql://root:root@localhost/tpch1"
-                print(wflow, optimizer, connstr)
+                logger.info(f"{scale} {optimizer} {connstr}")
                 shape_traffic("wan")
                 curr_df: pandas.DataFrame = mon.monitor(code, {"CONNSTR": connstr}, {})
                 shape_traffic("loc")
@@ -156,4 +156,4 @@ def micro_main():
         write(result, name)
 
     shape_traffic("loc")
-    four()
+    five()
