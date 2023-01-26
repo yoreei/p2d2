@@ -1,5 +1,11 @@
 # P2D2 Optimizer
 
+## Credits
+
+Yordan Grigorov
+Haralampos Gavriilidis
+Sergey Redyuk
+
 ## Presentation link:
 
 https://docs.google.com/presentation/d/1ddOAj5-91dMmr7gBm28uBOANgcL1zlLOv41waXOuHt4/edit?usp=sharing
