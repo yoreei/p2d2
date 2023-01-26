@@ -1,13 +1,16 @@
-# Private Repository of Yordan Grigorov's bachelor thesis
+# P2D2 Optimizer
 
-## Bachelor thesis link:
+## Presentation link:
 
+https://docs.google.com/presentation/d/1ddOAj5-91dMmr7gBm28uBOANgcL1zlLOv41waXOuHt4/edit?usp=sharing
 
-## TODO
-list of mappings
-IR
-pandas to IR
-SQL to IR
+## Thesis link (50 page academic work):
+
+https://drive.google.com/file/d/1EusaxeYp8BGZFN4AVRxKpls9tO-Y2D-B/view?usp=sharing
+
+## DEEM paper
+
+Coming soon!
 
 ## Dir structure
 
